@@ -1,0 +1,1505 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+<title>cptsearchmould(资产查询模板)</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gbk"/>
+<style>
+body, td {
+font-family: 微软雅黑;
+font-size: 12px;
+line-height: 150%;
+}
+table {
+width: 100%;
+background-color: #ccc;
+margin: 5px 0;
+word-break: break-all;
+}
+td {
+	background-color: #fff;
+	padding: 3px;
+padding-left: 10px;
+}
+thead td {
+	text-align: left;
+font-weight: bold;
+background-color: #eee;
+}
+a:link, a:visited, a:active {
+color: #015FB6;
+text-decoration: none;
+}
+a:hover {
+color: #E33E06;
+}
+.tablename {
+margin-top: 30px;
+}
+.outdiv {
+width: 1000px;
+margin: 40px auto;
+text-align: left;
+}
+
+</style>
+</head>
+<body>
+<center>
+<div class="outdiv">
+<div class="tablename">
+<b>表名：cptsearchmould</b>
+</div>
+<div>中文名称：资产查询模板</div>
+<div>表类型： </div>
+<a href='index.html' style='float: right;'>返回目录</a><div>说明：</div>
+<table cellspacing="1" cellpadding="0" mytablename="CptSearchMould">
+ <colgroup>
+  <col width="50px">
+  <col width="190px">
+  <col width="190px">
+  <col width="80px">
+  <col width="80px">
+  <col width="70px">
+  <col width="40px">
+  <col width="60px">
+  <col width="40px">
+  <col width="200px">
+ </colgroup>
+ <thead>
+  <tr>
+   <td>序号</td>
+   <td>中文名称</td>
+   <td>英文名称</td>
+   <td>数据类型</td>
+   <td>长度</td>
+   <td>允许空值</td>
+   <td>主键</td>
+   <td>默认值</td>
+   <td>自增</td>
+   <td>说明</td>
+  </tr>
+ </thead> 
+ <tbody>
+  <tr mycolname="id">
+   <td style="text-align: center;">1</td>
+   <td> 标识ID </td>
+   <td>id</td>
+   <td align="center">int</td>
+   <td align="center"></td>
+   <td align="center"> N </td>
+   <td align="center"> Y </td>
+   <td align="center"></td>
+   <td> Y </td>
+   <td> 标识列 </td>
+  </tr>
+  <tr mycolname="mouldname">
+   <td style="text-align: center;">2</td> 
+   <td>模板名称 </td>
+   <td>mouldname</td>
+   <td align="center">varchar</td>
+   <td align="center">1000</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td> 
+   <td>模板名称 </td> 
+  </tr> 
+  <tr mycolname="userid">
+   <td style="text-align: center;">3</td> 
+   <td>用户id </td>
+   <td>userid</td>
+   <td align="center">int</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td> 
+   <td>用户id </td> 
+  </tr> 
+  <tr mycolname="mark">
+   <td style="text-align: center;">4</td> 
+   <td>编号</td>
+   <td>mark</td>
+   <td align="center">varchar</td>
+   <td align="center">1000</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td> 
+   <td>编号</td> 
+  </tr> 
+  <tr mycolname="name">
+   <td style="text-align: center;">5</td> 
+   <td>名称 </td>
+   <td>name</td>
+   <td align="center">varchar</td>
+   <td align="center">1000</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td> 
+   <td>名称 </td> 
+  </tr> 
+  <tr mycolname="startdate">
+   <td style="text-align: center;">6</td> 
+   <td>开始日期 (从)</td>
+   <td>startdate</td>
+   <td align="center">char</td>
+   <td align="center">10</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td> 
+   <td>开始日期 (从)</td> 
+  </tr> 
+  <tr mycolname="startdate1">
+   <td style="text-align: center;">7</td> 
+   <td>开始日期(至) </td>
+   <td>startdate1</td>
+   <td align="center">char</td>
+   <td align="center">10</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td> 
+   <td>开始日期(至) </td> 
+  </tr> 
+  <tr mycolname="enddate">
+   <td style="text-align: center;">8</td> 
+   <td>结束日期(从) </td>
+   <td>enddate</td>
+   <td align="center">char</td>
+   <td align="center">10</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td> 
+   <td>结束日期(从) </td> 
+  </tr> 
+  <tr mycolname="enddate1">
+   <td style="text-align: center;">9</td> 
+   <td>结束日期(至) </td>
+   <td>enddate1</td>
+   <td align="center">char</td>
+   <td align="center">10</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td> 
+   <td>结束日期(至) </td> 
+  </tr> 
+  <tr mycolname="seclevel">
+   <td style="text-align: center;">10</td> 
+   <td>安全级别(从) </td>
+   <td>seclevel</td>
+   <td align="center">tinyint</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td> 
+   <td>安全级别(从) </td> 
+  </tr> 
+  <tr mycolname="seclevel1">
+   <td style="text-align: center;">11</td> 
+   <td>安全级别(至) </td>
+   <td>seclevel1</td>
+   <td align="center">tinyint</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td> 
+   <td>安全级别(至) </td> 
+  </tr> 
+  <tr mycolname="departmentid">
+   <td style="text-align: center;">12</td> 
+   <td>部门 </td>
+   <td>departmentid</td>
+   <td align="center">int</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td> 
+   <td>部门 </td> 
+  </tr> 
+  <tr mycolname="costcenterid">
+   <td style="text-align: center;">13</td> 
+   <td>成本中心 </td>
+   <td>costcenterid</td>
+   <td align="center">int</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td> 
+   <td>成本中心 </td> 
+  </tr> 
+  <tr mycolname="resourceid">
+   <td style="text-align: center;">14</td> 
+   <td>使用人(管理员) </td>
+   <td>resourceid</td>
+   <td align="center">int</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td> 
+   <td>使用人(管理员) </td> 
+  </tr> 
+  <tr mycolname="currencyid">
+   <td style="text-align: center;">15</td> 
+   <td>币种 </td>
+   <td>currencyid</td>
+   <td align="center">int</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td> 
+   <td>币种 </td> 
+  </tr> 
+  <tr mycolname="capitalcost">
+   <td style="text-align: center;">16</td> 
+   <td>成本(从) </td>
+   <td>capitalcost</td>
+   <td align="center">varchar</td>
+   <td align="center">1000</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td> 
+   <td>成本(从) </td> 
+  </tr> 
+  <tr mycolname="capitalcost1">
+   <td style="text-align: center;">17</td> 
+   <td>成本(至) </td>
+   <td>capitalcost1</td>
+   <td align="center">varchar</td>
+   <td align="center">1000</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td> 
+   <td>成本(至) </td> 
+  </tr> 
+  <tr mycolname="startprice">
+   <td style="text-align: center;">18</td> 
+   <td>开始价格(从) </td>
+   <td>startprice</td>
+   <td align="center">varchar</td>
+   <td align="center">1000</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td> 
+   <td>开始价格(从) </td> 
+  </tr> 
+  <tr mycolname="startprice1">
+   <td style="text-align: center;">19</td> 
+   <td>开始价格(至) </td>
+   <td>startprice1</td>
+   <td align="center">varchar</td>
+   <td align="center">1000</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td> 
+   <td>开始价格(至) </td> 
+  </tr> 
+  <tr mycolname="depreendprice">
+   <td style="text-align: center;">20</td>
+   <td>备用字段 </td>
+   <td>depreendprice</td>
+   <td align="center">varchar</td>
+   <td align="center">1000</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td> 
+   <td>备用字段 </td> 
+  </tr> 
+  <tr mycolname="depreendprice1">
+   <td style="text-align: center;">21</td>
+   <td>备用字段 </td>
+   <td>depreendprice1</td>
+   <td align="center">varchar</td>
+   <td align="center">1000</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td> 
+   <td>备用字段 </td> 
+  </tr> 
+  <tr mycolname="capitalspec">
+   <td style="text-align: center;">22</td> 
+   <td>规格 </td>
+   <td>capitalspec</td>
+   <td align="center">varchar</td>
+   <td align="center">1000</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td> 
+   <td>规格 </td> 
+  </tr> 
+  <tr mycolname="capitallevel">
+   <td style="text-align: center;">23</td> 
+   <td>等级 </td>
+   <td>capitallevel</td>
+   <td align="center">varchar</td>
+   <td align="center">1000</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td> 
+   <td>等级 </td> 
+  </tr> 
+  <tr mycolname="manufacturer">
+   <td style="text-align: center;">24</td> 
+   <td>制造厂商 </td>
+   <td>manufacturer</td>
+   <td align="center">varchar</td>
+   <td align="center">1000</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td> 
+   <td>制造厂商 </td> 
+  </tr> 
+  <tr mycolname="manudate">
+   <td style="text-align: center;">25</td> 
+   <td>出厂日期(从) </td>
+   <td>manudate</td>
+   <td align="center">char</td>
+   <td align="center">10</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td> 
+   <td>出厂日期(从) </td> 
+  </tr> 
+  <tr mycolname="manudate1">
+   <td style="text-align: center;">26</td> 
+   <td>出厂日期(至) </td>
+   <td>manudate1</td>
+   <td align="center">char</td>
+   <td align="center">10</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td> 
+   <td>出厂日期(至) </td> 
+  </tr> 
+  <tr mycolname="capitaltypeid">
+   <td style="text-align: center;">27</td> 
+   <td>资产类型 </td>
+   <td>capitaltypeid</td>
+   <td align="center">int</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td> 
+   <td>资产类型 </td> 
+  </tr> 
+  <tr mycolname="capitalgroupid">
+   <td style="text-align: center;">28</td> 
+   <td>资产组 </td>
+   <td>capitalgroupid</td>
+   <td align="center">int</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td> 
+   <td>资产组 </td> 
+  </tr> 
+  <tr mycolname="unitid">
+   <td style="text-align: center;">29</td> 
+   <td>单位 </td>
+   <td>unitid</td>
+   <td align="center">int</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td> 
+   <td>单位 </td> 
+  </tr> 
+  <tr mycolname="capitalnum">
+   <td style="text-align: center;">30</td> 
+   <td>数量(从) </td>
+   <td>capitalnum</td>
+   <td align="center">varchar</td>
+   <td align="center">1000</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td> 
+   <td>数量(从) </td> 
+  </tr> 
+  <tr mycolname="capitalnum1">
+   <td style="text-align: center;">31</td> 
+   <td>数量(至) </td>
+   <td>capitalnum1</td>
+   <td align="center">varchar</td>
+   <td align="center">1000</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td> 
+   <td>数量(至) </td> 
+  </tr> 
+  <tr mycolname="currentnum">
+   <td style="text-align: center;">32</td>
+   <td>备用字段 </td>
+   <td>currentnum</td>
+   <td align="center">varchar</td>
+   <td align="center">1000</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td> 
+   <td>备用字段 </td> 
+  </tr> 
+  <tr mycolname="currentnum1">
+   <td style="text-align: center;">33</td>
+   <td>备用字段 </td>
+   <td>currentnum1</td>
+   <td align="center">varchar</td>
+   <td align="center">1000</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td> 
+   <td>备用字段 </td> 
+  </tr> 
+  <tr mycolname="replacecapitalid">
+   <td style="text-align: center;">34</td> 
+   <td>替代</td>
+   <td>replacecapitalid</td>
+   <td align="center">int</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td> 
+   <td>替代</td> 
+  </tr> 
+  <tr mycolname="version">
+   <td style="text-align: center;">35</td> 
+   <td>版本</td>
+   <td>version</td>
+   <td align="center">varchar</td>
+   <td align="center">1000</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td> 
+   <td>版本</td> 
+  </tr> 
+  <tr mycolname="itemid">
+   <td style="text-align: center;">36</td>
+   <td>备用字段 </td>
+   <td>itemid</td>
+   <td align="center">int</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td> 
+   <td>备用字段 </td> 
+  </tr> 
+  <tr mycolname="depremethod1">
+   <td style="text-align: center;">37</td> 
+   <td>折旧法1 </td>
+   <td>depremethod1</td>
+   <td align="center">int</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td> 
+   <td>折旧法1 </td> 
+  </tr> 
+  <tr mycolname="depremethod2">
+   <td style="text-align: center;">38</td> 
+   <td>折旧法2 </td>
+   <td>depremethod2</td>
+   <td align="center">int</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td> 
+   <td>折旧法2 </td> 
+  </tr> 
+  <tr mycolname="deprestartdate">
+   <td style="text-align: center;">39</td> 
+   <td>折旧起始日期(从) </td>
+   <td>deprestartdate</td>
+   <td align="center">char</td>
+   <td align="center">10</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td> 
+   <td>折旧起始日期(从) </td> 
+  </tr> 
+  <tr mycolname="deprestartdate1">
+   <td style="text-align: center;">40</td> 
+   <td>折旧起始日期(至) </td>
+   <td>deprestartdate1</td>
+   <td align="center">char</td>
+   <td align="center">10</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td> 
+   <td>折旧起始日期(至) </td> 
+  </tr> 
+  <tr mycolname="depreenddate">
+   <td style="text-align: center;">41</td> 
+   <td>折旧结束日期(从) </td>
+   <td>depreenddate</td>
+   <td align="center">char</td>
+   <td align="center">10</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td> 
+   <td>折旧结束日期(从) </td> 
+  </tr> 
+  <tr mycolname="depreenddate1">
+   <td style="text-align: center;">42</td> 
+   <td>折旧结束日期(至) </td>
+   <td>depreenddate1</td>
+   <td align="center">char</td>
+   <td align="center">10</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td> 
+   <td>折旧结束日期(至) </td> 
+  </tr> 
+  <tr mycolname="customerid">
+   <td style="text-align: center;">43</td> 
+   <td>供应商id </td>
+   <td>customerid</td>
+   <td align="center">int</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td> 
+   <td>供应商id </td> 
+  </tr> 
+  <tr mycolname="attribute">
+   <td style="text-align: center;">44</td> 
+   <td>属性</td>
+   <td>attribute</td>
+   <td align="center">char</td>
+   <td align="center">1</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td> 
+   <td>属性</td> 
+  </tr> 
+  <tr mycolname="stateid">
+   <td style="text-align: center;">45</td> 
+   <td>状态 </td>
+   <td>stateid</td>
+   <td align="center">int</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td> 
+   <td>状态 </td> 
+  </tr> 
+  <tr mycolname="location">
+   <td style="text-align: center;">46</td> 
+   <td>存放地点 </td>
+   <td>location</td>
+   <td align="center">varchar</td>
+   <td align="center">1000</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td> 
+   <td>存放地点 </td> 
+  </tr> 
+  <tr mycolname="isdata">
+   <td style="text-align: center;">47</td> 
+   <td>资产或资产资料 </td>
+   <td>isdata</td>
+   <td align="center">char</td>
+   <td align="center">1</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td> 
+   <td>资产或资产资料 </td> 
+  </tr> 
+  <tr mycolname="isinner">
+   <td style="text-align: center;">48</td> 
+   <td>帐内或帐外</td>
+   <td>isinner</td>
+   <td align="center">char</td>
+   <td align="center">1</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td> 
+   <td>帐内或帐外</td> 
+  </tr> 
+  <tr mycolname="counttype">
+   <td style="text-align: center;">49</td>
+   <td>备用字段 </td>
+   <td>counttype</td>
+   <td align="center">char</td>
+   <td align="center">1</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td> 
+   <td>备用字段 </td> 
+  </tr> 
+  <tr mycolname="stockindate">
+   <td style="text-align: center;">50</td> 
+   <td>入库日期(从) </td>
+   <td>stockindate</td>
+   <td align="center">char</td>
+   <td align="center">10</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td> 
+   <td>入库日期(从) </td> 
+  </tr> 
+  <tr mycolname="stockindate1">
+   <td style="text-align: center;">51</td> 
+   <td>入库日期(至) </td>
+   <td>stockindate1</td>
+   <td align="center">char</td>
+   <td align="center">10</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td> 
+   <td>入库日期(至) </td> 
+  </tr> 
+  <tr mycolname="fnamark">
+   <td style="text-align: center;">52</td> 
+   <td>财务编号 </td>
+   <td>fnamark</td>
+   <td align="center">varchar</td>
+   <td align="center">1000</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td> 
+   <td>财务编号 </td> 
+  </tr> 
+  <tr mycolname="barcode">
+   <td style="text-align: center;">53</td> 
+   <td>条形码 </td>
+   <td>barcode</td>
+   <td align="center">varchar</td>
+   <td align="center">1000</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td> 
+   <td>条形码 </td> 
+  </tr> 
+  <tr mycolname="blongdepartment">
+   <td style="text-align: center;">54</td> 
+   <td>所属分部 </td>
+   <td>blongdepartment</td>
+   <td align="center">varchar</td>
+   <td align="center">1000</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td> 
+   <td>所属分部 </td> 
+  </tr> 
+  <tr mycolname="sptcount">
+   <td style="text-align: center;">55</td> 
+   <td>是否单独核算 </td>
+   <td>sptcount</td>
+   <td align="center">varchar</td>
+   <td align="center">1000</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td> 
+   <td>是否单独核算 </td> 
+  </tr> 
+  <tr mycolname="relatewfid">
+   <td style="text-align: center;">56</td> 
+   <td>相关流程 </td>
+   <td>relatewfid</td>
+   <td align="center">varchar</td>
+   <td align="center">1000</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td> 
+   <td>相关流程 </td> 
+  </tr> 
+  <tr mycolname="SelectDate">
+   <td style="text-align: center;">57</td> 
+   <td>购置日期(从) </td>
+   <td>SelectDate</td>
+   <td align="center">varchar</td>
+   <td align="center">1000</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td> 
+   <td>购置日期(从) </td> 
+  </tr> 
+  <tr mycolname="SelectDate1">
+   <td style="text-align: center;">58</td> 
+   <td>购置日期(至) </td>
+   <td>SelectDate1</td>
+   <td align="center">varchar</td>
+   <td align="center">1000</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td> 
+   <td>购置日期(至) </td> 
+  </tr> 
+  <tr mycolname="contractno">
+   <td style="text-align: center;">59</td> 
+   <td>合同号 </td>
+   <td>contractno</td>
+   <td align="center">varchar</td>
+   <td align="center">1000</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td> 
+   <td>合同号 </td> 
+  </tr> 
+  <tr mycolname="Invoice">
+   <td style="text-align: center;">60</td> 
+   <td>发票号码 </td>
+   <td>Invoice</td>
+   <td align="center">varchar</td>
+   <td align="center">1000</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td> 
+   <td>发票号码 </td> 
+  </tr> 
+  <tr mycolname="depreyear">
+   <td style="text-align: center;">61</td> 
+   <td>年限 (从)</td>
+   <td>depreyear</td>
+   <td align="center">varchar</td>
+   <td align="center">1000</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td> 
+   <td>年限 (从)</td> 
+  </tr> 
+  <tr mycolname="deprerate">
+   <td style="text-align: center;">62</td> 
+   <td>残值率 (从)</td>
+   <td>deprerate</td>
+   <td align="center">varchar</td>
+   <td align="center">1000</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td> 
+   <td>残值率 (从)</td> 
+  </tr> 
+  <tr mycolname="issupervision">
+   <td style="text-align: center;">63</td>
+   <td>备用字段 </td>
+   <td>issupervision</td>
+   <td align="center">varchar</td>
+   <td align="center">1000</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td> 
+   <td>备用字段 </td> 
+  </tr> 
+  <tr mycolname="amountpay">
+   <td style="text-align: center;">64</td>
+   <td>备用字段 </td>
+   <td>amountpay</td>
+   <td align="center">varchar</td>
+   <td align="center">1000</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td> 
+   <td>备用字段 </td> 
+  </tr> 
+  <tr mycolname="amountpay1">
+   <td style="text-align: center;">65</td>
+   <td>备用字段 </td>
+   <td>amountpay1</td>
+   <td align="center">varchar</td>
+   <td align="center">1000</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td> 
+   <td>备用字段 </td> 
+  </tr> 
+  <tr mycolname="depreyear1">
+   <td style="text-align: center;">66</td> 
+   <td>年限(至) </td>
+   <td>depreyear1</td>
+   <td align="center">varchar</td>
+   <td align="center">1000</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td> 
+   <td>年限(至) </td> 
+  </tr> 
+  <tr mycolname="deprerate1">
+   <td style="text-align: center;">67</td> 
+   <td>残值率(至) </td>
+   <td>deprerate1</td>
+   <td align="center">varchar</td>
+   <td align="center">1000</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td> 
+   <td>残值率(至) </td> 
+  </tr> 
+  <tr mycolname="purchasestate">
+   <td style="text-align: center;">68</td>
+   <td>备用字段 </td>
+   <td>purchasestate</td>
+   <td align="center">varchar</td>
+   <td align="center">1000</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td> 
+   <td>备用字段 </td> 
+  </tr> 
+  <tr mycolname="datafield1">
+   <td style="text-align: center;">69</td> 
+   <td>自定义日期1</td>
+   <td>datafield1</td>
+   <td align="center">varchar</td>
+   <td align="center">1000</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td> 
+   <td>自定义日期1</td> 
+  </tr> 
+  <tr mycolname="datafield11">
+   <td style="text-align: center;">70</td> 
+   <td>自定义日期1</td>
+   <td>datafield11</td>
+   <td align="center">varchar</td>
+   <td align="center">1000</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td> 
+   <td>自定义日期1</td> 
+  </tr> 
+  <tr mycolname="datafield2">
+   <td style="text-align: center;">71</td> 
+   <td>自定义日期2</td>
+   <td>datafield2</td>
+   <td align="center">varchar</td>
+   <td align="center">1000</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td> 
+   <td>自定义日期2</td> 
+  </tr> 
+  <tr mycolname="datafield22">
+   <td style="text-align: center;">72</td> 
+   <td>自定义日期2</td>
+   <td>datafield22</td>
+   <td align="center">varchar</td>
+   <td align="center">1000</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td> 
+   <td>自定义日期2</td> 
+  </tr> 
+  <tr mycolname="datafield3">
+   <td style="text-align: center;">73</td> 
+   <td>自定义日期3</td>
+   <td>datafield3</td>
+   <td align="center">varchar</td>
+   <td align="center">1000</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td> 
+   <td>自定义日期3</td> 
+  </tr> 
+  <tr mycolname="datafield33">
+   <td style="text-align: center;">74</td> 
+   <td>自定义日期3 </td>
+   <td>datafield33</td>
+   <td align="center">varchar</td>
+   <td align="center">1000</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td> 
+   <td>自定义日期3 </td> 
+  </tr> 
+  <tr mycolname="datafield4">
+   <td style="text-align: center;">75</td> 
+   <td>自定义日期4</td>
+   <td>datafield4</td>
+   <td align="center">varchar</td>
+   <td align="center">1000</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td> 
+   <td>自定义日期4</td> 
+  </tr> 
+  <tr mycolname="datafield44">
+   <td style="text-align: center;">76</td> 
+   <td>自定义日期4</td>
+   <td>datafield44</td>
+   <td align="center">varchar</td>
+   <td align="center">1000</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td> 
+   <td>自定义日期4</td> 
+  </tr> 
+  <tr mycolname="datafield5">
+   <td style="text-align: center;">77</td> 
+   <td>自定义日期5 </td>
+   <td>datafield5</td>
+   <td align="center">varchar</td>
+   <td align="center">1000</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td> 
+   <td>自定义日期5 </td> 
+  </tr> 
+  <tr mycolname="datafield55">
+   <td style="text-align: center;">78</td>
+   <td>自定义日期5 </td>
+   <td>datafield55</td>
+   <td align="center">varchar</td>
+   <td align="center">1000</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td> 
+   <td>自定义日期5 </td> 
+  </tr> 
+  <tr mycolname="numberfield1">
+   <td style="text-align: center;">79</td> 
+   <td>自定义数字1 </td>
+   <td>numberfield1</td>
+   <td align="center">varchar</td>
+   <td align="center">1000</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td> 
+   <td>自定义数字1 </td> 
+  </tr> 
+  <tr mycolname="numberfield11">
+   <td style="text-align: center;">80</td>
+   <td>自定义数字1 </td>
+   <td>numberfield11</td>
+   <td align="center">varchar</td>
+   <td align="center">1000</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td> 
+   <td>自定义数字1 </td> 
+  </tr> 
+  <tr mycolname="numberfield2">
+   <td style="text-align: center;">81</td> 
+   <td>自定义数字2</td>
+   <td>numberfield2</td>
+   <td align="center">varchar</td>
+   <td align="center">1000</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td> 
+   <td>自定义数字2</td> 
+  </tr> 
+  <tr mycolname="numberfield22">
+   <td style="text-align: center;">82</td> 
+   <td>自定义数字2</td>
+   <td>numberfield22</td>
+   <td align="center">varchar</td>
+   <td align="center">1000</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td> 
+   <td>自定义数字2</td> 
+  </tr> 
+  <tr mycolname="numberfield3">
+   <td style="text-align: center;">83</td> 
+   <td>自定义数字3</td>
+   <td>numberfield3</td>
+   <td align="center">varchar</td>
+   <td align="center">1000</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td> 
+   <td>自定义数字3</td> 
+  </tr> 
+  <tr mycolname="numberfield33">
+   <td style="text-align: center;">84</td> 
+   <td>自定义数字3</td>
+   <td>numberfield33</td>
+   <td align="center">varchar</td>
+   <td align="center">1000</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td> 
+   <td>自定义数字3</td> 
+  </tr> 
+  <tr mycolname="numberfield4">
+   <td style="text-align: center;">85</td> 
+   <td>自定义数字4</td>
+   <td>numberfield4</td>
+   <td align="center">varchar</td>
+   <td align="center">1000</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td> 
+   <td>自定义数字4</td> 
+  </tr> 
+  <tr mycolname="numberfield44">
+   <td style="text-align: center;">86</td> 
+   <td>自定义数字4</td>
+   <td>numberfield44</td>
+   <td align="center">varchar</td>
+   <td align="center">1000</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td> 
+   <td>自定义数字4</td> 
+  </tr> 
+  <tr mycolname="numberfield5">
+   <td style="text-align: center;">87</td> 
+   <td>自定义数字5</td>
+   <td>numberfield5</td>
+   <td align="center">varchar</td>
+   <td align="center">1000</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td> 
+   <td>自定义数字5</td> 
+  </tr> 
+  <tr mycolname="numberfield55">
+   <td style="text-align: center;">88</td> 
+   <td>自定义数字5</td>
+   <td>numberfield55</td>
+   <td align="center">varchar</td>
+   <td align="center">1000</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td> 
+   <td>自定义数字5</td> 
+  </tr> 
+  <tr mycolname="textfield1">
+   <td style="text-align: center;">89</td> 
+   <td>自定义文本1 </td>
+   <td>textfield1</td>
+   <td align="center">varchar</td>
+   <td align="center">1000</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td> 
+   <td>自定义文本1 </td> 
+  </tr> 
+  <tr mycolname="textfield2">
+   <td style="text-align: center;">90</td> 
+   <td>自定义文本2</td>
+   <td>textfield2</td>
+   <td align="center">varchar</td>
+   <td align="center">1000</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td> 
+   <td>自定义文本2</td> 
+  </tr> 
+  <tr mycolname="textfield3">
+   <td style="text-align: center;">91</td> 
+   <td>自定义文本3</td>
+   <td>textfield3</td>
+   <td align="center">varchar</td>
+   <td align="center">1000</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td> 
+   <td>自定义文本3</td> 
+  </tr> 
+  <tr mycolname="textfield4">
+   <td style="text-align: center;">92</td> 
+   <td>自定义文本4</td>
+   <td>textfield4</td>
+   <td align="center">varchar</td>
+   <td align="center">1000</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td> 
+   <td>自定义文本4</td> 
+  </tr> 
+  <tr mycolname="textfield5">
+   <td style="text-align: center;">93</td> 
+   <td>自定义文本5</td>
+   <td>textfield5</td>
+   <td align="center">varchar</td>
+   <td align="center">1000</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td> 
+   <td>自定义文本5</td> 
+  </tr> 
+  <tr mycolname="tinyintfield1">
+   <td style="text-align: center;">94</td> 
+   <td>自定义选择1 </td>
+   <td>tinyintfield1</td>
+   <td align="center">varchar</td>
+   <td align="center">1000</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td> 
+   <td>自定义选择1 </td> 
+  </tr> 
+  <tr mycolname="tinyintfield2">
+   <td style="text-align: center;">95</td> 
+   <td>自定义选择2 </td>
+   <td>tinyintfield2</td>
+   <td align="center">varchar</td>
+   <td align="center">1000</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td> 
+   <td>自定义选择2 </td> 
+  </tr> 
+  <tr mycolname="tinyintfield3">
+   <td style="text-align: center;">96</td> 
+   <td>自定义选择3</td>
+   <td>tinyintfield3</td>
+   <td align="center">varchar</td>
+   <td align="center">1000</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td> 
+   <td>自定义选择3</td> 
+  </tr> 
+  <tr mycolname="tinyintfield4">
+   <td style="text-align: center;">97</td> 
+   <td>自定义选择4 </td>
+   <td>tinyintfield4</td>
+   <td align="center">varchar</td>
+   <td align="center">1000</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td> 
+   <td>自定义选择4 </td> 
+  </tr> 
+  <tr mycolname="tinyintfield5">
+   <td style="text-align: center;">98</td> 
+   <td>自定义选择5</td>
+   <td>tinyintfield5</td>
+   <td align="center">varchar</td>
+   <td align="center">1000</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td> 
+   <td>自定义选择5</td> 
+  </tr> 
+  <tr mycolname="docff01name">
+   <td style="text-align: center;">99</td> 
+   <td>自定义文档1 </td>
+   <td>docff01name</td>
+   <td align="center">varchar</td>
+   <td align="center">1000</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td> 
+   <td>自定义文档1 </td> 
+  </tr> 
+  <tr mycolname="docff02name">
+   <td style="text-align: center;">100</td> 
+   <td>自定义文档2 </td>
+   <td>docff02name</td>
+   <td align="center">varchar</td>
+   <td align="center">1000</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td> 
+   <td>自定义文档2 </td> 
+  </tr> 
+  <tr mycolname="docff03name">
+   <td style="text-align: center;">101</td> 
+   <td>自定义文档3</td>
+   <td>docff03name</td>
+   <td align="center">varchar</td>
+   <td align="center">1000</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td> 
+   <td>自定义文档3</td> 
+  </tr> 
+  <tr mycolname="docff04name">
+   <td style="text-align: center;">102</td> 
+   <td>自定义文档4</td>
+   <td>docff04name</td>
+   <td align="center">varchar</td>
+   <td align="center">1000</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td> 
+   <td>自定义文档4</td> 
+  </tr> 
+  <tr mycolname="docff05name">
+   <td style="text-align: center;">103</td> 
+   <td>自定义文档5</td>
+   <td>docff05name</td>
+   <td align="center">varchar</td>
+   <td align="center">1000</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td> 
+   <td>自定义文档5</td> 
+  </tr> 
+  <tr mycolname="depff01name">
+   <td style="text-align: center;">104</td> 
+   <td>自定义部门1 </td>
+   <td>depff01name</td>
+   <td align="center">varchar</td>
+   <td align="center">1000</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td> 
+   <td>自定义部门1 </td> 
+  </tr> 
+  <tr mycolname="depff02name">
+   <td style="text-align: center;">105</td> 
+   <td>自定义部门2 </td>
+   <td>depff02name</td>
+   <td align="center">varchar</td>
+   <td align="center">1000</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td> 
+   <td>自定义部门2 </td> 
+  </tr> 
+  <tr mycolname="depff03name">
+   <td style="text-align: center;">106</td> 
+   <td>自定义部门3</td>
+   <td>depff03name</td>
+   <td align="center">varchar</td>
+   <td align="center">1000</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td> 
+   <td>自定义部门3</td> 
+  </tr> 
+  <tr mycolname="depff04name">
+   <td style="text-align: center;">107</td> 
+   <td>自定义部门4</td>
+   <td>depff04name</td>
+   <td align="center">varchar</td>
+   <td align="center">1000</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td> 
+   <td>自定义部门4</td> 
+  </tr> 
+  <tr mycolname="depff05name">
+   <td style="text-align: center;">108</td> 
+   <td>自定义部门5</td>
+   <td>depff05name</td>
+   <td align="center">varchar</td>
+   <td align="center">1000</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td> 
+   <td>自定义部门5</td> 
+  </tr> 
+  <tr mycolname="crmff01name">
+   <td style="text-align: center;">109</td> 
+   <td>自定义客户1 </td>
+   <td>crmff01name</td>
+   <td align="center">varchar</td>
+   <td align="center">1000</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td> 
+   <td>自定义客户1 </td> 
+  </tr> 
+  <tr mycolname="crmff02name">
+   <td style="text-align: center;">110</td> 
+   <td>自定义客户2 </td>
+   <td>crmff02name</td>
+   <td align="center">varchar</td>
+   <td align="center">1000</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td> 
+   <td>自定义客户2 </td> 
+  </tr> 
+  <tr mycolname="crmff03name">
+   <td style="text-align: center;">111</td> 
+   <td>自定义客户3</td>
+   <td>crmff03name</td>
+   <td align="center">varchar</td>
+   <td align="center">1000</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td> 
+   <td>自定义客户3</td> 
+  </tr> 
+  <tr mycolname="crmff04name">
+   <td style="text-align: center;">112</td> 
+   <td>自定义客户4</td>
+   <td>crmff04name</td>
+   <td align="center">varchar</td>
+   <td align="center">1000</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td> 
+   <td>自定义客户4</td> 
+  </tr> 
+  <tr mycolname="crmff05name">
+   <td style="text-align: center;">113</td> 
+   <td>自定义客户5</td>
+   <td>crmff05name</td>
+   <td align="center">varchar</td>
+   <td align="center">1000</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td> 
+   <td>自定义客户5</td> 
+  </tr> 
+  <tr mycolname="reqff01name">
+   <td style="text-align: center;">114</td> 
+   <td>自定义流程请求1 </td>
+   <td>reqff01name</td>
+   <td align="center">varchar</td>
+   <td align="center">1000</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td> 
+   <td>自定义流程请求1 </td> 
+  </tr> 
+  <tr mycolname="reqff02name">
+   <td style="text-align: center;">115</td> 
+   <td>自定义流程请求2</td>
+   <td>reqff02name</td>
+   <td align="center">varchar</td>
+   <td align="center">1000</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td> 
+   <td>自定义流程请求2</td> 
+  </tr> 
+  <tr mycolname="reqff03name">
+   <td style="text-align: center;">116</td> 
+   <td>自定义流程请求3</td>
+   <td>reqff03name</td>
+   <td align="center">varchar</td>
+   <td align="center">1000</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td> 
+   <td>自定义流程请求3</td> 
+  </tr> 
+  <tr mycolname="reqff04name">
+   <td style="text-align: center;">117</td> 
+   <td>自定义流程请求4</td>
+   <td>reqff04name</td>
+   <td align="center">varchar</td>
+   <td align="center">1000</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td> 
+   <td>自定义流程请求4</td> 
+  </tr> 
+  <tr mycolname="reqff05name">
+   <td style="text-align: center;">118</td> 
+   <td>自定义流程请求5</td>
+   <td>reqff05name</td>
+   <td align="center">varchar</td>
+   <td align="center">1000</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td> 
+   <td>自定义流程请求5</td> 
+  </tr> 
+ </tbody>
+</table>
+</div>
+</center>
+</body>
+</html>
+

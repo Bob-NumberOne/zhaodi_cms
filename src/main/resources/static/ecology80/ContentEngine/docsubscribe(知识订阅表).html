@@ -1,0 +1,245 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+<title>docsubscribe(知识订阅表)</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gbk"/>
+<style>
+body, td {
+font-family: 微软雅黑;
+font-size: 12px;
+line-height: 150%;
+}
+table {
+width: 100%;
+background-color: #ccc;
+margin: 5px 0;
+word-break: break-all;
+}
+td {
+	background-color: #fff;
+	padding: 3px;
+padding-left: 10px;
+}
+thead td {
+	text-align: left;
+font-weight: bold;
+background-color: #eee;
+}
+a:link, a:visited, a:active {
+color: #015FB6;
+text-decoration: none;
+}
+a:hover {
+color: #E33E06;
+}
+.tablename {
+margin-top: 30px;
+}
+.outdiv {
+width: 1000px;
+margin: 40px auto;
+text-align: left;
+}
+
+</style>
+</head>
+<body>
+<center>
+<div class="outdiv">
+<div class="tablename">
+<b>表名：docsubscribe</b>
+</div>
+<div>中文名称：知识订阅表</div>
+<div>表类型： </div>
+<a href='index.html' style='float: right;'>返回目录</a><div>说明：</div>
+<table cellspacing="1" cellpadding="0">
+ <colgroup>
+  <col width="50px">
+  <col width="190px">
+  <col width="190px">
+  <col width="80px">
+  <col width="80px">
+  <col width="70px">
+  <col width="40px">
+  <col width="60px">
+  <col width="40px">
+  <col width="200px">
+ </colgroup>
+ <thead>
+  <tr>
+   <td>序号</td>
+   <td>中文名称</td>
+   <td>英文名称</td>
+   <td>数据类型</td>
+   <td>长度</td>
+   <td>允许空值</td>
+   <td>主键</td>
+   <td>默认值</td>
+   <td>自增</td>
+   <td>说明</td>
+  </tr>
+ </thead> 
+ <tbody>
+  <tr>
+   <td style="text-align: center;">1</td>
+   <td>ID</td>
+   <td>id</td>
+   <td align="center">int</td>
+   <td align="center"></td>
+   <td align="center"> N </td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td> Y </td>
+   <td>　</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">2</td>
+   <td> 文档id</td>
+   <td>docId</td>
+   <td align="center">int</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>　</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">3</td>
+   <td> 订阅申请者id</td>
+   <td>hrmId</td>
+   <td align="center">int</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>　</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">4</td>
+   <td> 文档所有者id</td>
+   <td>ownerId</td>
+   <td align="center">int</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>　</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">5</td>
+   <td> 订阅申请日期</td>
+   <td>subscribeDate</td>
+   <td align="center">char</td>
+   <td align="center">10</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>　</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">6</td>
+   <td> 审批日期</td>
+   <td>approveDate</td>
+   <td align="center">char</td>
+   <td align="center">10</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>　</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">7</td>
+   <td> 搜索条件</td>
+   <td>searchCase</td>
+   <td align="center">varchar</td>
+   <td align="center">1000</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>　</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">8</td>
+   <td> 其他订阅</td>
+   <td>otherSubscribe</td>
+   <td align="center">varchar</td>
+   <td align="center">1000</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>　</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">9</td>
+   <td> 订阅说明</td>
+   <td>subscribeDesc</td>
+   <td align="center">varchar</td>
+   <td align="center">1000</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>　</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">10</td>
+   <td> 退回说明</td>
+   <td>getBackDesc</td>
+   <td align="center">varchar</td>
+   <td align="center">1000</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>　</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">11</td>
+   <td> 订阅状态</td>
+   <td>state</td>
+   <td align="center">char</td>
+   <td align="center">1</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>1.已申请，2.已批准，3.已收回</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">12</td>
+   <td> 订阅申请者类型</td>
+   <td>subscribeType</td>
+   <td align="center">int</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>1：内部用户，2：外部用户</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">13</td>
+   <td> 文档所有者类型</td>
+   <td>ownerType</td>
+   <td align="center">int</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>1：内部用户，2：外部用户</td>
+  </tr> 
+ </tbody>
+</table>
+</div>
+</center>
+</body>
+</html>
+

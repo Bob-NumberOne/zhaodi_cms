@@ -1,0 +1,269 @@
+﻿<html>
+<head>
+    <title>数据库设计文档 -- ecologydltest </title>
+    <style type='text/css'>
+        body, td
+        {
+            font-family: verdana;
+            font-size: 12px;
+            line-height: 150%;
+        }
+        table
+        {
+            width: 100%;
+            background-color: #ccc;
+            margin: 5px 0;
+	    word-break:break-all;
+        }
+        td
+        {
+            background-color: #fff;
+            padding: 3px;
+            padding-left: 10px;
+        }
+        thead td
+        {
+            text-align: center;
+            font-weight: bold;
+            background-color: #eee;
+        }
+        a:link, a:visited, a:active
+        {
+            color: #015FB6;
+            text-decoration: none;
+        }
+        a:hover
+        {
+            color: #E33E06;
+        }
+    </style>
+</head>
+<body style='text-align: center;'>
+    <div style='width: 1000px; margin: 20px auto; text-align: left;'>
+        <a name='index' />
+        <h2 style='text-align: center; line-height: 50px;'>
+            数据库设计文档</h2>
+        <div>
+            <b>数据库名：网上调查</b></div>
+        <table cellspacing='1' cellpadding='0'><colgroup><col width="50px"><col width="240px"><col width="240px"><col width="200px"><col width="270px"></colgroup>
+            <thead><tr><td>序号</td><td>表名</td><td>中文名称</td><td>表类型</td><td>说明</td></tr></thead>
+             <tr><td style='text-align: center;'>1</td><td><a href='#Voting'>Voting</a></td><td>调查基本信息表</td><td></td><td></td></tr>  
+             <tr><td style='text-align: center;'>2</td><td><a href='#voting_type'>voting_type</a></td><td></td><td></td><td></td></tr>  
+             <tr><td style='text-align: center;'>3</td><td><a href='#votingconfig'>votingconfig</a></td><td></td><td></td><td></td></tr>  
+             <tr><td style='text-align: center;'>4</td><td><a href='#VotingMaintDetail'>VotingMaintDetail</a></td><td></td><td></td><td></td></tr>  
+             <tr><td style='text-align: center;'>5</td><td><a href='#VotingOption'>VotingOption</a></td><td>调查选项表</td><td></td><td></td></tr>  
+             <tr><td style='text-align: center;'>6</td><td><a href='#VotingQuestion'>VotingQuestion</a></td><td></td><td></td><td></td></tr>  
+             <tr><td style='text-align: center;'>7</td><td><a href='#VotingRemark'>VotingRemark</a></td><td></td><td></td><td></td></tr>  
+             <tr><td style='text-align: center;'>8</td><td><a href='#VotingResource'>VotingResource</a></td><td></td><td></td><td></td></tr>  
+             <tr><td style='text-align: center;'>9</td><td><a href='#VotingResourceRemark'>VotingResourceRemark</a></td><td></td><td></td><td></td></tr>  
+             <tr><td style='text-align: center;'>10</td><td><a href='#VotingShare'>VotingShare</a></td><td></td><td></td><td></td></tr>  
+             <tr><td style='text-align: center;'>11</td><td><a href='#VotingShareDetail'>VotingShareDetail</a></td><td></td><td></td><td></td></tr>  
+             <tr><td style='text-align: center;'>12</td><td><a href='#VotingViewer'>VotingViewer</a></td><td>调查结果查看范围表</td><td></td><td></td></tr>  
+             <tr><td style='text-align: center;'>13</td><td><a href='#VotingViewerDetail'>VotingViewerDetail</a></td><td></td><td></td><td></td></tr>  
+             <tr><td style='text-align: center;'>14</td><td><a href='#votingviewset'>votingviewset</a></td><td></td><td></td><td></td></tr>          </table>
+         <a name='Voting' />
+        <div style='margin-top: 30px;'>
+            <a href='#index' style='float: right; margin-top: 6px;'>返回目录</a><b>表名：Voting</b></div>
+        <div>
+            说明：调查基本信息表</div>
+        <div>
+            修改说明： 调整 </div>
+        <table cellspacing='1' cellpadding='0'><colgroup><col width='50px'><col width="190px"><col width="190px"><col width="80px"><col width="80px"><col width="70px"><col width="40px"><col width="60px"><col width="40px"><col width="200px"></colgroup><thead><tr><td>序号</td><td>中文名称</td><td>英文名称</td><td>数据类型</td><td>长度</td><td>允许空值</td><td>主键</td><td>默认值</td><td>自增</td><td>说明</td></tr></thead>
+			<tr><td style='text-align: center;'>1</td><td>ID</td><td>id</td><td align='center'>int</td><td align='center'></td><td align='center'> N </td><td align='center'> Y </td><td align='center'></td><td> Y </td><td>&nbsp;</td></tr><tr><td style='text-align: center;'>2</td><td>
+			网上调查名称</td><td>subject</td><td align='center'>varchar</td><td align='center'>1000</td><td align='center'></td><td align='center'></td><td align='center'></td><td></td><td>&nbsp;</td></tr><tr><td style='text-align: center;'>3</td><td>
+				</td><td>detail</td><td align='center'>text</td><td align='center'></td><td align='center'></td><td align='center'></td><td align='center'></td><td></td><td>&nbsp;</td></tr><tr><td style='text-align: center;'>4</td><td>
+				创建人id</td><td>createrid</td><td align='center'>int</td><td align='center'></td><td align='center'></td><td align='center'></td><td align='center'></td><td></td><td>&nbsp;</td></tr><tr><td style='text-align: center;'>5</td><td>
+				创建日期</td><td>createdate</td><td align='center'>char</td><td align='center'>10</td><td align='center'></td><td align='center'></td><td align='center'></td><td></td><td>&nbsp;</td></tr><tr><td style='text-align: center;'>6</td><td>
+				创建时间</td><td>createtime</td><td align='center'>char</td><td align='center'>8</td><td align='center'></td><td align='center'></td><td align='center'></td><td></td><td>&nbsp;</td></tr><tr><td style='text-align: center;'>7</td><td>
+				审批人id</td><td>approverid</td><td align='center'>int</td><td align='center'></td><td align='center'></td><td align='center'></td><td align='center'></td><td></td><td>&nbsp;</td></tr><tr><td style='text-align: center;'>8</td><td>
+				审批日期</td><td>approvedate</td><td align='center'>char</td><td align='center'>10</td><td align='center'></td><td align='center'></td><td align='center'></td><td></td><td>&nbsp;</td></tr><tr><td style='text-align: center;'>9</td><td>
+				审批时间</td><td>approvetime</td><td align='center'>char</td><td align='center'>8</td><td align='center'></td><td align='center'></td><td align='center'></td><td></td><td>&nbsp;</td></tr><tr><td style='text-align: center;'>10</td><td>
+				开始日期</td><td>begindate</td><td align='center'>char</td><td align='center'>10</td><td align='center'></td><td align='center'></td><td align='center'></td><td></td><td>&nbsp;</td></tr><tr><td style='text-align: center;'>11</td><td>
+				开始时间</td><td>begintime</td><td align='center'>char</td><td align='center'>8</td><td align='center'></td><td align='center'></td><td align='center'></td><td></td><td>&nbsp;</td></tr><tr><td style='text-align: center;'>12</td><td>
+				结束日期</td><td>enddate</td><td align='center'>char</td><td align='center'>10</td><td align='center'></td><td align='center'></td><td align='center'></td><td></td><td>&nbsp;</td></tr><tr><td style='text-align: center;'>13</td><td>
+				结束时间</td><td>endtime</td><td align='center'>char</td><td align='center'>8</td><td align='center'></td><td align='center'></td><td align='center'></td><td></td><td>&nbsp;</td></tr><tr><td style='text-align: center;'>14</td><td>
+				是否匿名</td><td>isanony</td><td align='center'>varchar</td><td align='center'>1000</td><td align='center'></td><td align='center'></td><td align='center'></td><td></td><td>&nbsp;</td></tr><tr><td style='text-align: center;'>15</td><td>
+				文档id</td><td>docid</td><td align='center'>int</td><td align='center'></td><td align='center'></td><td align='center'></td><td align='center'></td><td></td><td>&nbsp;</td></tr><tr><td style='text-align: center;'>16</td><td>
+				客户ID</td><td>crmid</td><td align='center'>int</td><td align='center'></td><td align='center'></td><td align='center'></td><td align='center'></td><td></td><td>&nbsp;</td></tr><tr><td style='text-align: center;'>17</td><td>
+				项目id</td><td>projid</td><td align='center'>int</td><td align='center'></td><td align='center'></td><td align='center'></td><td align='center'></td><td></td><td>&nbsp;</td></tr><tr><td style='text-align: center;'>18</td><td>
+				流程ID</td><td>requestid</td><td align='center'>int</td><td align='center'></td><td align='center'></td><td align='center'></td><td align='center'></td><td></td><td>&nbsp;</td></tr><tr><td style='text-align: center;'>19</td><td>
+				投票次数</td><td>votingcount</td><td align='center'>int</td><td align='center'></td><td align='center'></td><td align='center'></td><td align='center'></td><td></td><td>&nbsp;</td></tr><tr><td style='text-align: center;'>20</td><td>
+				调查状态</td><td>status</td><td align='center'>int</td><td align='center'></td><td align='center'></td><td align='center'></td><td align='center'></td><td></td><td>&nbsp;</td></tr><tr><td style='text-align: center;'>21</td><td>
+				是否可以查看结果</td><td>isSeeResult</td><td align='center'>varchar</td><td align='center'>1000</td><td align='center'></td><td align='center'></td><td align='center'></td><td></td><td>&nbsp;</td></tr><tr><td style='text-align: center;'>22</td><td>
+				调查类型ID</td><td>votingtype</td><td align='center'>int</td><td align='center'></td><td align='center'></td><td align='center'></td><td align='center'>0</td><td></td><td>&nbsp;</td></tr><tr><td style='text-align: center;'>23</td><td>
+				</td><td>descr</td><td align='center'>varchar</td><td align='center'>1000</td><td align='center'></td><td align='center'></td><td align='center'></td><td></td><td>&nbsp;</td></tr><tr><td style='text-align: center;'>24</td><td>
+				</td><td>deploytype</td><td align='center'>varchar</td><td align='center'>1000</td><td align='center'></td><td align='center'></td><td align='center'></td><td></td><td>&nbsp;</td></tr><tr><td style='text-align: center;'>25</td><td>
+				</td><td>autoshowvote</td><td align='center'>varchar</td><td align='center'>1000</td><td align='center'></td><td align='center'></td><td align='center'></td><td></td><td>&nbsp;</td></tr><tr><td style='text-align: center;'>26</td><td>
+				</td><td>votetimecontrol</td><td align='center'>varchar</td><td align='center'>1000</td><td align='center'></td><td align='center'></td><td align='center'></td><td></td><td>&nbsp;</td></tr><tr><td style='text-align: center;'>27</td><td>
+				</td><td>votetimecontroltime</td><td align='center'>varchar</td><td align='center'>1000</td><td align='center'></td><td align='center'></td><td align='center'></td><td></td><td>&nbsp;</td></tr><tr><td style='text-align: center;'>28</td><td>
+				</td><td>forcevote</td><td align='center'>varchar</td><td align='center'>1000</td><td align='center'></td><td align='center'></td><td align='center'></td><td></td><td>&nbsp;</td></tr><tr><td style='text-align: center;'>29</td><td>
+				</td><td>remindtype</td><td align='center'>varchar</td><td align='center'>1000</td><td align='center'></td><td align='center'></td><td align='center'></td><td></td><td>&nbsp;</td></tr><tr><td style='text-align: center;'>30</td><td>
+				</td><td>remindtimebeforestart</td><td align='center'>varchar</td><td align='center'>1000</td><td align='center'></td><td align='center'></td><td align='center'></td><td></td><td>&nbsp;</td></tr><tr><td style='text-align: center;'>31</td><td>
+				</td><td>remindtimebeforeend</td><td align='center'>varchar</td><td align='center'>1000</td><td align='center'></td><td align='center'></td><td align='center'></td><td></td><td>&nbsp;</td></tr><tr><td style='text-align: center;'>32</td><td>
+				</td><td>hasremindedbeforestart</td><td align='center'>varchar</td><td align='center'>1000</td><td align='center'></td><td align='center'></td><td align='center'></td><td></td><td>&nbsp;</td></tr><tr><td style='text-align: center;'>33</td><td>
+				</td><td>hasremindedbeforeend</td><td align='center'>varchar</td><td align='center'>1000</td><td align='center'></td><td align='center'></td><td align='center'></td><td></td><td>&nbsp;</td></tr><tr><td style='text-align: center;'>34</td><td>
+				</td><td>istemplate</td><td align='center'>varchar</td><td align='center'>1000</td><td align='center'></td><td align='center'></td><td align='center'></td><td></td><td>&nbsp;</td></tr>        </table>
+         <a name='voting_type' />
+        <div style='margin-top: 30px;'>
+            <a href='#index' style='float: right; margin-top: 6px;'>返回目录</a><b>表名：voting_type</b></div>
+        <div>
+            说明：</div>
+        <div>
+            修改说明： 调整 </div>
+        <table cellspacing='1' cellpadding='0'><colgroup><col width='50px'><col width="190px"><col width="190px"><col width="80px"><col width="80px"><col width="70px"><col width="40px"><col width="60px"><col width="40px"><col width="200px"></colgroup><thead><tr><td>序号</td><td>中文名称</td><td>英文名称</td><td>数据类型</td><td>长度</td><td>允许空值</td><td>主键</td><td>默认值</td><td>自增</td><td>说明</td></tr></thead>
+			<tr><td style='text-align: center;'>1</td><td></td><td>id</td><td align='center'>int</td><td align='center'></td><td align='center'> N </td><td align='center'></td><td align='center'></td><td> Y </td><td>&nbsp;</td></tr><tr><td style='text-align: center;'>2</td><td></td><td>typename</td><td align='center'>varchar</td><td align='center'>1000</td><td align='center'></td><td align='center'></td><td align='center'></td><td></td><td>&nbsp;</td></tr><tr><td style='text-align: center;'>3</td><td></td><td>approver</td><td align='center'>int</td><td align='center'></td><td align='center'></td><td align='center'></td><td align='center'></td><td></td><td>&nbsp;</td></tr>        </table>
+         <a name='votingconfig' />
+        <div style='margin-top: 30px;'>
+            <a href='#index' style='float: right; margin-top: 6px;'>返回目录</a><b>表名：votingconfig</b></div>
+        <div>
+            说明：</div>
+        <div>
+            修改说明： 调整 </div>
+        <table cellspacing='1' cellpadding='0'><colgroup><col width='50px'><col width="190px"><col width="190px"><col width="80px"><col width="80px"><col width="70px"><col width="40px"><col width="60px"><col width="40px"><col width="200px"></colgroup><thead><tr><td>序号</td><td>中文名称</td><td>英文名称</td><td>数据类型</td><td>长度</td><td>允许空值</td><td>主键</td><td>默认值</td><td>自增</td><td>说明</td></tr></thead>
+			<tr><td style='text-align: center;'>1</td><td></td><td>id</td><td align='center'>int</td><td align='center'></td><td align='center'></td><td align='center'></td><td align='center'></td><td></td><td>&nbsp;</td></tr><tr><td style='text-align: center;'>2</td><td></td><td>doc</td><td align='center'>varchar</td><td align='center'>1000</td><td align='center'></td><td align='center'></td><td align='center'></td><td></td><td>&nbsp;</td></tr><tr><td style='text-align: center;'>3</td><td></td><td>flow</td><td align='center'>varchar</td><td align='center'>1000</td><td align='center'></td><td align='center'></td><td align='center'></td><td></td><td>&nbsp;</td></tr><tr><td style='text-align: center;'>4</td><td></td><td>customer</td><td align='center'>varchar</td><td align='center'>1000</td><td align='center'></td><td align='center'></td><td align='center'></td><td></td><td>&nbsp;</td></tr><tr><td style='text-align: center;'>5</td><td></td><td>project</td><td align='center'>varchar</td><td align='center'>1000</td><td align='center'></td><td align='center'></td><td align='center'></td><td></td><td>&nbsp;</td></tr><tr><td style='text-align: center;'>6</td><td></td><td>annex</td><td align='center'>varchar</td><td align='center'>1000</td><td align='center'></td><td align='center'></td><td align='center'></td><td></td><td>&nbsp;</td></tr><tr><td style='text-align: center;'>7</td><td></td><td>annexcatalogpath</td><td align='center'>varchar</td><td align='center'>1000</td><td align='center'></td><td align='center'></td><td align='center'></td><td></td><td>&nbsp;</td></tr><tr><td style='text-align: center;'>8</td><td></td><td>mainid</td><td align='center'>int</td><td align='center'></td><td align='center'></td><td align='center'></td><td align='center'></td><td></td><td>&nbsp;</td></tr><tr><td style='text-align: center;'>9</td><td></td><td>subid</td><td align='center'>int</td><td align='center'></td><td align='center'></td><td align='center'></td><td align='center'></td><td></td><td>&nbsp;</td></tr><tr><td style='text-align: center;'>10</td><td></td><td>seccateid</td><td align='center'>int</td><td align='center'></td><td align='center'></td><td align='center'></td><td align='center'></td><td></td><td>&nbsp;</td></tr><tr><td style='text-align: center;'>11</td><td></td><td>votingid</td><td align='center'>int</td><td align='center'></td><td align='center'></td><td align='center'></td><td align='center'></td><td></td><td>&nbsp;</td></tr>        </table>
+         <a name='VotingMaintDetail' />
+        <div style='margin-top: 30px;'>
+            <a href='#index' style='float: right; margin-top: 6px;'>返回目录</a><b>表名：VotingMaintDetail</b></div>
+        <div>
+            说明：</div>
+        <div>
+            修改说明： 新增 </div>
+        <table cellspacing='1' cellpadding='0'><colgroup><col width='50px'><col width="190px"><col width="190px"><col width="80px"><col width="80px"><col width="70px"><col width="40px"><col width="60px"><col width="40px"><col width="200px"></colgroup><thead><tr><td>序号</td><td>中文名称</td><td>英文名称</td><td>数据类型</td><td>长度</td><td>允许空值</td><td>主键</td><td>默认值</td><td>自增</td><td>说明</td></tr></thead>
+			<tr><td style='text-align: center;'>1</td><td></td><td>id</td><td align='center'>int</td><td align='center'></td><td align='center'> N </td><td align='center'> Y </td><td align='center'></td><td> Y </td><td>&nbsp;</td></tr><tr><td style='text-align: center;'>2</td><td></td><td>createrid</td><td align='center'>int</td><td align='center'></td><td align='center'></td><td align='center'></td><td align='center'></td><td></td><td>&nbsp;</td></tr><tr><td style='text-align: center;'>3</td><td></td><td>approverid</td><td align='center'>int</td><td align='center'></td><td align='center'></td><td align='center'></td><td align='center'></td><td></td><td>&nbsp;</td></tr>        </table>
+         <a name='VotingOption' />
+        <div style='margin-top: 30px;'>
+            <a href='#index' style='float: right; margin-top: 6px;'>返回目录</a><b>表名：VotingOption</b></div>
+        <div>
+            说明：调查选项表</div>
+        <div>
+            修改说明： 调整 </div>
+        <table cellspacing='1' cellpadding='0'><colgroup><col width='50px'><col width="190px"><col width="190px"><col width="80px"><col width="80px"><col width="70px"><col width="40px"><col width="60px"><col width="40px"><col width="200px"></colgroup><thead><tr><td>序号</td><td>中文名称</td><td>英文名称</td><td>数据类型</td><td>长度</td><td>允许空值</td><td>主键</td><td>默认值</td><td>自增</td><td>说明</td></tr></thead>
+			<tr><td style='text-align: center;'>1</td><td>ID</td><td>id</td><td align='center'>int</td><td align='center'></td><td align='center'> N </td><td align='center'> Y </td><td align='center'></td><td> Y </td><td>&nbsp;</td></tr><tr><td style='text-align: center;'>2</td><td>
+			网上调查</td><td>votingid</td><td align='center'>int</td><td align='center'></td><td align='center'></td><td align='center'></td><td align='center'></td><td></td><td>&nbsp;</td></tr><tr><td style='text-align: center;'>3</td><td>
+				主题id</td><td>questionid</td><td align='center'>int</td><td align='center'></td><td align='center'></td><td align='center'></td><td align='center'></td><td></td><td>&nbsp;</td></tr><tr><td style='text-align: center;'>4</td><td>
+				描述</td><td>description</td><td align='center'>varchar</td><td align='center'>4000</td><td align='center'></td><td align='center'></td><td align='center'></td><td></td><td>&nbsp;</td></tr><tr><td style='text-align: center;'>5</td><td>
+				最多选项</td><td>optioncount</td><td align='center'>int</td><td align='center'></td><td align='center'></td><td align='center'></td><td align='center'></td><td></td><td>&nbsp;</td></tr><tr><td style='text-align: center;'>6</td><td>
+				显示顺序</td><td>showorder</td><td align='center'>int</td><td align='center'></td><td align='center'></td><td align='center'></td><td align='center'>0</td><td></td><td>&nbsp;</td></tr><tr><td style='text-align: center;'>7</td><td>
+				</td><td>roworcolumn</td><td align='center'>varchar</td><td align='center'>1000</td><td align='center'></td><td align='center'></td><td align='center'></td><td></td><td>&nbsp;</td></tr>        </table>
+         <a name='VotingQuestion' />
+        <div style='margin-top: 30px;'>
+            <a href='#index' style='float: right; margin-top: 6px;'>返回目录</a><b>表名：VotingQuestion</b></div>
+        <div>
+            说明：</div>
+        <div>
+            修改说明： 调整 </div>
+        <table cellspacing='1' cellpadding='0'><colgroup><col width='50px'><col width="190px"><col width="190px"><col width="80px"><col width="80px"><col width="70px"><col width="40px"><col width="60px"><col width="40px"><col width="200px"></colgroup><thead><tr><td>序号</td><td>中文名称</td><td>英文名称</td><td>数据类型</td><td>长度</td><td>允许空值</td><td>主键</td><td>默认值</td><td>自增</td><td>说明</td></tr></thead>
+			<tr><td style='text-align: center;'>1</td><td>ID</td><td>id</td><td align='center'>int</td><td align='center'></td><td align='center'> N </td><td align='center'> Y </td><td align='center'></td><td> Y </td><td>&nbsp;</td></tr><tr><td style='text-align: center;'>2</td><td>
+			</td><td>description</td><td align='center'>varchar</td><td align='center'>1000</td><td align='center'></td><td align='center'></td><td align='center'></td><td></td><td>&nbsp;</td></tr><tr><td style='text-align: center;'>3</td><td>
+				</td><td>votingid</td><td align='center'>int</td><td align='center'></td><td align='center'></td><td align='center'></td><td align='center'></td><td></td><td>&nbsp;</td></tr><tr><td style='text-align: center;'>4</td><td>
+				</td><td>ismulti</td><td align='center'>int</td><td align='center'></td><td align='center'></td><td align='center'></td><td align='center'></td><td></td><td>&nbsp;</td></tr><tr><td style='text-align: center;'>5</td><td>
+				</td><td>isother</td><td align='center'>int</td><td align='center'></td><td align='center'></td><td align='center'></td><td align='center'></td><td></td><td>&nbsp;</td></tr><tr><td style='text-align: center;'>6</td><td>
+				</td><td>questioncount</td><td align='center'>int</td><td align='center'></td><td align='center'></td><td align='center'></td><td align='center'></td><td></td><td>&nbsp;</td></tr><tr><td style='text-align: center;'>7</td><td>
+				</td><td>ismultino</td><td align='center'>int</td><td align='center'></td><td align='center'></td><td align='center'></td><td align='center'></td><td></td><td>&nbsp;</td></tr><tr><td style='text-align: center;'>8</td><td>
+				</td><td>showorder</td><td align='center'>int</td><td align='center'></td><td align='center'></td><td align='center'></td><td align='center'>0</td><td></td><td>&nbsp;</td></tr><tr><td style='text-align: center;'>9</td><td>
+				</td><td>subject</td><td align='center'>varchar</td><td align='center'>4000</td><td align='center'></td><td align='center'></td><td align='center'></td><td></td><td>&nbsp;</td></tr><tr><td style='text-align: center;'>10</td><td>
+				</td><td>pagenum</td><td align='center'>varchar</td><td align='center'>1000</td><td align='center'></td><td align='center'></td><td align='center'></td><td></td><td>&nbsp;</td></tr><tr><td style='text-align: center;'>11</td><td>
+				</td><td>questiontype</td><td align='center'>varchar</td><td align='center'>1000</td><td align='center'></td><td align='center'></td><td align='center'></td><td></td><td>&nbsp;</td></tr><tr><td style='text-align: center;'>12</td><td>
+				</td><td>ismustinput</td><td align='center'>varchar</td><td align='center'>1000</td><td align='center'></td><td align='center'></td><td align='center'></td><td></td><td>&nbsp;</td></tr><tr><td style='text-align: center;'>13</td><td>
+				</td><td>limit</td><td align='center'>varchar</td><td align='center'>1000</td><td align='center'></td><td align='center'></td><td align='center'></td><td></td><td>&nbsp;</td></tr><tr><td style='text-align: center;'>14</td><td>
+				</td><td>max</td><td align='center'>varchar</td><td align='center'>1000</td><td align='center'></td><td align='center'></td><td align='center'></td><td></td><td>&nbsp;</td></tr><tr><td style='text-align: center;'>15</td><td>
+				</td><td>perrowcols</td><td align='center'>varchar</td><td align='center'>1000</td><td align='center'></td><td align='center'></td><td align='center'></td><td></td><td>&nbsp;</td></tr><tr><td style='text-align: center;'>16</td><td>
+				</td><td>israndomsort</td><td align='center'>varchar</td><td align='center'>1000</td><td align='center'></td><td align='center'></td><td align='center'></td><td></td><td>&nbsp;</td></tr>        </table>
+         <a name='VotingRemark' />
+        <div style='margin-top: 30px;'>
+            <a href='#index' style='float: right; margin-top: 6px;'>返回目录</a><b>表名：VotingRemark</b></div>
+        <div>
+            说明：</div>
+        <div>
+            修改说明： 新增 </div>
+        <table cellspacing='1' cellpadding='0'><colgroup><col width='50px'><col width="190px"><col width="190px"><col width="80px"><col width="80px"><col width="70px"><col width="40px"><col width="60px"><col width="40px"><col width="200px"></colgroup><thead><tr><td>序号</td><td>中文名称</td><td>英文名称</td><td>数据类型</td><td>长度</td><td>允许空值</td><td>主键</td><td>默认值</td><td>自增</td><td>说明</td></tr></thead>
+			<tr><td style='text-align: center;'>1</td><td></td><td>votingid</td><td align='center'>int</td><td align='center'></td><td align='center'></td><td align='center'></td><td align='center'></td><td></td><td>&nbsp;</td></tr><tr><td style='text-align: center;'>2</td><td></td><td>resourceid</td><td align='center'>int</td><td align='center'></td><td align='center'></td><td align='center'></td><td align='center'></td><td></td><td>&nbsp;</td></tr><tr><td style='text-align: center;'>3</td><td></td><td>useranony</td><td align='center'>int</td><td align='center'></td><td align='center'></td><td align='center'></td><td align='center'></td><td></td><td>&nbsp;</td></tr><tr><td style='text-align: center;'>4</td><td></td><td>remark</td><td align='center'>text</td><td align='center'></td><td align='center'></td><td align='center'></td><td align='center'></td><td></td><td>&nbsp;</td></tr><tr><td style='text-align: center;'>5</td><td></td><td>operatedate</td><td align='center'>char</td><td align='center'>10</td><td align='center'></td><td align='center'></td><td align='center'></td><td></td><td>&nbsp;</td></tr><tr><td style='text-align: center;'>6</td><td></td><td>operatetime</td><td align='center'>char</td><td align='center'>8</td><td align='center'></td><td align='center'></td><td align='center'></td><td></td><td>&nbsp;</td></tr>        </table>
+         <a name='VotingResource' />
+        <div style='margin-top: 30px;'>
+            <a href='#index' style='float: right; margin-top: 6px;'>返回目录</a><b>表名：VotingResource</b></div>
+        <div>
+            说明：</div>
+        <div>
+            修改说明： 调整 </div>
+        <table cellspacing='1' cellpadding='0'><colgroup><col width='50px'><col width="190px"><col width="190px"><col width="80px"><col width="80px"><col width="70px"><col width="40px"><col width="60px"><col width="40px"><col width="200px"></colgroup><thead><tr><td>序号</td><td>中文名称</td><td>英文名称</td><td>数据类型</td><td>长度</td><td>允许空值</td><td>主键</td><td>默认值</td><td>自增</td><td>说明</td></tr></thead>
+			<tr><td style='text-align: center;'>1</td><td></td><td>votingid</td><td align='center'>int</td><td align='center'></td><td align='center'></td><td align='center'></td><td align='center'></td><td></td><td>&nbsp;</td></tr><tr><td style='text-align: center;'>2</td><td></td><td>questionid</td><td align='center'>int</td><td align='center'></td><td align='center'></td><td align='center'></td><td align='center'></td><td></td><td>&nbsp;</td></tr><tr><td style='text-align: center;'>3</td><td></td><td>optionid</td><td align='center'>varchar</td><td align='center'>1000</td><td align='center'></td><td align='center'></td><td align='center'></td><td></td><td>&nbsp;</td></tr><tr><td style='text-align: center;'>4</td><td></td><td>resourceid</td><td align='center'>int</td><td align='center'></td><td align='center'></td><td align='center'></td><td align='center'></td><td></td><td>&nbsp;</td></tr><tr><td style='text-align: center;'>5</td><td></td><td>operatedate</td><td align='center'>char</td><td align='center'>10</td><td align='center'></td><td align='center'></td><td align='center'></td><td></td><td>&nbsp;</td></tr><tr><td style='text-align: center;'>6</td><td></td><td>operatetime</td><td align='center'>char</td><td align='center'>8</td><td align='center'></td><td align='center'></td><td align='center'></td><td></td><td>&nbsp;</td></tr>        </table>
+         <a name='VotingResourceRemark' />
+        <div style='margin-top: 30px;'>
+            <a href='#index' style='float: right; margin-top: 6px;'>返回目录</a><b>表名：VotingResourceRemark</b></div>
+        <div>
+            说明：</div>
+        <div>
+            修改说明： 调整 </div>
+        <table cellspacing='1' cellpadding='0'><colgroup><col width='50px'><col width="190px"><col width="190px"><col width="80px"><col width="80px"><col width="70px"><col width="40px"><col width="60px"><col width="40px"><col width="200px"></colgroup><thead><tr><td>序号</td><td>中文名称</td><td>英文名称</td><td>数据类型</td><td>长度</td><td>允许空值</td><td>主键</td><td>默认值</td><td>自增</td><td>说明</td></tr></thead>
+			<tr><td style='text-align: center;'>1</td><td></td><td>votingid</td><td align='center'>int</td><td align='center'></td><td align='center'></td><td align='center'></td><td align='center'></td><td></td><td>&nbsp;</td></tr><tr><td style='text-align: center;'>2</td><td></td><td>questionid</td><td align='center'>int</td><td align='center'></td><td align='center'></td><td align='center'></td><td align='center'></td><td></td><td>&nbsp;</td></tr><tr><td style='text-align: center;'>3</td><td></td><td>resourceid</td><td align='center'>int</td><td align='center'></td><td align='center'></td><td align='center'></td><td align='center'></td><td></td><td>&nbsp;</td></tr><tr><td style='text-align: center;'>4</td><td></td><td>useranony</td><td align='center'>int</td><td align='center'></td><td align='center'></td><td align='center'></td><td align='center'></td><td></td><td>&nbsp;</td></tr><tr><td style='text-align: center;'>5</td><td></td><td>otherinput</td><td align='center'>varchar</td><td align='center'>1000</td><td align='center'></td><td align='center'></td><td align='center'></td><td></td><td>&nbsp;</td></tr><tr><td style='text-align: center;'>6</td><td></td><td>operatedate</td><td align='center'>char</td><td align='center'>10</td><td align='center'></td><td align='center'></td><td align='center'></td><td></td><td>&nbsp;</td></tr><tr><td style='text-align: center;'>7</td><td></td><td>operatetime</td><td align='center'>char</td><td align='center'>8</td><td align='center'></td><td align='center'></td><td align='center'></td><td></td><td>&nbsp;</td></tr>        </table>
+         <a name='VotingShare' />
+        <div style='margin-top: 30px;'>
+            <a href='#index' style='float: right; margin-top: 6px;'>返回目录</a><b>表名：VotingShare</b></div>
+        <div>
+            说明：</div>
+        <div>
+            修改说明： 新增 </div>
+        <table cellspacing='1' cellpadding='0'><colgroup><col width='50px'><col width="190px"><col width="190px"><col width="80px"><col width="80px"><col width="70px"><col width="40px"><col width="60px"><col width="40px"><col width="200px"></colgroup><thead><tr><td>序号</td><td>中文名称</td><td>英文名称</td><td>数据类型</td><td>长度</td><td>允许空值</td><td>主键</td><td>默认值</td><td>自增</td><td>说明</td></tr></thead>
+			<tr><td style='text-align: center;'>1</td><td></td><td>id</td><td align='center'>int</td><td align='center'></td><td align='center'> N </td><td align='center'> Y </td><td align='center'></td><td> Y </td><td>&nbsp;</td></tr><tr><td style='text-align: center;'>2</td><td></td><td>votingid</td><td align='center'>int</td><td align='center'></td><td align='center'></td><td align='center'></td><td align='center'></td><td></td><td>&nbsp;</td></tr><tr><td style='text-align: center;'>3</td><td></td><td>sharetype</td><td align='center'>int</td><td align='center'></td><td align='center'></td><td align='center'></td><td align='center'></td><td></td><td>&nbsp;</td></tr><tr><td style='text-align: center;'>4</td><td></td><td>resourceid</td><td align='center'>int</td><td align='center'></td><td align='center'></td><td align='center'></td><td align='center'></td><td></td><td>&nbsp;</td></tr><tr><td style='text-align: center;'>5</td><td></td><td>subcompanyid</td><td align='center'>int</td><td align='center'></td><td align='center'></td><td align='center'></td><td align='center'></td><td></td><td>&nbsp;</td></tr><tr><td style='text-align: center;'>6</td><td></td><td>departmentid</td><td align='center'>int</td><td align='center'></td><td align='center'></td><td align='center'></td><td align='center'></td><td></td><td>&nbsp;</td></tr><tr><td style='text-align: center;'>7</td><td></td><td>roleid</td><td align='center'>int</td><td align='center'></td><td align='center'></td><td align='center'></td><td align='center'></td><td></td><td>&nbsp;</td></tr><tr><td style='text-align: center;'>8</td><td></td><td>seclevel</td><td align='center'>int</td><td align='center'></td><td align='center'></td><td align='center'></td><td align='center'></td><td></td><td>&nbsp;</td></tr><tr><td style='text-align: center;'>9</td><td></td><td>rolelevel</td><td align='center'>int</td><td align='center'></td><td align='center'></td><td align='center'></td><td align='center'></td><td></td><td>&nbsp;</td></tr><tr><td style='text-align: center;'>10</td><td></td><td>foralluser</td><td align='center'>int</td><td align='center'></td><td align='center'></td><td align='center'></td><td align='center'></td><td></td><td>&nbsp;</td></tr>       
+			<tr><td style='text-align: center;'>11</td><td></td><td>joblevel</td><td align='center'>char</td><td align='center'></td><td align='center'>10</td><td align='center'></td><td align='center'></td><td></td><td>&nbsp;</td></tr>  
+			<tr><td style='text-align: center;'>12</td><td></td><td>jobtitles</td><td align='center'>char</td><td align='center'></td><td align='center'>10</td><td align='center'></td><td align='center'></td><td></td><td>&nbsp;</td></tr>  
+			<tr><td style='text-align: center;'>13</td><td></td><td>jobsubcompany</td><td align='center'>char</td><td align='center'></td><td align='center'>10</td><td align='center'></td><td align='center'></td><td></td><td>&nbsp;</td></tr>  
+			<tr><td style='text-align: center;'>14</td><td></td><td>jobdepartment</td><td align='center'>char</td><td align='center'></td><td align='center'>10</td><td align='center'></td><td align='center'></td><td></td><td>&nbsp;</td></tr>  
+			
+			
+			</table>
+         <a name='VotingShareDetail' />
+        <div style='margin-top: 30px;'>
+            <a href='#index' style='float: right; margin-top: 6px;'>返回目录</a><b>表名：VotingShareDetail</b></div>
+        <div>
+            说明：</div>
+        <div>
+            修改说明： 新增 </div>
+        <table cellspacing='1' cellpadding='0'><colgroup><col width='50px'><col width="190px"><col width="190px"><col width="80px"><col width="80px"><col width="70px"><col width="40px"><col width="60px"><col width="40px"><col width="200px"></colgroup><thead><tr><td>序号</td><td>中文名称</td><td>英文名称</td><td>数据类型</td><td>长度</td><td>允许空值</td><td>主键</td><td>默认值</td><td>自增</td><td>说明</td></tr></thead>
+			<tr><td style='text-align: center;'>1</td><td></td><td>votingid</td><td align='center'>int</td><td align='center'></td><td align='center'></td><td align='center'></td><td align='center'></td><td></td><td>&nbsp;</td></tr><tr><td style='text-align: center;'>2</td><td></td><td>resourceid</td><td align='center'>int</td><td align='center'></td><td align='center'></td><td align='center'></td><td align='center'></td><td></td><td>&nbsp;</td></tr>        </table>
+         <a name='VotingViewer' />
+        <div style='margin-top: 30px;'>
+            <a href='#index' style='float: right; margin-top: 6px;'>返回目录</a><b>表名：VotingViewer</b></div>
+        <div>
+            说明：调查结果查看范围表</div>
+        <div>
+            修改说明： 新增 </div>
+        <table cellspacing='1' cellpadding='0'><colgroup><col width='50px'><col width="190px"><col width="190px"><col width="80px"><col width="80px"><col width="70px"><col width="40px"><col width="60px"><col width="40px"><col width="200px"></colgroup><thead><tr><td>序号</td><td>中文名称</td><td>英文名称</td><td>数据类型</td><td>长度</td><td>允许空值</td><td>主键</td><td>默认值</td><td>自增</td><td>说明</td></tr></thead>
+			<tr><td style='text-align: center;'>1</td><td>ID</td><td>id</td><td align='center'>int</td><td align='center'></td><td align='center'> N </td><td align='center'> Y </td><td align='center'></td><td> Y </td><td>&nbsp;</td></tr><tr><td style='text-align: center;'>2</td><td>
+			网上调查ID</td><td>votingid</td><td align='center'>int</td><td align='center'></td><td align='center'></td><td align='center'></td><td align='center'></td><td></td><td>&nbsp;</td></tr><tr><td style='text-align: center;'>3</td><td>
+				共享类型</td><td>sharetype</td><td align='center'>int</td><td align='center'></td><td align='center'></td><td align='center'></td><td align='center'></td><td></td><td>&nbsp;</td></tr><tr><td style='text-align: center;'>4</td><td>
+				共享人员id</td><td>resourceid</td><td align='center'>int</td><td align='center'></td><td align='center'></td><td align='center'></td><td align='center'></td><td></td><td>&nbsp;</td></tr><tr><td style='text-align: center;'>5</td><td>
+				共享分部id</td><td>subcompanyid</td><td align='center'>int</td><td align='center'></td><td align='center'></td><td align='center'></td><td align='center'></td><td></td><td>&nbsp;</td></tr><tr><td style='text-align: center;'>6</td><td>
+				共享部门id</td><td>departmentid</td><td align='center'>int</td><td align='center'></td><td align='center'></td><td align='center'></td><td align='center'></td><td></td><td>&nbsp;</td></tr><tr><td style='text-align: center;'>7</td><td>
+				共享角色id</td><td>roleid</td><td align='center'>int</td><td align='center'></td><td align='center'></td><td align='center'></td><td align='center'></td><td></td><td>&nbsp;</td></tr><tr><td style='text-align: center;'>8</td><td>
+				安全级别</td><td>seclevel</td><td align='center'>int</td><td align='center'></td><td align='center'></td><td align='center'></td><td align='center'></td><td></td><td>&nbsp;</td></tr><tr><td style='text-align: center;'>9</td><td>
+				角色级别</td><td>rolelevel</td><td align='center'>int</td><td align='center'></td><td align='center'></td><td align='center'></td><td align='center'></td><td></td><td>0：部门</br>1：分别</br>2：总部</td></tr><tr><td style='text-align: center;'>10</td><td>
+				是否共享所有人</td><td>foralluser</td><td align='center'>int</td><td align='center'></td><td align='center'></td><td align='center'></td><td align='center'></td><td></td><td>0：否</br>1：是</td></tr>       
+				
+				<tr><td style='text-align: center;'>11</td><td></td><td>joblevel</td><td align='center'>char</td><td align='center'></td><td align='center'>10</td><td align='center'></td><td align='center'></td><td></td><td>&nbsp;</td></tr>  
+			<tr><td style='text-align: center;'>12</td><td></td><td>jobtitles</td><td align='center'>char</td><td align='center'></td><td align='center'>10</td><td align='center'></td><td align='center'></td><td></td><td>&nbsp;</td></tr>  
+			<tr><td style='text-align: center;'>13</td><td></td><td>jobsubcompany</td><td align='center'>char</td><td align='center'></td><td align='center'>10</td><td align='center'></td><td align='center'></td><td></td><td>&nbsp;</td></tr>  
+			<tr><td style='text-align: center;'>14</td><td></td><td>jobdepartment</td><td align='center'>char</td><td align='center'></td><td align='center'>10</td><td align='center'></td><td align='center'></td><td></td><td>&nbsp;</td></tr>  
+				</table>
+         <a name='VotingViewerDetail' />
+        <div style='margin-top: 30px;'>
+            <a href='#index' style='float: right; margin-top: 6px;'>返回目录</a><b>表名：VotingViewerDetail</b></div>
+        <div>
+            说明：</div>
+        <div>
+            修改说明： 新增 </div>
+        <table cellspacing='1' cellpadding='0'><colgroup><col width='50px'><col width="190px"><col width="190px"><col width="80px"><col width="80px"><col width="70px"><col width="40px"><col width="60px"><col width="40px"><col width="200px"></colgroup><thead><tr><td>序号</td><td>中文名称</td><td>英文名称</td><td>数据类型</td><td>长度</td><td>允许空值</td><td>主键</td><td>默认值</td><td>自增</td><td>说明</td></tr></thead>
+			<tr><td style='text-align: center;'>1</td><td>的</td><td>votingid</td><td align='center'>int</td><td align='center'></td><td align='center'></td><td align='center'></td><td align='center'></td><td></td><td>&nbsp;</td></tr><tr><td style='text-align: center;'>2</td><td>
+			的</td><td>resourceid</td><td align='center'>int</td><td align='center'></td><td align='center'></td><td align='center'></td><td align='center'></td><td></td><td>&nbsp;</td></tr>        </table>
+         <a name='votingviewset' />
+        <div style='margin-top: 30px;'>
+            <a href='#index' style='float: right; margin-top: 6px;'>返回目录</a><b>表名：votingviewset</b></div>
+        <div>
+            说明：</div>
+        <div>
+            修改说明： 新增 </div>
+        <table cellspacing='1' cellpadding='0'><colgroup><col width='50px'><col width="190px"><col width="190px"><col width="80px"><col width="80px"><col width="70px"><col width="40px"><col width="60px"><col width="40px"><col width="200px"></colgroup><thead><tr><td>序号</td><td>中文名称</td><td>英文名称</td><td>数据类型</td><td>长度</td><td>允许空值</td><td>主键</td><td>默认值</td><td>自增</td><td>说明</td></tr></thead>
+			<tr><td style='text-align: center;'>1</td><td></td><td>votingid</td><td align='center'>int</td><td align='center'></td><td align='center'> N </td><td align='center'> Y </td><td align='center'></td><td></td><td>&nbsp;</td></tr><tr><td style='text-align: center;'>2</td><td></td><td>viewjson</td><td align='center'>varchar</td><td align='center'>4000</td><td align='center'></td><td align='center'></td><td align='center'></td><td></td><td>&nbsp;</td></tr>        </table>
+            </div>
+</body>
+</html>

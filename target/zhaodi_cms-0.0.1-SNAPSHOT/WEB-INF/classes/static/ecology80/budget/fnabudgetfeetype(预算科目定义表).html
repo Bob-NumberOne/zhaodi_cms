@@ -1,0 +1,233 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+<title>fnabudgetfeetype(预算科目定义表)</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gbk"/>
+<style>
+body, td {
+font-family: 微软雅黑;
+font-size: 12px;
+line-height: 150%;
+}
+table {
+width: 100%;
+background-color: #ccc;
+margin: 5px 0;
+word-break: break-all;
+}
+td {
+	background-color: #fff;
+	padding: 3px;
+padding-left: 10px;
+}
+thead td {
+	text-align: left;
+font-weight: bold;
+background-color: #eee;
+}
+a:link, a:visited, a:active {
+color: #015FB6;
+text-decoration: none;
+}
+a:hover {
+color: #E33E06;
+}
+.tablename {
+margin-top: 30px;
+}
+.outdiv {
+width: 1000px;
+margin: 40px auto;
+text-align: left;
+}
+
+</style>
+</head>
+<body>
+<center>
+<div class="outdiv">
+<div class="tablename">
+<b>表名：fnabudgetfeetype</b>
+</div>
+<div>中文名称：预算科目定义表</div>
+<div>表类型： </div>
+<a href='index.html' style='float: right;'>返回目录</a><div>说明：</div>
+<table cellspacing="1" cellpadding="0"> 
+ <thead> 
+  <tr> 
+   <td style="width: 40px;">序号</td> 
+   <td>中文名称</td> 
+   <td>英文名称</td> 
+   <td>数据类型</td> 
+   <td>长度</td> 
+   <td>允许空值</td> 
+   <td>主键</td> 
+   <td>默认值</td> 
+   <td>自增</td> 
+   <td>说明</td> 
+  </tr> 
+ </thead> 
+ <tbody>
+  <tr> 
+   <td style="text-align: center;">1</td> 
+   <td>主键</td> 
+   <td>id</td> 
+   <td align="center">int</td> 
+   <td align="center"></td> 
+   <td align="center">N</td> 
+   <td align="center">Y</td> 
+   <td align="center"></td> 
+   <td>Y</td> 
+   <td></td> 
+  </tr> 
+  <tr> 
+   <td style="text-align: center;">2</td> 
+   <td>名称</td> 
+   <td>name</td> 
+   <td align="center">varchar</td> 
+   <td align="center">400</td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td></td> 
+   <td></td> 
+  </tr> 
+  <tr> 
+   <td style="text-align: center;">3</td> 
+   <td>描述</td> 
+   <td>description</td> 
+   <td align="center">varchar</td> 
+   <td align="center">1000</td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td></td> 
+   <td></td> 
+  </tr> 
+  <tr> 
+   <td style="text-align: center;">4</td> 
+   <td>预算周期</td> 
+   <td>feeperiod</td> 
+   <td align="center">int</td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td></td> 
+   <td>1：月度；2：季度；3：半年度；4：年度；</td> 
+  </tr> 
+  <tr> 
+   <td style="text-align: center;">5</td> 
+   <td>科目种类</td> 
+   <td>feetype</td> 
+   <td align="center">int</td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td></td> 
+   <td>1：收入； 2：支出 </td> 
+  </tr> 
+  <tr> 
+   <td style="text-align: center;">6</td> 
+   <td>允许偏差</td> 
+   <td>agreegap</td> 
+   <td align="center">int</td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td></td> 
+   <td>百分比</td> 
+  </tr> 
+  <tr> 
+   <td style="text-align: center;">7</td> 
+   <td>科目级别</td> 
+   <td>feelevel</td> 
+   <td align="center">int</td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td></td> 
+   <td>1： 一级科目；2： 二级；3： 三级；</td> 
+  </tr> 
+  <tr> 
+   <td style="text-align: center;">8</td> 
+   <td>父级科目id</td> 
+   <td>supsubject</td> 
+   <td align="center">int</td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td></td> 
+   <td></td> 
+  </tr> 
+  <tr> 
+   <td style="text-align: center;">9</td> 
+   <td>预警值</td> 
+   <td>alertvalue</td> 
+   <td align="center">int</td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td></td> 
+   <td>百分比</td> 
+  </tr> 
+  <tr> 
+   <td style="text-align: center;">10</td> 
+   <td>封存</td> 
+   <td>Archive</td> 
+   <td align="center">int</td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td></td> 
+   <td>0、NULL：未封存；1：封存；</td> 
+  </tr> 
+  <tr> 
+   <td style="text-align: center;">15</td> 
+   <td>统一费控</td> 
+   <td>groupCtrl</td> 
+   <td align="center">char</td> 
+   <td align="center">1</td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td></td> 
+   <td>预算控制时汇总下级科目费用进行统一控制</td> 
+  </tr> 
+  <tr> 
+   <td style="text-align: center;">17</td> 
+   <td>科目编码</td> 
+   <td>codeName</td> 
+   <td align="center">char</td> 
+   <td align="center">100</td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td></td> 
+   <td></td> 
+  </tr> 
+  <tr> 
+   <td style="text-align: center;">18</td> 
+   <td>是否结转</td> 
+   <td>budgetAutoMove</td> 
+   <td align="center">int</td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td></td> 
+   <td>当前科目是否进行结转</td> 
+  </tr> 
+ </tbody>
+</table>
+</div>
+</center>
+</body>
+</html>
+

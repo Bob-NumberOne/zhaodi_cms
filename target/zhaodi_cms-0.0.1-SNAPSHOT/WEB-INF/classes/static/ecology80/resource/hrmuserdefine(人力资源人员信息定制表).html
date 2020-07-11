@@ -1,0 +1,917 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+<title>hrmuserdefine(人力资源人员信息定制表)</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gbk"/>
+<style>
+body, td {
+font-family: 微软雅黑;
+font-size: 12px;
+line-height: 150%;
+}
+table {
+width: 100%;
+background-color: #ccc;
+margin: 5px 0;
+word-break: break-all;
+}
+td {
+	background-color: #fff;
+	padding: 3px;
+padding-left: 10px;
+}
+thead td {
+	text-align: left;
+font-weight: bold;
+background-color: #eee;
+}
+a:link, a:visited, a:active {
+color: #015FB6;
+text-decoration: none;
+}
+a:hover {
+color: #E33E06;
+}
+.tablename {
+margin-top: 30px;
+}
+.outdiv {
+width: 1000px;
+margin: 40px auto;
+text-align: left;
+}
+
+</style>
+</head>
+<body>
+<center>
+<div class="outdiv">
+<div class="tablename">
+<b>表名：hrmuserdefine</b>
+</div>
+<div>中文名称：人力资源人员信息定制表</div>
+<div>表类型： </div>
+<a href='index.html' style='float: right;'>返回目录</a><div>说明：</div>
+<table cellspacing="1" cellpadding="0">
+ <colgroup>
+  <col width="50px">
+  <col width="190px">
+  <col width="190px">
+  <col width="80px">
+  <col width="80px">
+  <col width="70px">
+  <col width="40px">
+  <col width="60px">
+  <col width="40px">
+  <col width="200px">
+ </colgroup>
+ <thead>
+  <tr>
+   <td>序号</td>
+   <td>中文名称</td>
+   <td>英文名称</td>
+   <td>数据类型</td>
+   <td>长度</td>
+   <td>允许空值</td>
+   <td>主键</td>
+   <td>默认值</td>
+   <td>自增</td>
+   <td>说明</td>
+  </tr>
+ </thead> 
+ <tbody>
+  <tr>
+   <td style="text-align: center;">1</td>
+   <td>用户id</td>
+   <td>userid</td>
+   <td align="center">int</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>　</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">2</td>
+   <td> 人力资源id字段是否为基本字段</td>
+   <td>hasresourceid</td>
+   <td align="center">char</td>
+   <td align="center">1</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>0:基本,1:高级</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">3</td>
+   <td> 人力资源姓名字段是否为基本字段</td>
+   <td>hasresourcename</td>
+   <td align="center">char</td>
+   <td align="center">1</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>0:基本,1:高级</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">4</td>
+   <td> 人力资源职位字段是否为基本字段</td>
+   <td>hasjobtitle</td>
+   <td align="center">char</td>
+   <td align="center">1</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>0:基本,1:高级</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">5</td>
+   <td> 人力资源职责描述字段是否为基本字段</td>
+   <td>hasactivitydesc</td>
+   <td align="center">char</td>
+   <td align="center">1</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>0:基本,1:高级</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">6</td>
+   <td> 人力资源工作类型字段是否为基本字段</td>
+   <td>hasjobgroup</td>
+   <td align="center">char</td>
+   <td align="center">1</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>0:基本,1:高级</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">7</td>
+   <td> 人力资源职责字段是否为基本字段</td>
+   <td>hasjobactivity</td>
+   <td align="center">char</td>
+   <td align="center">1</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>0:基本,1:高级</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">8</td>
+   <td> 人力资源成本中心字段是否为基本字段</td>
+   <td>hascostcenter</td>
+   <td align="center">char</td>
+   <td align="center">1</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>0:基本,1:高级</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">9</td>
+   <td> 人力资源技能字段是否为基本字段</td>
+   <td>hascompetency</td>
+   <td align="center">char</td>
+   <td align="center">1</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>0:基本,1:高级</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">10</td>
+   <td> 人力资源类型字段是否为基本字段</td>
+   <td>hasresourcetype</td>
+   <td align="center">char</td>
+   <td align="center">1</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>0:基本,1:高级</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">11</td>
+   <td> 人力资源状态字段是否为基本字段</td>
+   <td>hasstatus</td>
+   <td align="center">char</td>
+   <td align="center">1</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>0:基本,1:高级</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">12</td>
+   <td> 人力资源所属分部字段是否为基本字段</td>
+   <td>hassubcompany</td>
+   <td align="center">char</td>
+   <td align="center">1</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>0:基本,1:高级</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">13</td>
+   <td> 人力资源所属部门字段是否为基本字段</td>
+   <td>hasdepartment</td>
+   <td align="center">char</td>
+   <td align="center">1</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>0:基本,1:高级</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">14</td>
+   <td> 人力资源位置字段是否为基本字段</td>
+   <td>haslocation</td>
+   <td align="center">char</td>
+   <td align="center">1</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>0:基本,1:高级</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">15</td>
+   <td> 人力资源经理字段是否为基本字段</td>
+   <td>hasmanager</td>
+   <td align="center">char</td>
+   <td align="center">1</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>0:基本,1:高级</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">16</td>
+   <td> 人力资源助理字段是否为基本字段</td>
+   <td>hasassistant</td>
+   <td align="center">char</td>
+   <td align="center">1</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>0:基本,1:高级</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">17</td>
+   <td> 人力资源所属角色字段是否为基本字段</td>
+   <td>hasroles</td>
+   <td align="center">char</td>
+   <td align="center">1</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>0:基本,1:高级</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">18</td>
+   <td> 人力资源安全级别字段是否为基本字段</td>
+   <td>hasseclevel</td>
+   <td align="center">char</td>
+   <td align="center">1</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>0:基本,1:高级</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">19</td>
+   <td> 人力资源工作级别字段是否为基本字段</td>
+   <td>hasjoblevel</td>
+   <td align="center">char</td>
+   <td align="center">1</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>0:基本,1:高级</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">20</td>
+   <td> 人力资源办公室字段是否为基本字段</td>
+   <td>hasworkroom</td>
+   <td align="center">char</td>
+   <td align="center">1</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>0:基本,1:高级</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">21</td>
+   <td> 人力资源办公电话字段是否为基本字段</td>
+   <td>hastelephone</td>
+   <td align="center">char</td>
+   <td align="center">1</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>0:基本,1:高级</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">22</td>
+   <td> 人力资源工作起始日期字段是否为基本字段</td>
+   <td>hasstartdate</td>
+   <td align="center">char</td>
+   <td align="center">1</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>0:基本,1:高级</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">23</td>
+   <td> 人力资源工作结束日期字段是否为基本字段</td>
+   <td>hasenddate</td>
+   <td align="center">char</td>
+   <td align="center">1</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>0:基本,1:高级</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">24</td>
+   <td> 人力资源合同结束日期字段是否为基本字段</td>
+   <td>hascontractdate</td>
+   <td align="center">char</td>
+   <td align="center">1</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>0:基本,1:高级</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">25</td>
+   <td> 人力资源生日字段是否为基本字段</td>
+   <td>hasbirthday</td>
+   <td align="center">char</td>
+   <td align="center">1</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>0:基本,1:高级</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">26</td>
+   <td> 性别是否选择为搜索条件</td>
+   <td>hassex</td>
+   <td align="center">char</td>
+   <td align="center">1</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>　</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">27</td>
+   <td> 相关项目是否选择为快捷方式</td>
+   <td>projectable</td>
+   <td align="center">char</td>
+   <td align="center">1</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>　</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">28</td>
+   <td> 相关客户是否选择为快捷方式</td>
+   <td>crmable</td>
+   <td align="center">char</td>
+   <td align="center">1</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>　</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">29</td>
+   <td> 相关资产是否选择为快捷方式</td>
+   <td>itemable</td>
+   <td align="center">char</td>
+   <td align="center">1</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>　</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">30</td>
+   <td> 相关文档是否选择为快捷方式</td>
+   <td>docable</td>
+   <td align="center">char</td>
+   <td align="center">1</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>　</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">31</td>
+   <td> 相关工作流是否选择为快捷方式</td>
+   <td>workflowable</td>
+   <td align="center">char</td>
+   <td align="center">1</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>　</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">32</td>
+   <td> 下属是否选择为快捷方式</td>
+   <td>subordinateable</td>
+   <td align="center">char</td>
+   <td align="center">1</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>　</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">33</td>
+   <td> 培训经历是否选择为快捷方式</td>
+   <td>trainable</td>
+   <td align="center">char</td>
+   <td align="center">1</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>　</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">34</td>
+   <td> 相关预算是否选择为搜索条件</td>
+   <td>budgetable</td>
+   <td align="center">char</td>
+   <td align="center">1</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>　</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">35</td>
+   <td> 财务项是否选择为搜索条件</td>
+   <td>fnatranable</td>
+   <td align="center">char</td>
+   <td align="center">1</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>　</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">36</td>
+   <td> 学历是否选择为搜索条件</td>
+   <td>dspperpage</td>
+   <td align="center">tinyint</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>　</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">37</td>
+   <td> 年龄是否选择为搜索条件</td>
+   <td>hasage</td>
+   <td align="center">char</td>
+   <td align="center">1</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>　</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">38</td>
+   <td> 员工号码是否选择为搜索条件</td>
+   <td>hasworkcode</td>
+   <td align="center">char</td>
+   <td align="center">1</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>　</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">39</td>
+   <td> 称呼是否选择为搜索条件</td>
+   <td>hasjobcall</td>
+   <td align="center">char</td>
+   <td align="center">1</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>　</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">40</td>
+   <td> 手机号码是否选择为搜索条件</td>
+   <td>hasmobile</td>
+   <td align="center">char</td>
+   <td align="center">1</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>　</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">41</td>
+   <td> 传呼号码是否选择为搜索条件</td>
+   <td>hasmobilecall</td>
+   <td align="center">char</td>
+   <td align="center">1</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>　</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">42</td>
+   <td> 传真是否选择为搜索条件</td>
+   <td>hasfax</td>
+   <td align="center">char</td>
+   <td align="center">1</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>　</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">43</td>
+   <td> 邮件是否选择为搜索条件</td>
+   <td>hasemail</td>
+   <td align="center">char</td>
+   <td align="center">1</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>　</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">44</td>
+   <td> 民族是否选择为搜索条件</td>
+   <td>hasfolk</td>
+   <td align="center">char</td>
+   <td align="center">1</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>　</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">45</td>
+   <td> 出生地是否选择为搜索条件</td>
+   <td>hasregresidentplace</td>
+   <td align="center">char</td>
+   <td align="center">1</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>　</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">46</td>
+   <td> 籍贯是否选择为搜索条件</td>
+   <td>hasnativeplace</td>
+   <td align="center">char</td>
+   <td align="center">1</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>　</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">47</td>
+   <td> 证书是否选择为搜索条件</td>
+   <td>hascertificatenum</td>
+   <td align="center">char</td>
+   <td align="center">1</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>　</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">48</td>
+   <td> 婚姻状况是否选择为搜索条件</td>
+   <td>hasmaritalstatus</td>
+   <td align="center">char</td>
+   <td align="center">1</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>　</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">49</td>
+   <td> 政治面貌是否选择为搜索条件</td>
+   <td>haspolicy</td>
+   <td align="center">char</td>
+   <td align="center">1</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>　</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">50</td>
+   <td> 入团日期是否选择为搜索条件</td>
+   <td>hasbememberdate</td>
+   <td align="center">char</td>
+   <td align="center">1</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>　</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">51</td>
+   <td> 入党日期是否选择为搜索条件</td>
+   <td>hasbepartydate</td>
+   <td align="center">char</td>
+   <td align="center">1</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>　</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">52</td>
+   <td> 国籍是否选择为搜索条件</td>
+   <td>hasislabouunion</td>
+   <td align="center">char</td>
+   <td align="center">1</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>　</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">53</td>
+   <td> 教育程度是否选择为搜索条件</td>
+   <td>haseducationlevel</td>
+   <td align="center">char</td>
+   <td align="center">1</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>　</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">54</td>
+   <td> 学位是否选择为搜索条件</td>
+   <td>hasdegree</td>
+   <td align="center">char</td>
+   <td align="center">1</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>　</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">55</td>
+   <td> 健康状况是否选择为搜索条件</td>
+   <td>hashealthinfo</td>
+   <td align="center">char</td>
+   <td align="center">1</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>　</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">56</td>
+   <td> 身高是否选择为搜索条件</td>
+   <td>hasheight</td>
+   <td align="center">char</td>
+   <td align="center">1</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>　</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">57</td>
+   <td> 体重是否选择为搜索条件</td>
+   <td>hasweight</td>
+   <td align="center">char</td>
+   <td align="center">1</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>　</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">58</td>
+   <td> 户籍是否选择为搜索条件</td>
+   <td>hasresidentplace</td>
+   <td align="center">char</td>
+   <td align="center">1</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>　</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">59</td>
+   <td> 家庭住址是否选择为搜索条件</td>
+   <td>hashomeaddress</td>
+   <td align="center">char</td>
+   <td align="center">1</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>　</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">60</td>
+   <td> 特长是否选择为搜索条件</td>
+   <td>hastempresidentnumber</td>
+   <td align="center">char</td>
+   <td align="center">1</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>　</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">61</td>
+   <td> 爱好是否选择为搜索条件</td>
+   <td>hasusekind</td>
+   <td align="center">char</td>
+   <td align="center">1</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>　</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">62</td>
+   <td> 工资银行是否选择为搜索条件</td>
+   <td>hasbankid1</td>
+   <td align="center">char</td>
+   <td align="center">1</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>　</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">63</td>
+   <td> 银行帐户是否选择为搜索条件</td>
+   <td>hasaccountid1</td>
+   <td align="center">char</td>
+   <td align="center">1</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>　</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">64</td>
+   <td> 的</td>
+   <td>hasaccumfundaccount</td>
+   <td align="center">char</td>
+   <td align="center">1</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>　</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">65</td>
+   <td> 登录号是否选择为搜索条件</td>
+   <td>hasloginid</td>
+   <td align="center">char</td>
+   <td align="center">1</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>　</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">66</td>
+   <td> 系统语言是否选择为搜索条件</td>
+   <td>hassystemlanguage</td>
+   <td align="center">char</td>
+   <td align="center">1</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>　</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">67</td>
+   <td> </td>
+   <td>workplanable</td>
+   <td align="center">char</td>
+   <td align="center">1</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>　</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">68</td>
+   <td> </td>
+   <td>hasaccounttype</td>
+   <td align="center">char</td>
+   <td align="center">1</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>　</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">69</td>
+   <td> </td>
+   <td>hasvirtualdepartment</td>
+   <td align="center">char</td>
+   <td align="center">1</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>　</td>
+  </tr> 
+ </tbody>
+</table>
+</div>
+</center>
+</body>
+</html>
+

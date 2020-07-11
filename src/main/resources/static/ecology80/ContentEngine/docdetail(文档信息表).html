@@ -1,0 +1,1337 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+<title>docdetail(文档信息表)</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gbk"/>
+<style>
+body, td {
+font-family: 微软雅黑;
+font-size: 12px;
+line-height: 150%;
+}
+table {
+width: 100%;
+background-color: #ccc;
+margin: 5px 0;
+word-break: break-all;
+}
+td {
+	background-color: #fff;
+	padding: 3px;
+padding-left: 10px;
+}
+thead td {
+	text-align: left;
+font-weight: bold;
+background-color: #eee;
+}
+a:link, a:visited, a:active {
+color: #015FB6;
+text-decoration: none;
+}
+a:hover {
+color: #E33E06;
+}
+.tablename {
+margin-top: 30px;
+}
+.outdiv {
+width: 1000px;
+margin: 40px auto;
+text-align: left;
+}
+
+</style>
+</head>
+<body>
+<center>
+<div class="outdiv">
+<div class="tablename">
+<b>表名：docdetail</b>
+</div>
+<div>中文名称：文档信息表</div>
+<div>表类型： </div>
+<a href='index.html' style='float: right;'>返回目录</a><div>说明：</div>
+<table cellspacing="1" cellpadding="0">
+ <colgroup>
+  <col width="50px">
+  <col width="190px">
+  <col width="190px">
+  <col width="80px">
+  <col width="80px">
+  <col width="70px">
+  <col width="40px">
+  <col width="60px">
+  <col width="40px">
+  <col width="200px">
+ </colgroup>
+ <thead>
+  <tr>
+   <td>序号</td>
+   <td>中文名称</td>
+   <td>英文名称</td>
+   <td>数据类型</td>
+   <td>长度</td>
+   <td>允许空值</td>
+   <td>主键</td>
+   <td>默认值</td>
+   <td>自增</td>
+   <td>说明</td>
+  </tr>
+ </thead> 
+ <tbody>
+  <tr>
+   <td style="text-align: center;">1</td>
+   <td>文档id</td>
+   <td>id</td>
+   <td align="center">int</td>
+   <td align="center"></td>
+   <td align="center"> N </td>
+   <td align="center"> Y </td>
+   <td align="center"></td>
+   <td></td>
+   <td>由SequenceIndex表得到，对应“docid”</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">2</td>
+   <td> 文档主目录</td>
+   <td>maincategory</td>
+   <td align="center">int</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>　</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">3</td>
+   <td> 文档分目录</td>
+   <td>subcategory</td>
+   <td align="center">int</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>　</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">4</td>
+   <td> 文档子目录</td>
+   <td>seccategory</td>
+   <td align="center">int</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>　</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">5</td>
+   <td> 文档种类</td>
+   <td>doctype</td>
+   <td align="center">int</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>　</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">6</td>
+   <td> 文档语言</td>
+   <td>doclangurage</td>
+   <td align="center">tinyint</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>　</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">7</td>
+   <td> 是否需要审批</td>
+   <td>docapprovable</td>
+   <td align="center">char</td>
+   <td align="center">1</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>0:否，1:是</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">8</td>
+   <td> 可否回复</td>
+   <td>docreplyable</td>
+   <td align="center">char</td>
+   <td align="center">1</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>0:否，1:是</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">9</td>
+   <td> 是否回复文档</td>
+   <td>isreply</td>
+   <td align="center">char</td>
+   <td align="center">1</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>0:否，1:是</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">10</td>
+   <td> 回复文件id</td>
+   <td>replydocid</td>
+   <td align="center">int</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>　</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">11</td>
+   <td> 文档标题</td>
+   <td>docsubject</td>
+   <td align="center">varchar</td>
+   <td align="center">1000</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>　</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">12</td>
+   <td> 文档内容 HTML格式</td>
+   <td>doccontent</td>
+   <td align="center">text</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>　</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">13</td>
+   <td> 文档共享种类</td>
+   <td>docsharetype</td>
+   <td align="center">char</td>
+   <td align="center">1</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>0:不共享，1:所有人，2:本部门员工，3:角色</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">14</td>
+   <td> 共享角色id</td>
+   <td>shareroleid</td>
+   <td align="center">int</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>　</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">15</td>
+   <td> 新闻类型</td>
+   <td>docpublishtype</td>
+   <td align="center">char</td>
+   <td align="center">1</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>1: 文档，2：主页，3：标题</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">16</td>
+   <td> 文档中选择的物品id</td>
+   <td>itemid</td>
+   <td align="center">int</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>　</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">17</td>
+   <td> 文档中选择的物品种类id</td>
+   <td>itemmaincategoryid</td>
+   <td align="center">int</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>　</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">18</td>
+   <td> 文档中选择的人资源id</td>
+   <td>hrmresid</td>
+   <td align="center">int</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>　</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">19</td>
+   <td> 文档中选择的CRMid</td>
+   <td>crmid</td>
+   <td align="center">int</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>　</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">20</td>
+   <td> 文档中选择的项目id</td>
+   <td>projectid</td>
+   <td align="center">int</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>　</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">21</td>
+   <td> 文档中选择的财务-交易id</td>
+   <td>financeid</td>
+   <td align="center">int</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>　</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">22</td>
+   <td> 文档中选择的财务-参考id1</td>
+   <td>financerefenceid1</td>
+   <td align="center">int</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>　</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">23</td>
+   <td> 文档中选择的财务-参考id2</td>
+   <td>financerefenceid2</td>
+   <td align="center">int</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>　</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">24</td>
+   <td> 文档创建者id</td>
+   <td>doccreaterid</td>
+   <td align="center">int</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>　</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">25</td>
+   <td> 文档创建者所在部门id</td>
+   <td>docdepartmentid</td>
+   <td align="center">int</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>　</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">26</td>
+   <td> 文档创建日期</td>
+   <td>doccreatedate</td>
+   <td align="center">char</td>
+   <td align="center">10</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>　</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">27</td>
+   <td> 文档创建时间</td>
+   <td>doccreatetime</td>
+   <td align="center">char</td>
+   <td align="center">8</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>　</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">28</td>
+   <td> 文档最后修改者id</td>
+   <td>doclastmoduserid</td>
+   <td align="center">int</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>　</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">29</td>
+   <td> 文档最后修改时间</td>
+   <td>doclastmoddate</td>
+   <td align="center">char</td>
+   <td align="center">10</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>　</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">30</td>
+   <td> 文档最后修改日期</td>
+   <td>doclastmodtime</td>
+   <td align="center">char</td>
+   <td align="center">8</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>　</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">31</td>
+   <td> 文档审批者id</td>
+   <td>docapproveuserid</td>
+   <td align="center">int</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>　</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">32</td>
+   <td> 文档审批日期</td>
+   <td>docapprovedate</td>
+   <td align="center">char</td>
+   <td align="center">10</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>　</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">33</td>
+   <td> 文档审批时间</td>
+   <td>docapprovetime</td>
+   <td align="center">char</td>
+   <td align="center">8</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>　</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">34</td>
+   <td> 文档归档者id</td>
+   <td>docarchiveuserid</td>
+   <td align="center">int</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>　</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">35</td>
+   <td> 文档归档日期</td>
+   <td>docarchivedate</td>
+   <td align="center">char</td>
+   <td align="center">10</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>　</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">36</td>
+   <td> 文档归档时间</td>
+   <td>docarchivetime</td>
+   <td align="center">char</td>
+   <td align="center">8</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>　</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">37</td>
+   <td> 文档状态</td>
+   <td>docstatus</td>
+   <td align="center">int</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>0:草稿<br>1:生效/正常(不需要审批，归档重新打开)<br>2: 生效/正常(审批后,发布后)<br>3:审批<br>4:退回(草稿)<br>5:归档<br>6:待发布<br>7:失效<br>8:作废<br>9:流程草稿</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">38</td>
+   <td> 文档父节点字符串</td>
+   <td>parentids</td>
+   <td align="center">varchar</td>
+   <td align="center">1000</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>　</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">39</td>
+   <td>资产id </td>
+   <td>assetid</td>
+   <td align="center">int</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>　</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">40</td>
+   <td> 文档拥有者id</td>
+   <td>ownerid</td>
+   <td align="center">int</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>　</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">41</td>
+   <td> 关键字</td>
+   <td>keyword</td>
+   <td align="center">varchar</td>
+   <td align="center">1000</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>　</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">42</td>
+   <td>附件个数 </td>
+   <td>accessorycount</td>
+   <td align="center">int</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>　</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">43</td>
+   <td> 回复文档的数量</td>
+   <td>replaydoccount</td>
+   <td align="center">int</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>　</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">44</td>
+   <td> 用户类型</td>
+   <td>usertype</td>
+   <td align="center">char</td>
+   <td align="center">1</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>1：人力资源，2：客户</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">45</td>
+   <td> 文档归档号</td>
+   <td>docno</td>
+   <td align="center">varchar</td>
+   <td align="center">1000</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>　</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">46</td>
+   <td> 是否可以拷贝</td>
+   <td>cancopy</td>
+   <td align="center">char</td>
+   <td align="center">1</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>1、是；0、否</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">47</td>
+   <td> 回复是否提醒</td>
+   <td>canremind</td>
+   <td align="center">char</td>
+   <td align="center">1</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>1、是；0、否</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">48</td>
+   <td> 打分次数</td>
+   <td>countMark</td>
+   <td align="center">int</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center">0</td>
+   <td></td>
+   <td>　</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">49</td>
+   <td> 总分数</td>
+   <td>sumMark</td>
+   <td align="center">int</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center">0</td>
+   <td></td>
+   <td>　</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">50</td>
+   <td> 浏览量</td>
+   <td>sumReadCount</td>
+   <td align="center">int</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center">0</td>
+   <td></td>
+   <td>　</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">51</td>
+   <td> 是否可以订阅</td>
+   <td>orderable</td>
+   <td align="center">char</td>
+   <td align="center">1</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center">(0)</td>
+   <td></td>
+   <td>1、是；0、否</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">52</td>
+   <td>扩展名 </td>
+   <td>docExtendName</td>
+   <td align="center">char</td>
+   <td align="center">10</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>可选项：doc 、html、xls</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">53</td>
+   <td> 文档编号</td>
+   <td>doccode</td>
+   <td align="center">varchar</td>
+   <td align="center">1000</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>　</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">54</td>
+   <td> 文档版本</td>
+   <td>docedition</td>
+   <td align="center">int</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>　</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">55</td>
+   <td> 文档版本ID</td>
+   <td>doceditionid</td>
+   <td align="center">int</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>　</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">56</td>
+   <td> 是否历史</td>
+   <td>ishistory</td>
+   <td align="center">int</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>1:是，0：否</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">57</td>
+   <td> 主文档</td>
+   <td>maindoc</td>
+   <td align="center">int</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>　</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">58</td>
+   <td> 审批类型</td>
+   <td>approvetype</td>
+   <td align="center">int</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>1:生效审批,2:失效审批</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">59</td>
+   <td> 允许只读操作人打印</td>
+   <td>readoptercanprint</td>
+   <td align="center">int</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>0:不允许，1:允许</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">60</td>
+   <td> 生效操作人</td>
+   <td>docvaliduserid</td>
+   <td align="center">int</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>　</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">61</td>
+   <td> 生效日期</td>
+   <td>docvaliddate</td>
+   <td align="center">char</td>
+   <td align="center">10</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>　</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">62</td>
+   <td> 生效时间</td>
+   <td>docvalidtime</td>
+   <td align="center">char</td>
+   <td align="center">8</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>　</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">63</td>
+   <td> 发布操作人</td>
+   <td>docpubuserid</td>
+   <td align="center">int</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>　</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">64</td>
+   <td> 发布日期</td>
+   <td>docpubdate</td>
+   <td align="center">char</td>
+   <td align="center">10</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>　</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">65</td>
+   <td> 发布时间</td>
+   <td>docpubtime</td>
+   <td align="center">char</td>
+   <td align="center">8</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>　</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">66</td>
+   <td> 重新打开操作人</td>
+   <td>docreopenuserid</td>
+   <td align="center">int</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>　</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">67</td>
+   <td> 重新打开日期</td>
+   <td>docreopendate</td>
+   <td align="center">char</td>
+   <td align="center">10</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>　</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">68</td>
+   <td> 重新打开时间</td>
+   <td>docreopentime</td>
+   <td align="center">char</td>
+   <td align="center">8</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>　</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">69</td>
+   <td> 失效操作人</td>
+   <td>docinvaluserid</td>
+   <td align="center">int</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>　</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">70</td>
+   <td> 失效日期</td>
+   <td>docinvaldate</td>
+   <td align="center">char</td>
+   <td align="center">10</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>　</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">71</td>
+   <td> 失效时间</td>
+   <td>docinvaltime</td>
+   <td align="center">char</td>
+   <td align="center">8</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>　</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">72</td>
+   <td> 作废操作人</td>
+   <td>doccanceluserid</td>
+   <td align="center">int</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>　</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">73</td>
+   <td> 作废日期</td>
+   <td>doccanceldate</td>
+   <td align="center">char</td>
+   <td align="center">10</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>　</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">74</td>
+   <td> 作废时间</td>
+   <td>doccanceltime</td>
+   <td align="center">char</td>
+   <td align="center">8</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>　</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">75</td>
+   <td>选择的发布模板 </td>
+   <td>selectedpubmouldid</td>
+   <td align="center">int</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>　</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">76</td>
+   <td> 签出状态</td>
+   <td>checkOutStatus</td>
+   <td align="center">char</td>
+   <td align="center">1</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>1：自动签出，2：强制签出，0或其它：未签出</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">77</td>
+   <td> 签出用户</td>
+   <td>checkOutUserId</td>
+   <td align="center">int</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>　</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">78</td>
+   <td> 签出用户类型</td>
+   <td>checkOutUserType</td>
+   <td align="center">char</td>
+   <td align="center">1</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>1:内部用户，2：外部用户</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">79</td>
+   <td> 签出日期</td>
+   <td>checkOutDate</td>
+   <td align="center">char</td>
+   <td align="center">10</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>　</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">80</td>
+   <td> 签出时间</td>
+   <td>checkOutTime</td>
+   <td align="center">char</td>
+   <td align="center">8</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>　</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">81</td>
+   <td> 是否套红，即是否已经套用显示模板</td>
+   <td>hasUsedTemplet</td>
+   <td align="center">char</td>
+   <td align="center">1</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>1：已经套红，0或NULL：尚未套红。针对已经套红的文档将不能调用显示模板或编辑模板。</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">82</td>
+   <td> 失效日期</td>
+   <td>invalidationdate</td>
+   <td align="center">char</td>
+   <td align="center">10</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>　</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">83</td>
+   <td> 文档创建者类型</td>
+   <td>docCreaterType</td>
+   <td align="center">char</td>
+   <td align="center">1</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>1:内部用户，2：外部用户</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">84</td>
+   <td> 文档最后修改者类型</td>
+   <td>docLastModUserType</td>
+   <td align="center">char</td>
+   <td align="center">1</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>1:内部用户，2：外部用户</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">85</td>
+   <td> 文档审批者类型</td>
+   <td>docApproveUserType</td>
+   <td align="center">char</td>
+   <td align="center">1</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>1:内部用户，2：外部用户</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">86</td>
+   <td> 生效操作人类型</td>
+   <td>docValidUserType</td>
+   <td align="center">char</td>
+   <td align="center">1</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>1:内部用户，2：外部用户</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">87</td>
+   <td> 失效操作人类型</td>
+   <td>docInvalUserType</td>
+   <td align="center">char</td>
+   <td align="center">1</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>1:内部用户，2：外部用户</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">88</td>
+   <td> 文档归档者类型</td>
+   <td>docArchiveUserType</td>
+   <td align="center">char</td>
+   <td align="center">1</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>1:内部用户，2：外部用户</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">89</td>
+   <td> 作废操作人类型</td>
+   <td>docCancelUserType</td>
+   <td align="center">char</td>
+   <td align="center">1</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>1:内部用户，2：外部用户</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">90</td>
+   <td> 发布操作人类型</td>
+   <td>docPubUserType</td>
+   <td align="center">char</td>
+   <td align="center">1</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>1:内部用户，2：外部用户</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">91</td>
+   <td> 重新打开操作人类型</td>
+   <td>docReopenUserType</td>
+   <td align="center">char</td>
+   <td align="center">1</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>1:内部用户，2：外部用户</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">92</td>
+   <td> 文档拥有者类型</td>
+   <td>ownerType</td>
+   <td align="center">char</td>
+   <td align="center">1</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>1:内部用户，2：外部用户</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">93</td>
+   <td> 可打印份数</td>
+   <td>canPrintedNum</td>
+   <td align="center">int</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>　</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">94</td>
+   <td> 已打印份数</td>
+   <td>hasPrintedNum</td>
+   <td align="center">int</td>
+   <td align="center"></td>
+   <td align="center"> N </td>
+   <td align="center"></td>
+   <td align="center">0</td>
+   <td></td>
+   <td>默认为0</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">95</td>
+   <td> 文档生效审批请求id</td>
+   <td>approverequestid</td>
+   <td align="center">int</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>　</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">96</td>
+   <td>是否来自流程 </td>
+   <td>fromworkflow</td>
+   <td align="center">int</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>　</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">97</td>
+   <td> 是否置顶</td>
+   <td>istop</td>
+   <td align="center">int</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center">0</td>
+   <td></td>
+   <td>　</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">98</td>
+   <td> 置顶日期</td>
+   <td>topdate</td>
+   <td align="center">varchar</td>
+   <td align="center">1000</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>　</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">99</td>
+   <td> 置顶时间</td>
+   <td>toptime</td>
+   <td align="center">varchar</td>
+   <td align="center">1000</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>　</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">100</td>
+   <td> 置顶有效开始日期</td>
+   <td>topstartdate</td>
+   <td align="center">varchar</td>
+   <td align="center">1000</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>　</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">101</td>
+   <td> 置顶有效结束日期</td>
+   <td>topenddate</td>
+   <td align="center">varchar</td>
+   <td align="center">1000</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>　</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">102</td>
+   <td> 文档失效审批请求id</td>
+   <td>invalidRequestId</td>
+   <td align="center">int</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>　</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">103</td>
+   <td>编辑模版id </td>
+   <td>editMouldId</td>
+   <td align="center">int</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>　</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">104</td>
+   <td>查询用拼音首字母 </td>
+   <td>ecology_pinyin_search</td>
+   <td align="center">varchar</td>
+   <td align="center">1000</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>　</td>
+  </tr> 
+ </tbody>
+</table>
+</div>
+</center>
+</body>
+</html>
+

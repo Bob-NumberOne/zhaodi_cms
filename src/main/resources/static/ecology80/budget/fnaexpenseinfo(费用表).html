@@ -1,0 +1,305 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+<title>fnaexpenseinfo(费用表)</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gbk"/>
+<style>
+body, td {
+font-family: 微软雅黑;
+font-size: 12px;
+line-height: 150%;
+}
+table {
+width: 100%;
+background-color: #ccc;
+margin: 5px 0;
+word-break: break-all;
+}
+td {
+	background-color: #fff;
+	padding: 3px;
+padding-left: 10px;
+}
+thead td {
+	text-align: left;
+font-weight: bold;
+background-color: #eee;
+}
+a:link, a:visited, a:active {
+color: #015FB6;
+text-decoration: none;
+}
+a:hover {
+color: #E33E06;
+}
+.tablename {
+margin-top: 30px;
+}
+.outdiv {
+width: 1000px;
+margin: 40px auto;
+text-align: left;
+}
+
+</style>
+</head>
+<body>
+<center>
+<div class="outdiv">
+<div class="tablename">
+<b>表名：fnaexpenseinfo</b>
+</div>
+<div>中文名称：费用表</div>
+<div>表类型： </div>
+<a href='index.html' style='float: right;'>返回目录</a><div>说明：</div>
+<table cellspacing="1" cellpadding="0"> 
+ <thead> 
+  <tr> 
+   <td style="width: 40px;">序号</td> 
+   <td>中文名称</td> 
+   <td>英文名称</td> 
+   <td>数据类型</td> 
+   <td>长度</td> 
+   <td>允许空值</td> 
+   <td>主键</td> 
+   <td>默认值</td> 
+   <td>自增</td> 
+   <td>说明</td> 
+  </tr> 
+ </thead> 
+ <tbody>
+  <tr> 
+   <td style="text-align: center;">1</td> 
+   <td>主键</td> 
+   <td>id</td> 
+   <td align="center">int</td> 
+   <td align="center"></td> 
+   <td align="center">N</td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td>Y</td> 
+   <td></td> 
+  </tr> 
+  <tr> 
+   <td style="text-align: center;">2</td> 
+   <td>承担主体id</td> 
+   <td>organizationid</td> 
+   <td align="center">int</td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td></td> 
+   <td>分部id；部门id；个人id；成本中心id；</td> 
+  </tr> 
+  <tr> 
+   <td style="text-align: center;">3</td> 
+   <td>承担主体类型</td> 
+   <td>organizationtype</td> 
+   <td align="center">int</td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td></td> 
+   <td>1：分部；2：部门；3：个人；18004：成本中心；</td> 
+  </tr> 
+  <tr> 
+   <td style="text-align: center;">4</td> 
+   <td>费用发生日期</td> 
+   <td>occurdate</td> 
+   <td align="center">char</td> 
+   <td align="center">10</td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td></td> 
+   <td></td> 
+  </tr> 
+  <tr> 
+   <td style="text-align: center;">5</td> 
+   <td>金额</td> 
+   <td>amount</td> 
+   <td align="center">decimal</td> 
+   <td align="center">15,3</td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td></td> 
+   <td></td> 
+  </tr> 
+  <tr> 
+   <td style="text-align: center;">6</td> 
+   <td>科目id</td> 
+   <td>subject</td> 
+   <td align="center">int</td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td></td> 
+   <td></td> 
+  </tr> 
+  <tr> 
+   <td style="text-align: center;">7</td> 
+   <td>状态</td> 
+   <td>status</td> 
+   <td align="center">int</td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td></td> 
+   <td>0：审批中；1：生效；</td> 
+  </tr> 
+  <tr> 
+   <td style="text-align: center;">8</td> 
+   <td>来源类型</td> 
+   <td>type</td> 
+   <td align="center">int</td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td></td> 
+   <td>1：付款；2：报销；3：冲销；</td> 
+  </tr> 
+  <tr> 
+   <td style="text-align: center;">9</td> 
+   <td>项目id</td> 
+   <td>relatedprj</td> 
+   <td align="center">int</td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td></td> 
+   <td>相关项目</td> 
+  </tr> 
+  <tr> 
+   <td style="text-align: center;">10</td> 
+   <td>客户id</td> 
+   <td>relatedcrm</td> 
+   <td align="center">int</td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td></td> 
+   <td>相关客户</td> 
+  </tr> 
+  <tr> 
+   <td style="text-align: center;">11</td> 
+   <td>凭证号</td> 
+   <td>debitremark</td> 
+   <td align="center">varchar</td> 
+   <td align="center">400</td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td></td> 
+   <td>手工做账时才会录入</td> 
+  </tr> 
+  <tr> 
+   <td style="text-align: center;">12</td> 
+   <td>描述</td> 
+   <td>description</td> 
+   <td align="center">varchar</td> 
+   <td align="center">1000</td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td></td> 
+   <td></td> 
+  </tr> 
+  <tr> 
+   <td style="text-align: center;">13</td> 
+   <td>流程requestid</td> 
+   <td>requestid</td> 
+   <td align="center">int</td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td></td> 
+   <td>统计用流程requestid</td> 
+  </tr> 
+  <tr> 
+   <td style="text-align: center;">15</td> 
+   <td>流程明细表id</td> 
+   <td>requestidDtlId</td> 
+   <td align="center">int</td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td></td> 
+   <td>统计用流程明细表id</td> 
+  </tr> 
+  <tr> 
+   <td style="text-align: center;">16</td> 
+   <td>流程明细表序号</td> 
+   <td>sourceDtlNumber</td> 
+   <td align="center">int</td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td></td> 
+   <td>记录来源明细表序号</td> 
+  </tr> 
+  <tr> 
+   <td style="text-align: center;">17</td> 
+   <td>流程requestid</td> 
+   <td>sourceRequestid</td> 
+   <td align="center">int</td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td></td> 
+   <td>来源流程requestid</td> 
+  </tr> 
+  <tr> 
+   <td style="text-align: center;">18</td> 
+   <td>流程明细表id</td> 
+   <td>sourceRequestidDtlId</td> 
+   <td align="center">int</td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td></td> 
+   <td>记录来源流程明细表id</td> 
+  </tr> 
+  <tr> 
+   <td style="text-align: center;">19</td> 
+   <td>年度期间ID</td> 
+   <td>budgetperiods</td> 
+   <td align="center">int</td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td></td> 
+   <td>费用发生日期所属：预算年度表主键</td> 
+  </tr> 
+  <tr> 
+   <td style="text-align: center;">20</td> 
+   <td>期间id</td> 
+   <td>budgetperiodslist</td> 
+   <td align="center">int</td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td></td> 
+   <td>费用发生日期所属：预算期间表主键</td> 
+  </tr> 
+ </tbody>
+</table>
+</div>
+</center>
+</body>
+</html>
+

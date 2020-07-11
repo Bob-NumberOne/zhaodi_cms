@@ -1,0 +1,413 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+<title>mode_customtreedetail(树形节点基本信息)</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gbk"/>
+<style>
+body, td {
+font-family: 微软雅黑;
+font-size: 12px;
+line-height: 150%;
+}
+table {
+width: 100%;
+background-color: #ccc;
+margin: 5px 0;
+word-break: break-all;
+}
+td {
+	background-color: #fff;
+	padding: 3px;
+padding-left: 10px;
+}
+thead td {
+	text-align: left;
+font-weight: bold;
+background-color: #eee;
+}
+a:link, a:visited, a:active {
+color: #015FB6;
+text-decoration: none;
+}
+a:hover {
+color: #E33E06;
+}
+.tablename {
+margin-top: 30px;
+}
+.outdiv {
+width: 1000px;
+margin: 40px auto;
+text-align: left;
+}
+
+</style>
+</head>
+<body>
+<center>
+<div class="outdiv">
+<div class="tablename">
+<b>表名：mode_customtreedetail</b>
+</div>
+<div>中文名称：树形节点基本信息</div>
+<div>表类型： </div>
+<a href='index.html' style='float: right;'>返回目录</a><div>说明：</div>
+<table cellspacing="1" cellpadding="0"> 
+ <colgroup> 
+  <col width="5%"> 
+  <col width="10%"> 
+  <col width="10%"> 
+  <col width="10%"> 
+  <col width="8%"> 
+  <col width="8%"> 
+  <col width="8%"> 
+  <col width="8%"> 
+  <col width="8%"> 
+  <col width="25%">
+ </colgroup> 
+ <thead> 
+  <tr> 
+   <td>序号</td> 
+   <td>中文名称</td> 
+   <td>英文名称</td> 
+   <td>数据类型</td> 
+   <td>长度</td> 
+   <td>允许空值</td> 
+   <td>主键</td> 
+   <td>默认值</td> 
+   <td>自增</td> 
+   <td>说明</td>
+  </tr>
+ </thead> 
+ <tbody> 
+  <tr> 
+   <td style="text-align: center;">1</td> 
+   <td>id</td> 
+   <td>id</td> 
+   <td align="center">int</td> 
+   <td align="center"></td> 
+   <td align="center">N</td> 
+   <td align="center">Y</td> 
+   <td align="center"></td> 
+   <td>Y</td> 
+   <td></td>
+  </tr> 
+  <tr> 
+   <td style="text-align: center;">2</td> 
+   <td>树形id</td> 
+   <td>mainid</td> 
+   <td align="center">int</td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td></td> 
+   <td>对应mode_customtree表的id</td>
+  </tr> 
+  <tr> 
+   <td style="text-align: center;">3</td> 
+   <td>名称</td> 
+   <td>nodename</td> 
+   <td align="center">varchar</td> 
+   <td align="center">1000</td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td></td> 
+   <td></td>
+  </tr> 
+  <tr> 
+   <td style="text-align: center;">4</td> 
+   <td>描述</td> 
+   <td>nodedesc</td> 
+   <td align="center">varchar</td> 
+   <td align="center">4000</td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td></td> 
+   <td></td>
+  </tr> 
+  <tr> 
+   <td style="text-align: center;">5</td> 
+   <td>数据来源</td> 
+   <td>sourcefrom</td> 
+   <td align="center">int</td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td></td> 
+   <td>1：模块<br>2：手动输入</td>
+  </tr> 
+  <tr> 
+   <td style="text-align: center;">6</td> 
+   <td>数据来源id</td> 
+   <td>sourceid</td> 
+   <td align="center">int</td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td></td> 
+   <td>数据来源为模块时才能选择，<br>数据来源id，对应模块的id即modeinfo表的id</td>
+  </tr> 
+  <tr> 
+   <td style="text-align: center;">7</td> 
+   <td>表名</td> 
+   <td>tablename</td> 
+   <td align="center">varchar</td> 
+   <td align="center">1000</td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td></td> 
+   <td>数据库表名</td>
+  </tr> 
+  <tr> 
+   <td style="text-align: center;">8</td> 
+   <td>主键</td> 
+   <td>tablekey</td> 
+   <td align="center">varchar</td> 
+   <td align="center">1000</td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td></td> 
+   <td>来源于表名中的数据库字段名，作为树形节点id的一部分</td>
+  </tr> 
+  <tr> 
+   <td style="text-align: center;">9</td> 
+   <td>上级</td> 
+   <td>tablesup</td> 
+   <td align="center">varchar</td> 
+   <td align="center">1000</td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td></td> 
+   <td>来源于表名中的数据库字段名，确定树形显示的上下级关系</td>
+  </tr> 
+  <tr> 
+   <td style="text-align: center;">10</td> 
+   <td>显示名</td> 
+   <td>showfield</td> 
+   <td align="center">varchar</td> 
+   <td align="center">1000</td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td></td> 
+   <td>来源于表名中的数据库字段名，树形节点的显示名称</td>
+  </tr> 
+  <tr> 
+   <td style="text-align: center;">11</td> 
+   <td>链接目标来源</td> 
+   <td>hreftype</td> 
+   <td align="center">int</td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td></td> 
+   <td>1：模块<br>2：手动输入<br>3：模块查询列表</td>
+  </tr> 
+  <tr> 
+   <td style="text-align: center;">12</td> 
+   <td>链接目标</td> 
+   <td>hrefid</td> 
+   <td align="center">int</td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td></td> 
+   <td>链接目标id，链接目标来源 为模块时，对应模块id，链接目标来源 为查询列表是，对应查询列表的id</td>
+  </tr> 
+  <tr> 
+   <td style="text-align: center;">13</td> 
+   <td>链接目标地址</td> 
+   <td>hreftarget</td> 
+   <td align="center">varchar</td> 
+   <td align="center">4000</td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td></td> 
+   <td></td>
+  </tr> 
+  <tr> 
+   <td style="text-align: center;">14</td> 
+   <td>链接目标关联字段</td> 
+   <td>hrefrelatefield</td> 
+   <td align="center">varchar</td> 
+   <td align="center">1000</td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td></td> 
+   <td>通过连接目标关联字段，可以往查询列表或模块中传参数</td>
+  </tr> 
+  <tr> 
+   <td style="text-align: center;">15</td> 
+   <td>节点默认图标</td> 
+   <td>nodeicon</td> 
+   <td align="center">varchar</td> 
+   <td align="center">1000</td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td></td> 
+   <td></td>
+  </tr> 
+  <tr> 
+   <td style="text-align: center;">16</td> 
+   <td>上级节点</td> 
+   <td>supnode</td> 
+   <td align="center">int</td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td></td> 
+   <td></td>
+  </tr> 
+  <tr> 
+   <td style="text-align: center;">17</td> 
+   <td>上级节点字段</td> 
+   <td>supnodefield</td> 
+   <td align="center">varchar</td> 
+   <td align="center">1000</td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td></td> 
+   <td>上级节点和本节点之间的关联字段</td>
+  </tr> 
+  <tr> 
+   <td style="text-align: center;">18</td> 
+   <td>本节点字段</td> 
+   <td>nodefield</td> 
+   <td align="center">varchar</td> 
+   <td align="center">1000</td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td></td> 
+   <td>本节点中和上级节点之间的关联字段</td>
+  </tr> 
+  <tr> 
+   <td style="text-align: center;">19</td> 
+   <td>显示顺序</td> 
+   <td>showorder</td> 
+   <td align="center">decimal</td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td></td> 
+   <td></td>
+  </tr> 
+  <tr> 
+   <td style="text-align: center;">20</td> 
+   <td>节点图标字段</td> 
+   <td>iconField</td> 
+   <td align="center">varchar</td> 
+   <td align="center">1000</td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td></td> 
+   <td>数据库字段名</td>
+  </tr> 
+  <tr> 
+   <td style="text-align: center;">21</td> 
+   <td>数据显示顺序</td> 
+   <td>dataorder</td> 
+   <td align="center">varchar</td> 
+   <td align="center">1000</td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td></td> 
+   <td></td>
+  </tr> 
+  <tr> 
+   <td style="text-align: center;">22</td> 
+   <td>数据显示条件</td> 
+   <td>datacondition</td> 
+   <td align="center">varchar</td> 
+   <td align="center">4000</td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td></td> 
+   <td></td>
+  </tr> 
+  <tr> 
+   <td style="text-align: center;">23</td> 
+   <td>链接目标地址字段</td> 
+   <td>hrefField</td> 
+   <td align="center">varchar</td> 
+   <td align="center">1000</td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td></td> 
+   <td>树形的链接地址，从字段的值中取</td>
+  </tr> 
+  <tr> 
+   <td style="text-align: center;">24</td> 
+   <td>根节点主键的值</td> 
+   <td>rootids</td> 
+   <td align="center">varchar</td> 
+   <td align="center">4000</td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td></td> 
+   <td>多个值使用英文逗号隔开，可以控制树形只显示其中一部分数据作为根节点</td>
+  </tr> 
+  <tr> 
+   <td style="text-align: center;">25</td> 
+   <td>是否显示根节点</td> 
+   <td>isshowrootnode</td> 
+   <td align="center">int</td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td></td> 
+   <td>1：是<br>0：否</td>
+  </tr> 
+  <tr> 
+   <td style="text-align: center;">26</td> 
+   <td>32位UUID</td> 
+   <td>uuid</td> 
+   <td align="center">varchar</td> 
+   <td align="center">32</td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td></td> 
+   <td>主要用在树形节点的复制</td>
+  </tr> 
+  <tr> 
+   <td style="text-align: center;">27</td> 
+   <td>是否包含下级的值</td> 
+   <td>isContainsSub</td> 
+   <td align="center">int</td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td></td> 
+   <td>用在链接目标关联字段过滤查询列表时，过滤出的查询列表数据不仅包含自身还要包含自身的所有下级的值。(仅在链接目标地址为查询列表，且链接目标关联字段不能为空的情况下生效)</td>
+  </tr>
+ </tbody>
+</table>
+</div>
+</center>
+</body>
+</html>
+

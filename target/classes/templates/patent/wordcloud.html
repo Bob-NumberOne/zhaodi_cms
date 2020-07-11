@@ -1,0 +1,877 @@
+<!DOCTYPE html >
+<html  xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <!-- 这里设定了项目根路径,后面使用到路径的地方正常填写即可 -->
+    <base th:href="${#request.getContextPath()}+'/'">
+    <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
+    <script src="echarts/echarts.min.js"></script>
+    <script src="echarts/wordcloud/dist/echarts-wordcloud.min.js"></script>
+    <link rel="stylesheet" href="js/layui/css/layui.css"  media="all">
+    <script type="text/javascript" src="js/layui/layui.js"></script>
+    <script type="text/javascript" src="js/serializejson.min.js"></script>
+    <style>
+        .table_head{text-align: center;}
+        .layui-transfer-data{height: 280px !important;}
+        .tabel-TCC{height:400px;display: none;padding-top: 50px;padding-left: 50px; line-height: 22px; font-weight: 300;}/* background-color: #393D49; color: #fff;*/
+        .layui-card {border:1px solid #f2f2f2;border-radius:5px;}
+        .icon {margin-right:10px;color:#1aa094;}
+        .icon-cray {color:#ffb800!important;}
+        .icon-blue {color:#1e9fff!important;}
+        .icon-tip {color:#ff5722!important;}
+        .layuimini-qiuck-module {text-align:center;margin-top: 10px}
+        .layuimini-qiuck-module a i {display:inline-block;width:100%;height:60px;line-height:60px;text-align:center;border-radius:2px;font-size:30px;background-color:#F8F8F8;color:#333;transition:all .3s;-webkit-transition:all .3s;}
+        .layuimini-qiuck-module a cite {position:relative;top:2px;display:block;color:#666;text-overflow:ellipsis;overflow:hidden;white-space:nowrap;font-size:14px;}
+        .welcome-module {width:100%;height:210px;}
+        .panel {background-color:#fff;border:1px solid transparent;border-radius:3px;-webkit-box-shadow:0 1px 1px rgba(0,0,0,.05);box-shadow:0 1px 1px rgba(0,0,0,.05)}
+        .panel-body {padding:10px}
+        .panel-title {margin-top:0;margin-bottom:0;font-size:12px;color:inherit}
+        .label {display:inline;padding:.2em .6em .3em;font-size:75%;font-weight:700;line-height:1;color:#fff;text-align:center;white-space:nowrap;vertical-align:baseline;border-radius:.25em;margin-top: .3em;}
+        .layui-red {color:red}
+        .main_btn > p {height:40px;}
+        .layui-card{margin-top: 20px;}
+        .layuimini-container{margin-left: 20px;}
+        .layui-bg-number {background-color:#F8F8F8;}
+        .layuimini-notice:hover {background:#f6f6f6;}
+        .layui-form-switch{margin-top: 0px !important;}
+        .layuimini-notice {padding:7px 16px;clear:both;font-size:12px !important;cursor:pointer;position:relative;transition:background 0.2s ease-in-out;}
+        .layuimini-notice-title,.layuimini-notice-label {
+            padding-right: 70px !important;text-overflow:ellipsis!important;overflow:hidden!important;white-space:nowrap!important;}
+        .layuimini-notice-title {line-height:28px;font-size:14px;}
+        .layuimini-notice-extra {position:absolute;top:50%;margin-top:-8px;right:16px;display:inline-block;height:16px;color:#999;}
+    </style>
+</head>
+<body>
+<form id="myForm">
+    <div class="layuimini-container">
+        <div class="layuimini-main">
+            <div class="layui-row layui-col-space15">
+                <div class="layui-col-xs4">
+                    <div class="layui-col-md12">
+                        <div class="layui-card layui-form">
+                            <div class="layui-card-header"><i class="fa fa-bar-chart icon"></i><span style="font-size: 16px;font-weight: 800;">词云筛选</span>
+                                <div  class="layui-input-inline" style="width: 210px;float: right;">
+                                    <label class="layui-form-label" style="width: 120px">使用默认关键词库</label>
+                                    <div class="layui-input-block">
+                                        <input type="checkbox" checked="" lay-skin="switch" lay-filter="switchTest" lay-text="ON|OFF">
+                                    </div>
+                                </div>
+                            </div>
+                            <!--查询-->
+                            <div>
+                                <div style="margin-top: 10px">
+                                    <button id="colWord" type="button" class="layui-btn layui-btn-primary" style="margin-left: 15px;">数据列筛选</button>
+                                    <button id="cxWord" type="button" class="layui-btn layui-btn-primary" style="margin-left: 20px;">词性筛选</button>
+                                    <button id="inputWord" type="button" class="layui-btn layui-btn-primary" style="margin-left: 20px;">文本输入</button>
+                                </div>
+                                <div style="margin-top: 10px">
+                                    <button id="filterWord" type="button" class="layui-btn layui-btn-primary" style="margin-left: 15px;">无用词过滤</button>
+                                    <button id="wordNumber" type="button" class="layui-btn layui-btn-primary" style="margin-left: 20px;">词量控制</button>
+                                    <button id="getTreeBtn" type="button" class="layui-btn layui-btn-primary" style="margin-left: 20px;">分块筛选</button>
+                                    <button id="searchWord" type="button" class="layui-btn" style="margin-left: 20px;">查询</button>
+                                </div>
+                                <div class="layui-card-body">
+                                    <table class="layui-hide" id="patent" lay-filter="patentTable"></table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="layui-col-xs8">
+                    <div class="layui-col-md12">
+                        <div class="layui-card">
+                            <div class="layui-card-header" style="font-size: 16px;font-weight: 800;"><i class="fa fa-bar-chart icon"></i>词云分析结果
+                            </div>
+                            <div class="layui-card-body">
+                                <div class="panel panel-default">
+                                    <div class="panel-body" style="width: auto;height: 900px;">
+                                            <div id="worldCloud" style="width: 100%;height: 50%"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--过滤-->
+    <div style="display: none" id="filter_table">
+        <table class="layui-hide" id="filterW" lay-filter="filterW"></table>
+    </div>
+    <!--添加数据-->
+    <div id="gl_add" class="layui-form tabel-TCC">
+        <div class="layui-form-item" style="margin-top: 20px;">
+            <div class="layui-inline">
+                <label class="layui-form-label">过滤词名称</label>
+                <div class="layui-input-inline">
+                    <input id="gladd_word" class="layui-input">
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--编辑数据-->
+    <div id="gl_update" class="layui-form tabel-TCC">
+        <input type="text" id="gl_id" style="display: none;">
+        <div class="layui-form-item" style="margin-top: 20px;">
+            <div class="layui-inline">
+                <label class="layui-form-label">过滤词名称</label>
+                <div class="layui-input-inline">
+                    <input id="glaupdate_word" class="layui-input">
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--词量控制-->
+
+    <div style="display: none;padding-top: 100px;padding-left: 100px;" id="word_number" class="layui-form">
+        <input type="text" id="number" name="number" value="500" style="display: none">
+        <div class="layui-input-inline" style="width: 300px;" id="slideTop"></div>
+    </div>
+
+    <div style="display: none">
+        <input type="text" id="flag" name="flag" value="1">
+    </div>
+    <!--数据列筛选-->
+    <div id="col_applicant" lay-filter="col_applicant" style="display: none;padding-left: 30px;padding-top: 30px;">
+        <input type="text" id="col_names" name="wordColumn"  style="display: none">
+        <div id="col_choose" class="demo-transfer"></div>
+    </div>
+
+    <!--词性筛选-->
+    <div id="cx_applicant" lay-filter="cx_applicant" style="display: none;padding-left: 30px;padding-top: 30px;">
+        <input type="text" id="cx_names" name="wordPart" style="display: none">
+        <div id="cx_choose" class="demo-transfer"></div>
+    </div>
+
+    <!--文本输入-->
+    <div id="wb_selfInput" class="layui-form" style="display: none">
+        <div class="layui-form-item layui-form-text" style="padding: 20px;">
+            <label style="height:30px;font-size: 18px;color: #000;">请输入一段想分析的文本：</label>
+            <div style="height: 10px;"></div>
+            <div class="layui-input-block" style="margin-left: 0px;">
+                <textarea id="wb_selfArea" name="selfWords" style="height: 400px;" placeholder="2003年10月15日，杨利伟乘由长征二号F火箭运载的神舟五号飞船首次进入太空，象征着中国太空事业向前迈进一大步，起到了里程碑的作用。" class="layui-textarea"></textarea>
+            </div>
+        </div>
+    </div>
+
+    <!--添加数据-->
+    <div id="wb_add" class="layui-form tabel-TCC">
+        <div class="layui-form-item" style="margin-top: 20px;">
+            <div class="layui-inline">
+                <label class="layui-form-label">名称</label>
+                <div class="layui-input-inline">
+                    <input id="add_word" class="layui-input">
+                </div>
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <div class="layui-inline">
+                <label class="layui-form-label">词性</label>
+                <div class="layui-input-inline">
+                    <input id="add_nature" class="layui-input">
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--编辑数据-->
+    <div id="wb_update" class="layui-form tabel-TCC">
+        <input type="text" id="hh_id" style="display: none;">
+        <div class="layui-form-item" style="margin-top: 20px;">
+            <div class="layui-inline">
+                <label class="layui-form-label">名称</label>
+                <div class="layui-input-inline">
+                    <input id="word" class="layui-input">
+                </div>
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <div class="layui-inline">
+                <label class="layui-form-label">词性</label>
+                <div class="layui-input-inline">
+                    <input id="nature" class="layui-input">
+                </div>
+            </div>
+        </div>
+    </div>
+    <input type="text" id="belongToBlock" name="belongToBlock" style="display: none">
+</form>
+<div style="display: none" id="patentTree" class="demo-tree-more"></div>
+<script type="text/javascript" src="js/patent/getBlockTree.js"></script>
+<script type="text/javascript" th:inline="none">
+    var screen_height=$(window).height()-20; //浏览器当前窗口可视区域高度
+    var screen_width=$(window).width(); //浏览器当前窗口可视区域宽度
+    $(".layui-card").css("height",screen_height-20);
+    $(".panel-body").css("height",screen_height-100);
+    $(".layui-card-body").css("height",screen_height-143);
+
+    $(".layuimini-container").css("width",screen_width-40);
+    $.ajax({
+        async: false,
+        url: 'patent/WordCloudAnalysis.xmj',
+        data: {},
+        dataType: 'json',
+        type: 'GET',
+        success: function (data) {
+            var JosnList = data[0];
+            getWorldCloud(JosnList);
+        },
+        error:function(request){
+            alert("请求失败");
+        }
+    });
+    function getWorldCloud(JosnList) {
+        var worldCloudcharts=echarts.init(document.getElementById('worldCloud'));
+        var worldCloudoption = {
+            title: {
+                text: '词云分析',
+                x: 'center',
+                textStyle: {
+                    fontSize: 23,
+                    color:'#FFFFFF'
+                }
+
+            },
+            tooltip: {
+                show: true
+            },
+            series: [{
+                name: '词云分析',
+                type: 'wordCloud',
+                sizeRange: [6, 66],
+                rotationRange: [-45, 90],
+                textPadding: 0,
+                autoSize: {
+                    enable: true,
+                    minSize: 6
+                },
+                textStyle: {
+                    normal: {
+                        color: function() {
+                            return 'rgb(' + [
+                                Math.round(Math.random() * 160),
+                                Math.round(Math.random() * 160),
+                                Math.round(Math.random() * 160)
+                            ].join(',') + ')';
+                        }
+                    },
+                    emphasis: {
+                        shadowBlur: 10,
+                        shadowColor: '#333'
+                    }
+                }
+            }]
+        };
+        worldCloudoption.series[0].data = JosnList;
+        worldCloudcharts.setOption(worldCloudoption);
+    }
+    layui.use(['slider','form','table','transfer'],function(){
+        var table = layui.table
+            ,form = layui.form
+            ,transfer = layui.transfer;
+        var slider = layui.slider;
+
+        //当滑块为普通模式，回调返回的 value 是一个数值
+        var ins=slider.render({
+            elem: '#slideTop'
+            ,input: true //输入框
+            ,min: 0 //最小值
+            ,max: 1000 //最大值
+            ,change: function(value){
+                if(value!=0){
+                    $("#number").val(value);
+                }
+            }
+        });
+        /*ins.config;*/
+        ins.setValue(500);
+
+        //监听指定开关
+        form.on('switch(switchTest)', function(data){
+            if (this.checked){
+                $("#flag").val("1");
+                layer.tips('温馨提示：选择使用默认关键词库，系统会优先提取含有关键词库里面的词！', data.othis)
+            }else{
+                $("#flag").val("0");
+                layer.tips('温馨提示：关闭使用默认关键词库，系统会筛选自定义文本输入里面的关键词！', data.othis)
+            }
+
+        });
+        reloadTable = table.render({
+            elem: '#patent'
+            ,url:"patent/findPartWords.xmj"
+            ,method:'post'
+            ,toolbar: false
+            ,title: '词'
+            ,toolbar: 'default' //开启工具栏，此处显示默认图标，可以自定义模板，详见文档
+            ,limits:[10,20,50,100]
+            ,totalRow: true
+            ,cols: [[
+                {type: 'checkbox', fixed: 'left'}
+                ,{field:'id', title:'ID', width:100, align:'center'}
+                ,{field:'word', title:'关键词', width:200, align:'center'}
+                ,{field:'nature', title:'词性', width:150, align:'center'}
+            ]]
+            ,page: true
+            ,response: {
+                statusCode: 200 //重新规定成功的状态码为 200，table 组件默认为 0
+            }
+            ,height: screen_height-200
+            ,parseData: function(res){ //将原始数据解析成 table 组件所规定的数据
+                return {
+                    "code": res.status, //解析接口状态
+                    "msg": res.message, //解析提示文本
+                    "count": res.counts, //解析数据长度
+                    "data": res.beans //解析数据列表
+                };
+            }
+        });
+
+        reloadTableFilter = table.render({
+            elem: '#filterW'
+            ,url:"patent/findFilterWords.xmj"
+            ,method:'post'
+            ,toolbar: false
+            ,title: '过滤分词'
+            ,toolbar: 'default' //开启工具栏，此处显示默认图标，可以自定义模板，详见文档
+            ,limits:[10,20,50,100]
+            ,totalRow: true
+            ,cols: [[
+                {type: 'checkbox', fixed: 'left'}
+                ,{field:'id', title:'ID', width:100, align:'center'}
+                ,{field:'word', title:'关键词', width:200, align:'center'}
+            ]]
+            ,page: true
+            ,response: {
+                statusCode: 200 //重新规定成功的状态码为 200，table 组件默认为 0
+            }
+            ,height: screen_height-250
+            ,parseData: function(res){ //将原始数据解析成 table 组件所规定的数据
+                return {
+                    "code": res.status, //解析接口状态
+                    "msg": res.message, //解析提示文本
+                    "count": res.counts, //解析数据长度
+                    "data": res.beans //解析数据列表
+                };
+            }
+        });
+
+        //获取数据列弹框数据
+        var data1 = [];
+        var data2 = [];
+        $.ajax({
+            async: false,
+            url: 'patent/getWordsAndColName.xmj',
+            data: {},
+            dataType: 'json',
+            type: 'post',
+            success: function (data) {
+                if(data.length>0){
+                    data1=data[0];
+                    data2=data[1];
+                }
+            }
+        });
+        //数据列显示搜索框
+        transfer.render({
+            elem: '#col_choose'
+            ,data: data1
+            ,title: ['列名', '筛选结果']
+            ,showSearch: true
+            ,id: 'wb_key1' //定义唯一索引
+        });
+        //词性显示搜索框
+        transfer.render({
+            elem: '#cx_choose'
+            ,data: data2
+            ,title: ['列名', '筛选结果']
+            ,showSearch: true
+            ,id: 'wb_key2' //定义唯一索引
+        });
+        //点击词量控制
+        $('#wordNumber').click(function () {
+            layer.open({
+                type: 1
+                ,title: ['词量控制', 'font-size:18px;'] //不显示标题栏
+                ,closeBtn: false
+                ,area: [ '600px', '300px']
+                ,id: 'LAY_layuipro2clkzz22' //设定一个id，防止重复弹出
+                ,maxmin: true
+                ,btn: ['确定', '取消']
+                ,btnAlign: 'c'
+                ,moveType: 1 //拖拽模式，0或者1
+                ,content: $('#word_number')
+                ,success: function(layero){
+                    //重新加载表格中的数据
+                    $('#word_number').css('display', 'block');
+                }
+            });
+        });
+
+        // 为输入框绑定光标聚焦事件的触发该函数，
+        $('#colWord').click(function () {
+            col_focus_handler();
+        });
+        //词性点击筛选
+        $('#cxWord').click(function () {
+            cx_focus_handler();
+        });
+        //自定义
+        $('#inputWord').click(function () {
+            self_focus_handler();
+        });
+        //过滤词
+        $('#filterWord').click(function () {
+            filter_focus_handler();
+        });
+        //点击查询
+        $('#searchWord').click(function () {
+            self_search_handler();
+        });
+        //过滤
+        function filter_focus_handler() {
+            layer.open({
+                type: 1
+                ,title: ['分词过滤', 'font-size:18px;'] //不显示标题栏
+                ,closeBtn: false
+                ,area: [ '600px', '700px']
+                ,id: 'LAY_layuipro222' //设定一个id，防止重复弹出
+                ,maxmin: true
+                ,btn: ['确定', '取消']
+                ,btnAlign: 'c'
+                ,moveType: 1 //拖拽模式，0或者1
+                ,content: $('#filter_table')
+                ,success: function(layero){
+                    //重新加载表格中的数据
+                    $('#filter_table').css('display', 'block');
+                }
+            });
+        }
+        //查询
+        function self_search_handler() {
+            var formData=$("#myForm").serializeJSON();
+            console.log(formData);
+            //参数判定
+            $.ajax({
+                url: 'patent/WordCloudAnalysis.xmj',
+                data: formData,
+                dataType: 'json',
+                type: 'POST',
+                success: function (data) {
+                    var JosnList = data[0];
+                    getWorldCloud(JosnList);
+                },
+                error:function(request){
+                    layer.msg("请求失败");
+                }
+            });
+        }
+
+        //词性刷选弹框
+        function cx_focus_handler() {
+            layer.open({
+                type : 1
+                ,title: ['数据列筛选', 'font-size:18px;']
+                , area : [ '550px', '530px' ]
+                , content : $('#cx_applicant')
+                ,btn: ['确认', '取消']
+                , success : function () {
+                    // 重新加载表格中的数据
+                    $('#cx_applicant').css('display', 'block');
+                },yes: function(index, layero){//确定操作
+                    //do something
+                    var getData = transfer.getData('wb_key2'); //获取右侧数据
+                    var text="";
+                    for(var i=0;i<getData.length;i++){
+                        if(i==getData.length-1){
+                            text+=getData[i].value;
+                        }else {
+                            text+=getData[i].value+",";
+                        }
+                    }
+                    $("#cx_names").val(text);
+                    layer.close(index); //如果设定了yes回调，需进行手工关闭
+                }
+            });
+        }
+
+        // “客户”输入框的光标聚焦事件的触发函数， 弹出弹层，弹层上显示所有的客户，以供选择。
+        function col_focus_handler() {
+            layer.open({
+                type : 1
+                ,title: ['数据列筛选', 'font-size:18px;']
+                , area : [ '550px', '530px' ]
+                , content : $('#col_applicant')
+                ,btn: ['确认', '取消']
+                , success : function () {
+                    // 重新加载表格中的数据
+                    $('#col_applicant').css('display', 'block');
+                },yes: function(index, layero){//确定操作
+                    //do something
+                    var getData = transfer.getData('wb_key1'); //获取右侧数据
+                    var text="";
+                    for(var i=0;i<getData.length;i++){
+                        if(i==getData.length-1){
+                            text+=getData[i].value;
+                        }else {
+                            text+=getData[i].value+",";
+                        }
+                    }
+                    $("#col_names").val(text);
+                    layer.close(index); //如果设定了yes回调，需进行手工关闭
+                }
+            });
+        }
+        function self_focus_handler(){
+            layer.open({
+                type: 1
+                ,title: ['自定义分词', 'font-size:18px;'] //不显示标题栏
+                ,closeBtn: false
+                ,area: [ '800px', '600px']
+                ,id: 'LAY_layuipro11222111' //设定一个id，防止重复弹出
+                ,maxmin: true
+                ,btn: ['确定', '取消']
+                ,btnAlign: 'c'
+                ,moveType: 1 //拖拽模式，0或者1
+                ,content: $('#wb_selfInput')
+                ,success: function(layero){
+                    // 重新加载表格中的数据
+                    $('#wb_selfInput').css('display', 'block');
+                }
+            });
+        }
+
+        table.on('toolbar(filterW)', function(obj){
+            var checkStatus = table.checkStatus(obj.config.id)
+                ,data = checkStatus.data; //获取选中的数据
+            switch(obj.event){
+                case 'add':
+                    //示范一个公告层
+                    layer.open({
+                        type: 1
+                        ,title: ['添加分词', 'font-size:18px;'] //不显示标题栏
+                        ,closeBtn: false
+                        ,area: [ '500px', '400px']
+                        ,id: 'LAY_layuiprocl' //设定一个id，防止重复弹出
+                        ,maxmin: true
+                        ,btn: ['确定', '取消']
+                        ,btnAlign: 'c'
+                        ,moveType: 1 //拖拽模式，0或者1
+                        ,content: $('#gl_add')
+                        ,success: function(layero){
+                            // 重新加载表格中的数据
+                            $('#gladd_word').val('');
+                            $('#gl_add').css('display', 'block');
+                        },yes: function(index, layero) {//确定操作
+                            var word=$("#gladd_word").val();
+                            if(word!=""){
+                                $.ajax({
+                                    async: false,
+                                    url: 'patent/insertFilterWords.xmj',
+                                    data: {"word":word},
+                                    dataType: 'json',
+                                    type: 'GET',
+                                    success: function (data) {
+                                        /*var code = data.code;*/
+                                        layer.msg(data.msg);
+                                        layer.close(index); //如果设定了yes回调，需进行手工关闭
+                                        reloadTableFilter.reload();
+                                    },
+                                    error:function(request){
+                                        layer.msg("请求失败");
+                                        layer.close(index); //如果设定了yes回调，需进行手工关闭
+                                    }
+                                });
+                            }else{
+                                layer.msg("分词名称不能为空！");
+                            }
+                        }
+                    });
+                    break;
+                case 'update':
+                    if(data.length === 0){
+                        layer.msg('请选择一行');
+                    } else if(data.length > 1){
+                        layer.msg('只能同时编辑一个');
+                    } else {
+                        layer.open({
+                            type: 1
+                            ,title: ['编辑分词', 'font-size:18px;'] //不显示标题栏
+                            ,closeBtn: false
+                            ,area: [ '500px', '400px']
+                            ,id: 'LAY_layuiprocl122' //设定一个id，防止重复弹出
+                            ,maxmin: true
+                            ,btn: ['确定', '取消']
+                            ,btnAlign: 'c'
+                            ,moveType: 1 //拖拽模式，0或者1
+                            ,content: $('#gl_update')
+                            ,success: function(layero){
+                                // 重新加载表格中的数据
+                                $("#gl_id").val(checkStatus.data[0].id);
+                                $("#gladd_word").val(checkStatus.data[0].word);
+                                $('#gl_update').css('display', 'block');
+                            },yes: function(index, layero) {//确定操作
+                                var gl_id=checkStatus.data[0].id;
+                                var word=$("#glaupdate_word").val();
+                                alert(gl_id+"==="+word);
+                                if(word!=""){
+                                    $.ajax({
+                                        async: false,
+                                        url: 'patent/updateFilterWords.xmj',
+                                        data: {"word":word,"id":gl_id},
+                                        dataType: 'json',
+                                        type: 'GET',
+                                        success: function (data) {
+                                            /*var code = data.code;*/
+                                            layer.msg(data.msg);
+                                            layer.close(index); //如果设定了yes回调，需进行手工关闭
+                                            reloadTableFilter.reload();
+
+                                        },
+                                        error:function(request){
+                                            layer.msg("请求失败");
+                                            layer.close(index); //如果设定了yes回调，需进行手工关闭
+                                        }
+                                    });
+                                }else{
+                                    layer.msg("分词名称空！");
+                                }
+                            }
+                        });
+                    }
+                    break;
+                case 'delete':
+                    if(data.length === 0){
+                        layer.msg('请选择一行');
+                    } else {
+                        //示范一个公告层
+                        layer.open({
+                            type: 1
+                            ,title: false //不显示标题栏
+                            ,closeBtn: false
+                            ,area: '300px;'
+                            ,id: 'LAY_layuipro1cl1' //设定一个id，防止重复弹出
+                            ,btn: ['确定', '取消']
+                            ,btnAlign: 'c'
+                            ,moveType: 1 //拖拽模式，0或者1
+                            ,content: '<div style="padding: 50px; line-height: 22px; background-color: #393D49; color: #fff; font-weight: 300;">确定删除吗？</div>'
+                            ,success: function(layero){
+                            },yes: function(index, layero) {//确定操作
+                                var idStr="";
+                                var len=checkStatus.data.length-1;
+                                for(var i=0;i<=len;i++){
+                                    if(i==len){
+                                        idStr+=data[i].id;
+                                    }else{
+                                        idStr+=data[i].id+",";
+                                    }
+                                }
+                                $.ajax({
+                                    url: 'patent/deleteFilterWordsF.xmj',
+                                    data: {"idStr":idStr},
+                                    dataType: 'json',
+                                    type: 'GET',
+                                    success: function (data) {
+                                        /*var code = data.code;*/
+                                        layer.msg(data.msg);
+                                        layer.close(index); //如果设定了yes回调，需进行手工关闭
+                                        reloadTableFilter.reload();
+                                    },
+                                    error:function(request){
+                                        layer.msg("请求失败");
+                                        layer.close(index); //如果设定了yes回调，需进行手工关闭
+                                    }
+                                });
+                            }
+                        });
+                    }
+                    break;
+            };
+        });
+        //监听头工具栏事件
+        table.on('toolbar(patentTable)', function(obj){
+            var checkStatus = table.checkStatus(obj.config.id)
+                ,data = checkStatus.data; //获取选中的数据
+            switch(obj.event){
+                case 'add':
+                    //示范一个公告层
+                    layer.open({
+                        type: 1
+                        ,title: ['添加分词', 'font-size:18px;'] //不显示标题栏
+                        ,closeBtn: false
+                        ,area: [ '800px', '600px']
+                        ,id: 'LAY_layuipro' //设定一个id，防止重复弹出
+                        ,maxmin: true
+                        ,btn: ['确定', '取消']
+                        ,btnAlign: 'c'
+                        ,moveType: 1 //拖拽模式，0或者1
+                        ,content: $('#wb_add')
+                        ,success: function(layero){
+                            // 重新加载表格中的数据
+                            $('#wb_add').css('display', 'block');
+                        },yes: function(index, layero) {//确定操作
+                            var word=$("#add_word").val();
+                            var nature=$("#add_nature").val();
+                            if(word!="" && nature!=""){
+                                $.ajax({
+                                    async: false,
+                                    url: 'patent/insertPartWords.xmj',
+                                    data: {"word":word,"nature":nature},
+                                    dataType: 'json',
+                                    type: 'GET',
+                                    success: function (data) {
+                                        /*var code = data.code;*/
+                                        layer.msg(data.msg);
+                                        layer.close(index); //如果设定了yes回调，需进行手工关闭
+                                        reloadTable.reload();
+                                        $('#wb_add input').val('');
+                                    },
+                                    error:function(request){
+                                        layer.msg("请求失败");
+                                        layer.close(index); //如果设定了yes回调，需进行手工关闭
+                                    }
+                                });
+                            }else{
+                                layer.msg("分词名称和词性不能为空！");
+                            }
+                        }
+                    });
+                    break;
+                case 'update':
+                    if(data.length === 0){
+                        layer.msg('请选择一行');
+                    } else if(data.length > 1){
+                        layer.msg('只能同时编辑一个');
+                    } else {
+                        layer.open({
+                            type: 1
+                            ,title: ['编辑分词', 'font-size:18px;'] //不显示标题栏
+                            ,closeBtn: false
+                            ,area: [ '800px', '600px']
+                            ,id: 'LAY_layuipro122' //设定一个id，防止重复弹出
+                            ,maxmin: true
+                            ,btn: ['确定', '取消']
+                            ,btnAlign: 'c'
+                            ,moveType: 1 //拖拽模式，0或者1
+                            ,content: $('#wb_update')
+                            ,success: function(layero){
+                                // 重新加载表格中的数据
+                                $("#hh_id").val(checkStatus.data[0].id);
+                                $("#word").val(checkStatus.data[0].word);
+                                $("#nature").val(checkStatus.data[0].nature);
+                                $('#wb_update').css('display', 'block');
+                            },yes: function(index, layero) {//确定操作
+                                var hh_id=checkStatus.data[0].id;
+                                var word=$("#word").val();
+                                var nature=$("#nature").val();
+                                if(word!="" && nature!=""){
+                                    $.ajax({
+                                        async: false,
+                                        url: 'patent/updatePartWords.xmj',
+                                        data: {"word":word,"nature":nature,"id":hh_id},
+                                        dataType: 'json',
+                                        type: 'GET',
+                                        success: function (data) {
+                                            /*var code = data.code;*/
+                                            layer.msg(data.msg);
+                                            layer.close(index); //如果设定了yes回调，需进行手工关闭
+                                            reloadTable.reload();
+
+                                        },
+                                        error:function(request){
+                                            layer.msg("请求失败");
+                                            layer.close(index); //如果设定了yes回调，需进行手工关闭
+                                        }
+                                    });
+                                }else{
+                                    layer.msg("分词名称和词性不能为空！");
+                                }
+                            }
+                        });
+                    }
+                    break;
+                case 'delete':
+                    if(data.length === 0){
+                        layer.msg('请选择一行');
+                    } else {
+                        //示范一个公告层
+                        layer.open({
+                            type: 1
+                            ,title: false //不显示标题栏
+                            ,closeBtn: false
+                            ,area: '300px;'
+                            ,id: 'LAY_layuipro11' //设定一个id，防止重复弹出
+                            ,btn: ['确定', '取消']
+                            ,btnAlign: 'c'
+                            ,moveType: 1 //拖拽模式，0或者1
+                            ,content: '<div style="padding: 50px; line-height: 22px; background-color: #393D49; color: #fff; font-weight: 300;">确定删除吗？</div>'
+                            ,success: function(layero){
+                            },yes: function(index, layero) {//确定操作
+                                var idStr="";
+                                var len=checkStatus.data.length-1;
+                                for(var i=0;i<=len;i++){
+                                    if(i==len){
+                                        idStr+=data[i].id;
+                                    }else{
+                                        idStr+=data[i].id+",";
+                                    }
+                                }
+                                $.ajax({
+                                    url: 'patent/deletePartWordsT.xmj',
+                                    data: {"idStr":idStr},
+                                    dataType: 'json',
+                                    type: 'GET',
+                                    success: function (data) {
+                                        /*var code = data.code;*/
+                                        layer.msg(data.msg);
+                                        layer.close(index); //如果设定了yes回调，需进行手工关闭
+                                        reloadTable.reload();
+                                    },
+                                    error:function(request){
+                                        layer.msg("请求失败");
+                                        layer.close(index); //如果设定了yes回调，需进行手工关闭
+                                    }
+                                });
+                            }
+                        });
+                    }
+                    break;
+            };
+        });
+
+        //监听行工具事件
+        table.on('tool(patentTable)', function(obj){ //注：tool 是工具条事件名，patentTable 是 table 原始容器的属性 lay-filter="对应的值"\
+            var data = obj.data.gkh ;//获得当前行数据
+            var path=data.substring(11,data.length-17);
+            var layEvent = obj.event; //获得 lay-event 对应的值
+            if(layEvent === 'look'){
+                window.open(path,'_blank');
+                //openLay("专利详情",item,"1000px", "600px");
+
+            }
+        });
+        function openLay(title, url, width, height){
+            layer.open({
+                type: 2 //此处以iframe举例
+                ,title: title
+                ,area: [width, height]
+                ,shade: 0.1
+                ,maxmin: true
+                ,offset: '75px'
+                ,content: url
+                ,btn: ['确定','关闭'] //只是为了演示
+                ,yes : function(index, layero) { // 保存按钮回调函数
+                    layer.close(index); // 关闭弹出层
+                }
+                ,btn2 : function(index, layero) { // 取消按钮回调函数
+                    layer.close(index); // 关闭弹出层
+                    /*reloadTable.reload();*/
+                },zIndex: layer.zIndex
+            });
+        }
+    });
+
+</script>
+</body>
+</html>

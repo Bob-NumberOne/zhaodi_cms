@@ -1,0 +1,593 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+<title>mainmenuinfo(主菜单信息表)</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gbk"/>
+<style>
+body, td {
+font-family: 微软雅黑;
+font-size: 12px;
+line-height: 150%;
+}
+table {
+width: 100%;
+background-color: #ccc;
+margin: 5px 0;
+word-break: break-all;
+}
+td {
+	background-color: #fff;
+	padding: 3px;
+padding-left: 10px;
+}
+thead td {
+	text-align: left;
+font-weight: bold;
+background-color: #eee;
+}
+a:link, a:visited, a:active {
+color: #015FB6;
+text-decoration: none;
+}
+a:hover {
+color: #E33E06;
+}
+.tablename {
+margin-top: 30px;
+}
+.outdiv {
+width: 1000px;
+margin: 40px auto;
+text-align: left;
+}
+
+</style>
+</head>
+<body>
+<center>
+<div class="outdiv">
+<div class="tablename">
+<b>表名：mainmenuinfo</b>
+</div>
+<div>中文名称：主菜单信息表</div>
+<div>表类型： </div>
+<a href='index.html' style='float: right;'>返回目录</a><div>说明：</div>
+<table cellspacing="1" cellpadding="0">
+ <colgroup>
+  <col width="50px">
+  <col width="190px">
+  <col width="190px">
+  <col width="80px">
+  <col width="80px">
+  <col width="70px">
+  <col width="40px">
+  <col width="60px">
+  <col width="40px">
+  <col width="200px">
+ </colgroup>
+ <thead>
+  <tr>
+   <td>序号</td>
+   <td>中文名称</td>
+   <td>英文名称</td>
+   <td>数据类型</td>
+   <td>长度</td>
+   <td>允许空值</td>
+   <td>主键</td>
+   <td>默认值</td>
+   <td>自增</td>
+   <td>说明</td>
+  </tr>
+ </thead> 
+ <tbody>
+  <tr>
+   <td style="text-align: center;">1</td>
+   <td>主菜单信息Id</td>
+   <td>id</td>
+   <td align="center">int</td>
+   <td align="center"></td>
+   <td align="center"> N </td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>　</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">2</td>
+   <td> 菜单信息名称html标签Id</td>
+   <td>labelId</td>
+   <td align="center">int</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>　</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">3</td>
+   <td> 菜单名称</td>
+   <td>menuName</td>
+   <td align="center">varchar</td>
+   <td align="center">1000</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>如果菜单不是通过html标签的到，而是直接重数据库表中的得到的，就记录菜单名称的字段</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">4</td>
+   <td> 菜单的链接地址</td>
+   <td>linkAddress</td>
+   <td align="center">varchar</td>
+   <td align="center">2000</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>　</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">5</td>
+   <td> </td>
+   <td>parentFrame</td>
+   <td align="center">varchar</td>
+   <td align="center">1000</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>　</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">6</td>
+   <td> </td>
+   <td>defaultParentId</td>
+   <td align="center">int</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>　</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">7</td>
+   <td> 默认的菜单等级，恢复系统默认设置时使用</td>
+   <td>defaultLevel</td>
+   <td align="center">int</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>　</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">8</td>
+   <td> 默认的顺序号，恢复系统默认设置时使用</td>
+   <td>defaultIndex</td>
+   <td align="center">int</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>　</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">9</td>
+   <td> 不使用</td>
+   <td>needRightToVisible</td>
+   <td align="center">char</td>
+   <td align="center">1</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>　</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">10</td>
+   <td> 不使用</td>
+   <td>rightDetailToVisible</td>
+   <td align="center">varchar</td>
+   <td align="center">1000</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>　</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">11</td>
+   <td> 不使用</td>
+   <td>needRightToView</td>
+   <td align="center">char</td>
+   <td align="center">1</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>　</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">12</td>
+   <td> 不使用</td>
+   <td>rightDetailToView</td>
+   <td align="center">varchar</td>
+   <td align="center">1000</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>　</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">13</td>
+   <td> 不使用</td>
+   <td>needSwitchToVisible</td>
+   <td align="center">char</td>
+   <td align="center">1</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>　</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">14</td>
+   <td> 不使用</td>
+   <td>switchClassNameToVisible</td>
+   <td align="center">varchar</td>
+   <td align="center">1000</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>　</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">15</td>
+   <td> 不使用</td>
+   <td>switchMethodNameToVisible</td>
+   <td align="center">varchar</td>
+   <td align="center">1000</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>　</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">16</td>
+   <td> 不使用</td>
+   <td>needSwitchToView</td>
+   <td align="center">char</td>
+   <td align="center">1</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>　</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">17</td>
+   <td> 不使用</td>
+   <td>switchClassNameToView</td>
+   <td align="center">varchar</td>
+   <td align="center">1000</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>　</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">18</td>
+   <td> 不使用</td>
+   <td>switchMethodNameToView</td>
+   <td align="center">varchar</td>
+   <td align="center">1000</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>　</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">19</td>
+   <td> 是否使用自定义名称</td>
+   <td>useCustomName</td>
+   <td align="center">char</td>
+   <td align="center">1</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>　</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">20</td>
+   <td> 自定义菜单名称</td>
+   <td>customName</td>
+   <td align="center">varchar</td>
+   <td align="center">1000</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>　</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">21</td>
+   <td> 相关联的模块Id</td>
+   <td>relatedModuleId</td>
+   <td align="center">int</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>　</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">22</td>
+   <td> 菜单图标</td>
+   <td>iconUrl</td>
+   <td align="center">varchar</td>
+   <td align="center">1000</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>　</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">23</td>
+   <td> 自定义菜单名称_英文</td>
+   <td>customName_e</td>
+   <td align="center">varchar</td>
+   <td align="center">1000</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>　</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">24</td>
+   <td> 是否自定义菜单</td>
+   <td>isCustom</td>
+   <td align="center">int</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>　</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">25</td>
+   <td> 父菜单的Id</td>
+   <td>parentId</td>
+   <td align="center">int</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>如果是顶级菜单，值为Null</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">26</td>
+   <td> 菜单等级</td>
+   <td>menuLevel</td>
+   <td align="center">int</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>0、代表顶级主菜单；在main.jsp的Applet，apXPDropDown传入的参数menuItems中用{|名称}表示。1、代表一级菜单；用{|名称,链接地址 ,mainFrame}表示）。2、代表二级菜单；用{||名称,链接地址 ,mainFrame}表示）。3、代表三级菜单；用{|||名称,链接地址 ,mainFrame}表示</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">27</td>
+   <td> </td>
+   <td>baseTarget</td>
+   <td align="center">varchar</td>
+   <td align="center">1000</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>　</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">28</td>
+   <td> 创建菜单被引用的分部</td>
+   <td>refersubid</td>
+   <td align="center">int</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>-1:没有引用,0:总部 大于0：分部id</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">29</td>
+   <td> 模块</td>
+   <td>module</td>
+   <td align="center">varchar</td>
+   <td align="center">1000</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>　</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">30</td>
+   <td> 自定义菜单名称_繁体</td>
+   <td>customName_t</td>
+   <td align="center">varchar</td>
+   <td align="center">1000</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>　</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">31</td>
+   <td> 顶部菜单图标</td>
+   <td>topIconUrl</td>
+   <td align="center">varchar</td>
+   <td align="center">1000</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>　</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">32</td>
+   <td> 顶部菜单简称</td>
+   <td>topmenuname</td>
+   <td align="center">varchar</td>
+   <td align="center">1000</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>　</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">33</td>
+   <td> 顶部菜单简称_英文</td>
+   <td>topname_e</td>
+   <td align="center">varchar</td>
+   <td align="center">1000</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>　</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">34</td>
+   <td> 顶部菜单简称_繁体</td>
+   <td>topname_t</td>
+   <td align="center">varchar</td>
+   <td align="center">1000</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>　</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">35</td>
+   <td> 应用描述</td>
+   <td>appdesc</td>
+   <td align="center">varchar</td>
+   <td align="center">1000</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>　</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">36</td>
+   <td> 应用图标</td>
+   <td>appicon</td>
+   <td align="center">varchar</td>
+   <td align="center">1000</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>　</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">37</td>
+   <td> 菜单样式</td>
+   <td>menucss</td>
+   <td align="center">varchar</td>
+   <td align="center">1000</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>　</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">37</td>
+   <td>是否高级</td>
+   <td>isAdvance</td>
+   <td align="center">int</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td></td>
+  </tr> 
+  <tr>
+   <td style="text-align: center;">37</td>
+   <td>所属模块</td>
+   <td>fromModule</td>
+   <td align="center">int</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td></td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">37</td>
+   <td>菜单类型</td>
+   <td>menuType</td>
+   <td align="center">int</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td></td>
+  </tr> 
+  <tr>
+   <td style="text-align: center;">37</td>
+   <td></td>
+   <td>displayUsage</td>
+   <td align="center">int</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td></td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">37</td>
+   <td>高级菜单选择内容</td>
+   <td>selectedContent</td>
+   <td align="center">VARCHAR2</td>
+   <td align="center">4000</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td></td>
+  </tr>
+ </tbody>
+</table>
+</div>
+</center>
+</body>
+</html>
+

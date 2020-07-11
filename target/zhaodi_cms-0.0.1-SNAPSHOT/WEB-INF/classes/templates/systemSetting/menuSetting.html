@@ -1,0 +1,321 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>雷达图案例</title><!-- 这里设定了项目根路径,后面使用到路径的地方正常填写即可 -->
+    <base th:href="${#request.getContextPath()}+'/'">
+    <link rel="stylesheet" href="js/layui/css/layui.css"  media="all">
+<!--    <link rel="stylesheet" href="layuiAdmin/css/public.css" media="all">-->
+    <link rel="stylesheet" href="css/patent/patentCom.css"  media="all">
+    <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
+    <script type="text/javascript" src="js/layui/layui.js"></script>
+    <!-- 引入 ECharts 文件 -->
+    <script src="echarts/echarts.min.js"></script>
+    <style>
+        .layui-form-label.required:after{
+            content:"*";
+            color:red;
+            position: absolute;
+            top:10px;
+            left:15px;
+        }
+        #mainForm input{
+            width: 400px;
+        }
+    </style>
+</head>
+<body style="margin: 0;padding: 0">
+<div class="layuimini-container">
+    <div class="layuimini-main">
+        <div class="layui-row layui-col-space15">
+            <div class="layui-col-xs4">
+                <div class="layui-col-md12">
+                    <div class="layui-card layui-form">
+                        <div class="layui-card-header"><i class="fa fa-bar-chart icon"></i><span style="font-size: 16px;font-weight: 800;">菜单树</span>
+                        </div>
+                        <!--树形-->
+                        <div style="overflow-y:auto;overflow-x:auto;">
+                            <div class="layui-card-body">
+                                <div id="menuTree" class="demo-tree-more"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="layui-col-xs8">
+                <div class="layui-col-md12">
+                    <div class="layui-card">
+                        <div class="layui-card-header" style="font-size: 16px;font-weight: 800;"><i class="fa fa-bar-chart icon"></i><span id="menuTitle">菜单资源信息</span><span id="menuHou"></span>
+                        </div>
+                        <div class="layui-card-body">
+                            <div class="panel panel-default">
+                                <div id="hh" class="panel-body" style="width: auto;height: 900px;">
+                                    <!-- 菜单树编辑页面 -->
+                                    <input type="text" style="display: none" id="MyGrade">
+                                    <form id="menuForm" class="layui-form">
+                                        <input type="text" style="display: none" name="menuType" id="menuType" value="1">
+                                        <input type="text" style="display: none" name="parentId" id="parentId">
+                                        <input type="text" style="display: none" name="menuId" id="menuId">
+                                        <div>
+                                            <div id="mainForm">
+                                                <div class="layui-form-item">
+                                                    <label class="layui-form-label required">菜单名称</label>
+                                                    <div class="layui-input-block">
+                                                        <input type="text" name="menuName" lay-verify="required" lay-reqtext="菜单名称不能为空" placeholder="请输入菜单名称"  class="layui-input">
+                                                    </div>
+                                                </div>
+                                                <div class="layui-form-item">
+                                                    <label class="layui-form-label">菜单路径</label>
+                                                    <div class="layui-input-block">
+                                                        <input type="text" name="href"  class="layui-input">
+                                                    </div>
+                                                </div>
+                                                <div class="layui-form-item">
+                                                    <label class="layui-form-label">菜单图标</label>
+                                                    <div class="layui-input-block">
+                                                        <input type="text" name="icon"  placeholder="请输入菜单图标"  value="" class="layui-input">
+                                                        <div style="color: gray;font-size: 12px;">图标设置如：fa fa-address-book</div>
+                                                    </div>
+                                                </div>
+                                                <div class="layui-form-item layui-form-text">
+                                                    <label class="layui-form-label">菜单等级</label>
+                                                    <div class="layui-input-block">
+                                                        <input name="grade" placeholder="请输入菜单等级"  lay-verify="number" lay-reqtext="菜单等级不能为空" class="layui-input">
+                                                    </div>
+                                                </div>
+                                                <div class="layui-form-item">
+                                                    <label class="layui-form-label required">菜单顺序</label>
+                                                    <div class="layui-input-block">
+                                                        <input type="text" name="sorting"  placeholder="请输入菜单顺序" lay-verify="number" lay-reqtext="菜单顺序不能为空"  value="" class="layui-input">
+                                                    </div>
+                                                </div>
+
+                                                <div class="layui-form-item">
+                                                    <label class="layui-form-label required">是否启用</label>
+                                                    <div class="layui-input-block"  style="width: 400px">
+                                                        <select id="flag" name="flag" lay-filter="flag" style="width: 400px" lay-verify="required" lay-reqtext="请选择是否启用">
+                                                            <option value=""></option>
+                                                            <option value="1">启用</option>
+                                                            <option value="2">停用</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+
+                                                <div class="layui-form-item">
+                                                    <label class="layui-form-label">创建人</label>
+                                                    <div class="layui-input-block">
+                                                        <input type="text" name="creater"  class="layui-input" disabled="disabled">
+                                                    </div>
+                                                </div>
+
+                                                <div class="layui-form-item">
+                                                    <label class="layui-form-label">创建时间</label>
+                                                    <div class="layui-input-block">
+                                                        <input type="text" name="creatTime"  class="layui-input" disabled="disabled">
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="layui-form-item" id="buttonItem">
+                                                <div class="layui-input-block">
+                                                    <input type="button" class="layui-btn test" id="addNext" value="添加下级节点">
+                                                    <input type="button" class="layui-btn test" id="addSame" value="添加同级节点">
+                                                    <input type="button" class="layui-btn test" lay-submit lay-filter="saveBtn" value="确认保存">
+                                                    <input type="button" class="layui-btn test" id="deleteNode" value="删除">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
+<script type="text/javascript" src="js/serializejson.min.js"></script>
+<script type="text/javascript"  th:inline="none">
+    var screen_height=$(window).height()-20; //浏览器当前窗口可视区域高度
+    var screen_width=$(window).width(); //浏览器当前窗口可视区域宽度
+    $(".layui-card").css("height",screen_height-20);
+    $(".panel-body").css("height",screen_height-100);
+    $(".layui-card-body").css("height",screen_height-143);
+    layui.use(['tree', 'util','form','transfer'], function(){
+        var $ = layui.jquery
+            ,tree = layui.tree
+            ,form= layui.form
+            ,layer = layui.layer;
+        function getMenuTree(){
+            var datas=[];
+            $.ajax({
+                async: false,
+                url: 'basic/getMenuTree.xmj',
+                data: {},
+                dataType: 'json',
+                type: 'GET',
+                success: function (data) {
+                    datas=data
+                },
+                error:function(request){
+                    alert("请求失败");
+                }
+            });
+            //基本演示
+            tree.render({
+                elem: '#menuTree'
+                ,data: datas
+                ,showCheckbox: false  //是否显示复选框
+                ,id: 'demoId1'
+                ,isJump: true //是否允许点击节点时弹出新窗口跳转
+                ,onlyIconControl: true  //是否仅允许节点左侧图标控制展开收缩
+                ,click: function(obj){
+                    $("#menuType").val("1");
+                    $("#menuHou").html("");
+                    var data=obj.data;
+                    var menuId = data.id;  //获取当前点击的节点ID
+                    $("#menuTitle").html(data.title);
+                    //根据menuID查询对应详细信息
+                    getMenuById(menuId);
+                }
+            });
+        }
+        //根据menuID查询对应详细信息
+        function getMenuById(menuId) {
+            /*layer.msg(menuId);*/
+            $.ajax({
+                async: false,
+                url: 'basic/getMenuById.xmj',
+                data: {"menuId":menuId},
+                dataType: 'json',
+                type: 'GET',
+                success: function (data) {
+                    //页面赋值
+                    setFormValue(data);
+                },
+                error:function(request){
+                    layer.msg("请求失败");
+                }
+            });
+        }
+        //页面赋值
+        function setFormValue(data) {
+            $("#MyGrade").val(data.grade);
+            $("#menuForm input[name='parentId']").val(data.parentId);
+            $("#menuForm input[name='menuId']").val(data.menuId);
+            $("#menuForm input[name='menuName']").val(data.menuName);
+            $("#menuForm input[name='href']").val(data.href);
+            $("#menuForm input[name='grade']").val(data.grade);
+            $("#menuForm input[name='sorting']").val(data.sorting);
+            $("#flag").val(data.flag);
+            layui.form.render('select');//layui必须使用，坑我一天了
+            $("#menuForm input[name='creater']").val(data.creater);
+            $("#menuForm input[name='icon']").val(data.icon);
+            $("#menuForm input[name='creatTime']").val(data.creatTime);
+        }
+        getMenuTree();
+        //监听提交
+        form.on('submit(saveBtn)', function(obj){
+            var formData=$("#menuForm").serializeJSON();
+            $.ajax({
+                async: false,
+                url: 'basic/updateMenuByType.xmj',
+                data: formData,
+                dataType: 'json',
+                type: 'POST',
+                success: function (data) {
+                    //页面刷新
+                    var code=data.code;
+                    var msgs=data.msg;
+                    layer.msg(msgs);
+                    if(code==1){
+                        $("#menuTitle").html("菜单资源信息");
+                        $("#menuHou").html("");
+                        getMenuTree();
+                        Clear();
+                    }
+                },
+                error:function(request){
+                    layer.msg("网络异常！");
+                    return false;
+                }
+            });
+        });
+        //清理页面数据
+        function Clear(){
+            $("#mainForm input").val("");
+            $("#flag").val("");
+            layui.form.render('select');//layui必须使用，坑我一天了
+        }
+        //添加下级节点
+        $("#addNext").click(function(){
+            var grade=parseInt($("#MyGrade").val())+1;
+            Clear();
+            $("#menuHou").html(">添加下级节点");
+            $("#menuType").val("2");
+            $("#menuForm input[name='grade']").val(grade);
+        });
+        //添加同级节点
+        $("#addSame").click(function(){
+            var grade=parseInt($("#MyGrade").val());
+            Clear();
+            $("#menuHou").html(">添加同级节点");
+            $("#menuType").val("3");
+            $("#menuForm input[name='grade']").val(grade);
+        });
+        //删除
+        $("#deleteNode").click(function(){
+            var menuId=$("#menuId").val();
+            var menuType=$("#menuType").val();
+            if(menuId=="" || menuType!="1"){
+                layer.msg("请选择需要删除的节点！");
+            }else{
+                layer.open({
+                    type: 1
+                    ,title: false //不显示标题栏
+                    ,closeBtn: false
+                    ,area: '300px;'
+                    ,id: 'LAY_layuipro1cl1' //设定一个id，防止重复弹出
+                    ,btn: ['确定', '取消']
+                    ,btnAlign: 'c'
+                    ,moveType: 1 //拖拽模式，0或者1
+                    ,content: '<div style="padding: 50px; line-height: 22px; background-color: #393D49; color: #fff; font-weight: 300;">确定删除吗？</div>'
+                    ,success: function(layero){
+                    },yes: function(index, layero) {//确定操作
+                        $.ajax({
+                            async: false,
+                            url: 'basic/deleteMenuTree.xmj',
+                            data: {"menuId":menuId},
+                            dataType: 'json',
+                            type: 'GET',
+                            success: function (data) {
+                                //页面刷新
+                                var msg=data.msg;
+                                var code=data.code;
+                                layer.close(index); //如果设定了yes回调，需进行手工关闭
+                                layer.msg(msg);
+                                if(code==1){
+                                    $("#menuId").val("");
+                                    $("#menuTitle").html("菜单资源信息");
+                                    $("#menuHou").html("");
+                                    getMenuTree();
+                                    Clear();
+                                }
+                            },
+                            error:function(request){
+                                layer.msg("网络异常！");
+                            }
+                        });
+                    }
+                });
+
+            }
+
+        });
+
+    });
+</script>

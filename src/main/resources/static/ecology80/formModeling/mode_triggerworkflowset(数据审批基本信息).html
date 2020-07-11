@@ -1,0 +1,197 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+<title>mode_triggerworkflowset(数据审批基本信息)</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gbk"/>
+<style>
+body, td {
+font-family: 微软雅黑;
+font-size: 12px;
+line-height: 150%;
+}
+table {
+width: 100%;
+background-color: #ccc;
+margin: 5px 0;
+word-break: break-all;
+}
+td {
+	background-color: #fff;
+	padding: 3px;
+padding-left: 10px;
+}
+thead td {
+	text-align: left;
+font-weight: bold;
+background-color: #eee;
+}
+a:link, a:visited, a:active {
+color: #015FB6;
+text-decoration: none;
+}
+a:hover {
+color: #E33E06;
+}
+.tablename {
+margin-top: 30px;
+}
+.outdiv {
+width: 1000px;
+margin: 40px auto;
+text-align: left;
+}
+
+</style>
+</head>
+<body>
+<center>
+<div class="outdiv">
+<div class="tablename">
+<b>表名：mode_triggerworkflowset</b>
+</div>
+<div>中文名称：数据审批基本信息</div>
+<div>表类型： </div>
+<a href='index.html' style='float: right;'>返回目录</a><div>说明：</div>
+<table cellspacing="1" cellpadding="0"> 
+ <colgroup> 
+  <col width="5%"> 
+  <col width="10%"> 
+  <col width="10%"> 
+  <col width="10%"> 
+  <col width="8%"> 
+  <col width="8%"> 
+  <col width="8%"> 
+  <col width="8%"> 
+  <col width="8%"> 
+  <col width="25%">
+ </colgroup> 
+ <thead> 
+  <tr> 
+   <td>序号</td> 
+   <td>中文名称</td> 
+   <td>英文名称</td> 
+   <td>数据类型</td> 
+   <td>长度</td> 
+   <td>允许空值</td> 
+   <td>主键</td> 
+   <td>默认值</td> 
+   <td>自增</td> 
+   <td>说明</td>
+  </tr>
+ </thead> 
+ <tbody> 
+  <tr> 
+   <td style="text-align: center;">1</td> 
+   <td>id</td> 
+   <td>id</td> 
+   <td align="center">int</td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td></td> 
+   <td></td>
+  </tr> 
+  <tr> 
+   <td style="text-align: center;">2</td> 
+   <td>模块名称</td> 
+   <td>modeid</td> 
+   <td align="center">int</td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td></td> 
+   <td>模块id，对应modeinfo表的id</td>
+  </tr> 
+  <tr> 
+   <td style="text-align: center;">3</td> 
+   <td>被触发流程类型</td> 
+   <td>workflowid</td> 
+   <td align="center">int</td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td></td> 
+   <td>工作流程id，对应workflow_base中的id，只有自定义的新表单的流程才能作为被触发的流程</td>
+  </tr> 
+  <tr> 
+   <td style="text-align: center;">4</td> 
+   <td>被触发流程创建人</td> 
+   <td>wfcreater</td> 
+   <td align="center">int</td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td></td> 
+   <td>被触发流程创建人<br>1:模块当前操作人<br>2:模块创建人<br>3:模块人力资源相关字段</td>
+  </tr> 
+  <tr> 
+   <td style="text-align: center;">5</td> 
+   <td>模块人力资源相关字段</td> 
+   <td>wfcreaterfieldid</td> 
+   <td align="center">int</td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td></td> 
+   <td>被触发流程创建人，从表单建模字段中取值时对应的字段id，对应workflow_billfield表的id</td>
+  </tr> 
+  <tr> 
+   <td style="text-align: center;">6</td> 
+   <td>流程触发成功回写</td> 
+   <td>successwriteback</td> 
+   <td align="center">varchar</td> 
+   <td align="center">4000</td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td></td> 
+   <td>触发审批流成功或者失败的时候，可以设置回写值，用来修改当前模块某些主字段的值，比如:a='2'，<br> 如果要修改多个字段的值，请用","将多个字段的值隔开，比如a='2',b='3',c='abc'，<br> 其中a,b,c是指表单中数据库字段名。</td>
+  </tr> 
+  <tr> 
+   <td style="text-align: center;">7</td> 
+   <td>流程触发失败回写</td> 
+   <td>failwriteback</td> 
+   <td align="center">varchar</td> 
+   <td align="center">4000</td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td></td> 
+   <td>同上</td>
+  </tr> 
+  <tr> 
+   <td style="text-align: center;">8</td> 
+   <td>流程触发条件</td> 
+   <td>showcondition</td> 
+   <td align="center">text</td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td></td> 
+   <td>流程触发条件sql</td>
+  </tr> 
+  <tr> 
+   <td style="text-align: center;">9</td> 
+   <td>流程触发条件显示名称</td> 
+   <td>showconditioncn</td> 
+   <td align="center">text</td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td></td> 
+   <td>流程触发条件sql对应的中文显示名称</td>
+  </tr>
+ </tbody>
+</table>
+</div>
+</center>
+</body>
+</html>
+

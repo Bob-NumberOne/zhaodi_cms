@@ -1,0 +1,389 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+<title>hrsyncset(HR同步配置基本信息表)</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gbk"/>
+<style>
+body, td {
+font-family: 微软雅黑;
+font-size: 12px;
+line-height: 150%;
+}
+table {
+width: 100%;
+background-color: #ccc;
+margin: 5px 0;
+word-break: break-all;
+}
+td {
+	background-color: #fff;
+	padding: 3px;
+padding-left: 10px;
+}
+thead td {
+	text-align: left;
+font-weight: bold;
+background-color: #eee;
+}
+a:link, a:visited, a:active {
+color: #015FB6;
+text-decoration: none;
+}
+a:hover {
+color: #E33E06;
+}
+.tablename {
+margin-top: 30px;
+}
+.outdiv {
+width: 1000px;
+margin: 40px auto;
+text-align: left;
+}
+
+</style>
+</head>
+<body>
+<center>
+<div class="outdiv">
+<div class="tablename">
+<b>表名：hrsyncset</b>
+</div>
+<div>中文名称：HR同步配置基本信息表</div>
+<div>表类型： </div>
+<a href='index.html' style='float: right;'>返回目录</a><div>说明：</div>
+<table cellspacing="1" cellpadding="0">
+ <thead>
+  <tr>
+   <td style="width: 40px;">序号</td>
+   <td>中文名称</td>
+   <td>英文名称</td>
+   <td>数据类型</td>
+   <td>长度</td>
+   <td>允许空值</td>
+   <td>主键</td>
+   <td>默认值</td>
+   <td>自增</td>
+   <td>说明</td>
+  </tr>
+ </thead> 
+ <tbody>
+  <tr>
+   <td style="text-align: center;">1</td> 
+   <td>主键</td> 
+   <td>id</td>
+   <td align="center">int</td>
+   <td align="center"></td>
+   <td align="center"> N </td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td> Y </td>
+   <td></td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">2</td> 
+   <td>是否启用</td> 
+   <td>isuselhr</td>
+   <td align="center">char</td>
+   <td align="center">1</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td> 
+   <td><p>0：禁止</p> <p>1：启用</p></td> 
+  </tr>
+  <tr>
+   <td style="text-align: center;">3</td>
+   <td>集成方式</td> 
+   <td>intetype</td>
+   <td align="center">char</td>
+   <td align="center">1</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td> 
+   <td><p>1：数据库</p> <p>2：Webservice接口方式</p> <p>3：自定义方式</p></td> 
+  </tr>
+  <tr>
+   <td style="text-align: center;">4</td> 
+   <td>数据源</td> 
+   <td>dbsource</td>
+   <td align="center">varchar</td>
+   <td align="center">1000</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td></td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">5</td> 
+   <td>webservice地址</td> 
+   <td>webserviceurl</td>
+   <td align="center">varchar</td>
+   <td align="center">1000</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td></td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">6</td>
+   <td>WEBSERVICE调用方式</td> 
+   <td>invoketype</td>
+   <td align="center">char</td>
+   <td align="center">1</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td> 
+   <td>已废弃</td> 
+  </tr>
+  <tr>
+   <td style="text-align: center;">7</td> 
+   <td>自定义参数</td> 
+   <td>customparams</td>
+   <td align="center">varchar</td>
+   <td align="center">1000</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>已废弃</td> 
+  </tr>
+  <tr>
+   <td style="text-align: center;">8</td> 
+   <td>自定义接口名称</td> 
+   <td>custominterface</td>
+   <td align="center">varchar</td>
+   <td align="center">1000</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td></td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">9</td> 
+   <td>同步方式</td> 
+   <td>hrmethod</td>
+   <td align="center">char</td>
+   <td align="center">1</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td></td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">10</td> 
+   <td>同步间隔时间</td> 
+   <td>TimeModul</td>
+   <td align="center">char</td>
+   <td align="center">1</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td> 
+   <td><p>0：周</p> <p>1：月</p> <p>2：年</p> <p>3：天</p></td> 
+  </tr>
+  <tr>
+   <td style="text-align: center;">11</td> 
+   <td>星期</td> 
+   <td>Frequency</td>
+   <td align="center">int</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td> 
+   <td><p>1：周一</p> <p>2：周二</p> <p>3：周三</p> <p>4：周四</p> <p>5：周五</p> <p>6：周六</p> <p>7：周日</p></td> 
+  </tr>
+  <tr>
+   <td style="text-align: center;">12</td> 
+   <td>天</td> 
+   <td>frequencyy</td>
+   <td align="center">int</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td> 
+   <td><p>1-28：对应1-28日</p> </td> 
+  </tr>
+  <tr>
+   <td style="text-align: center;">13</td> 
+   <td>取值类型</td> 
+   <td>createType</td>
+   <td align="center">char</td>
+   <td align="center">1</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td> 
+   <td><p>0：正数</p> <p>1：倒数</p> <p>说明：TimeModul=1或2有效</p></td> 
+  </tr>
+  <tr>
+   <td style="text-align: center;">14</td> 
+   <td>同步时间</td> 
+   <td>createTime</td>
+   <td align="center">char</td>
+   <td align="center">8</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td> 
+   <td>格式：03:00，表示3点正</td> 
+  </tr>
+  <tr>
+   <td style="text-align: center;">15</td> 
+   <td>岗位表名称</td> 
+   <td>jobtable</td>
+   <td align="center">varchar</td>
+   <td align="center">1000</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td> 
+   <td>数据库方式，intetype=1有效</td> 
+  </tr>
+  <tr>
+   <td style="text-align: center;">16</td> 
+   <td>部门表名称</td> 
+   <td>depttable</td>
+   <td align="center">varchar</td>
+   <td align="center">1000</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>数据库方式，intetype=1有效</td> 
+  </tr>
+  <tr>
+   <td style="text-align: center;">17</td> 
+   <td>分部表名称</td> 
+   <td>subcomtable</td>
+   <td align="center">varchar</td>
+   <td align="center">1000</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>数据库方式，intetype=1有效</td> 
+  </tr>
+  <tr>
+   <td style="text-align: center;">18</td> 
+   <td>人员表名称</td> 
+   <td>hrmtable</td>
+   <td align="center">varchar</td>
+   <td align="center">1000</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>数据库方式，intetype=1有效</td> 
+  </tr>
+  <tr>
+   <td style="text-align: center;">19</td> 
+   <td>同步岗位接口方法</td> 
+   <td>jobmothod</td>
+   <td align="center">varchar</td>
+   <td align="center">1000</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td> 
+   <td>Webservice接口方式，intetype=2有效</td> 
+  </tr>
+  <tr>
+   <td style="text-align: center;">20</td> 
+   <td>同步部门接口方法</td> 
+   <td>deptmothod</td>
+   <td align="center">varchar</td>
+   <td align="center">1000</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>Webservice接口方式，intetype=2有效</td> 
+  </tr>
+  <tr>
+   <td style="text-align: center;">21</td> 
+   <td>同步分部接口方法</td> 
+   <td>subcommothod</td>
+   <td align="center">varchar</td>
+   <td align="center">1000</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>Webservice接口方式，intetype=2有效</td> 
+  </tr>
+  <tr>
+   <td style="text-align: center;">22</td> 
+   <td>同步人员接口方法</td> 
+   <td>hrmmethod</td>
+   <td align="center">varchar</td>
+   <td align="center">1000</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>Webservice接口方式，intetype=2有效</td> 
+  </tr>
+  <tr>
+   <td style="text-align: center;">23</td> 
+   <td>岗位参数</td> 
+   <td>jobparam</td>
+   <td align="center">varchar</td>
+   <td align="center">2000</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>已废弃</td> 
+  </tr>
+  <tr>
+   <td style="text-align: center;">24</td> 
+   <td>部门参数</td> 
+   <td>deptparam</td>
+   <td align="center">varchar</td>
+   <td align="center">2000</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>已废弃</td> 
+  </tr>
+  <tr>
+   <td style="text-align: center;">25</td> 
+   <td>分部参数</td> 
+   <td>subcomparam</td>
+   <td align="center">varchar</td>
+   <td align="center">2000</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>已废弃</td> 
+  </tr>
+  <tr>
+   <td style="text-align: center;">26</td> 
+   <td>人员参数</td> 
+   <td>hrmparam</td>
+   <td align="center">varchar</td>
+   <td align="center">2000</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>已废弃</td> 
+  </tr> 
+ </tbody>
+</table>
+</div>
+</center>
+</body>
+</html>
+

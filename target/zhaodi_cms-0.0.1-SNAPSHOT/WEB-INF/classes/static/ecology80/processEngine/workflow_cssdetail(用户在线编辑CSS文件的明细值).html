@@ -1,0 +1,353 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+<title>workflow_cssdetail(用户在线编辑CSS文件的明细值)</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gbk"/>
+<style>
+body, td {
+font-family: 微软雅黑;
+font-size: 12px;
+line-height: 150%;
+}
+table {
+width: 100%;
+background-color: #ccc;
+margin: 5px 0;
+word-break: break-all;
+}
+td {
+	background-color: #fff;
+	padding: 3px;
+padding-left: 10px;
+}
+thead td {
+	text-align: left;
+font-weight: bold;
+background-color: #eee;
+}
+a:link, a:visited, a:active {
+color: #015FB6;
+text-decoration: none;
+}
+a:hover {
+color: #E33E06;
+}
+.tablename {
+margin-top: 30px;
+}
+.outdiv {
+width: 1000px;
+margin: 40px auto;
+text-align: left;
+}
+
+</style>
+</head>
+<body>
+<center>
+<div class="outdiv">
+<div class="tablename">
+<b>表名：workflow_cssdetail</b>
+</div>
+<div>中文名称：用户在线编辑CSS文件的明细值</div>
+<div>表类型： </div>
+<a href='index.html' style='float: right;'>返回目录</a><div>说明：</div>
+<table cellspacing="1" cellpadding="0">
+ <colgroup>
+  <col width="50px">
+  <col width="190px">
+  <col width="190px">
+  <col width="80px">
+  <col width="80px">
+  <col width="70px">
+  <col width="40px">
+  <col width="60px">
+  <col width="40px">
+  <col width="200px">
+ </colgroup>
+ <thead>
+  <tr>
+   <td>序号</td>
+   <td>中文名称</td>
+   <td>英文名称</td>
+   <td>数据类型</td>
+   <td>长度</td>
+   <td>允许空值</td>
+   <td>主键</td>
+   <td>默认值</td>
+   <td>自增</td>
+   <td>说明</td>
+  </tr>
+ </thead> 
+ <tbody>
+  <tr>
+   <td style="text-align: center;">1</td>
+   <td>ID</td>
+   <td>detailid</td>
+   <td align="center">int</td>
+   <td align="center"></td>
+   <td align="center"> N </td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td> Y </td>
+   <td>　</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">2</td>
+   <td> 外边框颜色</td>
+   <td>outerbordercolor</td>
+   <td align="center">varchar</td>
+   <td align="center">1000</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>　</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">3</td>
+   <td> 外边框宽度</td>
+   <td>outerbordersize</td>
+   <td align="center">int</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>　</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">4</td>
+   <td> 流程标题字号</td>
+   <td>requestnamesize</td>
+   <td align="center">int</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>　</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">5</td>
+   <td> 流程标题颜色</td>
+   <td>requestnamecolor</td>
+   <td align="center">varchar</td>
+   <td align="center">1000</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>　</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">6</td>
+   <td> 流程标题字体</td>
+   <td>requestnamefont</td>
+   <td align="center">varchar</td>
+   <td align="center">1000</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>　</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">7</td>
+   <td> 流程标题是否粗体</td>
+   <td>requestnamestyle0</td>
+   <td align="center">int</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>1、是</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">8</td>
+   <td> 流程标题是否斜体</td>
+   <td>requestnamestyle1</td>
+   <td align="center">int</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>1、是</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">9</td>
+   <td> 主表边框颜色</td>
+   <td>maintablecolor</td>
+   <td align="center">varchar</td>
+   <td align="center">1000</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>　</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">10</td>
+   <td> 主表边框宽度</td>
+   <td>maintablesize</td>
+   <td align="center">int</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>　</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">11</td>
+   <td> 主表字段显示名字号</td>
+   <td>mainfieldsize</td>
+   <td align="center">int</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>　</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">12</td>
+   <td> 主表字段显示名颜色</td>
+   <td>mainfieldcolor</td>
+   <td align="center">varchar</td>
+   <td align="center">1000</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>　</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">13</td>
+   <td> 主表字段显示名单元格底色</td>
+   <td>mainfieldnamecolor</td>
+   <td align="center">varchar</td>
+   <td align="center">1000</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>　</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">14</td>
+   <td> 主表字段值单元格底色</td>
+   <td>mainfieldvaluecolor</td>
+   <td align="center">varchar</td>
+   <td align="center">1000</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>　</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">15</td>
+   <td> 主表单元格高度</td>
+   <td>mainfieldheight</td>
+   <td align="center">int</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>　</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">16</td>
+   <td> 明细表边框颜色</td>
+   <td>detailtablecolor</td>
+   <td align="center">varchar</td>
+   <td align="center">1000</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>　</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">17</td>
+   <td> 明细表边框宽度</td>
+   <td>detailtablesize</td>
+   <td align="center">int</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>　</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">18</td>
+   <td> 明细表单元格高度</td>
+   <td>detailfieldheight</td>
+   <td align="center">int</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>　</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">19</td>
+   <td> 明细表字段显示名字号</td>
+   <td>detailfieldsize</td>
+   <td align="center">int</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>　</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">20</td>
+   <td> 明细表字段显示名颜色</td>
+   <td>detailfieldcolor</td>
+   <td align="center">varchar</td>
+   <td align="center">1000</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>　</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">21</td>
+   <td> 明细表字段显示名单元格底色</td>
+   <td>detailfieldnamecolor</td>
+   <td align="center">varchar</td>
+   <td align="center">1000</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>　</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">22</td>
+   <td> 明细表字段值单元格底色</td>
+   <td>detailfieldvaluecolor</td>
+   <td align="center">varchar</td>
+   <td align="center">1000</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>　</td>
+  </tr> 
+ </tbody>
+</table>
+</div>
+</center>
+</body>
+</html>
+

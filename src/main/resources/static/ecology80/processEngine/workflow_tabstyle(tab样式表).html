@@ -1,0 +1,389 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+<title>workflow_tabstyle()</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gbk"/>
+<style>
+body, td {
+font-family: 微软雅黑;
+font-size: 12px;
+line-height: 150%;
+}
+table {
+width: 100%;
+background-color: #ccc;
+margin: 5px 0;
+word-break: break-all;
+}
+td {
+	background-color: #fff;
+	padding: 3px;
+padding-left: 10px;
+}
+thead td {
+	text-align: left;
+font-weight: bold;
+background-color: #eee;
+}
+a:link, a:visited, a:active {
+color: #015FB6;
+text-decoration: none;
+}
+a:hover {
+color: #E33E06;
+}
+.tablename {
+margin-top: 30px;
+}
+.outdiv {
+width: 1000px;
+margin: 40px auto;
+text-align: left;
+}
+
+</style>
+</head>
+<body>
+<center>
+<div class="outdiv">
+<div class="tablename">
+<b>表名：workflow_tabstyle</b>
+</div>
+<div>中文名称：tab样式表</div>
+<div>表类型： </div>
+<a href='index.html' style='float: right;'>返回目录</a><div>说明：</div>
+<table cellspacing="1" cellpadding="0">
+ <colgroup>
+  <col width="50px">
+  <col width="190px">
+  <col width="190px">
+  <col width="80px">
+  <col width="80px">
+  <col width="70px">
+  <col width="40px">
+  <col width="60px">
+  <col width="40px">
+  <col width="200px">
+ </colgroup>
+ <thead>
+  <tr>
+   <td width="7%">序号</td>
+   <td width="13%">中文名称</td>
+   <td width="21%">英文名称</td>
+   <td width="11%">数据类型</td>
+   <td width="7%">长度</td>
+   <td width="11%">允许空值</td>
+   <td width="7%">主键</td>
+   <td width="9%">默认值</td>
+   <td width="7%">自增</td>
+   <td width="7%">说明</td>
+  </tr>
+ </thead> 
+ <tbody>
+  <tr>
+   <td style="text-align: center;">1</td>
+   <td>样式ID</td>
+   <td>styleid</td>
+   <td align="center">int</td>
+   <td align="center"></td>
+   <td align="center"> N </td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td> Y </td>
+   <td>　</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">2</td>
+   <td>样式名称</td>
+   <td>stylename</td>
+   <td align="center">varchar</td>
+   <td align="center">500</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>　</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">3</td>
+   <td>背景图片</td>
+   <td>image_bg</td>
+   <td align="center">varchar</td>
+   <td align="center">500</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>　</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">4</td>
+   <td>分隔图片</td>
+   <td>image_sep</td>
+   <td align="center">varchar</td>
+   <td align="center">500</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>　</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">5</td>
+   <td>分隔图片宽度</td>
+   <td>image_sepwidth</td>
+   <td align="center">int</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>　</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">6</td>
+   <td>背景图-左，选中</td>
+   <td>sel_bgleft</td>
+   <td align="center">varchar</td>
+   <td align="center">500</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>　</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">7</td>
+   <td>背景图宽度-左，选中</td>
+   <td>sel_bgleftwidth</td>
+   <td align="center">int</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>　</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">8</td>
+   <td>背景图-居中，选中</td>
+   <td>sel_bgmiddle</td>
+   <td align="center">varchar</td>
+   <td align="center">500</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>　</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">9</td>
+   <td>背景图-右，选中</td>
+   <td>sel_bgright</td>
+   <td align="center">varchar</td>
+   <td align="center">500</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>　</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">10</td>
+   <td>背景图宽度-右，选中</td>
+   <td>sel_bgrightwidth</td>
+   <td align="center">int</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>　</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">11</td>
+   <td>选中颜色</td>
+   <td>sel_color</td>
+   <td align="center">varchar</td>
+   <td align="center">50</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>　</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">12</td>
+   <td>选中字体大小</td>
+   <td>sel_fontsize</td>
+   <td align="center">int</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>　</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">13</td>
+   <td>选中类</td>
+   <td>sel_family</td>
+   <td align="center">varchar</td>
+   <td align="center">50</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>　</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">14</td>
+   <td>选中粗体</td>
+   <td>sel_bold</td>
+   <td align="center">int</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>　</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">15</td>
+   <td>选中斜体</td>
+   <td>sel_italic</td>
+   <td align="center">int</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>　</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">16</td>
+   <td>背景图-左，未选中</td>
+   <td>unsel_bgleft</td>
+   <td align="center">varchar</td>
+   <td align="center">500</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>　</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">17</td>
+   <td>背景图宽度-左，未选中</td>
+   <td>unsel_bgleftwidth</td>
+   <td align="center">int</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>　</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">18</td>
+   <td>背景图-居中，未选中</td>
+   <td>unsel_bgmiddle</td>
+   <td align="center">varchar</td>
+   <td align="center">500</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>　</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">19</td>
+   <td>背景图-右，未选中</td>
+   <td>unsel_bgright</td>
+   <td align="center">varchar</td>
+   <td align="center">500</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>　</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">20</td>
+   <td>背景图宽度-右，未选中</td>
+   <td>unsel_bgrightwidth</td>
+   <td align="center">int</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>　</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">21</td>
+   <td>未选中颜色</td>
+   <td>unsel_color</td>
+   <td align="center">varchar</td>
+   <td align="center">50</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>　</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">22</td>
+   <td>未选中字体大小</td>
+   <td>unsel_fontsize</td>
+   <td align="center">int</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>　</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">23</td>
+   <td>未选中类</td>
+   <td>unsel_family</td>
+   <td align="center">varchar</td>
+   <td align="center">50</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>　</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">24</td>
+   <td>未选中粗体</td>
+   <td>unsel_bold</td>
+   <td align="center">int</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>　</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">25</td>
+   <td>未选中斜体</td>
+   <td>unsel_italic</td>
+   <td align="center">int</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>　</td>
+  </tr> 
+ </tbody>
+</table>
+</div>
+</center>
+</body>
+</html>
+

@@ -1,0 +1,224 @@
+<!DOCTYPE html >
+<html  xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <!-- 这里设定了项目根路径,后面使用到路径的地方正常填写即可 -->
+    <base th:href="${#request.getContextPath()}+'/'">
+    <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
+    <link rel="stylesheet" href="layuiAdmin/lib/layui-v2.5.5/css/layui.css"  media="all">
+    <script src="layuiAdmin/lib/layui-v2.5.5/layui.js" charset="utf-8"></script>
+    <style>
+        .wb_img{text-align: center;vertical-align:middle;background: #fff;}
+        .layui-card {border:1px solid #f2f2f2;border-radius:5px;background-color: #f2f2f2;}
+        .wb_imgs{height: 240px;margin: 30px 15px;overflow-y:auto;background-color: #fff;padding: 5px;}
+        .icon {margin-right:10px;color:#1aa094;}
+        .icon-cray {color:#ffb800!important;}
+        .icon-blue {color:#1e9fff!important;}
+        .icon-tip {color:#ff5722!important;}
+        .layuimini-qiuck-module {text-align:center;margin-top: 10px}
+        .layuimini-qiuck-module a i {display:inline-block;width:100%;height:60px;line-height:60px;text-align:center;border-radius:2px;font-size:30px;background-color:#F8F8F8;color:#333;transition:all .3s;-webkit-transition:all .3s;}
+        .layuimini-qiuck-module a cite {position:relative;top:2px;display:block;color:#666;text-overflow:ellipsis;overflow:hidden;white-space:nowrap;font-size:14px;}
+        .welcome-module {width:100%;height:210px;}
+        .panel {background-color:#fff;border:1px solid transparent;border-radius:3px;-webkit-box-shadow:0 1px 1px rgba(0,0,0,.05);box-shadow:0 1px 1px rgba(0,0,0,.05)}
+        .panel-body {padding:10px}
+        .panel-title {margin-top:0;margin-bottom:0;font-size:12px;color:inherit}
+        .label {display:inline;padding:.2em .6em .3em;font-size:75%;font-weight:700;line-height:1;color:#fff;text-align:center;white-space:nowrap;vertical-align:baseline;border-radius:.25em;margin-top: .3em;}
+        .layui-red {color:red}
+        .main_btn > p {height:40px;}
+        .layui-card{margin-top: 20px;}
+        .layuimini-container{margin-left: 20px;}
+        .layui-bg-number {background-color:#F8F8F8;}
+        .layuimini-notice:hover {background:#f6f6f6;}
+        .layuimini-notice {padding:7px 16px;clear:both;font-size:12px !important;cursor:pointer;position:relative;transition:background 0.2s ease-in-out;}
+        .layuimini-notice-title,.layuimini-notice-label {
+            padding-right: 70px !important;text-overflow:ellipsis!important;overflow:hidden!important;white-space:nowrap!important;}
+        .layuimini-notice-title {line-height:28px;font-size:14px;}
+        .layuimini-notice-extra {position:absolute;top:50%;margin-top:-8px;right:16px;display:inline-block;height:16px;color:#999;}
+    </style>
+</head>
+<body>
+<div class="layuimini-container">
+    <div class="layuimini-main">
+        <div class="layui-row layui-col-space15">
+            <div class="layui-col-xs4">
+                <div class="layui-col-md12">
+                    <div class="layui-card">
+                        <div class="layui-card-header" style="font-size: 16px;font-weight: 800;"><i class="fa fa-bar-chart icon"></i>特色专利
+                        </div>
+                        <div class="layui-card-body">
+                            <div class="layui-carousel" id="setIamge1" lay-filter="setIamge1">
+                                <div carousel-item="">
+
+                                </div>
+                            </div>
+                        </div>
+                        <div id="img_text1"  class="wb_imgs">
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="layui-col-xs4">
+                <div class="layui-col-md12">
+                    <div class="layui-card">
+                        <div class="layui-card-header" style="font-size: 16px;font-weight: 800;"><i class="fa fa-bar-chart icon"></i>新技术
+                        </div>
+                        <div class="layui-card-body">
+                            <div class="layui-carousel" id="setIamge2"  lay-filter="setIamge2">
+                                <div carousel-item="">
+
+                                </div>
+                            </div>
+                        </div>
+                        <div id="img_text2"  class="wb_imgs">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="layui-col-xs4">
+                <div class="layui-col-md12">
+                    <div class="layui-card">
+                        <div class="layui-card-header" style="font-size: 16px;font-weight: 800;"><i class="fa fa-bar-chart icon"></i>风险专利
+                        </div>
+                        <div class="layui-card-body">
+                            <div class="layui-carousel" id="setIamge3"  lay-filter="setIamge3">
+                                <div carousel-item="">
+
+                                </div>
+                            </div>
+                        </div>
+                        <div id="img_text3" class="wb_imgs">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    var screen_height=$(window).height()-20; //浏览器当前窗口可视区域高度
+    var screen_width=$(window).width(); //浏览器当前窗口可视区域宽度
+    $(".layui-card").css("height",screen_height);
+    $(".layuimini-container").css("width",screen_width-40);
+   /* var card_width=screen_width-160;*/
+    layui.use(['carousel', 'form'], function(){
+        var carousel = layui.carousel
+            ,form = layui.form;
+        var card_width=$(".layui-card-body").width();
+        console.log(card_width);
+        var str1="";
+        var str2="";
+        var str3="";
+        var title1="";
+        var title2="";
+        var title3="";
+        var data1=[];
+        var data2=[];
+        var data3=[];
+        $.ajax({
+            async: false,
+            url: 'file/queryPic.xmj',
+            data: {},
+            dataType: 'json',
+            type: 'post',
+            success: function (data) {
+                data1=data.m1;
+                data2=data.m2;
+                data3=data.m3;
+                /*                alert(data1[0]);*/
+                for(var i=0;i<data1.length;i++){
+                    if (i==0){
+                        title1+='<div>'+data1[i].zy+'</div>';
+                    }else {
+                        title1+='<div style="display: none">'+data1[i].zy+'</div>';
+                    }
+
+                    str1+='<div class="wb_img" style="background: #fff;"><a href="'+data1[i].url+'" target="_blank"><div style="width: 100%;height: 440px;display: table-cell;vertical-align: middle;"><img style="max-height: 440px;width:auto;height:auto;" src="'+data1[i].img_url+'"></div></a></div>';
+                }
+                $("#img_text1").html(title1);
+                $("#setIamge1 div").html(str1);
+                $("#setIamge1 img").css("max-width",card_width);
+/*                $("#setIamge1 img").css("height","440px");*/
+                for(var j=0;j<data2.length;j++){
+                    if(j==0){
+                        title2+='<div>'+data2[j].zy+'</div>';
+                    }else {
+                        title2+='<div style="display: none">'+data2[j].zy+'</div>';
+                    }
+
+                    str2+='<div class="wb_img" style="background: #fff"><a href="'+data2[j].url+'" target="_blank"><div style="width: 100%;height: 440px;display: table-cell;vertical-align: middle;"><img style="max-height: 440px;width:auto;height:auto;" src="'+data2[j].img_url+'"></div></a></div>';
+                }
+                $("#img_text2").html(title2);
+                $("#setIamge2 div").html(str2);
+                $("#setIamge2 img").css("max-width",card_width);
+/*                $("#setIamge2 img").css("height","440px");*/
+
+                for(var k=0;k<data3.length;k++){
+                    if(k== 0){
+                        title3+='<div >'+data3[k].zy+'</div>';
+                    }else {
+                        title3+='<div style="display: none">'+data3[k].zy+'</div>';
+                    }
+
+                    str3+='<div class="wb_img" style="background: #fff;"><a href="'+data3[k].url+'" target="_blank"><div style="width: 100%;height: 440px;display: table-cell;vertical-align: middle;"><img id="" style="max-height: 440px;width:auto;height:auto;"  src="'+data3[k].img_url+'"></div></a></div>';
+                }
+                $("#img_text3").html(title3);
+                $("#setIamge3 div").html(str3);
+                $("#setIamge3 img").css("max-width",card_width);
+/*                $("#setIamge3 img").css("height","440px");*/
+            },error(e){
+                alert("网络错误！");
+            }
+        });
+
+        //图片轮播
+        carousel.render({
+            elem: '#setIamge1'
+            ,width: card_width
+            ,height: '440px'
+            ,interval: 5000
+            ,indicator: 'none'
+            ,anim: 'updown' //切换动画方式
+        });
+
+        //监听轮播切换事件
+        carousel.on('change(setIamge1)', function(obj){ //test1来源于对应HTML容器的 lay-filter="test1" 属性值
+            var num=obj.index;
+            $("#img_text1 div").css("display","none");
+            $("#img_text1 div:eq("+num+")").css("display","block");
+        });
+
+        carousel.render({
+            elem: '#setIamge2'
+            ,width: card_width
+            ,height: '440px'
+            ,interval: 5000
+            ,indicator: 'none'
+            ,anim: 'updown' //切换动画方式
+        });
+        //监听轮播切换事件
+        carousel.on('change(setIamge2)', function(obj){ //test1来源于对应HTML容器的 lay-filter="test1" 属性值
+            var num=obj.index;
+            $("#img_text2 div").css("display","none");
+            $("#img_text2 div:eq("+num+")").css("display","block");
+        });
+        carousel.render({
+            elem: '#setIamge3'
+            ,width: card_width
+            ,height: '440px'
+            ,interval: 5000
+            ,indicator: 'none'
+            ,anim: 'updown' //切换动画方式
+        });
+        //监听轮播切换事件
+        carousel.on('change(setIamge3)', function(obj){ //test1来源于对应HTML容器的 lay-filter="test1" 属性值
+            var num=obj.index;
+            $("#img_text3 div").css("display","none");
+            $("#img_text3 div:eq("+num+")").css("display","block");
+        });
+
+    });
+</script>
+</body>
+</html>

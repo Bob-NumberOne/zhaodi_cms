@@ -1,0 +1,247 @@
+<!DOCTYPE HTML>
+<html  xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>ECharts</title>
+    <meta http-equiv="pragma" content="no-cache">
+    <meta http-equiv="cache-control" content="no-cache">
+    <meta http-equiv="expires" content="0">
+    <meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+    <meta http-equiv="description" content="This is my page">
+    <!-- 这里设定了项目根路径,后面使用到路径的地方正常填写即可 -->
+    <base th:href="${#request.getContextPath()}+'/'">
+    <link rel="stylesheet" href="js/layui/css/layui.css"  media="all">
+    <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
+    <script type="text/javascript" src="js/layui/layui.js"></script>
+</head>
+<body>
+<div class="layui-form">
+    <div class="layui-inline layui-form-item" style="margin-left: 100px;padding-top: 20px;">
+        <div style="display: none" id="patentTree" class="demo-tree-more"></div>
+        <input type="text" id="belongToBlock" name="belongToBlock" style="display: none">
+        <button id="getTreeBtn" type="button" class="layui-btn layui-btn-primary" style="margin-left: 20px;">分块筛选</button>
+    </div>
+</div>
+<!-- 为 ECharts 准备一个具备大小（宽高）的 DOM -->
+<div id="main" style="width: 600px; height: 400px;"></div>
+</body>
+<script src="echarts/echarts.min.js"></script>
+<!--<script type="text/javascript" src="js/patent/getBlockTree.js"></script>-->
+<script type="text/javascript">
+    var screen_height=$(window).height()-10; //浏览器当前窗口可视区域高度
+    var screen_width=$(window).width(); //浏览器当前窗口可视区域宽度
+    $("#main").css("height",screen_height-65);
+    $("#main").css("width",screen_width-20);
+    function initData(block) {
+        var arr1=[];
+        var arr2=[];
+        var arr3=[];
+        var max=0;
+        $.ajax({
+            async: false,
+            url: 'patent/getEffectBubble.xmj',
+            data: {"block":block},
+            dataType: 'json',
+            type: 'GET',
+            success: function (data) {
+                if(data.length){
+                    arr1=data[0];
+                    arr2=data[1];
+                    var lastData=data[2];
+                    for(var i=0;i<lastData.length;i++){
+                        var arr4=[];
+                        arr4[0]=lastData[i].jg;
+                        arr4[1]=lastData[i].xg;
+                        arr4[2]=lastData[i].num;
+                        arr3.push(arr4);
+                        var number=parseInt(lastData[i].num);
+                        if(number>max){
+                            max=number;
+                        }
+                    }
+                }
+            }
+        })
+
+        // 基于准备好的dom，初始化echarts实例
+        var myChart = echarts.init(document.getElementById('main'));
+        // 指定图表的配置项和数据
+        var option = {
+            title : {
+                //text : 'ECharts 入门示例'
+            },
+            tooltip : {
+                trigger: 'item',
+                padding: 10,
+                backgroundColor: '#222',
+                borderColor: '#777',
+                borderWidth: 1,
+                formatter:function(params){
+                    var value = params.value;
+                    return '<div style="border-bottom: 1px solid rgba(255,255,255,0.3); font-size: 18px;padding-bottom: 7px;margin-bottom: 7px;">'
+                        + 'X轴和Y轴参数对比：'
+                        + '</div>'
+                        + 'X轴：'+value[0] + '<br>'
+                        + 'Y轴：'+ value[1] + '<br>'
+                        + '交叉值：'+ value[2] + '<br>';
+                }
+
+            },
+            legend : {
+                //data : [ '销量' ]
+            },
+            grid:{
+                y2:100
+            },
+            xAxis : [ {
+                name : '分块',
+                type : 'category',
+                data : arr1,
+                axisLabel:{
+                    /*formatter:function(value){
+                        return value.split("").join("\n");
+                    }*/
+                    interval:0,
+                    margin: 10,
+                    rotate:40,
+                    formatter : function(params){
+                        var newParamsName = "";// 最终拼接成的字符串
+                        var paramsNameNumber = params.length;// 文字的个数
+                        var provideNumber = 10;// 每行能显示的字的个数
+                        var rowNumber = Math.ceil(paramsNameNumber / provideNumber);// 换行的话，需要显示几行，向上取整
+                        /**
+                         * 判断标签的个数是否大于规定的个数， 如果大于，则进行换行处理 如果不大于，即等于或小于，就返回原标签
+                         */
+                        // 条件等同于rowNumber>1
+                        if (paramsNameNumber > provideNumber) {
+                            /** 循环每一行,p表示行 */
+                            for (var p = 0; p < rowNumber; p++) {
+                                var tempStr = "";// 表示每一次截取的字符串
+                                var start = p * provideNumber;// 开始截取的位置
+                                var end = start + provideNumber;// 结束截取的位置
+                                // 此处特殊处理最后一行的索引值
+                                if (p == rowNumber - 1) {
+                                    // 最后一次不换行
+                                    tempStr = params.substring(start, paramsNameNumber);
+                                } else {
+                                    // 每一次拼接字符串并换行
+                                    tempStr = params.substring(start, end) + "\n";
+                                }
+                                newParamsName += tempStr;// 最终拼成的字符串
+                            }
+
+                        } else {
+                            // 将旧标签的值赋给新标签
+                            newParamsName = params;
+                        }
+                        //将最终的字符串返回
+                        return newParamsName
+                    }
+                }
+            } ], //axisCommon,
+            yAxis : [ {
+                name : '技术效果',
+                type : 'category',
+                data : arr2
+            } ],
+            series : [ {
+                name : '销量',
+                type : 'scatter',
+                data : arr3,
+                symbolSize : function(data) {
+                    if(max<=5){
+                        return data[2]*20;
+                    }else if(5<max && max<=10){
+                        return data[2]*10;
+                    }else if(10<max && max<=20){
+                        return data[2]*4;
+                    }else if(20<max && max<=50){
+                        return data[2]*3;
+                    }else if(50<max && max<=100){
+                        return data[2]*2;
+                    }else if (100<max){
+                        return data[2];
+                    }
+                },
+            } ]
+        };
+
+        // 使用刚指定的配置项和数据显示图表。
+        myChart.setOption(option);
+    }
+    //初始化数据
+    initData("");
+    var font_Color="rgb(95, 184, 120)";
+    layui.use(['tree'],function() {
+        var tree = layui.tree
+            ,layer = layui.layer;
+        function findTreeArr(arr, newArr) {
+            if(arr!=null){
+                for (let i = 0; i < arr.length; i++) {
+                    newArr.push(arr[i].id);
+                    findTreeArr(arr[i].children, newArr);
+                }
+            }
+            return newArr;
+        }
+        function getBlockTree() {
+            var datas={};
+            $.ajax({
+                async: false,
+                url: 'OA/getAtreeMenu.xmj',
+                data: {},
+                dataType: 'json',
+                type: 'GET',
+                success: function (data) {
+                    datas=data
+                },
+                error:function(request){
+                    alert("请求失败");
+                }
+            });
+            tree.render({
+                elem: '#patentTree'
+                ,data: datas
+                ,showCheckbox: false  //是否显示复选框
+                ,id: 'getBlockTree'
+                ,isJump: true //是否允许点击节点时弹出新窗口跳转
+                ,onlyIconControl: true  //是否仅允许节点左侧图标控制展开收缩
+                ,click: function(obj){
+                    var data = obj.data;  //获取当前点击的节点数据
+                    var arr=[];
+                    arr.push(data.id);
+                    arr= findTreeArr(data.children,arr);
+                    $("#belongToBlock").val(arr);
+                    $("#patentTree .layui-tree-txt").css("color","rgb(85, 85, 85)");
+                    $("#patentTree div[data-id='"+data.id+"'] .layui-tree-txt").css("color",font_Color);
+                    //重新刷新页面
+                    initData($("#belongToBlock").val());
+                }
+            });
+        }
+        $("#getTreeBtn").click(function () {
+            //获取数据
+            if($("#patentTree").children().length==0){
+                getBlockTree();
+            }
+            //打开一个树的弹框，点击后调用查询方法
+            layer.open({
+                type: 1
+                ,title: ['分块筛选', 'font-size:18px;'] //不显示标题栏
+                ,closeBtn: false
+                ,area: [ '600px', '700px']
+                ,id: 'LAY_layui_patent' //设定一个id，防止重复弹出
+                ,maxmin: true
+                ,btn: ['确定', '取消']
+                ,btnAlign: 'c'
+                ,moveType: 1 //拖拽模式，0或者1
+                ,content: $('#patentTree')
+                ,success: function(index){
+                    //关闭窗口
+                    /*layer.close(index); //如果设定了yes回调，需进行手工关闭*/
+                }
+            });
+        })
+    })
+
+</script>
+</html>

@@ -1,0 +1,1121 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+<title>crm_customerinfo(客户信息表)</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gbk"/>
+<style>
+body, td {
+font-family: 微软雅黑;
+font-size: 12px;
+line-height: 150%;
+}
+table {
+width: 100%;
+background-color: #ccc;
+margin: 5px 0;
+word-break: break-all;
+}
+td {
+	background-color: #fff;
+	padding: 3px;
+padding-left: 10px;
+}
+thead td {
+	text-align: left;
+font-weight: bold;
+background-color: #eee;
+}
+a:link, a:visited, a:active {
+color: #015FB6;
+text-decoration: none;
+}
+a:hover {
+color: #E33E06;
+}
+.tablename {
+margin-top: 30px;
+}
+.outdiv {
+width: 1000px;
+margin: 40px auto;
+text-align: left;
+}
+
+</style>
+</head>
+<body>
+<center>
+<div class="outdiv">
+<div class="tablename">
+<b>表名：crm_customerinfo</b>
+</div>
+<div>中文名称：客户信息表</div>
+<div>表类型： </div>
+<a href='index.html' style='float: right;'>返回目录</a><div>说明：</div>
+<table cellspacing="1" cellpadding="0"> 
+ <colgroup> 
+  <col width="50px"> 
+  <col width="190px"> 
+  <col width="190px"> 
+  <col width="80px"> 
+  <col width="80px"> 
+  <col width="70px"> 
+  <col width="40px"> 
+  <col width="60px"> 
+  <col width="40px"> 
+  <col width="200px"> 
+ </colgroup> 
+ <thead> 
+  <tr class="firstRow"> 
+   <td> 序号 </td> 
+   <td> 中文名称 </td> 
+   <td> 英文名称 </td> 
+   <td> 数据类型 </td> 
+   <td> 长度 </td> 
+   <td> 允许空值 </td> 
+   <td> 主键 </td> 
+   <td> 默认值 </td> 
+   <td> 自增 </td> 
+   <td> 说明 </td> 
+  </tr> 
+ </thead> 
+ <tbody> 
+  <tr> 
+   <td style="text-align: center;"> 1 </td> 
+   <td> ID </td> 
+   <td> id </td> 
+   <td align="center"> int </td> 
+   <td align="center"></td> 
+   <td align="center"> N </td> 
+   <td align="center"> Y </td> 
+   <td align="center"></td> 
+   <td> Y </td> 
+   <td> 　 </td> 
+  </tr> 
+  <tr> 
+   <td style="text-align: center;"> 2 </td> 
+   <td> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 客户名称 </td> 
+   <td> name </td> 
+   <td align="center"> varchar </td> 
+   <td align="center"> 1000 </td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td></td> 
+   <td> 　 </td> 
+  </tr> 
+  <tr> 
+   <td style="text-align: center;"> 3 </td> 
+   <td> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 名称语种ID </td> 
+   <td> language </td> 
+   <td align="center"> int </td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td></td> 
+   <td> 　 </td> 
+  </tr> 
+  <tr> 
+   <td style="text-align: center;"> 4 </td> 
+   <td> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 客户英文名称,简称 </td> 
+   <td> engname </td> 
+   <td align="center"> varchar </td> 
+   <td align="center"> 1000 </td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td></td> 
+   <td> 　 </td> 
+  </tr> 
+  <tr> 
+   <td style="text-align: center;"> 5 </td> 
+   <td> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 地址1 </td> 
+   <td> address1 </td> 
+   <td align="center"> varchar </td> 
+   <td align="center"> 1000 </td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td></td> 
+   <td> 　 </td> 
+  </tr> 
+  <tr> 
+   <td style="text-align: center;"> 6 </td> 
+   <td> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 地址2 </td> 
+   <td> address2 </td> 
+   <td align="center"> varchar </td> 
+   <td align="center"> 1000 </td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td></td> 
+   <td> 　 </td> 
+  </tr> 
+  <tr> 
+   <td style="text-align: center;"> 7 </td> 
+   <td> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 地址3 </td> 
+   <td> address3 </td> 
+   <td align="center"> varchar </td> 
+   <td align="center"> 1000 </td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td></td> 
+   <td> 　 </td> 
+  </tr> 
+  <tr> 
+   <td style="text-align: center;"> 8 </td> 
+   <td> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 邮编 </td> 
+   <td> zipcode </td> 
+   <td align="center"> varchar </td> 
+   <td align="center"> 1000 </td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td></td> 
+   <td> 　 </td> 
+  </tr> 
+  <tr> 
+   <td style="text-align: center;"> 9 </td> 
+   <td> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 城市 </td> 
+   <td> city </td> 
+   <td align="center"> int </td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td></td> 
+   <td> 　 </td> 
+  </tr> 
+  <tr> 
+   <td style="text-align: center;"> 10 </td> 
+   <td> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 国家 </td> 
+   <td> country </td> 
+   <td align="center"> int </td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td></td> 
+   <td> 　 </td> 
+  </tr> 
+  <tr> 
+   <td style="text-align: center;"> 11 </td> 
+   <td> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 省份 </td> 
+   <td> province </td> 
+   <td align="center"> int </td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td></td> 
+   <td> 　 </td> 
+  </tr> 
+  <tr> 
+   <td style="text-align: center;"> 12 </td> 
+   <td> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 县 </td> 
+   <td> county </td> 
+   <td align="center"> varchar </td> 
+   <td align="center"> 1000 </td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td></td> 
+   <td> 　 </td> 
+  </tr> 
+  <tr> 
+   <td style="text-align: center;"> 13 </td> 
+   <td> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 联系电话 </td> 
+   <td> phone </td> 
+   <td align="center"> varchar </td> 
+   <td align="center"> 1000 </td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td></td> 
+   <td> 　 </td> 
+  </tr> 
+  <tr> 
+   <td style="text-align: center;"> 14 </td> 
+   <td> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 传真 </td> 
+   <td> fax </td> 
+   <td align="center"> varchar </td> 
+   <td align="center"> 1000 </td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td></td> 
+   <td> 　 </td> 
+  </tr> 
+  <tr> 
+   <td style="text-align: center;"> 15 </td> 
+   <td> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 邮箱 </td> 
+   <td> email </td> 
+   <td align="center"> varchar </td> 
+   <td align="center"> 1000 </td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td></td> 
+   <td> 　 </td> 
+  </tr> 
+  <tr> 
+   <td style="text-align: center;"> 16 </td> 
+   <td> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 网址 </td> 
+   <td> website </td> 
+   <td align="center"> varchar </td> 
+   <td align="center"> 1000 </td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td></td> 
+   <td> 　 </td> 
+  </tr> 
+  <tr> 
+   <td style="text-align: center;"> 17 </td> 
+   <td> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 联系方式ID </td> 
+   <td> source </td> 
+   <td align="center"> int </td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td></td> 
+   <td> 为发现客户的途径 </td> 
+  </tr> 
+  <tr> 
+   <td style="text-align: center;"> 18 </td> 
+   <td> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 行业部门ID </td> 
+   <td> sector </td> 
+   <td align="center"> int </td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td></td> 
+   <td> 　 </td> 
+  </tr> 
+  <tr> 
+   <td style="text-align: center;"> 19 </td> 
+   <td> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 的 </td> 
+   <td> size_n </td> 
+   <td align="center"> int </td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td></td> 
+   <td> 　 </td> 
+  </tr> 
+  <tr> 
+   <td style="text-align: center;"> 20 </td> 
+   <td> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 管理人ID </td> 
+   <td> manager </td> 
+   <td align="center"> int </td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td></td> 
+   <td> HRM中resource的ID </td> 
+  </tr> 
+  <tr> 
+   <td style="text-align: center;"> 21 </td> 
+   <td> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 代理商 </td> 
+   <td> agent </td> 
+   <td align="center"> int </td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td></td> 
+   <td> 是从已有客户中找出类型为代理商的让他们选ID </td> 
+  </tr> 
+  <tr> 
+   <td style="text-align: center;"> 22 </td> 
+   <td> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 上一级客户的ID </td> 
+   <td> parentid </td> 
+   <td align="center"> int </td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td></td> 
+   <td> 　 </td> 
+  </tr> 
+  <tr> 
+   <td style="text-align: center;"> 23 </td> 
+   <td> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 部门（地区）信息的ID </td> 
+   <td> department </td> 
+   <td align="center"> int </td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td></td> 
+   <td> 　 </td> 
+  </tr> 
+  <tr> 
+   <td style="text-align: center;"> 24 </td> 
+   <td> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 财务代码 </td> 
+   <td> fincode </td> 
+   <td align="center"> int </td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td></td> 
+   <td> 　 </td> 
+  </tr> 
+  <tr> 
+   <td style="text-align: center;"> 25 </td> 
+   <td> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 结算货币种类ID </td> 
+   <td> currency </td> 
+   <td align="center"> int </td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td></td> 
+   <td> 　 </td> 
+  </tr> 
+  <tr> 
+   <td style="text-align: center;"> 26 </td> 
+   <td> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 合同金额ID </td> 
+   <td> contractlevel </td> 
+   <td align="center"> int </td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td></td> 
+   <td> 　 </td> 
+  </tr> 
+  <tr> 
+   <td style="text-align: center;"> 27 </td> 
+   <td> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 信用等级ID </td> 
+   <td> creditlevel </td> 
+   <td align="center"> int </td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td></td> 
+   <td> 　 </td> 
+  </tr> 
+  <tr> 
+   <td style="text-align: center;"> 28 </td> 
+   <td> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 信用等级之外的信用额度调整 </td> 
+   <td> creditoffset </td> 
+   <td align="center"> money </td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td></td> 
+   <td> 　 </td> 
+  </tr> 
+  <tr> 
+   <td style="text-align: center;"> 29 </td> 
+   <td> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 折扣率 </td> 
+   <td> discount </td> 
+   <td align="center"> real </td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td></td> 
+   <td> 　 </td> 
+  </tr> 
+  <tr> 
+   <td style="text-align: center;"> 30 </td> 
+   <td> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 增值税号码 </td> 
+   <td> taxnumber </td> 
+   <td align="center"> varchar </td> 
+   <td align="center"> 1000 </td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td></td> 
+   <td> 　 </td> 
+  </tr> 
+  <tr> 
+   <td style="text-align: center;"> 31 </td> 
+   <td> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 银行帐户 </td> 
+   <td> bankacount </td> 
+   <td align="center"> varchar </td> 
+   <td align="center"> 1000 </td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td></td> 
+   <td> 　 </td> 
+  </tr> 
+  <tr> 
+   <td style="text-align: center;"> 32 </td> 
+   <td> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 发票客户 </td> 
+   <td> invoiceacount </td> 
+   <td align="center"> int </td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td></td> 
+   <td> 为一个客户ID，如果为空则就是自己 </td> 
+  </tr> 
+  <tr> 
+   <td style="text-align: center;"> 33 </td> 
+   <td> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 送货类型ID </td> 
+   <td> deliverytype </td> 
+   <td align="center"> int </td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td></td> 
+   <td> 　 </td> 
+  </tr> 
+  <tr> 
+   <td style="text-align: center;"> 34 </td> 
+   <td> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 支付条件 </td> 
+   <td> paymentterm </td> 
+   <td align="center"> int </td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td></td> 
+   <td> 　 </td> 
+  </tr> 
+  <tr> 
+   <td style="text-align: center;"> 35 </td> 
+   <td> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 付款方式 </td> 
+   <td> paymentway </td> 
+   <td align="center"> int </td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td></td> 
+   <td> 　 </td> 
+  </tr> 
+  <tr> 
+   <td style="text-align: center;"> 36 </td> 
+   <td> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 销售确认书 </td> 
+   <td> saleconfirm </td> 
+   <td align="center"> int </td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td></td> 
+   <td> 　 </td> 
+  </tr> 
+  <tr> 
+   <td style="text-align: center;"> 37 </td> 
+   <td> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 信用卡号 </td> 
+   <td> creditcard </td> 
+   <td align="center"> varchar </td> 
+   <td align="center"> 1000 </td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td></td> 
+   <td> 　 </td> 
+  </tr> 
+  <tr> 
+   <td style="text-align: center;"> 38 </td> 
+   <td> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 信用卡到期日期 </td> 
+   <td> creditexpire </td> 
+   <td align="center"> varchar </td> 
+   <td align="center"> 1000 </td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td></td> 
+   <td> 　 </td> 
+  </tr> 
+  <tr> 
+   <td style="text-align: center;"> 39 </td> 
+   <td> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 相关文档的ID </td> 
+   <td> documentid </td> 
+   <td align="center"> int </td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td></td> 
+   <td> 　 </td> 
+  </tr> 
+  <tr> 
+   <td style="text-align: center;"> 40 </td> 
+   <td> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 图片id </td> 
+   <td> picid </td> 
+   <td align="center"> int </td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td></td> 
+   <td> 　 </td> 
+  </tr> 
+  <tr> 
+   <td style="text-align: center;"> 41 </td> 
+   <td> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 地址类型ID </td> 
+   <td> type </td> 
+   <td align="center"> int </td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td></td> 
+   <td> 　 </td> 
+  </tr> 
+  <tr> 
+   <td style="text-align: center;"> 42 </td> 
+   <td> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 当前类型起始日期 </td> 
+   <td> typebegin </td> 
+   <td align="center"> varchar </td> 
+   <td align="center"> 1000 </td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td></td> 
+   <td> 　 </td> 
+  </tr> 
+  <tr> 
+   <td style="text-align: center;"> 43 </td> 
+   <td> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 客户描述ID </td> 
+   <td> description </td> 
+   <td align="center"> int </td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td></td> 
+   <td> 　 </td> 
+  </tr> 
+  <tr> 
+   <td style="text-align: center;"> 44 </td> 
+   <td> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 客户状态ID </td> 
+   <td> status </td> 
+   <td align="center"> int </td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td></td> 
+   <td> 　 </td> 
+  </tr> 
+  <tr> 
+   <td style="text-align: center;"> 45 </td> 
+   <td> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 客户级别ID </td> 
+   <td> rating </td> 
+   <td align="center"> int </td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td></td> 
+   <td> 　 </td> 
+  </tr> 
+  <tr> 
+   <td style="text-align: center;"> 46 </td> 
+   <td> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 自定义日期1 </td> 
+   <td> datefield1 </td> 
+   <td align="center"> varchar </td> 
+   <td align="center"> 1000 </td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td></td> 
+   <td> 　 </td> 
+  </tr> 
+  <tr> 
+   <td style="text-align: center;"> 47 </td> 
+   <td> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 自定义日期1 </td> 
+   <td> datefield2 </td> 
+   <td align="center"> varchar </td> 
+   <td align="center"> 1000 </td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td></td> 
+   <td> 　 </td> 
+  </tr> 
+  <tr> 
+   <td style="text-align: center;"> 48 </td> 
+   <td> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 自定义日期1 </td> 
+   <td> datefield3 </td> 
+   <td align="center"> varchar </td> 
+   <td align="center"> 1000 </td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td></td> 
+   <td> 　 </td> 
+  </tr> 
+  <tr> 
+   <td style="text-align: center;"> 49 </td> 
+   <td> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 自定义日期1 </td> 
+   <td> datefield4 </td> 
+   <td align="center"> varchar </td> 
+   <td align="center"> 1000 </td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td></td> 
+   <td> 　 </td> 
+  </tr> 
+  <tr> 
+   <td style="text-align: center;"> 50 </td> 
+   <td> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 自定义日期1 </td> 
+   <td> datefield5 </td> 
+   <td align="center"> varchar </td> 
+   <td align="center"> 1000 </td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td></td> 
+   <td> 　 </td> 
+  </tr> 
+  <tr> 
+   <td style="text-align: center;"> 51 </td> 
+   <td> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 自定义数值1 </td> 
+   <td> numberfield1 </td> 
+   <td align="center"> float </td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td></td> 
+   <td> 　 </td> 
+  </tr> 
+  <tr> 
+   <td style="text-align: center;"> 52 </td> 
+   <td> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 自定义数值2 </td> 
+   <td> numberfield2 </td> 
+   <td align="center"> float </td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td></td> 
+   <td> 　 </td> 
+  </tr> 
+  <tr> 
+   <td style="text-align: center;"> 53 </td> 
+   <td> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 自定义数值3 </td> 
+   <td> numberfield3 </td> 
+   <td align="center"> float </td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td></td> 
+   <td> 　 </td> 
+  </tr> 
+  <tr> 
+   <td style="text-align: center;"> 54 </td> 
+   <td> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 自定义数值4 </td> 
+   <td> numberfield4 </td> 
+   <td align="center"> float </td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td></td> 
+   <td> 　 </td> 
+  </tr> 
+  <tr> 
+   <td style="text-align: center;"> 55 </td> 
+   <td> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 自定义数值5 </td> 
+   <td> numberfield5 </td> 
+   <td align="center"> float </td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td></td> 
+   <td> 　 </td> 
+  </tr> 
+  <tr> 
+   <td style="text-align: center;"> 56 </td> 
+   <td> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 自定义文本1 </td> 
+   <td> textfield1 </td> 
+   <td align="center"> varchar </td> 
+   <td align="center"> 1000 </td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td></td> 
+   <td> 　 </td> 
+  </tr> 
+  <tr> 
+   <td style="text-align: center;"> 57 </td> 
+   <td> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 自定义文本2 </td> 
+   <td> textfield2 </td> 
+   <td align="center"> varchar </td> 
+   <td align="center"> 1000 </td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td></td> 
+   <td> 　 </td> 
+  </tr> 
+  <tr> 
+   <td style="text-align: center;"> 58 </td> 
+   <td> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 自定义文本3 </td> 
+   <td> textfield3 </td> 
+   <td align="center"> varchar </td> 
+   <td align="center"> 1000 </td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td></td> 
+   <td> 　 </td> 
+  </tr> 
+  <tr> 
+   <td style="text-align: center;"> 59 </td> 
+   <td> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 自定义文本4 </td> 
+   <td> textfield4 </td> 
+   <td align="center"> varchar </td> 
+   <td align="center"> 1000 </td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td></td> 
+   <td> 　 </td> 
+  </tr> 
+  <tr> 
+   <td style="text-align: center;"> 60 </td> 
+   <td> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 自定义文本5 </td> 
+   <td> textfield5 </td> 
+   <td align="center"> varchar </td> 
+   <td align="center"> 1000 </td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td></td> 
+   <td> 　 </td> 
+  </tr> 
+  <tr> 
+   <td style="text-align: center;"> 61 </td> 
+   <td> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 自定义判断1 </td> 
+   <td> tinyintfield1 </td> 
+   <td align="center"> tinyint </td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td></td> 
+   <td> 　 </td> 
+  </tr> 
+  <tr> 
+   <td style="text-align: center;"> 62 </td> 
+   <td> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 自定义判断2 </td> 
+   <td> tinyintfield2 </td> 
+   <td align="center"> tinyint </td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td></td> 
+   <td> 　 </td> 
+  </tr> 
+  <tr> 
+   <td style="text-align: center;"> 63 </td> 
+   <td> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 自定义判断3 </td> 
+   <td> tinyintfield3 </td> 
+   <td align="center"> tinyint </td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td></td> 
+   <td> 　 </td> 
+  </tr> 
+  <tr> 
+   <td style="text-align: center;"> 64 </td> 
+   <td> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 自定义判断4 </td> 
+   <td> tinyintfield4 </td> 
+   <td align="center"> tinyint </td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td></td> 
+   <td> 　 </td> 
+  </tr> 
+  <tr> 
+   <td style="text-align: center;"> 65 </td> 
+   <td> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 自定义判断5 </td> 
+   <td> tinyintfield5 </td> 
+   <td align="center"> tinyint </td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td></td> 
+   <td> 　 </td> 
+  </tr> 
+  <tr> 
+   <td style="text-align: center;"> 66 </td> 
+   <td> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 是否删除 </td> 
+   <td> deleted </td> 
+   <td align="center"> tinyint </td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td></td> 
+   <td> 0-删除 </td> 
+  </tr> 
+  <tr> 
+   <td style="text-align: center;"> 67 </td> 
+   <td> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 中介机构 </td> 
+   <td> subcompanyid1 </td> 
+   <td align="center"> int </td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td></td> 
+   <td> 　 </td> 
+  </tr> 
+  <tr> 
+   <td style="text-align: center;"> 68 </td> 
+   <td> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 行业级别 </td> 
+   <td> seclevel </td> 
+   <td align="center"> int </td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"> 0 </td> 
+   <td></td> 
+   <td> 没有parent的为0，然后根据parent+1来确定 </td> 
+  </tr> 
+  <tr> 
+   <td style="text-align: center;"> 69 </td> 
+   <td> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 门户登陆帐号 </td> 
+   <td> PortalLoginid </td> 
+   <td align="center"> varchar </td> 
+   <td align="center"> 1000 </td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td></td> 
+   <td> 　 </td> 
+  </tr> 
+  <tr> 
+   <td style="text-align: center;"> 70 </td> 
+   <td> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 门户登陆密码 </td> 
+   <td> PortalPassword </td> 
+   <td align="center"> varchar </td> 
+   <td align="center"> 1000 </td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td></td> 
+   <td> 　 </td> 
+  </tr> 
+  <tr> 
+   <td style="text-align: center;"> 71 </td> 
+   <td> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 门户状态 </td> 
+   <td> PortalStatus </td> 
+   <td align="center"> tinyint </td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td></td> 
+   <td> 0：注册，1：是申请中，2：开通，3：冻结 </td> 
+  </tr> 
+  <tr> 
+   <td style="text-align: center;"> 72 </td> 
+   <td> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 创建日期 </td> 
+   <td> createdate </td> 
+   <td align="center"> varchar </td> 
+   <td align="center"> 1000 </td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td></td> 
+   <td> 　 </td> 
+  </tr> 
+  <tr> 
+   <td style="text-align: center;"> 73 </td> 
+   <td> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 背景资料 </td> 
+   <td> introductionDocid </td> 
+   <td align="center"> int </td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td></td> 
+   <td> 　 </td> 
+  </tr> 
+  <tr> 
+   <td style="text-align: center;"> 74 </td> 
+   <td> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 客户价值 </td> 
+   <td> evaluation </td> 
+   <td align="center"> int </td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td></td> 
+   <td> 　 </td> 
+  </tr> 
+  <tr> 
+   <td style="text-align: center;"> 75 </td> 
+   <td> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 信用金额额度 </td> 
+   <td> CreditAmount </td> 
+   <td align="center"> decimal </td> 
+   <td align="center"> 10,2 </td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td></td> 
+   <td> 　 </td> 
+  </tr> 
+  <tr> 
+   <td style="text-align: center;"> 76 </td> 
+   <td> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 信用期间 </td> 
+   <td> CreditTime </td> 
+   <td align="center"> int </td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td></td> 
+   <td> 　 </td> 
+  </tr> 
+  <tr> 
+   <td style="text-align: center;"> 77 </td> 
+   <td> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 银行名称 </td> 
+   <td> bankName </td> 
+   <td align="center"> varchar </td> 
+   <td align="center"> 1000 </td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td></td> 
+   <td> 　 </td> 
+  </tr> 
+  <tr> 
+   <td style="text-align: center;"> 78 </td> 
+   <td> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 帐户名称 </td> 
+   <td> accountName </td> 
+   <td align="center"> varchar </td> 
+   <td align="center"> 1000 </td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td></td> 
+   <td> 　 </td> 
+  </tr> 
+  <tr> 
+   <td style="text-align: center;"> 79 </td> 
+   <td> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 银行账号 </td> 
+   <td> accounts </td> 
+   <td align="center"> varchar </td> 
+   <td align="center"> 1000 </td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td></td> 
+   <td> 　 </td> 
+  </tr> 
+  <tr> 
+   <td style="text-align: center;"> 80 </td> 
+   <td> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 客户编号 </td> 
+   <td> crmcode </td> 
+   <td align="center"> varchar </td> 
+   <td align="center"> 1000 </td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td></td> 
+   <td> 　 </td> 
+  </tr> 
+  <tr> 
+   <td style="text-align: center;"> 81 </td> 
+   <td> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 性别 </td> 
+   <td> Sex </td> 
+   <td align="center"> tinyint </td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"> 0 </td> 
+   <td></td> 
+   <td> 　 </td> 
+  </tr> 
+  <tr> 
+   <td style="text-align: center;"> 82 </td> 
+   <td> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 身份证号 </td> 
+   <td> IDCardNo </td> 
+   <td align="center"> varchar </td> 
+   <td align="center"> 1000 </td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td></td> 
+   <td> 　 </td> 
+  </tr> 
+  <tr> 
+   <td style="text-align: center;"> 83 </td> 
+   <td> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 繁体名称 </td> 
+   <td> twname </td> 
+   <td align="center"> varchar </td> 
+   <td align="center"> 1000 </td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"> NULL </td> 
+   <td></td> 
+   <td> 　 </td> 
+  </tr> 
+  <tr> 
+   <td style="text-align: center;"> 84 </td> 
+   <td> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 介绍 </td> 
+   <td> introduction </td> 
+   <td align="center"> varchar </td> 
+   <td align="center"> 1000 </td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td></td> 
+   <td> 　 </td> 
+  </tr> 
+  <tr> 
+   <td style="text-align: center;"> 85 </td> 
+   <td> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 名称简拼 </td> 
+   <td> ecology_pinyin_search </td> 
+   <td align="center"> varchar </td> 
+   <td align="center"> 1000 </td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td></td> 
+   <td> 　 </td> 
+  </tr> 
+  <tr> 
+   <td style="text-align: center;"> 86 </td> 
+   <td> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 区县 </td> 
+   <td> district </td> 
+   <td align="center"> int </td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td></td> 
+   <td> 　 </td> 
+  </tr> 
+ </tbody> 
+</table>
+</div>
+</center>
+</body>
+</html>
+

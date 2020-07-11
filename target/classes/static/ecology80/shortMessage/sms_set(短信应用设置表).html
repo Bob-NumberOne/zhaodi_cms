@@ -1,0 +1,221 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+<title>sms_set(短信应用设置表)</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gbk"/>
+<style>
+body, td {
+font-family: 微软雅黑;
+font-size: 12px;
+line-height: 150%;
+}
+table {
+width: 100%;
+background-color: #ccc;
+margin: 5px 0;
+word-break: break-all;
+}
+td {
+	background-color: #fff;
+	padding: 3px;
+padding-left: 10px;
+}
+thead td {
+	text-align: left;
+font-weight: bold;
+background-color: #eee;
+}
+a:link, a:visited, a:active {
+color: #015FB6;
+text-decoration: none;
+}
+a:hover {
+color: #E33E06;
+}
+.tablename {
+margin-top: 30px;
+}
+.outdiv {
+width: 1000px;
+margin: 40px auto;
+text-align: left;
+}
+
+</style>
+</head>
+<body>
+<center>
+<div class="outdiv">
+<div class="tablename">
+<b>表名：sms_set</b>
+</div>
+<div>中文名称：短信应用设置表</div>
+<div>表类型： </div>
+<a href='index.html' style='float: right;'>返回目录</a><div>说明：</div>
+<table cellspacing="1" cellpadding="0">
+ <colgroup>
+  <col width="50px">
+  <col width="190px">
+  <col width="190px">
+  <col width="80px">
+  <col width="80px">
+  <col width="70px">
+  <col width="40px">
+  <col width="60px">
+  <col width="40px">
+  <col width="200px">
+ </colgroup>
+ <thead>
+  <tr>
+   <td>序号</td>
+   <td>中文名称</td>
+   <td>英文名称</td>
+   <td>数据类型</td>
+   <td>长度</td>
+   <td>允许空值</td>
+   <td>主键</td>
+   <td>默认值</td>
+   <td>自增</td>
+   <td>说明</td>
+  </tr>
+ </thead> 
+ <tbody>
+  <tr>
+   <td style="text-align: center;">1</td> 
+   <td>主键ID</td> 
+   <td>id</td>
+   <td align="center">int</td>
+   <td align="center"></td>
+   <td align="center"> N </td>
+   <td align="center"> Y </td>
+   <td align="center"></td>
+   <td></td>
+   <td>&nbsp;</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">2</td> 
+   <td>是否长短信</td> 
+   <td>longSms</td>
+   <td align="center">char</td>
+   <td align="center">1</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center">(0)</td>
+   <td></td> 
+   <td><p>1 长短信</p> </td> 
+  </tr>
+  <tr>
+   <td style="text-align: center;">3</td> 
+   <td>拆分数</td> 
+   <td>splitLength</td>
+   <td align="center">int</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center">60</td>
+   <td></td>
+   <td>&nbsp;</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">4</td> 
+   <td>页面署名位置</td> 
+   <td>signPostion</td>
+   <td align="center">char</td>
+   <td align="center">1</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center">(1)</td>
+   <td></td> 
+   <td>0 前 1后 </td> 
+  </tr>
+  <tr>
+   <td style="text-align: center;">5</td> 
+   <td>页面发送署名</td> 
+   <td>username</td>
+   <td align="center">char</td>
+   <td align="center">1</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center">(1)</td>
+   <td></td> 
+   <td>0不显示 1显示 </td> 
+  </tr>
+  <tr>
+   <td style="text-align: center;">6</td> 
+   <td>页面发送署名ID</td> 
+   <td>userid</td>
+   <td align="center">char</td>
+   <td align="center">1</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center">(1)</td>
+   <td></td>
+   <td>0不显示 1显示</td> 
+  </tr>
+  <tr>
+   <td style="text-align: center;">7</td> 
+   <td>页面发送部门</td> 
+   <td>dept</td>
+   <td align="center">char</td>
+   <td align="center">1</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center">(0)</td>
+   <td></td>
+   <td>0不显示 1显示</td> 
+  </tr>
+  <tr>
+   <td style="text-align: center;">8</td> 
+   <td>页面发送分部</td> 
+   <td>subcomp</td>
+   <td align="center">char</td>
+   <td align="center">1</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center">(0)</td>
+   <td></td>
+   <td>0不显示 1显示</td> 
+  </tr>
+  <tr>
+   <td style="text-align: center;">9</td> 
+   <td>签名</td> 
+   <td>sign</td>
+   <td align="center">varchar</td>
+   <td align="center">1000</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>&nbsp;</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">10</td> 
+   <td>是否显示短信发送页面回复帮助</td> 
+   <td>showReply</td>
+   <td align="center">char</td>
+   <td align="center">1</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center">(1)</td>
+   <td></td>
+   <td>0不显示 1显示</td> 
+  </tr>
+  <tr>
+   <td style="text-align: center;">11</td> 
+   <td>签名位置</td> 
+   <td>signPos</td>
+   <td align="center">char</td>
+   <td align="center">1</td>
+   <td align="center"> N </td>
+   <td align="center"></td>
+   <td align="center">(0)</td>
+   <td></td>
+   <td>0 前 1后 </td> 
+  </tr> 
+ </tbody>
+</table>
+</div>
+</center>
+</body>
+</html>
+

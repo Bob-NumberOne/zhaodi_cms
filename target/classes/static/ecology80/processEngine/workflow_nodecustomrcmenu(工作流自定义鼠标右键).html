@@ -1,0 +1,1313 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+<title>workflow_nodecustomrcmenu(缺)</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gbk"/>
+<style>
+body, td {
+font-family: 微软雅黑;
+font-size: 12px;
+line-height: 150%;
+}
+table {
+width: 100%;
+background-color: #ccc;
+margin: 5px 0;
+word-break: break-all;
+}
+td {
+	background-color: #fff;
+	padding: 3px;
+padding-left: 10px;
+}
+thead td {
+	text-align: left;
+font-weight: bold;
+background-color: #eee;
+}
+a:link, a:visited, a:active {
+color: #015FB6;
+text-decoration: none;
+}
+a:hover {
+color: #E33E06;
+}
+.tablename {
+margin-top: 30px;
+}
+.outdiv {
+width: 1000px;
+margin: 40px auto;
+text-align: left;
+}
+
+</style>
+</head>
+<body>
+<center>
+<div class="outdiv">
+<div class="tablename">
+<b>表名：workflow_nodecustomrcmenu</b>
+</div>
+<div>中文名称：工作流自定义鼠标右键</div>
+<div>表类型： </div>
+<a href='index.html' style='float: right;'>返回目录</a><div>说明：</div>
+<table cellspacing="1" cellpadding="0">
+ <colgroup>
+  <col width="50px">
+  <col width="190px">
+  <col width="190px">
+  <col width="80px">
+  <col width="80px">
+  <col width="70px">
+  <col width="40px">
+  <col width="60px">
+  <col width="40px">
+  <col width="200px">
+ </colgroup>
+ <thead>
+  <tr>
+   <td>序号</td>
+   <td>中文名称</td>
+   <td>英文名称</td>
+   <td>数据类型</td>
+   <td>长度</td>
+   <td>允许空值</td>
+   <td>主键</td>
+   <td>默认值</td>
+   <td>自增</td>
+   <td>说明</td>
+  </tr>
+ </thead> 
+ <tbody>
+  <tr>
+   <td style="text-align: center;">1</td>
+   <td>ID</td>
+   <td>id</td>
+   <td align="center">int</td>
+   <td align="center"></td>
+   <td align="center"> N </td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td> Y </td>
+   <td>　</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">2</td>
+   <td> 工作流id</td>
+   <td>wfid</td>
+   <td align="center">int</td>
+   <td align="center"></td>
+   <td align="center"> N </td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>　</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">3</td>
+   <td> 节点id</td>
+   <td>nodeid</td>
+   <td align="center">int</td>
+   <td align="center"></td>
+   <td align="center"> N </td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>　</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">4</td>
+   <td> 自定义右键按钮中文名称</td>
+   <td>submitName7</td>
+   <td align="center">varchar</td>
+   <td align="center">1000</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>替代：提交/批准</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">5</td>
+   <td> 自定义右键按钮英文名称</td>
+   <td>submitName8</td>
+   <td align="center">varchar</td>
+   <td align="center">1000</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>替代：提交/批准</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">6</td>
+   <td> 自定义右键按钮中文名称</td>
+   <td>forwardName7</td>
+   <td align="center">varchar</td>
+   <td align="center">1000</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>替代:转发</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">7</td>
+   <td> 自定义右键按钮英文名称</td>
+   <td>forwardName8</td>
+   <td align="center">varchar</td>
+   <td align="center">1000</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>替代:转发</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">8</td>
+   <td> 自定义右键按钮中文名称</td>
+   <td>saveName7</td>
+   <td align="center">varchar</td>
+   <td align="center">1000</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>替代:保存</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">9</td>
+   <td> 自定义右键按钮英文名称</td>
+   <td>saveName8</td>
+   <td align="center">varchar</td>
+   <td align="center">1000</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>替代:保存</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">10</td>
+   <td> 自定义右键按钮中文名称</td>
+   <td>rejectName7</td>
+   <td align="center">varchar</td>
+   <td align="center">1000</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>替代:退回</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">11</td>
+   <td> 自定义右键按钮英文名称</td>
+   <td>rejectName8</td>
+   <td align="center">varchar</td>
+   <td align="center">1000</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>替代:退回</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">12</td>
+   <td> 自定义右键按钮中文名称</td>
+   <td>forsubName7</td>
+   <td align="center">varchar</td>
+   <td align="center">1000</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>替代:转发批注</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">13</td>
+   <td> 自定义右键按钮英文名称</td>
+   <td>forsubName8</td>
+   <td align="center">varchar</td>
+   <td align="center">1000</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>替代:转发批注</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">14</td>
+   <td> 自定义右键按钮中文名称</td>
+   <td>ccsubName7</td>
+   <td align="center">varchar</td>
+   <td align="center">1000</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>替代:抄送批注</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">15</td>
+   <td> 自定义右键按钮英文名称</td>
+   <td>ccsubName8</td>
+   <td align="center">varchar</td>
+   <td align="center">1000</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>替代:抄送批注</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">16</td>
+   <td> 新建工作流右键按钮中文名称</td>
+   <td>newWFName7</td>
+   <td align="center">varchar</td>
+   <td align="center">1000</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>　</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">17</td>
+   <td> 新建工作流右键按钮英文名称</td>
+   <td>newWFName8</td>
+   <td align="center">varchar</td>
+   <td align="center">1000</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>　</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">18</td>
+   <td> 新建短信右键按钮中文名称</td>
+   <td>newSMSName7</td>
+   <td align="center">varchar</td>
+   <td align="center">1000</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>　</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">19</td>
+   <td> 新建短信右键按钮英文名称</td>
+   <td>newSMSName8</td>
+   <td align="center">varchar</td>
+   <td align="center">1000</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>　</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">20</td>
+   <td> 是否使用新建流程右键按钮</td>
+   <td>haswfrm</td>
+   <td align="center">char</td>
+   <td align="center">1</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>1，使用；0，不使用</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">21</td>
+   <td> 是否使用新建短信右键按钮</td>
+   <td>hassmsrm</td>
+   <td align="center">char</td>
+   <td align="center">1</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>1，使用；0，不使用</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">22</td>
+   <td> 新建工作流的工作流id</td>
+   <td>workflowid</td>
+   <td align="center">int</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>　</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">23</td>
+   <td> 新建短信的用户自定义短信内容</td>
+   <td>customMessage</td>
+   <td align="center">varchar</td>
+   <td align="center">1000</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>　</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">24</td>
+   <td> 新建短信的短信内容字段</td>
+   <td>fieldid</td>
+   <td align="center">int</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>　</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">25</td>
+   <td> 提交不需反馈右键按钮中文名称</td>
+   <td>subnobackName7</td>
+   <td align="center">varchar</td>
+   <td align="center">1000</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>　</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">26</td>
+   <td> 提交不需反馈右键按钮英文名称</td>
+   <td>subnobackName8</td>
+   <td align="center">varchar</td>
+   <td align="center">1000</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>　</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">27</td>
+   <td> 提交需反馈右键按钮中文名称</td>
+   <td>subbackName7</td>
+   <td align="center">varchar</td>
+   <td align="center">1000</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>　</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">28</td>
+   <td> 提交需反馈右键按钮英文名称</td>
+   <td>subbackName8</td>
+   <td align="center">varchar</td>
+   <td align="center">1000</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>　</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">29</td>
+   <td> 被转发批注不需反馈右键按钮中文名称</td>
+   <td>forsubnobackName7</td>
+   <td align="center">varchar</td>
+   <td align="center">1000</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>　</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">30</td>
+   <td> 被转发批注不需反馈右键按钮英文名称</td>
+   <td>forsubnobackName8</td>
+   <td align="center">varchar</td>
+   <td align="center">1000</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>　</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">31</td>
+   <td> 被转发批注需反馈右键按钮中文名称</td>
+   <td>forsubbackName7</td>
+   <td align="center">varchar</td>
+   <td align="center">1000</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>　</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">32</td>
+   <td> 被转发批注需反馈右键按钮英文名称</td>
+   <td>forsubbackName8</td>
+   <td align="center">varchar</td>
+   <td align="center">1000</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>　</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">33</td>
+   <td> 被抄送批注不需反馈右键按钮中文名称</td>
+   <td>ccsubnobackName7</td>
+   <td align="center">varchar</td>
+   <td align="center">1000</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>　</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">34</td>
+   <td> 被抄送批注不需反馈右键按钮英文名称</td>
+   <td>ccsubnobackName8</td>
+   <td align="center">varchar</td>
+   <td align="center">1000</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>　</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">35</td>
+   <td> 被抄送批注需反馈右键按钮中文名称</td>
+   <td>ccsubbackName7</td>
+   <td align="center">varchar</td>
+   <td align="center">1000</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>　</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">36</td>
+   <td> 被抄送批注需反馈右键按钮英文名称</td>
+   <td>ccsubbackName8</td>
+   <td align="center">varchar</td>
+   <td align="center">1000</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>　</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">37</td>
+   <td> 是否使用被转发批注不需要反馈按钮</td>
+   <td>hasfornoback</td>
+   <td align="center">char</td>
+   <td align="center">1</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>1，使用；0，不使用</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">38</td>
+   <td> 是否使用被转发批注需要反馈按钮</td>
+   <td>hasforback</td>
+   <td align="center">char</td>
+   <td align="center">1</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>1，使用；0，不使用</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">39</td>
+   <td> 是否使用被抄送批注不需要反馈按钮</td>
+   <td>hasccnoback</td>
+   <td align="center">char</td>
+   <td align="center">1</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>1，使用；0，不使用</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">40</td>
+   <td> 是否使用被抄送批注需要反馈按钮</td>
+   <td>hasccback</td>
+   <td align="center">char</td>
+   <td align="center">1</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>1，使用；0，不使用</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">41</td>
+   <td> 是否使用提交不需要反馈按钮</td>
+   <td>hasnoback</td>
+   <td align="center">char</td>
+   <td align="center">1</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>1，使用；0，不使用</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">42</td>
+   <td> 是否使用提交需要反馈按钮</td>
+   <td>hasback</td>
+   <td align="center">char</td>
+   <td align="center">1</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>1，使用；0，不使用</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">43</td>
+   <td> 启用自定义落款</td>
+   <td>usecustomsender</td>
+   <td align="center">char</td>
+   <td align="center">1</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>1，启用</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">44</td>
+   <td> 超时设置自定义中文名</td>
+   <td>newOverTimeName7</td>
+   <td align="center">varchar</td>
+   <td align="center">1000</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>　</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">45</td>
+   <td> 超时设置自定义英文名</td>
+   <td>newOverTimeName8</td>
+   <td align="center">varchar</td>
+   <td align="center">1000</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>　</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">46</td>
+   <td> 是否显示超时设置</td>
+   <td>hasovertime</td>
+   <td align="center">char</td>
+   <td align="center">1</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>1：显示，0：不显示</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">47</td>
+   <td> 在流转日志中是否显示自定义的名称</td>
+   <td>isshowinwflog</td>
+   <td align="center">char</td>
+   <td align="center">1</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>0：不显示，显示标准名称；1：按自定名称显示</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">48</td>
+   <td> 自定义右键按钮繁体名称</td>
+   <td>submitName9</td>
+   <td align="center">varchar</td>
+   <td align="center">1000</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>替代：提交/批准</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">49</td>
+   <td> 自定义右键按钮繁体名称</td>
+   <td>forwardName9</td>
+   <td align="center">varchar</td>
+   <td align="center">1000</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>替代:转发</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">50</td>
+   <td> 自定义右键按钮繁体名称</td>
+   <td>saveName9</td>
+   <td align="center">varchar</td>
+   <td align="center">1000</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>替代:保存</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">51</td>
+   <td> 自定义右键按钮繁体名称</td>
+   <td>rejectName9</td>
+   <td align="center">varchar</td>
+   <td align="center">1000</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>替代:退回</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">52</td>
+   <td> 自定义右键按钮繁体名称</td>
+   <td>forsubName9</td>
+   <td align="center">varchar</td>
+   <td align="center">1000</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>替代:转发批注</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">53</td>
+   <td> 自定义右键按钮繁体名称</td>
+   <td>ccsubName9</td>
+   <td align="center">varchar</td>
+   <td align="center">1000</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>替代:抄送批注</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">54</td>
+   <td> 新建工作流右键按钮繁体名称</td>
+   <td>newWFName9</td>
+   <td align="center">varchar</td>
+   <td align="center">1000</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>　</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">55</td>
+   <td> 新建短信右键按钮繁体名称</td>
+   <td>newSMSName9</td>
+   <td align="center">varchar</td>
+   <td align="center">1000</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>　</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">56</td>
+   <td> 提交不需反馈右键按钮繁体名称</td>
+   <td>subnobackName9</td>
+   <td align="center">varchar</td>
+   <td align="center">1000</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>　</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">57</td>
+   <td> 提交需反馈右键按钮繁体名称</td>
+   <td>subbackName9</td>
+   <td align="center">varchar</td>
+   <td align="center">1000</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>　</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">58</td>
+   <td> 被转发批注不需反馈右键按繁体名称</td>
+   <td>forsubnobackName9</td>
+   <td align="center">varchar</td>
+   <td align="center">1000</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>　</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">59</td>
+   <td> 被转发批注需反馈右键按钮繁体名称</td>
+   <td>forsubbackName9</td>
+   <td align="center">varchar</td>
+   <td align="center">1000</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>　</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">60</td>
+   <td> 被抄送批注不需反馈右键按钮繁体名称</td>
+   <td>ccsubnobackName9</td>
+   <td align="center">varchar</td>
+   <td align="center">1000</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>　</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">61</td>
+   <td> 被抄送批注需反馈右键按钮繁体名称</td>
+   <td>ccsubbackName9</td>
+   <td align="center">varchar</td>
+   <td align="center">1000</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>　</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">62</td>
+   <td> 超时设置自定义繁体名称</td>
+   <td>newOverTimeName9</td>
+   <td align="center">varchar</td>
+   <td align="center">1000</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>　</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">63</td>
+   <td>是否支持微信提醒 </td>
+   <td>haschats</td>
+   <td align="center">char</td>
+   <td align="center">1</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>　</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">64</td>
+   <td>微信提醒字段ID </td>
+   <td>chatsfieldid</td>
+   <td align="center">int</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>　</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">65</td>
+   <td>微信提醒名称7 </td>
+   <td>newCHATSName7</td>
+   <td align="center">varchar</td>
+   <td align="center">1000</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>　</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">66</td>
+   <td>微信提醒名称8</td>
+   <td>newCHATSName8</td>
+   <td align="center">varchar</td>
+   <td align="center">1000</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>　</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">67</td>
+   <td>微信提醒名称9 </td>
+   <td>newCHATSName9</td>
+   <td align="center">varchar</td>
+   <td align="center">1000</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>　</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">68</td>
+   <td>自定义微信提醒 </td>
+   <td>customChats</td>
+   <td align="center">varchar</td>
+   <td align="center">1000</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>　</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">69</td>
+   <td> 自定义右键按钮中文名称</td>
+   <td>forhandName7</td>
+   <td align="center">varchar</td>
+   <td align="center">50</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>替代：转办</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">70</td>
+   <td> 自定义右键按钮英文名称</td>
+   <td>forhandName8</td>
+   <td align="center">varchar</td>
+   <td align="center">50</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>替代：转办</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">71</td>
+   <td> 自定义右键按钮繁体名称</td>
+   <td>forhandName9</td>
+   <td align="center">varchar</td>
+   <td align="center">50</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>替代：转办</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">72</td>
+   <td> 自定义右键按钮中文名称</td>
+   <td>forhandnobackName7</td>
+   <td align="center">varchar</td>
+   <td align="center">50</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>替代：转办不需反馈</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">73</td>
+   <td> 自定义右键按钮英文名称</td>
+   <td>forhandnobackName8</td>
+   <td align="center">varchar</td>
+   <td align="center">50</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>替代：转办不需反馈</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">74</td>
+   <td> 自定义右键按钮繁体名称</td>
+   <td>forhandnobackName9</td>
+   <td align="center">varchar</td>
+   <td align="center">50</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>替代：转办不需反馈</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">75</td>
+   <td> 自定义右键按钮中文名称</td>
+   <td>forhandbackName7</td>
+   <td align="center">varchar</td>
+   <td align="center">50</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>替代：转办需反馈</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">76</td>
+   <td> 自定义右键按钮英文名称</td>
+   <td>forhandbackName8</td>
+   <td align="center">varchar</td>
+   <td align="center">50</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>替代：转办需反馈</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">77</td>
+   <td> 自定义右键按钮繁体名称</td>
+   <td>forhandbackName9</td>
+   <td align="center">varchar</td>
+   <td align="center">50</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>替代：转办需反馈</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">78</td>
+   <td> 自定义右键按钮中文名称</td>
+   <td>takingOpName7</td>
+   <td align="center">varchar</td>
+   <td align="center">50</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>替代：意见征询</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">79</td>
+   <td> 自定义右键按钮英文名称</td>
+   <td>takingOpName8</td>
+   <td align="center">varchar</td>
+   <td align="center">50</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>替代：意见征询</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">80</td>
+   <td> 自定义右键按钮繁体名称</td>
+   <td>takingOpName9</td>
+   <td align="center">varchar</td>
+   <td align="center">50</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>替代：意见征询</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">81</td>
+   <td> 自定义右键按钮中文名称</td>
+   <td>takingOpinionsName7</td>
+   <td align="center">varchar</td>
+   <td align="center">50</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>替代：回复</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">82</td>
+   <td> 自定义右键按钮英文名称</td>
+   <td>takingOpinionsName8</td>
+   <td align="center">varchar</td>
+   <td align="center">50</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>替代：回复</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">83</td>
+   <td> 自定义右键按钮繁体名称</td>
+   <td>takingOpinionsName9</td>
+   <td align="center">varchar</td>
+   <td align="center">50</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>替代：回复</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">84</td>
+   <td> 自定义右键按钮中文名称</td>
+   <td>takingOpinionsnobackName7</td>
+   <td align="center">varchar</td>
+   <td align="center">50</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>替代：回复不需反馈</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">85</td>
+   <td> 自定义右键按钮英文名称</td>
+   <td>takingOpinionsnobackName8</td>
+   <td align="center">varchar</td>
+   <td align="center">50</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>替代：回复不需反馈</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">86</td>
+   <td> 自定义右键按钮繁体名称</td>
+   <td>takingOpinionsnobackName9</td>
+   <td align="center">varchar</td>
+   <td align="center">50</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>替代：回复不需反馈</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">87</td>
+   <td> 自定义右键按钮中文名称</td>
+   <td>takingOpinionsbackName7</td>
+   <td align="center">varchar</td>
+   <td align="center">50</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>替代：回复需反馈</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">88</td>
+   <td> 自定义右键按钮英文名称</td>
+   <td>takingOpinionsbackName8</td>
+   <td align="center">varchar</td>
+   <td align="center">50</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>替代：回复需反馈</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">89</td>
+   <td> 自定义右键按钮繁体名称</td>
+   <td>takingOpinionsbackName9</td>
+   <td align="center">varchar</td>
+   <td align="center">50</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>替代：回复需反馈</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">90</td>
+   <td> 是否使用被转办批注需要反馈按钮</td>
+   <td>hasforhandback</td>
+   <td align="center">char</td>
+   <td align="center">1</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>1，使用；0，不使用</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">91</td>
+   <td> 是否使用被转办批注不需要反馈按钮</td>
+   <td>hasforhandnoback</td>
+   <td align="center">char</td>
+   <td align="center">1</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>1，使用；0，不使用</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">92</td>
+   <td> 是否使用回复需要反馈按钮</td>
+   <td>hastakingOpinionsback</td>
+   <td align="center">char</td>
+   <td align="center">1</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>1，使用；0，不使用</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">93</td>
+   <td> 是否使用回复不需要反馈按钮</td>
+   <td>hastakingOpinionsnoback</td>
+   <td align="center">char</td>
+   <td align="center">1</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>1，使用；0，不使用</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">94</td>
+   <td> 提交反馈控制</td>
+   <td>subbackCtrl</td>
+   <td align="center">int</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>0，统一需反馈；1，统一不需反馈；2，操作者选择</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">95</td>
+   <td> 转办反馈控制</td>
+   <td>forhandbackCtrl</td>
+   <td align="center">int</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>0，统一需反馈；1，统一不需反馈；2，操作者选择</td>
+  </tr> 
+  <tr>
+   <td style="text-align: center;">96</td>
+   <td> 转发接收人批注反馈控制</td>
+   <td>forsubbackCtrl</td>
+   <td align="center">int</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>0，统一需反馈；1，统一不需反馈；2，操作者选择</td>
+  </tr> 
+  <tr>
+   <td style="text-align: center;">97</td>
+   <td> 抄送接收人批注反馈控制</td>
+   <td>ccsubbackCtrl</td>
+   <td align="center">int</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>0，统一需反馈；1，统一不需反馈；2，操作者选择</td>
+  </tr> 
+  <tr>
+   <td style="text-align: center;">98</td>
+   <td> 意见征询接收人回复反馈控制</td>
+   <td>takingOpinionsbackCtrl</td>
+   <td align="center">int</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>0，统一需反馈；1，统一不需反馈；2，操作者选择</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">99</td>
+   <td>是否启用提交至退回节点按钮</td>
+   <td>isSubmitDirect</td>
+   <td align="center">char</td>
+   <td align="center">1</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>1，启用；其他，不启用</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">100</td>
+   <td>提交至退回节点按钮中文名称</td>
+   <td>submitDirectName7</td>
+   <td align="center">varchar</td>
+   <td align="center">4000</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td></td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">101</td>
+   <td>提交至退回节点按钮英文名称</td>
+   <td>submitDirectName8</td>
+   <td align="center">varchar</td>
+   <td align="center">4000</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td></td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">102</td>
+   <td>提交至退回节点按钮繁体名称</td>
+   <td>submitDirectName9</td>
+   <td align="center">varchar</td>
+   <td align="center">4000</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td></td>
+  </tr>
+ </tbody>
+</table>
+</div>
+</center>
+</body>
+</html>
+

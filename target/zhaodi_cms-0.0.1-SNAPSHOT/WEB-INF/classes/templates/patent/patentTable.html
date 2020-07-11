@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <base th:href="${#request.getContextPath()}+'/'">
+    <link rel="stylesheet" href="layuiAdmin/lib/layui-v2.5.5/css/layui.css"  media="all">
+    <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
+    <script src="js/layui/layui.js" charset="utf-8"></script>
+    <script type="text/javascript" src="js/serializejson.min.js"></script>
+    <style type="text/css">
+        .wb_head{margin-top: 20px;padding-left: 50px}
+        .table_head{text-align: center;}
+        .layui-transfer-data{height: 280px !important;}
+    </style>
+</head>
+<body>
+<form class="layui-form" id="myForm" style="padding-top:20px; ">
+    <div class="layui-inline wb_head layui-form-item" style="margin-left: 20px">
+
+        <div class="layui-inline" id="setYearRange">
+            <label class="layui-form-label">申请年月</label>
+            <div class="layui-input-inline">
+                <input type="text" name="yearRange" class="layui-input" id="yearRange" placeholder=" - ">
+            </div>
+        </div>
+        <!--筛选-->
+        <div class="layui-inline">
+            <label class="layui-form-label">专利申请人</label>
+            <div class="layui-input-inline">
+                <input type="text" id="wb_sqr" name="companyName" lay-verify="title" autocomplete="off" placeholder="请选择专利申请人" class="layui-input">
+            </div>
+            <div id="wb_applicant" lay-filter="wb_applicant" style="display: none;padding-left: 30px;padding-top: 30px;">
+                <div id="wb_choose" class="demo-transfer"></div>
+            </div>
+            <!--添加 弹出部门表格的 tool（里面的按钮）-->
+            <script type="text/html" id="hidden1-table-tool">
+                <a class="layui-btn layui-btn-xs" lay-event="select">选择</a>
+            </script>
+        </div>
+
+        <div class="layui-inline">
+            <label class="layui-form-label">分块名称</label>
+            <div class="layui-input-inline">
+                <input type="text" class="layui-input" id="fk" name="fk">
+            </div>
+        </div>
+
+        <div class="layui-inline layui-form-item" >
+            <div style="display: none" id="patentTree" class="demo-tree-more"></div>
+            <input type="text" id="belongToBlock" name="belongToBlock" style="display: none">
+            <button id="getTreeBtn" type="button" class="layui-btn layui-btn-primary" style="margin-left: 20px;">分块筛选</button>
+        </div>
+
+        <button id="search" type="button" class="layui-btn layui-btn-primary" style="margin-left: 50px;">搜索</button>
+    </div>
+</form>
+<table class="layui-hide" id="patent" lay-filter="patentTable"></table>
+<script type="text/html" id="barDemo" th:inline="none">
+    <a class="layui-btn layui-btn-primary layui-btn-xs" lay-event="look"><i class="layui-icon layui-icon-form"></i>查看</a>
+    <!--<a class="layui-btn layui-btn-primary layui-btn-xs" lay-event="del"><i class="layui-icon layui-icon-delete"></i>删除</a>-->
+</script>
+<script type="text/javascript" src="js/patent/getBlockTree.js"></script>
+<script th:inline="none">
+    layui.use(['table','form','layer','laydate','transfer'],function(){
+        var table = layui.table
+            ,form = layui.form
+            ,layer = layui.layer
+            ,transfer=layui.transfer
+            ,laydate = layui.laydate;
+        //年范围
+        laydate.render({
+            elem: '#yearRange'
+            ,type: 'month'
+            ,range: true
+        });
+        //获取弹框数据
+        var data1 = [];
+        $.ajax({
+            async: false,
+            url: 'patent/getCompanyNames.xmj',
+            data: {},
+            dataType: 'json',
+            type: 'post',
+            success: function (data) {
+                if(data.length>0){
+                    data1=data;
+                }
+            }
+        });
+        //显示搜索框
+        transfer.render({
+            elem: '#wb_choose'
+            ,data: data1
+            ,title: ['专利申请人', '筛选结果']
+            ,showSearch: true
+            ,id: 'wb_key' //定义唯一索引
+        });
+        // 为输入框绑定光标聚焦事件的触发该函数，
+        $('#wb_sqr').focus(applicant_input_focus_handler);
+
+        // “客户”输入框的光标聚焦事件的触发函数， 弹出弹层，弹层上显示所有的客户，以供选择。
+        function applicant_input_focus_handler() {
+            layer.open({
+                type : 1
+                ,title: ['[标]当前申请(专利权)人', 'font-size:18px;']
+                , area : [ '550px', '530px' ]
+                , content : $('#wb_applicant')
+                ,btn: ['确认', '取消']
+                , success : function () {
+                    // 重新加载表格中的数据
+                    $('#wb_applicant').css('display', 'block');
+                },yes: function(index, layero){//确定操作
+                    //do something
+                    var getData = transfer.getData('wb_key'); //获取右侧数据
+                    var text="";
+                    for(var i=0;i<getData.length;i++){
+                        if(i==getData.length-1){
+                            text+=getData[i].title;
+                        }else {
+                            text+=getData[i].title+",";
+                        }
+                    }
+                    $("#wb_sqr").val(text);
+                    layer.close(index); //如果设定了yes回调，需进行手工关闭
+                }
+            });
+        }
+        reloadTable = table.render({
+            elem: '#patent'
+            ,url:"patent/getPatentData.xmj"
+            ,method:'post'
+            ,toolbar: true
+            ,title: '创新刊物'
+            ,limits:[10,50,100]
+            ,totalRow: true
+            ,cols: [[
+                {field:'gkh', title:'公开(公告)号', width:170, fixed: 'left', unresize: true, sort: true,templet:function (res){
+                    var items=res.gkh.split("\"");
+                    var item=items[items.length-2];
+                    return item;
+                }}
+                ,{field:'sqh', title:'申请号', width:170}
+                ,{field:'bt', title:'标题', width:170}
+                ,{field:'dqsqzqr', title:'[标]当前申请(专利权)人', width:180}
+                ,{field:'fmr', title:'发明人', width:150}
+                ,{field:'sqny', title:'申请年月', width:150}
+                ,{field:'fk', title:'分块', width:150}
+                ,{field:'dqsq', title:'当前申请(专利权)人地址', width:180,templet:function (res){
+                    var item=res.dqsq.slice(7);
+                    return item;
+                }}
+                ,{field:'creatTime', title:'创建时间', width:170}
+                ,{fixed: 'right', title:'操作', toolbar: '#barDemo', width:160, align:'center'}
+            ]]
+            ,page: true
+            ,response: {
+                statusCode: 200 //重新规定成功的状态码为 200，table 组件默认为 0
+            }
+            ,parseData: function(res){ //将原始数据解析成 table 组件所规定的数据
+                return {
+                    "code": res.status, //解析接口状态
+                    "msg": res.message, //解析提示文本
+                    "count": res.counts, //解析数据长度
+                    "data": res.beans //解析数据列表
+                };
+            }
+        });
+        $("#search").click(function () {
+            var formData=$("#myForm").serializeJSON();
+            //这里以搜索为例
+            reloadTable.reload({
+                where: formData
+                ,page: {
+                    curr: 1 //重新从第 1 页开始
+                }
+            });
+        })
+
+
+        //监听行工具事件
+        table.on('tool(patentTable)', function(obj){ //注：tool 是工具条事件名，patentTable 是 table 原始容器的属性 lay-filter="对应的值"\
+            var data = obj.data.gkh ;//获得当前行数据
+            var items=data.split("\"");
+            var path=items[1];
+            var layEvent = obj.event; //获得 lay-event 对应的值
+            if(layEvent === 'look'){
+                window.open(path,'_blank');
+                //openLay("专利详情",item,"1000px", "600px");
+
+            }
+        });
+        function openLay(title, url, width, height){
+            layer.open({
+                type: 2 //此处以iframe举例
+                ,title: title
+                ,area: [width, height]
+                ,shade: 0.1
+                ,maxmin: true
+                ,offset: '75px'
+                ,content: url
+                ,btn: ['确定','关闭'] //只是为了演示
+                ,yes : function(index, layero) { // 保存按钮回调函数
+                    layer.close(index); // 关闭弹出层
+                }
+                ,btn2 : function(index, layero) { // 取消按钮回调函数
+                    layer.close(index); // 关闭弹出层
+                    /*reloadTable.reload();*/
+                },zIndex: layer.zIndex
+            });
+        }
+    });
+</script>
+
+</body>
+</html>

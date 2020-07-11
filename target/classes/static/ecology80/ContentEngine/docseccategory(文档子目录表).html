@@ -1,0 +1,1025 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+<title>docseccategory(文档子目录表)</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gbk"/>
+<style>
+body, td {
+font-family: 微软雅黑;
+font-size: 12px;
+line-height: 150%;
+}
+table {
+width: 100%;
+background-color: #ccc;
+margin: 5px 0;
+word-break: break-all;
+}
+td {
+	background-color: #fff;
+	padding: 3px;
+padding-left: 10px;
+}
+thead td {
+	text-align: left;
+font-weight: bold;
+background-color: #eee;
+}
+a:link, a:visited, a:active {
+color: #015FB6;
+text-decoration: none;
+}
+a:hover {
+color: #E33E06;
+}
+.tablename {
+margin-top: 30px;
+}
+.outdiv {
+width: 1000px;
+margin: 40px auto;
+text-align: left;
+}
+
+</style>
+</head>
+<body>
+<center>
+<div class="outdiv">
+<div class="tablename">
+<b>表名：docseccategory</b>
+</div>
+<div>中文名称：文档子目录表</div>
+<div>表类型： </div>
+<a href='index.html' style='float: right;'>返回目录</a><div>说明：</div>
+<table cellspacing="1" cellpadding="0">
+ <colgroup>
+  <col width="50px">
+  <col width="190px">
+  <col width="190px">
+  <col width="80px">
+  <col width="80px">
+  <col width="70px">
+  <col width="40px">
+  <col width="60px">
+  <col width="40px">
+  <col width="200px">
+ </colgroup>
+ <thead>
+  <tr>
+   <td>序号</td>
+   <td>中文名称</td>
+   <td>英文名称</td>
+   <td>数据类型</td>
+   <td>长度</td>
+   <td>允许空值</td>
+   <td>主键</td>
+   <td>默认值</td>
+   <td>自增</td>
+   <td>说明</td>
+  </tr>
+ </thead> 
+ <tbody>
+  <tr>
+   <td style="text-align: center;">1</td>
+   <td>子目录id</td>
+   <td>id</td>
+   <td align="center">int</td>
+   <td align="center"></td>
+   <td align="center"> N </td>
+   <td align="center"> Y </td>
+   <td align="center"></td>
+   <td> Y </td>
+   <td>　</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">2</td>
+   <td> 分目录id</td>
+   <td>subcategoryid</td>
+   <td align="center">int</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>　</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">3</td>
+   <td> 子目录名称</td>
+   <td>categoryname</td>
+   <td align="center">varchar</td>
+   <td align="center">1000</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>　</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">4</td>
+   <td> 文档模板id</td>
+   <td>docmouldid</td>
+   <td align="center">int</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>　</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">5</td>
+   <td> 是否可以发布</td>
+   <td>publishable</td>
+   <td align="center">char</td>
+   <td align="center">1</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>0:否，1:是</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">6</td>
+   <td> 是否可以回复</td>
+   <td>replyable</td>
+   <td align="center">char</td>
+   <td align="center">1</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>0:否，1:是</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">7</td>
+   <td> 是否可以选择共享</td>
+   <td>shareable</td>
+   <td align="center">char</td>
+   <td align="center">1</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>0:否，1:是</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">8</td>
+   <td> 具有创建权限的用户种类</td>
+   <td>cusertype</td>
+   <td align="center">char</td>
+   <td align="center">1</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>申请人: A<br>承包商: F<br>职员: H<br>代理商: R<br>供应商: S<br>客户: C<br>学生: D<br>临时:T</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">9</td>
+   <td> 用户的安全级别 &gt;=</td>
+   <td>cuserseclevel</td>
+   <td align="center">tinyint</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>　</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">10</td>
+   <td> 可创建文档的部门1</td>
+   <td>cdepartmentid1</td>
+   <td align="center">int</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>　</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">11</td>
+   <td> 部门1中人员的安全级别 &gt;=</td>
+   <td>cdepseclevel1</td>
+   <td align="center">tinyint</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>　</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">12</td>
+   <td> 可创建文档的部门2</td>
+   <td>cdepartmentid2</td>
+   <td align="center">int</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>　</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">13</td>
+   <td> 部门2中人员的安全级别 &gt;=</td>
+   <td>cdepseclevel2</td>
+   <td align="center">tinyint</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>　</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">14</td>
+   <td> 可创建文档的角色1</td>
+   <td>croleid1</td>
+   <td align="center">int</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>　</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">15</td>
+   <td> 角色1中人员的级别&gt;=</td>
+   <td>crolelevel1</td>
+   <td align="center">char</td>
+   <td align="center">1</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>0:部门<br>1:分部<br>2:总部</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">16</td>
+   <td> 可创建文档的角色2</td>
+   <td>croleid2</td>
+   <td align="center">int</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>　</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">17</td>
+   <td> 角色2中人员的级别&gt;=</td>
+   <td>crolelevel2</td>
+   <td align="center">char</td>
+   <td align="center">1</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td></td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">18</td>
+   <td> 可创建文档的角色3</td>
+   <td>croleid3</td>
+   <td align="center">int</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>　</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">19</td>
+   <td> 角色3中人员的级别</td>
+   <td>crolelevel3</td>
+   <td align="center">char</td>
+   <td align="center">1</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td></td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">20</td>
+   <td> 是否允许上传附件</td>
+   <td>hasaccessory</td>
+   <td align="center">char</td>
+   <td align="center">1</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>现已经不使用</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">21</td>
+   <td> 最大允许附件数</td>
+   <td>accessorynum</td>
+   <td align="center">tinyint</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>现已经不使用</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">22</td>
+   <td> 是否需要相关资产</td>
+   <td>hasasset</td>
+   <td align="center">char</td>
+   <td align="center">1</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>0：不需要,1：需要</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">23</td>
+   <td> 相关资产标题</td>
+   <td>assetlabel</td>
+   <td align="center">varchar</td>
+   <td align="center">1000</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>　</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">24</td>
+   <td> 是否需要相关物品</td>
+   <td>hasitems</td>
+   <td align="center">char</td>
+   <td align="center">1</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>0：不需要,1：需要</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">25</td>
+   <td> 相关物品标题</td>
+   <td>itemlabel</td>
+   <td align="center">varchar</td>
+   <td align="center">1000</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>　</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">26</td>
+   <td> 是否需要相关人力资源信息</td>
+   <td>hashrmres</td>
+   <td align="center">char</td>
+   <td align="center">1</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>0：不需要,1：需要</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">27</td>
+   <td> 相关人力资源标题</td>
+   <td>hrmreslabel</td>
+   <td align="center">varchar</td>
+   <td align="center">1000</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>　</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">28</td>
+   <td> 是否需要相关客户信息</td>
+   <td>hascrm</td>
+   <td align="center">char</td>
+   <td align="center">1</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>0：不需要,1：需要</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">29</td>
+   <td> 相关客户标题</td>
+   <td>crmlabel</td>
+   <td align="center">varchar</td>
+   <td align="center">1000</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>　</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">30</td>
+   <td> 是否需要相关项目信息</td>
+   <td>hasproject</td>
+   <td align="center">char</td>
+   <td align="center">1</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>0：不需要,1：需要</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">31</td>
+   <td> 相关项目标题</td>
+   <td>projectlabel</td>
+   <td align="center">varchar</td>
+   <td align="center">1000</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>　</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">32</td>
+   <td> 是否需要相关财务信息</td>
+   <td>hasfinance</td>
+   <td align="center">char</td>
+   <td align="center">1</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>0：不需要,1：需要</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">33</td>
+   <td> 相关财务标题</td>
+   <td>financelabel</td>
+   <td align="center">varchar</td>
+   <td align="center">1000</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>　</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">34</td>
+   <td> 审批工作流</td>
+   <td>approveworkflowid</td>
+   <td align="center">int</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>　</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">35</td>
+   <td> 是否可以打分</td>
+   <td>markable</td>
+   <td align="center">char</td>
+   <td align="center">1</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>1、是；0、否</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">36</td>
+   <td> 是否匿名打分</td>
+   <td>markAnonymity</td>
+   <td align="center">char</td>
+   <td align="center">1</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>1、是；0、否</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">37</td>
+   <td> 是否可以订阅</td>
+   <td>orderable</td>
+   <td align="center">char</td>
+   <td align="center">1</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center">(0)</td>
+   <td></td>
+   <td>1、是；0、否</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">38</td>
+   <td>锁定查看文档 </td>
+   <td>defaultLockedDoc</td>
+   <td align="center">int</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center">0</td>
+   <td></td>
+   <td>　</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">39</td>
+   <td>允许修改默认共享 </td>
+   <td>allownModiMShareL</td>
+   <td align="center">int</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>　</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">40</td>
+   <td>（该字段未启用） </td>
+   <td>allownModiMShareW</td>
+   <td align="center">int</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>　</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">41</td>
+   <td> 此目录下最大允许上传的附件的大小</td>
+   <td>maxUploadFileSize</td>
+   <td align="center">int</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center">5</td>
+   <td></td>
+   <td>　</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">42</td>
+   <td> Word模板id</td>
+   <td>wordmouldid</td>
+   <td align="center">int</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>　</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">43</td>
+   <td> 子目录编码</td>
+   <td>coder</td>
+   <td align="center">varchar</td>
+   <td align="center">1000</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>　</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">44</td>
+   <td> 提交文档时是否弹出共享设置窗口</td>
+   <td>isSetShare</td>
+   <td align="center">int</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>　</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">45</td>
+   <td> 禁止文档下载</td>
+   <td>nodownload</td>
+   <td align="center">int</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>禁止对word、excel、wps、ppt类型文档的下载(存为本地文件)，对html类型文档无效，对html类型文档的附件不限制。(1、禁止,0、否)</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">46</td>
+   <td> 禁止文档重名</td>
+   <td>norepeatedname</td>
+   <td align="center">int</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>该子目录下禁止新建和修改出重名的文档(1、禁止,0、否)</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">47</td>
+   <td> 是否受控目录</td>
+   <td>iscontroledbydir</td>
+   <td align="center">int</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>选中时正常状态的文档1、“生效”， 0、“正常”；</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">48</td>
+   <td> 发布操作</td>
+   <td>puboperation</td>
+   <td align="center">int</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>该目录下文档是否需要发布操作才能变为“生效、正常“（1、是；0、否）</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">49</td>
+   <td> 子文档阅读提醒</td>
+   <td>childdocreadremind</td>
+   <td align="center">int</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>当打开主文档时，是否需要弹出消息，提示查看子文档（1、是；0、否）</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">50</td>
+   <td> 允许只读操作人打印</td>
+   <td>readoptercanprint</td>
+   <td align="center">int</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>1、允许，0、不允许，2、由文档设置<br>允许：设置该目录下只读操作人可以打印文档；<br>不允许：设置该目录下只读操作人不可以打印文档；<br>由文档设置：该目录下只读操作人是否可以打印，由文档编辑人设置；</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">51</td>
+   <td> 启用版本管理</td>
+   <td>editionIsOpen</td>
+   <td align="center">int</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>1：启用，0：未启用</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">52</td>
+   <td> 显示前缀</td>
+   <td>editionPrefix</td>
+   <td align="center">varchar</td>
+   <td align="center">1000</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>文档属性页版本字段的显示前缀</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">53</td>
+   <td> 只读权限操作人可查看历史版本</td>
+   <td>readerCanViewHistoryEdition</td>
+   <td align="center">int</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>文档的普通查看者是否能查看文档的历史版本</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">54</td>
+   <td>是否启用审批流 </td>
+   <td>isOpenApproveWf</td>
+   <td align="center">char</td>
+   <td align="center">1</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>　</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">55</td>
+   <td>生效审批流程id </td>
+   <td>validityApproveWf</td>
+   <td align="center">int</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>　</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">56</td>
+   <td>失效效审批流程id </td>
+   <td>invalidityApproveWf</td>
+   <td align="center">int</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>　</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">57</td>
+   <td>是否启用自定义列表 </td>
+   <td>useCustomSearch</td>
+   <td align="center">int</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>　</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">58</td>
+   <td> 应用模版ID</td>
+   <td>appliedTemplateId</td>
+   <td align="center">int</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>　</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">59</td>
+   <td> 此目录下的默认文档发布</td>
+   <td>defaultDummyCata</td>
+   <td align="center">varchar</td>
+   <td align="center">1000</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>　</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">60</td>
+   <td> 文档日志查看类型</td>
+   <td>logviewtype</td>
+   <td align="center">int</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>0：按文档权限查看，1：仅管理员能查看</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">61</td>
+   <td> 目录排序</td>
+   <td>secorder</td>
+   <td align="center">float</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center">0</td>
+   <td></td>
+   <td>　</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">62</td>
+   <td> 新建工作流指定流程id</td>
+   <td>appointedWorkflowId</td>
+   <td align="center">int</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>　</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">63</td>
+   <td> 是否打印控制</td>
+   <td>isPrintControl</td>
+   <td align="center">char</td>
+   <td align="center">1</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>1为是，0或其他为否</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">64</td>
+   <td> 打印申请流程id</td>
+   <td>printApplyWorkflowId</td>
+   <td align="center">int</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>　</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">65</td>
+   <td> 文档阅读日志控制</td>
+   <td>isLogControl</td>
+   <td align="center">char</td>
+   <td align="center">1</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>　</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">66</td>
+   <td> </td>
+   <td>relationable</td>
+   <td align="center">char</td>
+   <td align="center">1</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center">(0)</td>
+   <td></td>
+   <td>　</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">67</td>
+   <td> 单附件直接打开</td>
+   <td>isOpenAttachment</td>
+   <td align="center">int</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center">0</td>
+   <td></td>
+   <td>　</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">68</td>
+   <td> Office文档最大大小</td>
+   <td>maxOfficeDocFileSize</td>
+   <td align="center">int</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center">8</td>
+   <td></td>
+   <td>　</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">69</td>
+   <td> 展开文档属性</td>
+   <td>isAutoExtendInfo</td>
+   <td align="center">int</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center">0</td>
+   <td></td>
+   <td>0:否，1:是</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">70</td>
+   <td> 不删除历史版本附件</td>
+   <td>isNotDelHisAtt</td>
+   <td align="center">int</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center">0</td>
+   <td></td>
+   <td>0:删除，1:不删除</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">71</td>
+   <td> 是否禁止附件批量下载</td>
+   <td>bacthDownload</td>
+   <td align="center">int</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center">0</td>
+   <td></td>
+   <td>1：禁止，0或非1-允许（默认为允许）</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">72</td>
+   <td>签发人字段id </td>
+   <td>isuser</td>
+   <td align="center">int</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>　</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">73</td>
+   <td>文号字段id </td>
+   <td>e8number</td>
+   <td align="center">varchar</td>
+   <td align="center">1000</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>　</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">74</td>
+   <td>查询用拼音首字母 </td>
+   <td>ecology_pinyin_search</td>
+   <td align="center">varchar</td>
+   <td align="center">1000</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>　</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">75</td>
+   <td>父节点id </td>
+   <td>parentid</td>
+   <td align="center">int</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>　</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">76</td>
+   <td>目录id </td>
+   <td>dirid</td>
+   <td align="center">int</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>　</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">77</td>
+   <td>目录类型 </td>
+   <td>dirType</td>
+   <td align="center">int</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>　</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;"> 78</td>
+   <td>分部</td>
+   <td>subcompanyid</td>
+   <td align="center">int</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>　</td>
+  </tr> 
+ </tbody>
+</table>
+</div>
+</center>
+</body>
+</html>
+

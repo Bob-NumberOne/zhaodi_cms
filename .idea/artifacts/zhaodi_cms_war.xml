@@ -1,0 +1,14 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="zhaodi_cms:war">
+    <output-path>$PROJECT_DIR$/target</output-path>
+    <properties id="maven-jee-properties">
+      <options>
+        <module>zhaodi_cms</module>
+        <packaging>war</packaging>
+      </options>
+    </properties>
+    <root id="archive" name="zhaodi_cms-0.0.1-SNAPSHOT.war">
+      <element id="artifact" artifact-name="zhaodi_cms:war exploded" />
+    </root>
+  </artifact>
+</component>

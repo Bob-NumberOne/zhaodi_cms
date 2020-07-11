@@ -1,0 +1,401 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+<title>prj_settings(项目应用设置)</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gbk"/>
+<style>
+body, td {
+font-family: 微软雅黑;
+font-size: 12px;
+line-height: 150%;
+}
+table {
+width: 100%;
+background-color: #ccc;
+margin: 5px 0;
+word-break: break-all;
+}
+td {
+	background-color: #fff;
+	padding: 3px;
+padding-left: 10px;
+}
+thead td {
+	text-align: left;
+font-weight: bold;
+background-color: #eee;
+}
+a:link, a:visited, a:active {
+color: #015FB6;
+text-decoration: none;
+}
+a:hover {
+color: #E33E06;
+}
+.tablename {
+margin-top: 30px;
+}
+.outdiv {
+width: 1000px;
+margin: 40px auto;
+text-align: left;
+}
+
+</style>
+</head>
+<body>
+<center>
+<div class="outdiv">
+<div class="tablename">
+<b>表名：prj_settings</b>
+</div>
+<div>中文名称：项目应用设置</div>
+<div>表类型： </div>
+<a href='index.html' style='float: right;'>返回目录</a><div>说明：</div>
+<table cellspacing="1" cellpadding="0" mytablename="Prj_Settings">
+ <colgroup>
+  <col width="50px">
+  <col width="190px">
+  <col width="190px">
+  <col width="80px">
+  <col width="80px">
+  <col width="70px">
+  <col width="40px">
+  <col width="60px">
+  <col width="40px">
+  <col width="200px">
+ </colgroup>
+ <thead>
+  <tr>
+   <td>序号</td>
+   <td>中文名称</td>
+   <td>英文名称</td>
+   <td>数据类型</td>
+   <td>长度</td>
+   <td>允许空值</td>
+   <td>主键</td>
+   <td>默认值</td>
+   <td>自增</td>
+   <td>说明</td>
+  </tr>
+ </thead> 
+ <tbody>
+  <tr mycolname="id">
+   <td style="text-align: center;">1</td>
+   <td> 标识ID </td>
+   <td>id</td>
+   <td align="center">int</td>
+   <td align="center"></td>
+   <td align="center"> N </td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td> Y </td>
+   <td> 标识列 </td>
+  </tr>
+  <tr mycolname="subcompanyid">
+   <td style="text-align: center;">2</td> 
+   <td>分部id </td>
+   <td>subcompanyid</td>
+   <td align="center">int</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td> 
+   <td>分部id </td> 
+  </tr> 
+  <tr mycolname="departmentid">
+   <td style="text-align: center;">3</td> 
+   <td>部门id</td>
+   <td>departmentid</td>
+   <td align="center">int</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td> 
+   <td>部门id</td> 
+  </tr> 
+  <tr mycolname="userid">
+   <td style="text-align: center;">4</td> 
+   <td>用户id</td>
+   <td>userid</td>
+   <td align="center">int</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td> 
+   <td>用户id</td> 
+  </tr> 
+  <tr mycolname="prj_dsc_doc">
+   <td style="text-align: center;">5</td> 
+   <td>项目交流文档开关</td>
+   <td>prj_dsc_doc</td>
+   <td align="center">char</td>
+   <td align="center">1</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td> 
+   <td>项目交流文档开关</td> 
+  </tr> 
+  <tr mycolname="prj_dsc_wf">
+   <td style="text-align: center;">6</td> 
+   <td>项目交流流程开关 </td> 
+   <td>prj_dsc_wf</td>
+   <td align="center">char</td>
+   <td align="center">1</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td> 
+   <td>项目交流流程开关 </td> 
+  </tr> 
+  <tr mycolname="prj_dsc_crm">
+   <td style="text-align: center;">7</td> 
+   <td>项目交流客户开关 </td> 
+   <td>prj_dsc_crm</td>
+   <td align="center">char</td>
+   <td align="center">1</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td> 
+   <td>项目交流客户开关 </td> 
+  </tr> 
+  <tr mycolname="prj_dsc_prj">
+   <td style="text-align: center;">8</td> 
+   <td>项目交流项目开关 </td> 
+   <td>prj_dsc_prj</td>
+   <td align="center">char</td>
+   <td align="center">1</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td> 
+   <td>项目交流项目开关 </td> 
+  </tr> 
+  <tr mycolname="prj_dsc_tsk">
+   <td style="text-align: center;">9</td> 
+   <td>项目交流任务开关 </td> 
+   <td>prj_dsc_tsk</td>
+   <td align="center">char</td>
+   <td align="center">1</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td> 
+   <td>项目交流任务开关 </td> 
+  </tr> 
+  <tr mycolname="prj_dsc_acc">
+   <td style="text-align: center;">10</td> 
+   <td>项目交流附件开关 </td> 
+   <td>prj_dsc_acc</td>
+   <td align="center">char</td>
+   <td align="center">1</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td> 
+   <td>项目交流附件开关 </td> 
+  </tr> 
+  <tr mycolname="prj_dsc_accsec">
+   <td style="text-align: center;">11</td> 
+   <td>项目交流附件目录 </td> 
+   <td>prj_dsc_accsec</td>
+   <td align="center">int</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td> 
+   <td>项目交流附件目录 </td> 
+  </tr> 
+  <tr mycolname="tsk_dsc_doc">
+   <td style="text-align: center;">12</td> 
+   <td>任务交流文档开关</td>
+   <td>tsk_dsc_doc</td>
+   <td align="center">char</td>
+   <td align="center">1</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td> 
+   <td>任务交流文档开关</td> 
+  </tr> 
+  <tr mycolname="tsk_dsc_wf">
+   <td style="text-align: center;">13</td> 
+   <td>任务交流流程开关 </td>
+   <td>tsk_dsc_wf</td>
+   <td align="center">char</td>
+   <td align="center">1</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td> 
+   <td>任务交流流程开关 </td> 
+  </tr> 
+  <tr mycolname="tsk_dsc_crm">
+   <td style="text-align: center;">14</td> 
+   <td>任务交流客户开关 </td>
+   <td>tsk_dsc_crm</td>
+   <td align="center">char</td>
+   <td align="center">1</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td> 
+   <td>任务交流客户开关 </td> 
+  </tr> 
+  <tr mycolname="tsk_dsc_prj">
+   <td style="text-align: center;">15</td> 
+   <td>任务交流项目开关 </td>
+   <td>tsk_dsc_prj</td>
+   <td align="center">char</td>
+   <td align="center">1</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td> 
+   <td>任务交流项目开关 </td> 
+  </tr> 
+  <tr mycolname="tsk_dsc_tsk">
+   <td style="text-align: center;">16</td> 
+   <td>任务交流任务开关 </td>
+   <td>tsk_dsc_tsk</td>
+   <td align="center">char</td>
+   <td align="center">1</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td> 
+   <td>任务交流任务开关 </td> 
+  </tr> 
+  <tr mycolname="tsk_dsc_acc">
+   <td style="text-align: center;">17</td> 
+   <td>任务交流附件开关 </td>
+   <td>tsk_dsc_acc</td>
+   <td align="center">char</td>
+   <td align="center">1</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td> 
+   <td>任务交流附件开关 </td> 
+  </tr> 
+  <tr mycolname="tsk_dsc_accsec">
+   <td style="text-align: center;">18</td> 
+   <td>任务交流附件目录 </td>
+   <td>tsk_dsc_accsec</td>
+   <td align="center">int</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td> 
+   <td>任务交流附件目录 </td> 
+  </tr> 
+  <tr mycolname="prj_acc">
+   <td style="text-align: center;">19</td> 
+   <td>项目卡片附件开关 </td>
+   <td>prj_acc</td>
+   <td align="center">char</td>
+   <td align="center">1</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td> 
+   <td>项目卡片附件开关 </td> 
+  </tr> 
+  <tr mycolname="prj_accsec">
+   <td style="text-align: center;">20</td> 
+   <td>项目卡片附件目录 </td>
+   <td>prj_accsec</td>
+   <td align="center">int</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td> 
+   <td>项目卡片附件目录 </td> 
+  </tr> 
+  <tr mycolname="tsk_acc">
+   <td style="text-align: center;">21</td> 
+   <td>任务卡片附件开关 </td>
+   <td>tsk_acc</td>
+   <td align="center">char</td>
+   <td align="center">1</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td> 
+   <td>任务卡片附件开关 </td> 
+  </tr> 
+  <tr mycolname="tsk_accsec">
+   <td style="text-align: center;">22</td> 
+   <td>任务卡片附件目录 </td>
+   <td>tsk_accsec</td>
+   <td align="center">int</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td> 
+   <td>任务卡片附件目录 </td> 
+  </tr> 
+  <tr mycolname="prj_gnt_showplan_">
+   <td style="text-align: center;">23</td> 
+   <td>甘特图显示计划任务</td>
+   <td>prj_gnt_showplan_</td>
+   <td align="center">char</td>
+   <td align="center">1</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td> 
+   <td>甘特图显示计划任务</td> 
+  </tr> 
+  <tr mycolname="prj_gnt_warningday">
+   <td style="text-align: center;">24</td> 
+   <td>甘特图显示预警提前天数 </td>
+   <td>prj_gnt_warningday</td>
+   <td align="center">int</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td> 
+   <td>甘特图显示预警提前天数 </td> 
+  </tr> 
+  <tr mycolname="tsk_approval">
+   <td style="text-align: center;">25</td> 
+   <td>任务审批开关 </td>
+   <td>tsk_approval</td>
+   <td align="center">char</td>
+   <td align="center">1</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td> 
+   <td>任务审批开关 </td> 
+  </tr> 
+  <tr mycolname="tsk_approval_type">
+   <td style="text-align: center;">26</td> 
+   <td>任务审批类型 </td>
+   <td>tsk_approval_type</td>
+   <td align="center">int</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td> 
+   <td><p>1,项目经理审批;</p> <p>2,任务上级负责人审批;</p></td>
+  </tr> 
+ </tbody>
+</table>
+</div>
+</center>
+</body>
+</html>
+

@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zhaodi.oa.dao.SalesProjectDao">
+    <!--获取表数据 -->
+    <select id="getOATable" resultType="com.zhaodi.oa.entity.OATable" parameterType="com.zhaodi.bean.Page">
+        SELECT * FROM View_SystemAllTable w1,
+        (
+        SELECT TOP ${page.pageSize} tableName FROM
+        (
+            SELECT TOP ${page.totalSize} tableName FROM View_SystemAllTable
+            <if test="page.message != null and page.message !=''">
+                WHERE TableName like '%'+#{page.message,jdbcType=NVARCHAR}+'%'  or indexdesc like '%'+#{page.message,jdbcType=NVARCHAR}+'%' or workflowname like '%'+#{page.message,jdbcType=NVARCHAR}+'%' or tableDetail  like '%'+#{page.message,jdbcType=NVARCHAR}+'%'
+            </if>
+            ORDER BY tableName ASC
+        ) w ORDER BY w.tableName DESC
+        ) w2 WHERE w1.tableName = w2.tableName
+        ORDER BY w1.id DESC,w1.workflowname,w1.TableName DESC
+    </select>
+    <!--获取条数-->
+    <select id="getOATableCounts" resultType="int" parameterType="com.zhaodi.bean.Page">
+        select count(*) from View_SystemAllTable w1
+        <if test="page.message != null and page.message !=''">
+            where  (w1.TableName like '%'+#{page.message,jdbcType=NVARCHAR}+'%'  or w1.indexdesc like '%'+#{page.message,jdbcType=NVARCHAR}+'%' or w1.workflowname like '%'+#{page.message,jdbcType=NVARCHAR}+'%'  or tableDetail  like '%'+#{page.message,jdbcType=NVARCHAR}+'%')
+        </if>
+    </select>
+
+    <!--根据表ID查询对应表详细信息 -->
+    <select id="getOATableFields" resultType="com.zhaodi.oa.entity.OATableFields">
+        select aa.id as fieldId,aa.FieldName,aa.fielddbtype,bb.indexdesc,aa.viewtype,aa.type,aa.fieldhtmltype,aa.detailtable,aa.dsporder
+        from workflow_billfield aa
+        LEFT JOIN HtmlLabelIndex bb on bb.id=aa.fieldlabel
+        where aa.billId=#{billId}
+        ORDER BY aa.viewtype,aa.detailTable,aa.dsporder
+    </select>
+    <insert id="insertTableFields" parameterType="string">
+        insert into uf_SystemTableDetai
+        (
+        tableName
+        ,tableDetail
+        ,tableHtmlSrc
+        ,formmodeid
+        ,modedatacreater
+        ,modedatacreatertype
+        ,modedatacreatedate
+        ,modedatacreatetime
+        )
+        VALUES
+        (
+        #{tableName}
+        ,#{tableDetail}
+        ,#{tableHtmlSrc}
+        ,convert(int,'4113')
+        ,convert(int,'1')
+        ,convert(int,'0')
+        ,CONVERT (varchar(10),GETDATE(),120)
+        ,convert(varchar(8),getdate(),108)
+        )
+    </insert>
+
+    <!--获取品牌管理中心下考勤表数据 -->
+    <select id="getorkAttendance" resultType="com.zhaodi.oa.entity.WorkAttendance" parameterType="com.zhaodi.bean.Page">
+        SELECT * FROM View_SalesProjectPersonnel w1,
+            (
+            SELECT TOP ${page.pageSize} id FROM
+            (
+                SELECT TOP ${page.totalSize} id FROM View_SalesProjectPersonnel
+                WHERE 1=1
+                /*人员*/
+                <if test="page.bean.lastName != null and page.bean.lastName !=''">
+                    and lastName like '%'+#{page.bean.lastName}+'%'
+                </if>
+                /*区域*/
+                <if test="page.bean.departmentid != null and page.bean.departmentid !='0'">
+                    and (departmentid=#{page.bean.departmentid} or supdepid=#{page.bean.departmentid})
+                </if>
+                /*岗位*/
+                <if test="page.bean.jobtitlename != null and page.bean.jobtitlename !=''">
+                    and jobtitle in (${page.bean.jobtitlename})
+                </if>
+                /*办事处*/
+                <if test="page.bean.departmentname != null and page.bean.departmentname !=''">
+                    and departmentname like '%'+#{page.bean.departmentname}+'%'
+                </if>
+                ORDER BY id ASC
+            ) w ORDER BY w.id DESC
+        ) w2 WHERE w1.id = w2.id
+        ORDER BY w1.id ASC
+    </select>
+    <!--获取考勤条数-->
+    <select id="getWorkCounts" resultType="int" parameterType="com.zhaodi.bean.Page">
+        select count(*) from View_SalesProjectPersonnel
+        WHERE 1=1
+        /*人员*/
+        <if test="page.bean.lastName != null and page.bean.lastName !=''">
+            and lastName like '%'+#{page.bean.lastName}+'%'
+        </if>
+        /*区域*/
+        <if test="page.bean.departmentid != null and page.bean.departmentid !='0'">
+            and (departmentid=#{page.bean.departmentid} or supdepid=#{page.bean.departmentid})
+        </if>
+        /*岗位*/
+        <if test="page.bean.jobtitlename != null and page.bean.jobtitlename !=''">
+            and jobtitle in (${page.bean.jobtitlename})
+        </if>
+        /*办事处*/
+        <if test="page.bean.departmentname != null and page.bean.departmentname !=''">
+            and departmentname like '%'+#{page.bean.departmentname}+'%'
+        </if>
+    </select>
+
+    <!--公共假日 按照日期范围查询-->
+    <select id="getHolidayDate" resultType="java.util.HashMap" parameterType="string">
+        select holidaydate,holidayname,changetype from HrmPubHoliday
+        where
+        <![CDATA[ holidaydate >= cast(CONVERT(varchar, #{startDate})as date) ]]>
+        <![CDATA[ and holidaydate <= cast(CONVERT(varchar, #{endDate})as date) ]]>
+    </select>
+    <!--公共假日 按照某个日期查询-->
+    <select id="getCurrentHoliday" resultType="java.util.HashMap" parameterType="string">
+        select holidayname,changetype from HrmPubHoliday
+        where holidaydate=cast(CONVERT(varchar, #{dayStr})as date)
+    </select>
+    <!--签到次数-->
+    <select id="getMobileSignTimes" resultType="java.util.HashMap">
+        select operate_time as operateTime from mobile_sign where operater=#{user} and operate_date=cast(CONVERT(varchar, #{dateStr})as date)
+    </select>
+    <!--服务日志次数-->
+    <select id="getFWLogCounts" resultType="int" >
+        select count(1) as totalLog from 	formtable_main_223 where requestid is not null and  tbr=#{user} and tbrq=cast(CONVERT(varchar, #{dateStr})as date)
+    </select>
+    <!--项目日志次数-->
+    <select id="getYXLogCounts" resultType="int">
+        select count(1) as totalLog from 	formtable_main_54 where requestid is not null and  tbr=#{user} and tbrq=cast(CONVERT(varchar, #{dateStr})as date)
+    </select>
+    <!--查询请假-->
+    <select id="getUserLeave" resultType="java.util.HashMap">
+        select qjksrq,qjkssj,qjjsrq,qjjssj from formtable_main_117
+        where sqr=#{user}
+        and
+        ((<![CDATA[ qjksrq>=cast(CONVERT(varchar, #{startDate})as date) ]]>
+        <![CDATA[ and qjksrq<=cast(CONVERT(varchar, #{endDate})as date) ]]>)
+        or (<![CDATA[ qjjsrq>=cast(CONVERT(varchar, #{startDate})as date) ]]>
+        and <![CDATA[ qjjsrq<=cast(CONVERT(varchar, #{endDate})as date) ]]>))
+        and requestId in (select requestId from workflow_requestbase where currentnodetype=3)
+    </select>
+    <!--获取市场部下的岗位-->
+    <select  id="getJobTitle" resultType="java.util.HashMap">
+        select id as value,jobtitlename as title from HrmJobTitles  where id in (43,45,49)
+        union all
+        select id as value,jobtitlename as title from HrmJobTitles  where id not in (43,45,49)
+    </select>
+
+</mapper>

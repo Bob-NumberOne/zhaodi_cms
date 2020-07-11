@@ -1,0 +1,689 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+<title>lgccatalogs(产品类别表)</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gbk"/>
+<style>
+body, td {
+font-family: 微软雅黑;
+font-size: 12px;
+line-height: 150%;
+}
+table {
+width: 100%;
+background-color: #ccc;
+margin: 5px 0;
+word-break: break-all;
+}
+td {
+	background-color: #fff;
+	padding: 3px;
+padding-left: 10px;
+}
+thead td {
+	text-align: left;
+font-weight: bold;
+background-color: #eee;
+}
+a:link, a:visited, a:active {
+color: #015FB6;
+text-decoration: none;
+}
+a:hover {
+color: #E33E06;
+}
+.tablename {
+margin-top: 30px;
+}
+.outdiv {
+width: 1000px;
+margin: 40px auto;
+text-align: left;
+}
+
+</style>
+</head>
+<body>
+<center>
+<div class="outdiv">
+<div class="tablename">
+<b>表名：lgccatalogs</b>
+</div>
+<div>中文名称：产品类别表</div>
+<div>表类型： </div>
+<a href='index.html' style='float: right;'>返回目录</a><div>说明：</div>
+<table cellspacing="1" cellpadding="0"> 
+ <colgroup> 
+  <col width="50px"> 
+  <col width="190px"> 
+  <col width="190px"> 
+  <col width="80px"> 
+  <col width="80px"> 
+  <col width="70px"> 
+  <col width="40px"> 
+  <col width="60px"> 
+  <col width="40px"> 
+  <col width="200px"> 
+ </colgroup> 
+ <thead> 
+  <tr class="firstRow"> 
+   <td> 序号 </td> 
+   <td> 中文名称 </td> 
+   <td> 英文名称 </td> 
+   <td> 数据类型 </td> 
+   <td> 长度 </td> 
+   <td> 允许空值 </td> 
+   <td> 主键 </td> 
+   <td> 默认值 </td> 
+   <td> 自增 </td> 
+   <td> 说明 </td> 
+  </tr> 
+ </thead> 
+ <tbody> 
+  <tr> 
+   <td style="text-align: center;"> 1 </td> 
+   <td style="word-break: break-all;"> ID </td> 
+   <td> id </td> 
+   <td align="center"> int </td> 
+   <td align="center"></td> 
+   <td align="center"> N </td> 
+   <td align="center"> Y </td> 
+   <td align="center"></td> 
+   <td> Y </td> 
+   <td> 　 </td> 
+  </tr> 
+  <tr> 
+   <td style="text-align: center;"> 2 </td> 
+   <td style="word-break: break-all;"> 类别名称 </td> 
+   <td> catalogname </td> 
+   <td align="center"> varchar </td> 
+   <td align="center"> 1000 </td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td></td> 
+   <td> 　 </td> 
+  </tr> 
+  <tr> 
+   <td style="text-align: center;"> 3 </td> 
+   <td style="word-break: break-all;"> 类别描述 </td> 
+   <td> catalogdesc </td> 
+   <td align="center"> varchar </td> 
+   <td align="center"> 1000 </td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td></td> 
+   <td> 　 </td> 
+  </tr> 
+  <tr> 
+   <td style="text-align: center;"> 4 </td> 
+   <td style="word-break: break-all;"> 类别排序 </td> 
+   <td> catalogorder </td> 
+   <td align="center"> int </td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td></td> 
+   <td> 　 </td> 
+  </tr> 
+  <tr> 
+   <td style="text-align: center;"> 5 </td> 
+   <td style="word-break: break-all;"> 页容量 </td> 
+   <td> perpage </td> 
+   <td align="center"> int </td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td></td> 
+   <td> 　 </td> 
+  </tr> 
+  <tr> 
+   <td style="text-align: center;"> 6 </td> 
+   <td style="word-break: break-all;"> 安全级别起始站 </td> 
+   <td> seclevelfrom </td> 
+   <td align="center"> tinyint </td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td></td> 
+   <td> 　 </td> 
+  </tr> 
+  <tr> 
+   <td style="text-align: center;"> 7 </td> 
+   <td style="word-break: break-all;"> 安全级别结束值 </td> 
+   <td> seclevelto </td> 
+   <td align="center"> tinyint </td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td></td> 
+   <td style="word-break: break-all;"> 　1：最高，2：工具条，3：隐藏 </td> 
+  </tr> 
+  <tr> 
+   <td style="text-align: center;"> 8 </td> 
+   <td style="word-break: break-all;"> 显示<br> </td> 
+   <td> navibardsp </td> 
+   <td align="center"> char </td> 
+   <td align="center"> 1 </td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td></td> 
+   <td> 　 </td> 
+  </tr> 
+  <tr> 
+   <td style="text-align: center;"> 9 </td> 
+   <td style="word-break: break-all;"> 背景颜色 </td> 
+   <td> navibarbgcolor </td> 
+   <td align="center"> char </td> 
+   <td align="center"> 6 </td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td></td> 
+   <td style="word-break: break-all;"> 　 </td> 
+  </tr> 
+  <tr> 
+   <td style="text-align: center;"> 10 </td> 
+   <td style="word-break: break-all;"> 字体颜色 </td> 
+   <td> navibarfontcolor </td> 
+   <td align="center"> char </td> 
+   <td align="center"> 6 </td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td></td> 
+   <td> 　 </td> 
+  </tr> 
+  <tr> 
+   <td style="text-align: center;"> 11 </td> 
+   <td style="word-break: break-all;"> 字体大小 </td> 
+   <td> navibarfontsize </td> 
+   <td align="center"> varchar </td> 
+   <td align="center"> 1000 </td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td></td> 
+   <td> 　 </td> 
+  </tr> 
+  <tr> 
+   <td style="text-align: center;"> 12 </td> 
+   <td style="word-break: break-all;"> 字体类型 </td> 
+   <td> navibarfonttype </td> 
+   <td align="center"> varchar </td> 
+   <td align="center"> 1000 </td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td></td> 
+   <td> 　 </td> 
+  </tr> 
+  <tr> 
+   <td style="text-align: center;"> 13 </td> 
+   <td style="word-break: break-all;"> 工具条显示 </td> 
+   <td> toolbardsp </td> 
+   <td align="center"> char </td> 
+   <td align="center"> 1 </td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td></td> 
+   <td style="word-break: break-all;"> 　1：左页，2：右页，3：隐藏 </td> 
+  </tr> 
+  <tr> 
+   <td style="text-align: center;"> 14 </td> 
+   <td style="word-break: break-all;"> 工具条宽度<br> </td> 
+   <td> toolbarwidth </td> 
+   <td align="center"> int </td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"> 200 </td> 
+   <td></td> 
+   <td> 　 </td> 
+  </tr> 
+  <tr> 
+   <td style="text-align: center;"> 15 </td> 
+   <td style="word-break: break-all;"> 工具条背景色 </td> 
+   <td> toolbarbgcolor </td> 
+   <td align="center"> char </td> 
+   <td align="center"> 6 </td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td></td> 
+   <td> 　 </td> 
+  </tr> 
+  <tr> 
+   <td style="text-align: center;"> 16 </td> 
+   <td style="word-break: break-all;"> 工具条字体颜色 </td> 
+   <td> toolbarfontcolor </td> 
+   <td align="center"> char </td> 
+   <td align="center"> 6 </td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td></td> 
+   <td> 　 </td> 
+  </tr> 
+  <tr> 
+   <td style="text-align: center;"> 17 </td> 
+   <td style="word-break: break-all;"> 工具条链接背景色 </td> 
+   <td> toolbarlinkbgcolor </td> 
+   <td align="center"> char </td> 
+   <td align="center"> 6 </td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td></td> 
+   <td> 　 </td> 
+  </tr> 
+  <tr> 
+   <td style="text-align: center;"> 18 </td> 
+   <td style="word-break: break-all;"> 工具条链接字体颜色 </td> 
+   <td> toolbarlinkfontcolor </td> 
+   <td align="center"> char </td> 
+   <td align="center"> 6 </td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td></td> 
+   <td> 　 </td> 
+  </tr> 
+  <tr> 
+   <td style="text-align: center;"> 19 </td> 
+   <td style="word-break: break-all;"> 工具条字体大小 </td> 
+   <td> toolbarfontsize </td> 
+   <td align="center"> varchar </td> 
+   <td align="center"> 1000 </td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td></td> 
+   <td> 　 </td> 
+  </tr> 
+  <tr> 
+   <td style="text-align: center;"> 20 </td> 
+   <td style="word-break: break-all;"> 工具条字体 </td> 
+   <td> toolbarfonttype </td> 
+   <td align="center"> varchar </td> 
+   <td align="center"> 1000 </td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td></td> 
+   <td> 　 </td> 
+  </tr> 
+  <tr> 
+   <td style="text-align: center;"> 21 </td> 
+   <td style="word-break: break-all;"> 国家<br> </td> 
+   <td> countrydsp </td> 
+   <td align="center"> char </td> 
+   <td align="center"> 1 </td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td></td> 
+   <td> 　 </td> 
+  </tr> 
+  <tr> 
+   <td style="text-align: center;"> 22 </td> 
+   <td style="word-break: break-all;"> 默认<br> </td> 
+   <td> countrydeftype </td> 
+   <td align="center"> char </td> 
+   <td align="center"> 1 </td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td></td> 
+   <td> 　 </td> 
+  </tr> 
+  <tr> 
+   <td style="text-align: center;"> 23 </td> 
+   <td style="word-break: break-all;"> 国家ID<br> </td> 
+   <td> countryid </td> 
+   <td align="center"> int </td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td></td> 
+   <td style="word-break: break-all;"> 　0：人力资源，1：固定 </td> 
+  </tr> 
+  <tr> 
+   <td style="text-align: center;"> 24 </td> 
+   <td style="word-break: break-all;"> 按名称搜索<br> </td> 
+   <td> searchbyname </td> 
+   <td align="center"> char </td> 
+   <td align="center"> 1 </td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td></td> 
+   <td> 　 </td> 
+  </tr> 
+  <tr> 
+   <td style="text-align: center;"> 25 </td> 
+   <td style="word-break: break-all;"> 按人员搜索<br> </td> 
+   <td> searchbycrm </td> 
+   <td align="center"> char </td> 
+   <td align="center"> 1 </td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td></td> 
+   <td> 　 </td> 
+  </tr> 
+  <tr> 
+   <td style="text-align: center;"> 26 </td> 
+   <td style="word-break: break-all;"> 高级搜索 </td> 
+   <td> searchadv </td> 
+   <td align="center"> char </td> 
+   <td align="center"> 1 </td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td></td> 
+   <td> 　 </td> 
+  </tr> 
+  <tr> 
+   <td style="text-align: center;"> 27 </td> 
+   <td style="word-break: break-all;"> 种类列表<br> </td> 
+   <td> assortmentdsp </td> 
+   <td align="center"> char </td> 
+   <td align="center"> 1 </td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td></td> 
+   <td> 　 </td> 
+  </tr> 
+  <tr> 
+   <td style="text-align: center;"> 28 </td> 
+   <td style="word-break: break-all;"> 列表名称 </td> 
+   <td> assortmentname </td> 
+   <td align="center"> varchar </td> 
+   <td align="center"> 1000 </td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td></td> 
+   <td> 　 </td> 
+  </tr> 
+  <tr> 
+   <td style="text-align: center;"> 29 </td> 
+   <td style="word-break: break-all;"> 列表条件 </td> 
+   <td> assortmentsql </td> 
+   <td align="center"> text </td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td></td> 
+   <td> 　 </td> 
+  </tr> 
+  <tr> 
+   <td style="text-align: center;"> 30 </td> 
+   <td style="word-break: break-all;"> 属性显示 </td> 
+   <td> attributedsp </td> 
+   <td align="center"> char </td> 
+   <td align="center"> 1 </td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td></td> 
+   <td> 　 </td> 
+  </tr> 
+  <tr> 
+   <td style="text-align: center;"> 31 </td> 
+   <td style="word-break: break-all;"> 属性颜色 </td> 
+   <td> attributecol </td> 
+   <td align="center"> int </td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td></td> 
+   <td> 　 </td> 
+  </tr> 
+  <tr> 
+   <td style="text-align: center;"> 32 </td> 
+   <td style="word-break: break-all;"> 属性字体大小 </td> 
+   <td> attributefontsize </td> 
+   <td align="center"> varchar </td> 
+   <td align="center"> 1000 </td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td></td> 
+   <td> 　 </td> 
+  </tr> 
+  <tr> 
+   <td style="text-align: center;"> 33 </td> 
+   <td style="word-break: break-all;"> 属性字体 </td> 
+   <td> attributefonttype </td> 
+   <td align="center"> varchar </td> 
+   <td align="center"> 1000 </td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td></td> 
+   <td> 　 </td> 
+  </tr> 
+  <tr> 
+   <td style="text-align: center;"> 34 </td> 
+   <td style="word-break: break-all;"> 显示条件 </td> 
+   <td> assetsql </td> 
+   <td align="center"> text </td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td></td> 
+   <td> 　 </td> 
+  </tr> 
+  <tr> 
+   <td style="text-align: center;"> 35 </td> 
+   <td style="word-break: break-all;"> 列1 </td> 
+   <td> assetcol1 </td> 
+   <td align="center"> varchar </td> 
+   <td align="center"> 1000 </td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td></td> 
+   <td> 　 </td> 
+  </tr> 
+  <tr> 
+   <td style="text-align: center;"> 36 </td> 
+   <td style="word-break: break-all;"> 列2 </td> 
+   <td> assetcol2 </td> 
+   <td align="center"> varchar </td> 
+   <td align="center"> 1000 </td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td></td> 
+   <td> 　 </td> 
+  </tr> 
+  <tr> 
+   <td style="text-align: center;"> 37 </td> 
+   <td style="word-break: break-all;"> 列3 </td> 
+   <td> assetcol3 </td> 
+   <td align="center"> varchar </td> 
+   <td align="center"> 1000 </td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td></td> 
+   <td> 　 </td> 
+  </tr> 
+  <tr> 
+   <td style="text-align: center;"> 38 </td> 
+   <td style="word-break: break-all;"> 列4 </td> 
+   <td> assetcol4 </td> 
+   <td align="center"> varchar </td> 
+   <td align="center"> 1000 </td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td></td> 
+   <td> 　 </td> 
+  </tr> 
+  <tr> 
+   <td style="text-align: center;"> 39 </td> 
+   <td style="word-break: break-all;"> 列5 </td> 
+   <td> assetcol5 </td> 
+   <td align="center"> varchar </td> 
+   <td align="center"> 1000 </td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td></td> 
+   <td> 　 </td> 
+  </tr> 
+  <tr> 
+   <td style="text-align: center;"> 40 </td> 
+   <td style="word-break: break-all;"> 列6 </td> 
+   <td> assetcol6 </td> 
+   <td align="center"> varchar </td> 
+   <td align="center"> 1000 </td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td></td> 
+   <td> 　 </td> 
+  </tr> 
+  <tr> 
+   <td style="text-align: center;"> 41 </td> 
+   <td style="word-break: break-all;"> 字体大小<br> </td> 
+   <td> assetfontsize </td> 
+   <td align="center"> varchar </td> 
+   <td align="center"> 1000 </td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td></td> 
+   <td> 　 </td> 
+  </tr> 
+  <tr> 
+   <td style="text-align: center;"> 42 </td> 
+   <td style="word-break: break-all;"> 字体类型 </td> 
+   <td> assetfonttype </td> 
+   <td align="center"> varchar </td> 
+   <td align="center"> 1000 </td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td></td> 
+   <td> 　 </td> 
+  </tr> 
+  <tr> 
+   <td style="text-align: center;"> 43 </td> 
+   <td style="word-break: break-all;"> 使用<br> </td> 
+   <td> webshopdap </td> 
+   <td align="center"> char </td> 
+   <td align="center"> 1 </td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td></td> 
+   <td> 　 </td> 
+  </tr> 
+  <tr> 
+   <td style="text-align: center;"> 44 </td> 
+   <td style="word-break: break-all;"> 类型 </td> 
+   <td> webshoptype </td> 
+   <td align="center"> char </td> 
+   <td align="center"> 1 </td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td></td> 
+   <td style="word-break: break-all;"> 　1：定向客户，一般访问者 </td> 
+  </tr> 
+  <tr> 
+   <td style="text-align: center;"> 45 </td> 
+   <td style="word-break: break-all;"> 返回<br> </td> 
+   <td> webshopreturn </td> 
+   <td align="center"> char </td> 
+   <td align="center"> 1 </td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td></td> 
+   <td> 　 </td> 
+  </tr> 
+  <tr> 
+   <td style="text-align: center;"> 46 </td> 
+   <td style="word-break: break-all;"> 人力资源 </td> 
+   <td> webshopmanageid </td> 
+   <td align="center"> int </td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td></td> 
+   <td> 　 </td> 
+  </tr> 
+  <tr> 
+   <td style="text-align: center;"> 47 </td> 
+   <td style="word-break: break-all;"> 创建者 </td> 
+   <td> createrid </td> 
+   <td align="center"> int </td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td></td> 
+   <td> 　 </td> 
+  </tr> 
+  <tr> 
+   <td style="text-align: center;"> 48 </td> 
+   <td style="word-break: break-all;"> 创建日期 </td> 
+   <td> createdate </td> 
+   <td align="center"> char </td> 
+   <td align="center"> 10 </td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td></td> 
+   <td> 　 </td> 
+  </tr> 
+  <tr> 
+   <td style="text-align: center;"> 49 </td> 
+   <td style="word-break: break-all;"> 最后修改者 </td> 
+   <td> lastmoderid </td> 
+   <td align="center"> int </td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td></td> 
+   <td> 　 </td> 
+  </tr> 
+  <tr> 
+   <td style="text-align: center;"> 50 </td> 
+   <td style="word-break: break-all;"> 最后修改日期 </td> 
+   <td> lastmoddate </td> 
+   <td align="center"> char </td> 
+   <td align="center"> 10 </td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td></td> 
+   <td> 　 </td> 
+  </tr> 
+ </tbody> 
+</table>
+</div>
+</center>
+</body>
+</html>
+

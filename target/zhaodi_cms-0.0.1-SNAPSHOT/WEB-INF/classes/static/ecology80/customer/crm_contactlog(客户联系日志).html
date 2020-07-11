@@ -1,0 +1,365 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+<title>crm_contactlog(客户联系日志)</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gbk"/>
+<style>
+body, td {
+font-family: 微软雅黑;
+font-size: 12px;
+line-height: 150%;
+}
+table {
+width: 100%;
+background-color: #ccc;
+margin: 5px 0;
+word-break: break-all;
+}
+td {
+	background-color: #fff;
+	padding: 3px;
+padding-left: 10px;
+}
+thead td {
+	text-align: left;
+font-weight: bold;
+background-color: #eee;
+}
+a:link, a:visited, a:active {
+color: #015FB6;
+text-decoration: none;
+}
+a:hover {
+color: #E33E06;
+}
+.tablename {
+margin-top: 30px;
+}
+.outdiv {
+width: 1000px;
+margin: 40px auto;
+text-align: left;
+}
+
+</style>
+</head>
+<body>
+<center>
+<div class="outdiv">
+<div class="tablename">
+<b>表名：crm_contactlog</b>
+</div>
+<div>中文名称：客户联系日志</div>
+<div>表类型： </div>
+<a href='index.html' style='float: right;'>返回目录</a><div>说明：</div>
+<table cellspacing="1" cellpadding="0"> 
+ <colgroup> 
+  <col width="50px"> 
+  <col width="190px"> 
+  <col width="190px"> 
+  <col width="80px"> 
+  <col width="80px"> 
+  <col width="70px"> 
+  <col width="40px"> 
+  <col width="60px"> 
+  <col width="40px"> 
+  <col width="200px"> 
+ </colgroup> 
+ <thead> 
+  <tr class="firstRow"> 
+   <td> 序号 </td> 
+   <td> 中文名称 </td> 
+   <td> 英文名称 </td> 
+   <td> 数据类型 </td> 
+   <td> 长度 </td> 
+   <td> 允许空值 </td> 
+   <td> 主键 </td> 
+   <td> 默认值 </td> 
+   <td> 自增 </td> 
+   <td> 说明 </td> 
+  </tr> 
+ </thead> 
+ <tbody> 
+  <tr> 
+   <td style="text-align: center;"> 1 </td> 
+   <td> ID </td> 
+   <td> id </td> 
+   <td align="center"> int </td> 
+   <td align="center"></td> 
+   <td align="center"> N </td> 
+   <td align="center"> Y </td> 
+   <td align="center"></td> 
+   <td> Y </td> 
+   <td> 　 </td> 
+  </tr> 
+  <tr> 
+   <td style="text-align: center;"> 2 </td> 
+   <td> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 客户ID </td> 
+   <td> customerid </td> 
+   <td align="center"> int </td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td></td> 
+   <td> 　 </td> 
+  </tr> 
+  <tr> 
+   <td style="text-align: center;"> 3 </td> 
+   <td> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 客户联系人ID </td> 
+   <td> contacterid </td> 
+   <td align="center"> int </td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td></td> 
+   <td> 　 </td> 
+  </tr> 
+  <tr> 
+   <td style="text-align: center;"> 4 </td> 
+   <td> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 人力资源ID </td> 
+   <td> resourceid </td> 
+   <td align="center"> int </td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td></td> 
+   <td> 　 </td> 
+  </tr> 
+  <tr> 
+   <td style="text-align: center;"> 5 </td> 
+   <td> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 联系方法ID </td> 
+   <td> contactway </td> 
+   <td align="center"> int </td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td></td> 
+   <td> 　 </td> 
+  </tr> 
+  <tr> 
+   <td style="text-align: center;"> 6 </td> 
+   <td> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 是否客户主动 </td> 
+   <td> ispassive </td> 
+   <td align="center"> tinyint </td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td></td> 
+   <td> 　 </td> 
+  </tr> 
+  <tr> 
+   <td style="text-align: center;"> 7 </td> 
+   <td> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 标题 </td> 
+   <td> subject </td> 
+   <td align="center"> varchar </td> 
+   <td align="center"> 1000 </td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td></td> 
+   <td> 　 </td> 
+  </tr> 
+  <tr> 
+   <td style="text-align: center;"> 8 </td> 
+   <td> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 类型 </td> 
+   <td> contacttype </td> 
+   <td align="center"> int </td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td></td> 
+   <td> 1-常规2-业务相关3-客户埋怨 </td> 
+  </tr> 
+  <tr> 
+   <td style="text-align: center;"> 9 </td> 
+   <td> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 联系日期 </td> 
+   <td> contactdate </td> 
+   <td align="center"> varchar </td> 
+   <td align="center"> 10 </td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td></td> 
+   <td> 　 </td> 
+  </tr> 
+  <tr> 
+   <td style="text-align: center;"> 10 </td> 
+   <td> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 联系时间 </td> 
+   <td> contacttime </td> 
+   <td align="center"> varchar </td> 
+   <td align="center"> 8 </td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td></td> 
+   <td> 　 </td> 
+  </tr> 
+  <tr> 
+   <td style="text-align: center;"> 11 </td> 
+   <td> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 联系结束日期 </td> 
+   <td> enddate </td> 
+   <td align="center"> varchar </td> 
+   <td align="center"> 1000 </td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td></td> 
+   <td> 如出差上门服务等 </td> 
+  </tr> 
+  <tr> 
+   <td style="text-align: center;"> 12 </td> 
+   <td> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 联系结束日期 </td> 
+   <td> endtime </td> 
+   <td align="center"> varchar </td> 
+   <td align="center"> 1000 </td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td></td> 
+   <td> 如出差上门服务等 </td> 
+  </tr> 
+  <tr> 
+   <td style="text-align: center;"> 13 </td> 
+   <td> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 联系情况 </td> 
+   <td> contactinfo </td> 
+   <td align="center"> text </td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td></td> 
+   <td> 　 </td> 
+  </tr> 
+  <tr> 
+   <td style="text-align: center;"> 14 </td> 
+   <td> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 文档ID </td> 
+   <td> documentid </td> 
+   <td align="center"> int </td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td></td> 
+   <td> 还可以对这次联系有更详细的描述，提供文档 </td> 
+  </tr> 
+  <tr> 
+   <td style="text-align: center;"> 15 </td> 
+   <td> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 联系情况提交日期 </td> 
+   <td> submitdate </td> 
+   <td align="center"> varchar </td> 
+   <td align="center"> 1000 </td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td></td> 
+   <td> 　 </td> 
+  </tr> 
+  <tr> 
+   <td style="text-align: center;"> 16 </td> 
+   <td> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 联系情况提交时间 </td> 
+   <td> submittime </td> 
+   <td align="center"> varchar </td> 
+   <td align="center"> 1000 </td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td></td> 
+   <td> 　 </td> 
+  </tr> 
+  <tr> 
+   <td style="text-align: center;"> 17 </td> 
+   <td> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 是否子批注 </td> 
+   <td> issublog </td> 
+   <td align="center"> tinyint </td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td></td> 
+   <td> 　 </td> 
+  </tr> 
+  <tr> 
+   <td style="text-align: center;"> 18 </td> 
+   <td> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 所属批注的条目ID </td> 
+   <td> parentid </td> 
+   <td align="center"> int </td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td></td> 
+   <td> 　 </td> 
+  </tr> 
+  <tr> 
+   <td style="text-align: center;"> 19 </td> 
+   <td> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 是否已存档 </td> 
+   <td> isprocessed </td> 
+   <td align="center"> tinyint </td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td></td> 
+   <td> 不能修改 </td> 
+  </tr> 
+  <tr> 
+   <td style="text-align: center;"> 20 </td> 
+   <td> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 联系情况处理日期 </td> 
+   <td> processdate </td> 
+   <td align="center"> varchar </td> 
+   <td align="center"> 1000 </td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td></td> 
+   <td> 　 </td> 
+  </tr> 
+  <tr> 
+   <td style="text-align: center;"> 21 </td> 
+   <td> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 联系情况提交时间 </td> 
+   <td> processtime </td> 
+   <td align="center"> varchar </td> 
+   <td align="center"> 1000 </td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td></td> 
+   <td> 　 </td> 
+  </tr> 
+  <tr> 
+   <td style="text-align: center;"> 22 </td> 
+   <td> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 是否完成 </td> 
+   <td> isfinished </td> 
+   <td align="center"> tinyint </td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td></td> 
+   <td> 　 </td> 
+  </tr> 
+  <tr> 
+   <td style="text-align: center;"> 23 </td> 
+   <td> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 代理商id </td> 
+   <td> agentid </td> 
+   <td align="center"> int </td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td></td> 
+   <td> 　 </td> 
+  </tr> 
+ </tbody> 
+</table>
+</div>
+</center>
+</body>
+</html>
+

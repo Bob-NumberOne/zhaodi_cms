@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <base th:href="${#request.getContextPath()}+'/'">
+    <link rel="stylesheet" href="layuiAdmin/lib/layui-v2.5.5/css/layui.css"  media="all">
+    <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
+    <script src="js/layui/layui.js" charset="utf-8"></script>
+    <script type="text/javascript" src="js/serializejson.min.js"></script>
+    <style type="text/css">
+        .wb_head{margin-top: 20px;padding-left: 50px}
+        .table_head{text-align: center;}
+        .layui-transfer-data{height: 280px !important;}
+    </style>
+</head>
+<body>
+<form class="layui-form" id="myForm" style="padding-top:20px; ">
+    <div class="layui-inline wb_head layui-form-item" style="display: flex;justify-content: center;align-items: center;">
+
+        <div class="layui-inline" id="message" >
+            <div class="layui-input-inline" style="width: 400px">
+                <input type="text" name="message" style="width: 400px" class="layui-input" id="message" placeholder="请输入需要检索的内容">
+            </div>
+            <button id="search" type="button" style="margin-left: -10px;" class="layui-btn layui-btn-primary">搜索</button>
+        </div>
+
+    </div>
+</form>
+<table id="fieldDtail" class="layui-table" lay-even="fieldDtail" lay-skin="row" style="display: none">
+    <colgroup>
+        <col width="150">
+        <col width="150">
+        <col width="150">
+        <col width="150">
+        <col width="150">
+        <col width="150">
+        <col width="150">
+        <col width="150">
+        <col width="150">
+    </colgroup>
+    <thead>
+    <tr>
+        <th>字段ID</th>
+        <th>字段名称</th>
+        <th>字段类型</th>
+        <th>字段显示名</th>
+        <th>字段位置</th>
+        <th>表现形式</th>
+        <th>字段类型</th>
+        <th>明细表名称</th>
+        <th>显示顺序</th>
+    </tr>
+    </thead>
+    <tbody id="fieldDtail_Content">
+
+    </tbody>
+</table>
+
+<table class="layui-hide" id="patent" lay-filter="patentTable"></table>
+<script type="text/html" id="barDemo" th:inline="none">
+    <a class="layui-btn layui-btn-primary layui-btn-xs" lay-event="look"><i class="layui-icon layui-icon-form"></i>字段详情</a>
+
+</script>
+<script type="text/javascript" src="js/patent/getBlockTree.js"></script>
+<script th:inline="none">
+    layui.use(['table','form','layer'],function(){
+        var table = layui.table
+            ,form = layui.form
+            ,layer = layui.layer;
+        reloadTable = table.render({
+            elem: '#patent'
+            ,url:"project/getTableList.xmj"
+            ,method:'post'
+            ,toolbar: true
+            ,title: '创新刊物'
+            ,limits:[10,50,100]
+            ,totalRow: true
+            ,cols: [[
+                {field:'id', title:'表ID', width:150, align:'center'}
+                ,{field:'tableName', title:'数据库表英文名称', width:270}
+                ,{field:'indexDesc', title:'数据库表中文名称', width:270,templet:function (res){
+                    var item=res.indexDesc;
+                    var tableDetail=res.tableDetail;
+                    if(item==null || item==""){
+                        if(tableDetail==null){
+                            return "";
+                        }
+                        return tableDetail
+                    }
+                    return item;
+                }
+                }
+                ,{field:'workflowName', title:'流程或者模块名称', width:270}
+                ,{field:'isValid', title:'流程状态', width:270,templet:function (res){
+                    var item=res.isValid;
+                    var flag="";
+                    if(item==0){
+                        flag="无效";
+                    }else if(item==1){
+                        flag="有效";
+                    }else if(item==2){
+                        flag="测试";
+                    }else if(item==3){
+                        flag="已删除";
+                    }
+                    return flag;
+                }}
+                ,{fixed: 'right', title:'操作', toolbar: '#barDemo', width:160, align:'center'}
+            ]]
+            ,page: true
+            ,response: {
+                statusCode: 200 //重新规定成功的状态码为 200，table 组件默认为 0
+            }
+            ,parseData: function(res){ //将原始数据解析成 table 组件所规定的数据
+                return {
+                    "code": res.status, //解析接口状态
+                    "msg": res.message, //解析提示文本
+                    "count": res.counts, //解析数据长度
+                    "data": res.beans //解析数据列表
+                };
+            }
+        });
+        $("#search").click(function () {
+            var formData=$("#myForm").serializeJSON();
+            //console.log(formData);
+            //这里以搜索为例
+            reloadTable.reload({
+                where: formData
+                ,page: {
+                    curr: 1 //重新从第 1 页开始
+                }
+            });
+        })
+
+        //回车键监听
+        $('#message').bind('keydown',function(event){
+            if(event.keyCode == "13") {
+                var formData=$("#myForm").serializeJSON();
+                //console.log(message);
+                //这里以搜索为例
+                reloadTable.reload({
+                    where: formData
+                    ,page: {
+                        curr: 1 //重新从第 1 页开始
+                    }
+                });
+            }
+        });
+        //监听行工具事件
+        table.on('tool(patentTable)', function(obj){ //注：tool 是工具条事件名，patentTable 是 table 原始容器的属性 lay-filter="对应的值"\
+            var billId = obj.data.id ;//获得当前行数据
+            var tableName=obj.data.tableName ;//表名称
+            var tableElement=$("#fieldDtail");
+            var tableDetail=obj.data.tableDetail;
+            var tableHtmlSrc=obj.data.tableHtmlSrc;
+            //console.log(tableDetail+"====="+tableHtmlSrc);
+            var layEvent = obj.event; //获得 lay-event 对应的值
+            if(layEvent === 'look'){
+                if((tableDetail==null || tableDetail=='') && billId!=null){
+                    console.log("流程");
+                    $.ajax({
+                        async: false,
+                        url: 'project/getOATableFields.xmj',
+                        data: {"billId":billId},
+                        dataType: 'json',
+                        type: 'GET',
+                        success: function (data) {
+                            console.log(data);
+                            var htmlText="";
+                            $("#fieldDtail_Content").html("");
+                            for(var i=0;i<data.length;i++){
+                                var viewType="";
+                                if(data[i].viewType=="0"){
+                                    viewType="主表字段";
+                                }else if(data[i].viewType=="1"){
+                                    viewType="明细字段";
+                                }
+                                htmlText+="<tr>\n" +
+                                    "        <td>"+data[i].fieldId+"</td>\n" +
+                                    "        <td>"+data[i].fieldName+"</td>\n" +
+                                    "        <td>"+data[i].fieldDbType+"</td>\n" +
+                                    "        <td>"+data[i].indexDesc+"</td>\n" +
+                                    "        <td>"+viewType+"</td>\n" +//字段位置
+                                    "        <td>"+data[i].type+"</td>\n" +//字段位置
+                                    "        <td>"+data[i].fieldHtmlType+"</td>\n" +
+                                    "        <td>"+data[i].detailTable+"</td>\n" +//明细表名称
+                                    "        <td>"+data[i].dsporder+"</td>\n" +//显示顺序
+                                    "    </tr>";
+                            }
+                            $("#fieldDtail_Content").append(htmlText);
+                            openWindows(tableName,"1200px","800px",tableElement);
+                        },
+                        error:function(request){
+                            layer.msg("请求失败");
+                        }
+                    });
+                }else if(tableDetail!=null  && (billId==null ||  billId=='')){
+                    //console.log("系统");
+                    openLay(tableName,tableHtmlSrc,"1200px","700px");
+                }else{
+                    //console.log("基本");
+                }
+
+            }
+        });
+        function openWindows(tableName,width,height,idElement) {
+            var detail=tableName+"详情";
+            layer.open({
+                type: 1
+                ,title: [detail, 'font-size:18px;'] //不显示标题栏
+                ,closeBtn: false
+                ,area: [ width, height]
+                ,id: 'LAY_layuipro123' //设定一个id，防止重复弹出
+                ,maxmin: true
+                ,btn: ['确定', '取消']
+                ,btnAlign: 'c'
+                ,moveType: 1 //拖拽模式，0或者1
+                ,content: idElement
+                ,success: function(layero){
+                    //idElement.css('display', 'block');
+                },yes: function(index, layero) {//确定操作
+                    layer.close(index); //如果设定了yes回调，需进行手工关闭
+                    reloadTable.reload();
+                }
+            });
+        }
+        function openLay(title, url, width, height){
+            layer.open({
+                type: 2 //此处以iframe举例
+                ,title: title+"详情"
+                ,area: [width, height]
+                ,shade: 0.1
+                ,maxmin: true
+                ,offset: '75px'
+                ,content: url
+                ,btn: ['确定','关闭'] //只是为了演示
+                ,yes : function(index, layero) { // 保存按钮回调函数
+                    layer.close(index); // 关闭弹出层
+                }
+                ,btn2 : function(index, layero) { // 取消按钮回调函数
+                    layer.close(index); // 关闭弹出层
+                    /*reloadTable.reload();*/
+                },zIndex: layer.zIndex
+            });
+        }
+    });
+</script>
+
+</body>
+</html>

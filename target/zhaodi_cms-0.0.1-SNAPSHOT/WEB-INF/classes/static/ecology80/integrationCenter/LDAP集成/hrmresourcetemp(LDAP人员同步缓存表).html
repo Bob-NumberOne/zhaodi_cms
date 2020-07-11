@@ -1,0 +1,1481 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+<title>hrmresourcetemp(LDAP人员同步缓存表)</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gbk"/>
+<style>
+body, td {
+font-family: 微软雅黑;
+font-size: 12px;
+line-height: 150%;
+}
+table {
+width: 100%;
+background-color: #ccc;
+margin: 5px 0;
+word-break: break-all;
+}
+td {
+	background-color: #fff;
+	padding: 3px;
+padding-left: 10px;
+}
+thead td {
+	text-align: left;
+font-weight: bold;
+background-color: #eee;
+}
+a:link, a:visited, a:active {
+color: #015FB6;
+text-decoration: none;
+}
+a:hover {
+color: #E33E06;
+}
+.tablename {
+margin-top: 30px;
+}
+.outdiv {
+width: 1000px;
+margin: 40px auto;
+text-align: left;
+}
+
+</style>
+</head>
+<body>
+<center>
+<div class="outdiv">
+<div class="tablename">
+<b>表名：hrmresourcetemp</b>
+</div>
+<div>中文名称：LDAP人员同步缓存表</div>
+<div>表类型： </div>
+<a href='index.html' style='float: right;'>返回目录</a><div>说明：</div>
+<table cellspacing="1" cellpadding="0">
+ <thead>
+  <tr>
+   <td style="width: 40px;">序号</td>
+   <td>中文名称</td>
+   <td>英文名称</td>
+   <td>数据类型</td>
+   <td>长度</td>
+   <td>允许空值</td>
+   <td>主键</td>
+   <td>默认值</td>
+   <td>自增</td>
+   <td>说明</td>
+  </tr>
+ </thead> 
+ <tbody>
+  <tr>
+   <td style="text-align: center;">1</td>
+   <td></td>
+   <td>textfield13</td>
+   <td align="center">varchar</td>
+   <td align="center">500</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td></td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">2</td> 
+   <td>主键id</td> 
+   <td>id</td>
+   <td align="center">int</td>
+   <td align="center"></td>
+   <td align="center"> N </td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td> Y </td>
+   <td></td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">3</td> 
+   <td>登录账号</td> 
+   <td>loginid</td>
+   <td align="center">varchar</td>
+   <td align="center">60</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td></td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">4</td> 
+   <td>密码</td> 
+   <td>password</td>
+   <td align="center">varchar</td>
+   <td align="center">100</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td></td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">5</td> 
+   <td>姓名</td> 
+   <td>lastname</td>
+   <td align="center">varchar</td>
+   <td align="center">60</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td></td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">6</td> 
+   <td>性别</td> 
+   <td>sex</td>
+   <td align="center">char</td>
+   <td align="center">1</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td></td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">7</td> 
+   <td>生日</td> 
+   <td>birthday</td>
+   <td align="center">char</td>
+   <td align="center">10</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td></td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">8</td> 
+   <td>国家</td> 
+   <td>nationality</td>
+   <td align="center">int</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td></td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">9</td> 
+   <td> 系统语言</td> 
+   <td>systemlanguage</td>
+   <td align="center">int</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td></td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">10</td> 
+   <td> 婚姻状况</td> 
+   <td>maritalstatus</td>
+   <td align="center">char</td>
+   <td align="center">1</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td></td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">11</td> 
+   <td> 电话</td> 
+   <td>telephone</td>
+   <td align="center">varchar</td>
+   <td align="center">60</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td></td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">12</td> 
+   <td> 手机</td> 
+   <td>mobile</td>
+   <td align="center">varchar</td>
+   <td align="center">60</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td></td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">13</td> 
+   <td> 其他电话</td> 
+   <td>mobilecall</td>
+   <td align="center">varchar</td>
+   <td align="center">60</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td></td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">14</td> 
+   <td> 电子邮件</td> 
+   <td>email</td>
+   <td align="center">varchar</td>
+   <td align="center">60</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td></td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">15</td> 
+   <td> 工作地点</td> 
+   <td>locationid</td>
+   <td align="center">int</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td></td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">16</td> 
+   <td> 办公室</td> 
+   <td>workroom</td>
+   <td align="center">varchar</td>
+   <td align="center">60</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td></td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">17</td> 
+   <td> 家庭住址</td> 
+   <td>homeaddress</td>
+   <td align="center">varchar</td>
+   <td align="center">100</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td></td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">18</td> 
+   <td> 用户类别</td> 
+   <td>resourcetype</td>
+   <td align="center">char</td>
+   <td align="center">1</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td></td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">19</td> 
+   <td> 合同开始日期</td> 
+   <td>startdate</td>
+   <td align="center">char</td>
+   <td align="center">10</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td></td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">20</td> 
+   <td> 合同结束日期</td> 
+   <td>enddate</td>
+   <td align="center">char</td>
+   <td align="center">10</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td></td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">21</td> 
+   <td> 岗位</td> 
+   <td>jobtitle</td>
+   <td align="center">int</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td></td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">22</td> 
+   <td> 职责描述</td> 
+   <td>jobactivitydesc</td>
+   <td align="center">varchar</td>
+   <td align="center">200</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td></td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">23</td> 
+   <td> 工作级别</td> 
+   <td>joblevel</td>
+   <td align="center">tinyint</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td></td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">24</td> 
+   <td> 安全级别</td> 
+   <td>seclevel</td>
+   <td align="center">tinyint</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td></td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">25</td> 
+   <td> 所属部门</td> 
+   <td>departmentid</td>
+   <td align="center">int</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td></td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">26</td> 
+   <td> 所属分部1</td> 
+   <td>subcompanyid1</td>
+   <td align="center">int</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td></td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">27</td> 
+   <td> 所属成本中心</td> 
+   <td>costcenterid</td>
+   <td align="center">int</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td></td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">28</td> 
+   <td> 经理</td> 
+   <td>managerid</td>
+   <td align="center">int</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td></td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">29</td> 
+   <td> 助理</td> 
+   <td>assistantid</td>
+   <td align="center">int</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td></td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">30</td> 
+   <td> 工资银行1</td> 
+   <td>bankid1</td>
+   <td align="center">int</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td></td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">31</td> 
+   <td> 工资帐号1</td> 
+   <td>accountid1</td>
+   <td align="center">varchar</td>
+   <td align="center">100</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td></td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">32</td> 
+   <td> 照片id</td> 
+   <td>resourceimageid</td>
+   <td align="center">int</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td></td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">33</td> 
+   <td> 创建人id</td> 
+   <td>createrid</td>
+   <td align="center">int</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td></td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">34</td> 
+   <td> 创建日期</td> 
+   <td>createdate</td>
+   <td align="center">char</td>
+   <td align="center">10</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td></td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">35</td> 
+   <td> 最后修改人id</td> 
+   <td>lastmodid</td>
+   <td align="center">int</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td></td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">36</td> 
+   <td> 最后修改日期</td> 
+   <td>lastmoddate</td>
+   <td align="center">char</td>
+   <td align="center">10</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td></td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">37</td> 
+   <td> 最后登陆日期</td> 
+   <td>lastlogindate</td>
+   <td align="center">char</td>
+   <td align="center">10</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td></td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">38</td> 
+   <td> 自定义日期1</td> 
+   <td>datefield1</td>
+   <td align="center">varchar</td>
+   <td align="center">10</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td></td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">39</td> 
+   <td> 自定义日期2</td> 
+   <td>datefield2</td>
+   <td align="center">varchar</td>
+   <td align="center">10</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td></td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">40</td> 
+   <td> 自定义日期3</td> 
+   <td>datefield3</td>
+   <td align="center">varchar</td>
+   <td align="center">10</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td></td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">41</td> 
+   <td> 自定义日期4</td> 
+   <td>datefield4</td>
+   <td align="center">varchar</td>
+   <td align="center">10</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td></td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">42</td> 
+   <td> 自定义日期5</td> 
+   <td>datefield5</td>
+   <td align="center">varchar</td>
+   <td align="center">10</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td></td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">43</td> 
+   <td> 自定义数字1</td> 
+   <td>numberfield1</td>
+   <td align="center">float</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td></td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">44</td> 
+   <td> 自定义数字2</td> 
+   <td>numberfield2</td>
+   <td align="center">float</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td></td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">45</td> 
+   <td> 自定义数字3</td> 
+   <td>numberfield3</td>
+   <td align="center">float</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td></td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">46</td> 
+   <td> 自定义数字4</td> 
+   <td>numberfield4</td>
+   <td align="center">float</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td></td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">47</td> 
+   <td> 自定义数字5</td> 
+   <td>numberfield5</td>
+   <td align="center">float</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td></td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">48</td> 
+   <td> 自定义文本1</td> 
+   <td>textfield1</td>
+   <td align="center">varchar</td>
+   <td align="center">100</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td></td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">49</td> 
+   <td> 自定义文本2</td> 
+   <td>textfield2</td>
+   <td align="center">varchar</td>
+   <td align="center">100</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td></td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">50</td> 
+   <td> 自定义文本3</td> 
+   <td>textfield3</td>
+   <td align="center">varchar</td>
+   <td align="center">100</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td></td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">51</td> 
+   <td> 自定义文本4</td> 
+   <td>textfield4</td>
+   <td align="center">varchar</td>
+   <td align="center">100</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td></td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">52</td> 
+   <td> 自定义文本5</td> 
+   <td>textfield5</td>
+   <td align="center">varchar</td>
+   <td align="center">100</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td></td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">53</td> 
+   <td> 自定义判断1</td> 
+   <td>tinyintfield1</td>
+   <td align="center">tinyint</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td></td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">54</td> 
+   <td> 自定义判断2</td> 
+   <td>tinyintfield2</td>
+   <td align="center">tinyint</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td></td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">55</td> 
+   <td> 自定义判断3</td> 
+   <td>tinyintfield3</td>
+   <td align="center">tinyint</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td></td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">56</td> 
+   <td> 自定义判断4</td> 
+   <td>tinyintfield4</td>
+   <td align="center">tinyint</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td></td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">57</td> 
+   <td> 自定义判断5</td> 
+   <td>tinyintfield5</td>
+   <td align="center">tinyint</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td></td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">58</td> 
+   <td> 身份证号码</td> 
+   <td>certificatenum</td>
+   <td align="center">varchar</td>
+   <td align="center">60</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td></td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">59</td> 
+   <td> 籍贯</td> 
+   <td>nativeplace</td>
+   <td align="center">varchar</td>
+   <td align="center">100</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td></td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">60</td> 
+   <td> 学历</td> 
+   <td>educationlevel</td>
+   <td align="center">int</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td></td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">61</td> 
+   <td> 入团时间</td> 
+   <td>bememberdate</td>
+   <td align="center">char</td>
+   <td align="center">10</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td></td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">62</td> 
+   <td> 入党时间</td> 
+   <td>bepartydate</td>
+   <td align="center">char</td>
+   <td align="center">10</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td></td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">63</td> 
+   <td> 编号</td> 
+   <td>workcode</td>
+   <td align="center">varchar</td>
+   <td align="center">60</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td></td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">64</td> 
+   <td> 户口</td> 
+   <td>regresidentplace</td>
+   <td align="center">varchar</td>
+   <td align="center">200</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td></td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">65</td> 
+   <td> 健康状况</td> 
+   <td>healthinfo</td>
+   <td align="center">char</td>
+   <td align="center">1</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td></td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">66</td> 
+   <td> 居住地</td> 
+   <td>residentplace</td>
+   <td align="center">varchar</td>
+   <td align="center">200</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td></td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">67</td> 
+   <td> 政治面貌</td> 
+   <td>policy</td>
+   <td align="center">varchar</td>
+   <td align="center">30</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td></td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">68</td> 
+   <td> 学位</td> 
+   <td>degree</td>
+   <td align="center">varchar</td>
+   <td align="center">30</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td></td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">69</td> 
+   <td> 身高</td> 
+   <td>height</td>
+   <td align="center">varchar</td>
+   <td align="center">10</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td></td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">70</td> 
+   <td> 用工性质</td> 
+   <td>usekind</td>
+   <td align="center">int</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td></td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">71</td> 
+   <td> 职称</td> 
+   <td>jobcall</td>
+   <td align="center">int</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td></td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">72</td> 
+   <td> 公积金帐号</td> 
+   <td>accumfundaccount</td>
+   <td align="center">varchar</td>
+   <td align="center">30</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td></td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">73</td> 
+   <td> 出生地</td> 
+   <td>birthplace</td>
+   <td align="center">varchar</td>
+   <td align="center">60</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td></td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">74</td> 
+   <td> 民族</td> 
+   <td>folk</td>
+   <td align="center">varchar</td>
+   <td align="center">30</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td></td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">75</td> 
+   <td> 居住地电话</td> 
+   <td>residentphone</td>
+   <td align="center">varchar</td>
+   <td align="center">60</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td></td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">76</td> 
+   <td> 居住地邮编</td> 
+   <td>residentpostcode</td>
+   <td align="center">varchar</td>
+   <td align="center">60</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td></td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">77</td> 
+   <td> 分机</td> 
+   <td>extphone</td>
+   <td align="center">varchar</td>
+   <td align="center">50</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td></td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">78</td> 
+   <td> 所有上级</td> 
+   <td>managerstr</td>
+   <td align="center">varchar</td>
+   <td align="center">500</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td></td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">79</td> 
+   <td> 状态</td> 
+   <td>status</td>
+   <td align="center">int</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td></td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">80</td> 
+   <td> 传真</td> 
+   <td>fax</td>
+   <td align="center">varchar</td>
+   <td align="center">60</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td></td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">81</td> 
+   <td> 是否为工会会员</td> 
+   <td>islabouunion</td>
+   <td align="center">char</td>
+   <td align="center">1</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td></td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">82</td> 
+   <td> 体重</td> 
+   <td>weight</td>
+   <td align="center">int</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td></td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">83</td> 
+   <td> 暂住证号码</td> 
+   <td>tempresidentnumber</td>
+   <td align="center">varchar</td>
+   <td align="center">60</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td></td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">84</td> 
+   <td> 试用期结束日期</td> 
+   <td>probationenddate</td>
+   <td align="center">char</td>
+   <td align="center">10</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td></td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">85</td>
+   <td></td>
+   <td>countryid</td>
+   <td align="center">int</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center">1</td>
+   <td></td>
+   <td></td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">86</td>
+   <td></td>
+   <td>passwdchgdate</td>
+   <td align="center">char</td>
+   <td align="center">10</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td></td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">87</td>
+   <td></td>
+   <td>needusb</td>
+   <td align="center">int</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td></td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">88</td>
+   <td>Usb相关</td>
+   <td>serial</td>
+   <td align="center">varchar</td>
+   <td align="center">32</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td></td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">89</td>
+   <td></td>
+   <td>account</td>
+   <td align="center">varchar</td>
+   <td align="center">60</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td></td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">90</td>
+   <td></td>
+   <td>lloginid</td>
+   <td align="center">varchar</td>
+   <td align="center">60</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td></td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">91</td> 
+   <td> 是否使用动态密码</td> 
+   <td>needdynapass</td>
+   <td align="center">int</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td></td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">92</td> 
+   <td> 显示顺序</td> 
+   <td>dsporder</td>
+   <td align="center">float</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td></td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">93</td> 
+   <td> 动态密码状态</td> 
+   <td>passwordstate</td>
+   <td align="center">int</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td></td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">94</td> 
+   <td> 帐号类型</td> 
+   <td>accounttype</td>
+   <td align="center">int</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td></td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">95</td> 
+   <td> 所属主帐号</td> 
+   <td>belongto</td>
+   <td align="center">int</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td></td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">96</td>
+   <td></td>
+   <td>dactylogram</td>
+   <td align="center">varchar</td>
+   <td align="center">4000</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td></td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">97</td>
+   <td></td>
+   <td>assistantdactylogram</td>
+   <td align="center">varchar</td>
+   <td align="center">4000</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td></td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">98</td> 
+   <td> 密码锁定标记</td> 
+   <td>passwordlock</td>
+   <td align="center">int</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td></td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">99</td> 
+   <td> 连续错误次数</td> 
+   <td>sumpasswordwrong</td>
+   <td align="center">int</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td></td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">100</td> 
+   <td> 旧密码1</td> 
+   <td>oldpassword1</td>
+   <td align="center">varchar</td>
+   <td align="center">100</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td></td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">101</td> 
+   <td> 旧密码2</td> 
+   <td>oldpassword2</td>
+   <td align="center">varchar</td>
+   <td align="center">100</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td></td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">102</td>
+   <td></td>
+   <td>msgStyle</td>
+   <td align="center">varchar</td>
+   <td align="center">20</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td></td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">103</td>
+   <td></td>
+   <td>messagerurl</td>
+   <td align="center">varchar</td>
+   <td align="center">100</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td></td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">104</td>
+   <td></td>
+   <td>pinyinlastname</td>
+   <td align="center">varchar</td>
+   <td align="center">50</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td></td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">105</td>
+   <td></td>
+   <td>tokenkey</td>
+   <td align="center">varchar</td>
+   <td align="center">100</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td></td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">106</td>
+   <td></td>
+   <td>userUsbType</td>
+   <td align="center">varchar</td>
+   <td align="center">10</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td></td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">107</td>
+   <td></td>
+   <td>adsjgs</td>
+   <td align="center">varchar</td>
+   <td align="center">500</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td></td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">108</td>
+   <td></td>
+   <td>adgs</td>
+   <td align="center">varchar</td>
+   <td align="center">500</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td></td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">109</td>
+   <td></td>
+   <td>adbm</td>
+   <td align="center">varchar</td>
+   <td align="center">500</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td></td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">110</td>
+   <td></td>
+   <td>outkey</td>
+   <td align="center">varchar</td>
+   <td align="center">100</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td></td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">111</td>
+   <td></td>
+   <td>maildeldate</td>
+   <td align="center">varchar</td>
+   <td align="center">10</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td></td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">112</td>
+   <td></td>
+   <td>mobileshowtype</td>
+   <td align="center">int</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td></td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">113</td>
+   <td></td>
+   <td>usbstate</td>
+   <td align="center">int</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td></td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">114</td>
+   <td></td>
+   <td>totalSpace</td>
+   <td align="center">float</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center">100</td>
+   <td></td>
+   <td></td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">115</td>
+   <td></td>
+   <td>occupySpace</td>
+   <td align="center">float</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center">0</td>
+   <td></td>
+   <td></td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">116</td>
+   <td></td>
+   <td>ecology_pinyin_search</td>
+   <td align="center">varchar</td>
+   <td align="center">300</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td></td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">117</td>
+   <td></td>
+   <td>isADAccount</td>
+   <td align="center">char</td>
+   <td align="center">1</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td></td>
+  </tr> 
+ </tbody>
+</table>
+</div>
+</center>
+</body>
+</html>
+

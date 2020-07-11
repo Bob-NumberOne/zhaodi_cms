@@ -1,0 +1,6 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="zhaodi">
+    <output-path>$PROJECT_DIR$/../eclipse_JAVAEE/apache-tomcat-8.5.9/webapps</output-path>
+    <root id="archive" name="zhaodi.war" />
+  </artifact>
+</component>

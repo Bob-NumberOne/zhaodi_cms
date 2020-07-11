@@ -1,0 +1,245 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+<title>prj_templatetask(项目模板任务)</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gbk"/>
+<style>
+body, td {
+font-family: 微软雅黑;
+font-size: 12px;
+line-height: 150%;
+}
+table {
+width: 100%;
+background-color: #ccc;
+margin: 5px 0;
+word-break: break-all;
+}
+td {
+	background-color: #fff;
+	padding: 3px;
+padding-left: 10px;
+}
+thead td {
+	text-align: left;
+font-weight: bold;
+background-color: #eee;
+}
+a:link, a:visited, a:active {
+color: #015FB6;
+text-decoration: none;
+}
+a:hover {
+color: #E33E06;
+}
+.tablename {
+margin-top: 30px;
+}
+.outdiv {
+width: 1000px;
+margin: 40px auto;
+text-align: left;
+}
+
+</style>
+</head>
+<body>
+<center>
+<div class="outdiv">
+<div class="tablename">
+<b>表名：prj_templatetask</b>
+</div>
+<div>中文名称：项目模板任务</div>
+<div>表类型： </div>
+<a href='index.html' style='float: right;'>返回目录</a><div>说明：</div>
+<table cellspacing="1" cellpadding="0" mytablename="Prj_TemplateTask">
+ <colgroup>
+  <col width="50px">
+  <col width="190px">
+  <col width="190px">
+  <col width="80px">
+  <col width="80px">
+  <col width="70px">
+  <col width="40px">
+  <col width="60px">
+  <col width="40px">
+  <col width="200px">
+ </colgroup>
+ <thead>
+  <tr>
+   <td>序号</td>
+   <td>中文名称</td>
+   <td>英文名称</td>
+   <td>数据类型</td>
+   <td>长度</td>
+   <td>允许空值</td>
+   <td>主键</td>
+   <td>默认值</td>
+   <td>自增</td>
+   <td>说明</td>
+  </tr>
+ </thead> 
+ <tbody>
+  <tr mycolname="id">
+   <td style="text-align: center;">1</td>
+   <td> 标识ID </td>
+   <td>id</td>
+   <td align="center">int</td>
+   <td align="center"></td>
+   <td align="center"> N </td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td> Y </td>
+   <td> 标识列 </td>
+  </tr>
+  <tr mycolname="templetId">
+   <td style="text-align: center;">2</td> 
+   <td>模板id </td>
+   <td>templetId</td>
+   <td align="center">int</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td> 
+   <td>模板id </td> 
+  </tr> 
+  <tr mycolname="templetTaskId">
+   <td style="text-align: center;">3</td> 
+   <td>任务id</td>
+   <td>templetTaskId</td>
+   <td align="center">int</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td> 
+   <td>任务id</td> 
+  </tr> 
+  <tr mycolname="taskName">
+   <td style="text-align: center;">4</td> 
+   <td>名称</td>
+   <td>taskName</td>
+   <td align="center">varchar</td>
+   <td align="center">1000</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td> 
+   <td>名称</td> 
+  </tr> 
+  <tr mycolname="taskManager">
+   <td style="text-align: center;">5</td> 
+   <td>任务负责人 </td>
+   <td>taskManager</td>
+   <td align="center">int</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td> 
+   <td>任务负责人 </td> 
+  </tr> 
+  <tr mycolname="begindate">
+   <td style="text-align: center;">6</td> 
+   <td>开始日期 </td>
+   <td>begindate</td>
+   <td align="center">char</td>
+   <td align="center">10</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td> 
+   <td>开始日期 </td> 
+  </tr> 
+  <tr mycolname="enddate">
+   <td style="text-align: center;">7</td> 
+   <td>结束日期 </td>
+   <td>enddate</td>
+   <td align="center">char</td>
+   <td align="center">10</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td> 
+   <td>结束日期 </td> 
+  </tr> 
+  <tr mycolname="workday">
+   <td style="text-align: center;">8</td> 
+   <td>工期 </td>
+   <td>workday</td>
+   <td align="center">int</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td> 
+   <td>工期 </td> 
+  </tr> 
+  <tr mycolname="budget">
+   <td style="text-align: center;">9</td> 
+   <td>预算</td>
+   <td>budget</td>
+   <td align="center">decimal</td>
+   <td align="center">15,3</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td> 
+   <td>预算</td> 
+  </tr> 
+  <tr mycolname="parentTaskId">
+   <td style="text-align: center;">10</td> 
+   <td>上级任务 </td>
+   <td>parentTaskId</td>
+   <td align="center">int</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td> 
+   <td>上级任务 </td> 
+  </tr> 
+  <tr mycolname="befTaskId">
+   <td style="text-align: center;">11</td> 
+   <td>前置任务 </td>
+   <td>befTaskId</td>
+   <td align="center">int</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td> 
+   <td>前置任务 </td> 
+  </tr> 
+  <tr mycolname="taskDesc">
+   <td style="text-align: center;">12</td> 
+   <td>任务说明 </td>
+   <td>taskDesc</td>
+   <td align="center">text</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td> 
+   <td>任务说明 </td> 
+  </tr> 
+  <tr mycolname="accessory">
+   <td style="text-align: center;">13</td> 
+   <td>附件 </td>
+   <td>accessory</td>
+   <td align="center">varchar</td>
+   <td align="center">2000</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td> 
+   <td>附件 </td> 
+  </tr> 
+ </tbody>
+</table>
+</div>
+</center>
+</body>
+</html>
+

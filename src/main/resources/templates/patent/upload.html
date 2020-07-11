@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html  xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <!-- 这里设定了项目根路径,后面使用到路径的地方正常填写即可 -->
+    <base th:href="${#request.getContextPath()}+'/'">
+    <link rel="stylesheet" href="js/layui/css/layui.css"  media="all">
+    <style type="text/css">
+        .e8_tblForm{margin-left: 50px;margin-top: 20px;}
+        .bb{height: 20px;}
+    </style>
+</head>
+<body>
+<table class="e8_tblForm" id="freewfoTable">
+    <tbody>
+    <tr>
+        <td class="e8_tblForm_label" width="20%">1、下载模板</td>
+        <td class="e8_tblForm_field"><a href="file/downExcel.xmj" style="color:blue;">创新刊物</a>&nbsp;&nbsp;
+        </td>
+    </tr>
+    <tr><td class="bb"></td></tr>
+    <tr>
+        <td class="e8_tblForm_label" width="20%">2、上传Excel</td>
+        <td class="e8_tblForm_field">
+            <button type="button"  class="layui-btn layui-btn-normal" id="chooseFile"><i class="layui-icon"></i>选择文件</button>
+        </td>
+    </tr>
+    <tr><td class="bb"></td></tr>
+    <tr>
+        <td class="e8_tblForm_label" width="20%">
+            <!-- 导入 -->
+            3
+            、导入
+        </td>
+        <td class="e8_tblForm_field layui-form">
+            <div class="layui-inline" style="float: left"><button type="button" class="layui-btn" id="beginUpload" style="width: 113px;">开始上传</button></div>
+            <div style="display: none;float: left;width: 500px;padding: 10px;" id="progressTo">
+                <div class="layui-progress layui-progress-big"  lay-showPercent="yes" lay-filter="progressBar">
+                    <div class="layui-progress-bar layui-bg-blue" lay-percent="0%"></div>
+                </div>
+            </div>
+        </td>
+    </tr>
+    <tr style="height: 30px"><td></td><td><div id="wb_msg" style="color: red;font-weight: bold;"></div></td></tr>
+    <tr>
+        <td colspan="2" style="">
+            <br><b>操作步骤：</b><br><!-- 操作步骤 -->
+
+            1）请先下载<a href="file/downExcel.xmj" style="color:blue;">创新刊物</a>模板进行填写导入表单内容，第一行为表单字段的名称。<br>
+            2）请在第2步中选择填写好的Excel文件，并点击开始导入。<br>
+            3）点击"开始导入"。<br><br>
+            <b>使用注意事项：</b><br>
+            1）模板中第一行为表单字段名称，从第二行开始填写需要导入的数据。<br>
+            2）数据之间不能有空行。<span style="color:red;">(存在空行时仅会导入空行以上的数据，空行以下的数据不会导入)</span><br>
+            3）主字段为一个SHEET页，如果有明细时模板中会有多个SHEET，一个明细一个SHEET。<br>
+            4）每条主数据都有一个ID字段，同时每条明细数据里面都有MAINID字段，这两个字段的作用为明细数据和主数据的关联关系，ID的值必须为数字或者字母。<br>
+            5）数字类型字段不要有特殊格式，例如：科学计数法，千分位，货币符号等。<br>
+            6）浏览类型字段直接输入名称或主键，例如：人力资源字段直接输入人员名称或主键。<br>
+            7）check类型字段输入"1/0"或"是/否"。<br>
+            8）下拉选择框类型字段输入下拉选择框显示名称。(百分比格式的需要改为文本格式)<br>
+            9）日期类型字段导入时模板中需改为日期格式。<br>
+            10）人力资源字段支持编号导入，excel模板中的格式为：workcode_具体编号。<br>
+            11）模板中支持创建人，创建日期导入。在模板中创建人支持直接输入名称或者主键ID。<br>
+            12）批量导入支持以数据ID作为重复验证字段去更新已有数据，已有数据的ID可以从查询列表导出。<br>
+            13）<span style="color:red;font-weight:bold;Letter-spacing:1px;">导入类型为“追加”，就是把模版中的数据新增到该模块中；导入类型为“覆盖”会把该模块中所有的数据全部删除，然后再导入模版中的数据，请慎用！</span><br>
+            14）<span style="color:red;font-weight:bold;Letter-spacing:1px;">分块遵循规范如：顶层父类名称>分块名称，比如：地基施工>场地就位</span><br>
+            15）<span style="color:red;font-weight:bold;Letter-spacing:1px;">导入必填字段，当设置选择框为空时表示导入时需要验证设置的字段是否必填，当选择框不为空时则表示满足选择框条件之后才去验证设置的字段是否必填。</span><br>
+            16）<span style="color:red;font-weight:bold;Letter-spacing:1px;">浏览类型字段根据名称导入，如果名称为整数，则需要加上前缀name_，例如：name_名称。</span><br>
+            17）<span style="color:red;font-weight:bold;Letter-spacing:1px;">浏览类型字段根据主键导入，如果主键非整数，则需要加上前缀key_，例如：key_主键。</span><br>
+            18）<span style="color:red;font-weight:bold;Letter-spacing:1px;">分部，部门，人员字段支持A&gt;B&gt;C格式导入数据</span><br>
+
+        </td>
+    </tr>
+    </tbody>
+</table>
+
+
+<script src="js/layui/layui.js" charset="utf-8"></script>
+<!-- 注意：如果你直接复制所有代码到本地，上述js路径需要改成你本地的 -->
+<script>
+    layui.use(['element','upload'],function(){
+        var $ = layui.jquery
+            ,element=layui.element
+            ,upload = layui.upload;
+        //创建监听函数
+        upload.render({
+            elem: '#chooseFile'
+            ,url: 'patent/savePatentData.xmj' //改成您自己的上传接口
+            ,accept: 'file' //普通文件
+            ,auto: false
+            ,exts: 'xls|excel|xlsx' //只允许上传压缩文件
+            ,multiple: true
+            ,bindAction: '#beginUpload'
+/*            ,xhr:xhrOnProgress
+            ,progress: function(t, elem) {
+                $("#progressTo").css("display","block");
+                element.progress('progressBar',t  + '%');
+
+            }*/
+            ,before: function(obj){
+                $("#beginUpload").addClass("layui-btn-disabled");
+                layer.load(); //上传loading
+/*                layer.load(1,{
+                    shade: [1,"#fff"]
+                })*/
+            }
+            ,done: function(res){
+                layer.closeAll();
+                var msg=res.msg;
+                /*var code=res.code;*/
+                $("#wb_msg").text(msg);
+                layer.msg(msg);
+                $("#beginUpload").removeClass("layui-btn-disabled");
+            }
+        });
+        //触发事件
+/*        function doUpload() {
+            //模拟loading
+            var n = 0, timer = setInterval(function(){
+                n = n + Math.random()*10|0;
+                if(n>100){
+                    n = 100;
+                    clearInterval(timer);
+                }
+                element.progress('uploading', n+'%');
+            }, 300+Math.random()*1000);
+        }*/
+
+
+    });
+</script>
+</body>
+</html>

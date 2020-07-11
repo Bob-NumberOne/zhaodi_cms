@@ -1,0 +1,281 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+<title>mode_custombrowserdspfield(浏览框字段信息表)</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gbk"/>
+<style>
+body, td {
+font-family: 微软雅黑;
+font-size: 12px;
+line-height: 150%;
+}
+table {
+width: 100%;
+background-color: #ccc;
+margin: 5px 0;
+word-break: break-all;
+}
+td {
+	background-color: #fff;
+	padding: 3px;
+padding-left: 10px;
+}
+thead td {
+	text-align: left;
+font-weight: bold;
+background-color: #eee;
+}
+a:link, a:visited, a:active {
+color: #015FB6;
+text-decoration: none;
+}
+a:hover {
+color: #E33E06;
+}
+.tablename {
+margin-top: 30px;
+}
+.outdiv {
+width: 1000px;
+margin: 40px auto;
+text-align: left;
+}
+
+</style>
+</head>
+<body>
+<center>
+<div class="outdiv">
+<div class="tablename">
+<b>表名：mode_custombrowserdspfield</b>
+</div>
+<div>中文名称：浏览框字段信息表</div>
+<div>表类型： </div>
+<a href='index.html' style='float: right;'>返回目录</a><div>说明：</div>
+<table cellspacing="1" cellpadding="0"> 
+ <colgroup> 
+  <col width="5%"> 
+  <col width="10%"> 
+  <col width="10%"> 
+  <col width="10%"> 
+  <col width="8%"> 
+  <col width="8%"> 
+  <col width="8%"> 
+  <col width="8%"> 
+  <col width="8%"> 
+  <col width="25%">
+ </colgroup> 
+ <thead> 
+  <tr> 
+   <td>序号</td> 
+   <td>中文名称</td> 
+   <td>英文名称</td> 
+   <td>数据类型</td> 
+   <td>长度</td> 
+   <td>允许空值</td> 
+   <td>主键</td> 
+   <td>默认值</td> 
+   <td>自增</td> 
+   <td>说明</td>
+  </tr>
+ </thead> 
+ <tbody> 
+  <tr> 
+   <td style="text-align: center;">1</td> 
+   <td>id</td> 
+   <td>id</td> 
+   <td align="center">int</td> 
+   <td align="center"></td> 
+   <td align="center">N</td> 
+   <td align="center">Y</td> 
+   <td align="center"></td> 
+   <td>Y</td> 
+   <td></td>
+  </tr> 
+  <tr> 
+   <td style="text-align: center;">2</td> 
+   <td>浏览框id</td> 
+   <td>customid</td> 
+   <td align="center">int</td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td></td> 
+   <td>对应mode_custombrowser表的id</td>
+  </tr> 
+  <tr> 
+   <td style="text-align: center;">3</td> 
+   <td>字段id</td> 
+   <td>fieldid</td> 
+   <td align="center">int</td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td></td> 
+   <td>对应workflow_billfield表的id</td>
+  </tr> 
+  <tr> 
+   <td style="text-align: center;">4</td> 
+   <td>是否查询条件</td> 
+   <td>isquery</td> 
+   <td align="center">char</td> 
+   <td align="center">1</td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td></td> 
+   <td>1：是<br>0：否</td>
+  </tr> 
+  <tr> 
+   <td style="text-align: center;">5</td> 
+   <td>是否显示</td> 
+   <td>isshow</td> 
+   <td align="center">char</td> 
+   <td align="center">1</td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td></td> 
+   <td>1：是<br>0：否</td>
+  </tr> 
+  <tr> 
+   <td style="text-align: center;">6</td> 
+   <td>现实顺序</td> 
+   <td>showorder</td> 
+   <td align="center">int</td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td></td> 
+   <td></td>
+  </tr> 
+  <tr> 
+   <td style="text-align: center;">7</td> 
+   <td>查询显示顺序</td> 
+   <td>queryorder</td> 
+   <td align="center">int</td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td></td> 
+   <td></td>
+  </tr> 
+  <tr> 
+   <td style="text-align: center;">8</td> 
+   <td>是否链接字段</td> 
+   <td>istitle</td> 
+   <td align="center">char</td> 
+   <td align="center">1</td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td></td> 
+   <td>1：是<br>0：否<br>一个浏览框，只能有一个链接字段，链接字段是生成浏览按钮的前提条件，作为浏览按钮的显示字段</td>
+  </tr> 
+  <tr> 
+   <td style="text-align: center;">9</td> 
+   <td>是否快捷搜索字段</td> 
+   <td>isquicksearch</td> 
+   <td align="center">int</td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td></td> 
+   <td>1：是<br>0：否</td>
+  </tr> 
+  <tr> 
+   <td style="text-align: center;">10</td> 
+   <td>isorderfield</td> 
+   <td>isorderfield</td> 
+   <td align="center">int</td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td></td> 
+   <td>作废</td>
+  </tr> 
+  <tr> 
+   <td style="text-align: center;">11</td> 
+   <td>priorder</td> 
+   <td>priorder</td> 
+   <td align="center">char</td> 
+   <td align="center">4</td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td></td> 
+   <td>作废</td>
+  </tr> 
+  <tr> 
+   <td style="text-align: center;">12</td> 
+   <td>是否排序</td> 
+   <td>isorder</td> 
+   <td align="center">int</td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td></td> 
+   <td>1：是<br>0：否</td>
+  </tr> 
+  <tr> 
+   <td style="text-align: center;">13</td> 
+   <td>排序类型i</td> 
+   <td>ordertype</td> 
+   <td align="center">varchar</td> 
+   <td align="center">100</td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td></td> 
+   <td>n：--<br>a：默认升序<br>d：默认降序</td>
+  </tr> 
+  <tr> 
+   <td style="text-align: center;">14</td> 
+   <td>默认排序优先级</td> 
+   <td>ordernum</td> 
+   <td align="center">int</td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td></td> 
+   <td>值越小，优先级越高</td>
+  </tr> 
+  <tr> 
+   <td style="text-align: center;">15</td> 
+   <td>是否条件转换</td> 
+   <td>conditionTransition</td> 
+   <td align="center">int</td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td></td> 
+   <td>1：是<br>0：否</td>
+  </tr>
+  <tr> 
+   <td style="text-align: center;">15</td> 
+   <td>列宽</td> 
+   <td>colwidth</td> 
+   <td align="center">number(10,2)</td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td></td> 
+   <td>列宽百分比</td>
+  </tr>
+ </tbody>
+</table>
+</div>
+</center>
+</body>
+</html>
+

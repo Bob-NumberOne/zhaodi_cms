@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <title>首页</title>
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <base th:href="${#request.getContextPath()}+'/'">
+    <link rel="stylesheet" th:href="@{/layuiAdmin/lib/layui-v2.5.5/css/layui.css}" media="all">
+    <link rel="stylesheet" th:href="@{/layuiAdmin/css/layuimini.css?v=2.0.0}" media="all">
+    <link rel="stylesheet" th:href="@{/layuiAdmin/lib/font-awesome-4.7.0/css/font-awesome.min.css}" media="all">
+    <!--[if lt IE 9]>
+    <script src="https://cdn.staticfile.org/html5shiv/r29/html5.min.js"></script>
+    <script src="https://cdn.staticfile.org/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <link rel="stylesheet" href="layuiAdmin/css/public.css" media="all">
+    <style>
+        .layui-card {border:1px solid #f2f2f2;border-radius:5px;}
+        .icon {margin-right:10px;color:#1aa094;}
+        .icon-cray {color:#ffb800!important;}
+        .icon-blue {color:#1e9fff!important;}
+        .icon-tip {color:#ff5722!important;}
+        .layuimini-qiuck-module {text-align:center;margin-top: 10px}
+        .layuimini-qiuck-module a i {display:inline-block;width:100%;height:60px;line-height:60px;text-align:center;border-radius:2px;font-size:30px;background-color:#F8F8F8;color:#333;transition:all .3s;-webkit-transition:all .3s;}
+        .layuimini-qiuck-module a cite {position:relative;top:2px;display:block;color:#666;text-overflow:ellipsis;overflow:hidden;white-space:nowrap;font-size:14px;}
+        .welcome-module {width:100%;height:210px;}
+        .panel {background-color:#fff;border:1px solid transparent;border-radius:3px;-webkit-box-shadow:0 1px 1px rgba(0,0,0,.05);box-shadow:0 1px 1px rgba(0,0,0,.05)}
+        .panel-body {padding:10px}
+        .panel-title {margin-top:0;margin-bottom:0;font-size:12px;color:inherit}
+        .label {display:inline;padding:.2em .6em .3em;font-size:75%;font-weight:700;line-height:1;color:#fff;text-align:center;white-space:nowrap;vertical-align:baseline;border-radius:.25em;margin-top: .3em;}
+        .layui-red {color:red}
+        .main_btn > p {height:40px;}
+        .layui-bg-number {background-color:#F8F8F8;}
+        .layuimini-notice:hover {background:#f6f6f6;}
+        .layuimini-notice {padding:7px 16px;clear:both;font-size:12px !important;cursor:pointer;position:relative;transition:background 0.2s ease-in-out;}
+        .layuimini-notice-title,.layuimini-notice-label {
+            padding-right: 70px !important;text-overflow:ellipsis!important;overflow:hidden!important;white-space:nowrap!important;}
+        .layuimini-notice-title {line-height:28px;font-size:14px;}
+        .layuimini-notice-extra {position:absolute;top:50%;margin-top:-8px;right:16px;display:inline-block;height:16px;color:#999;}
+    </style>
+</head>
+<body>
+<div class="layuimini-container">
+    <div class="layuimini-main">
+        <div class="layui-row layui-col-space15">
+            <div class="layui-col-xs6">
+                <div class="layui-col-md12">
+                    <div class="layui-card">
+                        <a href="javascript:;" layuimini-content-href="page/toPatentAdded.xmj" data-title="企业专利按月新增概述" >
+                            <div class="layui-card-header"><i class="fa fa-bar-chart icon"></i>企业专利按月新增概述
+                            </div>
+                        </a>
+                        <div class="layui-card-body">
+                            <!--<div id="echarts-records" style="width: 100%;min-height:300px"></div>-->
+                            <!-- 为ECharts准备一个具备大小（宽高）的Dom -->
+                            <div id="main" style="width: 100%;min-height:300px"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="layui-col-xs6">
+                <div class="layui-col-md12">
+                    <div class="layui-card">
+                        <a href="javascript:;" layuimini-content-href="page/toPatentBrokenLine.xmj" data-title="历史数据对比图" >
+                            <div class="layui-card-header"><i class="fa fa-line-chart icon"></i>各企业历史数据对比图
+                            </div>
+                        </a>
+                        <div class="layui-card-body" >
+                            <div id="moreColumn" style="width: 100%;min-height:300px"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="layui-col-xs6">
+                <div class="layui-col-md12">
+                    <div class="layui-card">
+                        <a href="javascript:;" layuimini-content-href="page/toTechDirection.xmj" data-title="企业技术方向" >
+                            <div class="layui-card-header"><i class="fa fa-arrows icon"></i>企业新增发展方向
+                            </div>
+                        </a>
+                        <div class="layui-card-body">
+                            <!-- 为 ECharts 准备一个具备大小（宽高）的 容器 -->
+                            <div id="chart1"  style="width: 100%;min-height:300px;padding-right: 100px;"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="layui-col-xs6">
+                <div class="layui-col-md12">
+                    <div class="layui-card">
+                        <a href="javascript:;" layuimini-content-href="page/toArticiple.xmj" data-title="词云分析" >
+                            <div class="layui-card-header"><i class="fa fa-cloud icon"></i>企业新增专利词云
+                            </div>
+                        </a>
+                        <div class="layui-card-body">
+                            <div id="worldCloud"  style="width: 100%;min-height:300px;padding-right: 100px;"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script th:src="@{/layuiAdmin/lib/layui-v2.5.5/layui.js}" charset="utf-8"></script>
+<script th:src="@{/layuiAdmin/js/lay-config.js?v=2.0.0}" charset="utf-8"></script>
+<script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
+<script type="text/javascript" src="layuiAdmin/js/lay-module/layuimini/miniTab.js"></script>
+<script src="echarts/echarts.min.js"></script>
+<script src="echarts/wordcloud/dist/echarts-wordcloud.min.js"></script>
+<script>
+    layui.use(['flow','form','layer','miniTab'], function(){
+        var form = layui.form
+            ,miniTab=layui.miniTab
+            ,flow = layui.flow
+            ,layer = layui.layer;
+        setData1(10,"");//初始化
+        miniTab.listen();
+        function setData1(top,companyName) {
+            /*图形展现*/
+            var names=[];
+            var values=[];
+            $.ajax({
+                async: false,
+                url: 'patent/getPatentAdded.xmj',
+                data: {"top":top,"companyName":companyName},
+                dataType: 'json',
+                type: 'post',
+                success: function (data) {
+                    if(data.length>0){
+                        names=data[0];
+                        values=data[1];
+                    }else{
+                        alert("请求数据失败！");
+                    }
+                }
+            })
+
+            // 基于准备好的dom，初始化echarts图表
+            var myChart = echarts.init(document.getElementById('main'));
+            option = {
+                color: ['#3398DB'],
+                tooltip: {
+                    trigger: 'axis',
+                    axisPointer: {            // 坐标轴指示器，坐标轴触发有效
+                        type: 'shadow'        // 默认为直线，可选为：'line' | 'shadow'
+                    }
+                },
+                grid: {
+                    left: '3%',
+                    right: '4%',
+                    bottom: '3%',
+                    containLabel: true
+                },
+                xAxis: [
+                    {
+                        type: 'category',
+                        data: names,
+                        axisTick: {
+                            alignWithLabel: true
+                        },
+                        //设置文本过长超出隐藏...表示
+                        axisLabel:{
+                            interval:0,
+                            margin: 8,
+                            formatter:function(params){
+                                var val="";
+                                if(params.length >4){
+                                    val = params.substr(0,4)+'...';
+                                    return val;
+                                }else{
+                                    return params;
+                                }
+                            }
+                        }
+                    },
+
+                ],
+                yAxis: [
+                    {
+                        type: 'value'
+                    }
+                ],
+                series: [
+                    {
+                        name: "专利申请数量",
+                        type: 'bar',
+                        barWidth: '60%',
+                        data: values
+                    }
+                ]
+            };
+            // 为echarts对象加载数据
+            myChart.setOption(option,true);// 加上true表示不合并配置
+        }
+
+        function setImage(data1,data2,data3) {
+            var myChart = echarts.init(document.getElementById('moreColumn'));
+            var option = {
+                /*        title: {
+                            text: '历史数据对比'
+                        },*/
+                tooltip: {
+                    trigger: 'axis'
+                },
+                legend: {
+                    data: data1,
+                    textStyle: {
+                        padding: [0, 0, 0, 8],
+                    },
+                    formatter: function (name) {
+                        return (name.length > 8 ? (name.slice(0, 8) + "...") : name);
+                    }
+                },
+                grid: {
+                    left: '3%',
+                    right: '4%',
+                    bottom: '3%',
+                    containLabel: true
+                },
+                /*        toolbox: {
+                            feature: {
+                                saveAsImage: {}
+                            }
+                        },*/
+                xAxis: {
+                    type: 'category',
+                    boundaryGap: false,
+                    data: data2
+                },
+                yAxis: {
+                    type: 'value'
+                },
+                series: data3
+            };
+            // 使用刚指定的配置项和数据显示图表。
+            myChart.setOption(option,true);// 加上true表示不合并配置
+        }
+        function setData2(type,companyName,year,yearRange,top) {
+            /*            var data1=[];
+                        var data2=[];
+                        var data3=[];*/
+            $.ajax({
+                async: false,
+                url: 'patent/getPatentLine.xmj',
+                data: {"type":type,"companyName":companyName,"year":year,"yearRange":yearRange,"top":top},
+                dataType: 'json',
+                type: 'post',
+                success: function (data) {
+                    if(data.length>0){
+                        setImage(data[0],data[1],data[2]);
+                    }else{
+                        layer.msg("请求数据失败！");
+                    }
+                },error:function(e){
+                    layer.msg('请求数据失败！');
+                }
+
+            })
+
+
+        }
+        setData2(3,"","","","");//初始化
+        var datasss={"children":[{"title":"桩","childrenList":["1","4","8","34","98","98","35","99","150","150","151","151","100","185","185","186","186","101","187","187","188","188","102","102","103","103","36","36","37","104","104","105","105","38","189","189","190","190","39","191","191","192","192","40","106","106","107","107","108","108","109","109","9","41","110","110","111","111","42","42","43","112","152","170","170","171","171","153","172","172","173","173","174","174","175","175","113","154","176","176","177","177","155","178","178","179","179","180","180","181","181","44","114","114","115","115","45","116","116","117","117","118","118","119","119","46","120","120","121","121","122","122","47","123","123","124","124","125","125","48","126","126","127","127","5","10","10","11","49","49","50","50","12","51","51","52","52","6","13","53","53","54","54","14","55","128","156","156","157","157","158","182","182","183","183","184","184","159","159","129","160","160","161","161","162","162","163","163","164","164","56","56","57","57","15","58","58","59","59","60","60","16","61","61","62","62","7","17","17","18","63","63","64","64","19","65","65","66","66","67","67","20","68","68","69","69","70","70","21","71","130","130","72","131","131","22","73","132","132","74","133","133","23","75","75","76","76","24","77","134","134","78","78","25","79","135","135","80","80","26","81","81","82","136","165","165","137","137","83","138","166","166","167","167","168","168","169","169","139","139","27","84","84","85","85","28","86","86","87","87","29","88","88","89","89","30","90","140","140","141","141","142","142","91","143","143","144","144","145","145","31","92","92","93","146","146","147","147","32","94","94","95","95","33","96","148","148","97","149","149"],"id":"1"},{"title":"地基施工","childrenList":["2","2274","2281","2281","2282","2282","2275","2283","2283","2284","2284","2285","2285","2276","2286","2286","2287","2287","2288","2288","2277","2289","2323","2323","2324","2324","2325","2325","2290","2290","2291","2291","2292","2292","2293","2293","2294","2294","2295","2295","2296","2296","2297","2326","2326","2327","2327","2328","2328","2329","2329","2298","2330","2330","2331","2331","2332","2332","2299","2299","2300","2300","2301","2301","2302","2302","2303","2303","2304","2304","2305","2333","2333","2334","2334","2335","2335","2336","2336","2337","2337","2338","2338","2339","2339","2306","2340","2340","2341","2362","2414","2414","2415","2415","2416","2416","2417","2417","2363","2418","2418","2419","2419","2420","2420","2421","2421","2364","2364","2342","2365","2365","2366","2366","2367","2367","2368","2368","2369","2369","2370","2370","2343","2371","2371","2372","2372","2373","2373","2344","2344","2345","2374","2422","2422","2375","2375","2346","2376","2423","2423","2377","2424","2498","2498","2425","2425","2307","2347","2378","2426","2499","2499","2500","2500","2427","2427","2428","2428","2429","2429","2430","2430","2431","2431","2432","2432","2433","2433","2434","2434","2435","2435","2379","2436","2501","2501","2502","2502","2437","2437","2438","2438","2439","2439","2440","2440","2441","2441","2442","2442","2443","2443","2444","2444","2445","2445","2348","2380","2446","2503","2503","2504","2504","2447","2447","2448","2448","2449","2449","2450","2450","2381","2451","2505","2505","2506","2506","2452","2452","2453","2453","2454","2454","2455","2455","2349","2382","2456","2507","2507","2508","2508","2509","2509","2510","2510","2457","2457","2458","2458","2459","2459","2460","2460","2461","2461","2462","2462","2463","2463","2464","2464","2465","2465","2466","2466","2467","2467","2468","2468","2383","2469","2469","2470","2470","2471","2471","2472","2472","2473","2473","2474","2474","2475","2475","2476","2476","2477","2477","2478","2478","2479","2479","2480","2480","2308","2308","2309","2309","2310","2350","2350","2351","2351","2352","2384","2384","2385","2385","2353","2353","2311","2311","2312","2354","2386","2386","2387","2387","2388","2388","2389","2389","2390","2390","2391","2391","2355","2392","2392","2393","2393","2394","2394","2395","2395","2396","2396","2397","2397","2278","2313","2356","2398","2481","2481","2482","2482","2483","2483","2399","2484","2511","2511","2512","2512","2513","2513","2485","2514","2514","2515","2515","2486","2516","2516","2487","2487","2400","2488","2517","2517","2518","2518","2489","2489","2401","2401","2357","2402","2402","2403","2403","2404","2404","2405","2405","2314","2358","2406","2406","2407","2407","2359","2408","2408","2409","2490","2490","2410","2491","2491","2411","2492","2492","2412","2493","2493","2413","2494","2494","2495","2495","2496","2496","2497","2497","2315","2360","2360","2316","2316","2279","2317","2317","2318","2318","2319","2319","2320","2361","2361","2321","2321","2322","2322","2280","2280"],"id":"2"},{"title":"桩配式","childrenList":["3"],"id":"3"}],"id":0};
+        //雷达图
+        var postData={"sendData":datasss,"companyName":""};
+        function setData3() {
+            var data1=[];
+            var data2=[];
+            var data3=[];
+            $.ajax({
+                async: false,
+                url: 'patent/getDirClass.xmj',
+                data: JSON.stringify(postData),
+                contentType : "application/json;charsetset=UTF-8",//必须
+                dataType: 'json',
+                type: "POST",
+                success: function (data) {
+                    if(data.length>0){
+                        data1=data[0];
+                        data2=data[1];
+                        data3=data[2];
+                    }else{
+                        alert("请求数据失败！");
+                    }
+                }
+            });
+
+
+            // 基于准备好的容器(这里的容器是id为chart1的div)，初始化echarts实例
+            var chart1 = echarts.init(document.getElementById("chart1"));
+
+            // 指定图表的配置项和数据
+            option = {
+                /* title: {
+                     text: '企业新增发展方向'
+                 },*/
+                // 图表的位置
+                grid: {
+                    position: 'horizontal',
+                },
+                tooltip : {
+                    //雷达图的tooltip不会超出div，也可以设置position属性，position定位的tooltip 不会随着鼠标移动而位置变化，不友好
+                    confine: true,
+                    enterable: true, //鼠标是否可以移动到tooltip区域内
+                },
+                legend: {
+                    show: true,
+                    icon: 'rect',                   // 图例项的 icon。ECharts 提供的标记类型包括 'circle', 'rect', 'roundRect', 'triangle', 'diamond', 'pin', 'arrow'也可以通过 'image://url' 设置为图片，其中 url 为图片的链接，或者 dataURI。可以通过 'path://' 将图标设置为任意的矢量路径。
+                    top : '5%',                    // 图例距离顶部边距
+                    right : '2%',                   // 图例距离左侧边距
+                    itemWidth: 10,                  // 图例标记的图形宽度。[ default: 25 ]
+                    itemHeight: 10,                 // 图例标记的图形高度。[ default: 14 ]
+                    itemGap: 10,                	// 图例每项之间的间隔。[ default: 10 ]横向布局时为水平间隔，纵向布局时为纵向间隔。
+                    orient: 'vertical',
+                    data: data3,
+                    textStyle: {
+                        padding: [0, 0, 0, 8],
+                    },
+                    formatter: function (name) {
+                        return (name.length > 14 ? (name.slice(0, 14) + "...") : name);
+                    }
+                },
+                splitNumber: 3, // 雷达图圈数设置
+                radar: {
+                    // shape: 'circle',
+                    name: {
+                        textStyle: {
+                            color: '#fff',
+                            backgroundColor: '#999',
+                            borderRadius: 3,
+                            padding: [3, 5]
+                        }
+                    },
+                    indicator: data1
+                },
+                series: [{
+                    name: '企业新增发展方向',
+                    symbolSize: 3, // 拐点的大小
+                    itemStyle: {                // 折线拐点标志的样式。
+                        normal: {                   // 普通状态时的样式
+                            lineStyle: {
+                                width: 1
+                            },
+                            opacity: 0.2
+                        },
+                        emphasis: {                 // 高亮时的样式
+                            lineStyle: {
+                                width: 5
+                            },
+                            opacity: 1
+                        }
+                    },
+                    type: 'radar',
+                    data: data2
+                }]
+            };
+            /*    $(window).resize(function() {//这是能够让图表自适应的代码
+                    chart1.resize();
+                });*/
+            // 使用刚指定的配置项和数据显示图表
+            chart1.setOption(option);
+        }
+        setData3();
+
+        var JosnList = [];
+        $.ajax({
+            async: true,
+            url: 'patent/WordCloudAnalysis.xmj',
+            data: {"number":200},
+            dataType: 'json',
+            type: 'GET',
+            success: function (data) {
+                JosnList=data[0];
+                setData4(JosnList);
+            },
+            error:function(request){
+                alert("请求失败");
+            }
+        });
+
+        function setData4(JosnList1) {
+            var worldCloudcharts=echarts.init(document.getElementById('worldCloud'));
+            var worldCloudoption = {
+                title: {
+                    text: '词云分析',
+                    x: 'center',
+                    textStyle: {
+                        fontSize: 23,
+                        color:'#FFFFFF'
+                    }
+
+                },
+                tooltip: {
+                    confine: true,
+                    enterable: true, //鼠标是否可以移动到tooltip区域内
+                },
+                legend: {
+                    show: true,
+                    icon: 'rect',                   // 图例项的 icon。ECharts 提供的标记类型包括 'circle', 'rect', 'roundRect', 'triangle', 'diamond', 'pin', 'arrow'也可以通过 'image://url' 设置为图片，其中 url 为图片的链接，或者 dataURI。可以通过 'path://' 将图标设置为任意的矢量路径。
+                    top : '5%',                    // 图例距离顶部边距
+                    right : '2%',                   // 图例距离左侧边距
+                    itemWidth: 10,                  // 图例标记的图形宽度。[ default: 25 ]
+                    itemHeight: 10,                 // 图例标记的图形高度。[ default: 14 ]
+                    itemGap: 10,                	// 图例每项之间的间隔。[ default: 10 ]横向布局时为水平间隔，纵向布局时为纵向间隔。
+                    orient: 'vertical',
+                    data: [{                    // 图例的数据数组。数组项通常为一个字符串，每一项代表一个系列的 name（如果是饼图，也可以是饼图单个数据的 name）。图例组件会自动根据对应系列的图形标记（symbol）来绘制自己的颜色和标记，特殊字符串 ''（空字符串）或者 '\n'（换行字符串）用于图例的换行。
+                        name: '男',                 // 图例项的名称，应等于某系列的name值（如果是饼图，也可以是饼图单个数据的 name）。
+                        icon: 'rect',               // 图例项的 icon。
+                        textStyle: {                // 图例项的文本样式。
+                            color: 'rgba(51,0,255,1)',
+                            fontWeight: 'bold'		// 文字字体的粗细，可选'normal'，'bold'，'bolder'，'lighter'
+                        }
+                    },{
+                        name: '女',
+                        icon: 'rect',
+                        textStyle: {
+                            color: 'rgba(255,0,0,1)',
+                            fontWeight: 'bold'		// 文字字体的粗细，可选'normal'，'bold'，'bolder'，'lighter'
+                        }
+                    }]
+                },
+                series: [{
+                    name: '词云分析',
+                    type: 'wordCloud',
+                    sizeRange: [6, 66],
+                    rotationRange: [-45, 90],
+                    textPadding: 0,
+                    autoSize: {
+                        enable: true,
+                        minSize: 6
+                    },
+                    textStyle: {
+                        normal: {
+                            color: function() {
+                                return 'rgb(' + [
+                                    Math.round(Math.random() * 160),
+                                    Math.round(Math.random() * 160),
+                                    Math.round(Math.random() * 160)
+                                ].join(',') + ')';
+                            }
+                        },
+                        emphasis: {
+                            shadowBlur: 10,
+                            shadowColor: '#333'
+                        }
+                    }
+                }]
+            };
+
+            worldCloudoption.series[0].data = JosnList1;
+            worldCloudcharts.setOption(worldCloudoption);
+        }
+
+    });
+</script>
+</body>
+</html>

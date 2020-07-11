@@ -1,0 +1,233 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+<title>mode_workflowtomodeset(流程转数据基本信息)</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gbk"/>
+<style>
+body, td {
+font-family: 微软雅黑;
+font-size: 12px;
+line-height: 150%;
+}
+table {
+width: 100%;
+background-color: #ccc;
+margin: 5px 0;
+word-break: break-all;
+}
+td {
+	background-color: #fff;
+	padding: 3px;
+padding-left: 10px;
+}
+thead td {
+	text-align: left;
+font-weight: bold;
+background-color: #eee;
+}
+a:link, a:visited, a:active {
+color: #015FB6;
+text-decoration: none;
+}
+a:hover {
+color: #E33E06;
+}
+.tablename {
+margin-top: 30px;
+}
+.outdiv {
+width: 1000px;
+margin: 40px auto;
+text-align: left;
+}
+
+</style>
+</head>
+<body>
+<center>
+<div class="outdiv">
+<div class="tablename">
+<b>表名：mode_workflowtomodeset</b>
+</div>
+<div>中文名称：流程转数据基本信息</div>
+<div>表类型： </div>
+<a href='index.html' style='float: right;'>返回目录</a><div>说明：</div>
+<table cellspacing="1" cellpadding="0"> 
+ <colgroup> 
+  <col width="5%"> 
+  <col width="10%"> 
+  <col width="10%"> 
+  <col width="10%"> 
+  <col width="8%"> 
+  <col width="8%"> 
+  <col width="8%"> 
+  <col width="8%"> 
+  <col width="8%"> 
+  <col width="25%">
+ </colgroup> 
+ <thead> 
+  <tr> 
+   <td>序号</td> 
+   <td>中文名称</td> 
+   <td>英文名称</td> 
+   <td>数据类型</td> 
+   <td>长度</td> 
+   <td>允许空值</td> 
+   <td>主键</td> 
+   <td>默认值</td> 
+   <td>自增</td> 
+   <td>说明</td>
+  </tr>
+ </thead> 
+ <tbody> 
+  <tr> 
+   <td style="text-align: center;">1</td> 
+   <td>id</td> 
+   <td>id</td> 
+   <td align="center">int</td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td></td> 
+   <td></td>
+  </tr> 
+  <tr> 
+   <td style="text-align: center;">2</td> 
+   <td>模块id</td> 
+   <td>modeid</td> 
+   <td align="center">int</td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td></td> 
+   <td>对应modeinfo表的id</td>
+  </tr> 
+  <tr> 
+   <td style="text-align: center;">3</td> 
+   <td>流程类型</td> 
+   <td>workflowid</td> 
+   <td align="center">int</td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td></td> 
+   <td>工作流程id，对应workflow_base表的id</td>
+  </tr> 
+  <tr> 
+   <td style="text-align: center;">4</td> 
+   <td>模块创建人</td> 
+   <td>modecreater</td> 
+   <td align="center">int</td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td></td> 
+   <td>1：流程当前操作人<br>2：流程创建人<br>3：流程人力资源相关字段</td>
+  </tr> 
+  <tr> 
+   <td style="text-align: center;">5</td> 
+   <td>流程人力资源相关字段</td> 
+   <td>modecreaterfieldid</td> 
+   <td align="center">int</td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td></td> 
+   <td>当使用流程中的字段的值作为模块的创建人时字段的id，对应workflow_billfield表的id</td>
+  </tr> 
+  <tr> 
+   <td style="text-align: center;">6</td> 
+   <td>触发节点</td> 
+   <td>triggerNodeId</td> 
+   <td align="center">int</td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td></td> 
+   <td>对应workflow_nodebase表的id</td>
+  </tr> 
+  <tr> 
+   <td style="text-align: center;">7</td> 
+   <td>触发时间</td> 
+   <td>triggerType</td> 
+   <td align="center">int</td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td></td> 
+   <td>0：离开节点<br>1：到达节点</td>
+  </tr> 
+  <tr> 
+   <td style="text-align: center;">8</td> 
+   <td>是否启用</td> 
+   <td>isenable</td> 
+   <td align="center">char</td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td></td> 
+   <td>1：启用<br>0：不启用<br>只有启用时，流程转数据才能生效</td>
+  </tr> 
+  <tr> 
+   <td style="text-align: center;">9</td> 
+   <td>触发表单</td> 
+   <td>formtype</td> 
+   <td align="center">varchar</td> 
+   <td align="center">1000</td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td></td> 
+   <td>maintable：主表<br>detail1：明细1，依此类推<br></td>
+  </tr> 
+  <tr> 
+   <td style="text-align: center;">10</td> 
+   <td>接口id</td> 
+   <td>actionid</td> 
+   <td align="center">int</td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td></td> 
+   <td>对应在流程中设置的节点预处理和后处理的接口id,对应workflowactionset表的id</td>
+  </tr>
+  <tr> 
+   <td style="text-align: center;">11</td> 
+   <td>主表操作类型</td> 
+   <td>maintableopttype</td> 
+   <td align="center">varchar</td> 
+   <td align="center">1</td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td></td> 
+   <td>1：插入<br>2：更新</td>
+  </tr>
+  <tr> 
+   <td style="text-align: center;">12</td> 
+   <td>主表更新条件</td> 
+   <td>maintableupdatecondition</td> 
+   <td align="center">varchar</td> 
+   <td align="center">256</td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td></td> 
+   <td></td>
+  </tr>
+ </tbody>
+</table>
+</div>
+</center>
+</body>
+</html>
+

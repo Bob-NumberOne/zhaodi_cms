@@ -1,0 +1,341 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+<title>cpconstitution(章程)</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gbk"/>
+<style>
+body, td {
+font-family: 微软雅黑;
+font-size: 12px;
+line-height: 150%;
+}
+table {
+width: 100%;
+background-color: #ccc;
+margin: 5px 0;
+word-break: break-all;
+}
+td {
+	background-color: #fff;
+	padding: 3px;
+padding-left: 10px;
+}
+thead td {
+	text-align: left;
+font-weight: bold;
+background-color: #eee;
+}
+a:link, a:visited, a:active {
+color: #015FB6;
+text-decoration: none;
+}
+a:hover {
+color: #E33E06;
+}
+.tablename {
+margin-top: 30px;
+}
+.outdiv {
+width: 1000px;
+margin: 40px auto;
+text-align: left;
+}
+
+</style>
+</head>
+<body>
+<center>
+<div class="outdiv">
+<div class="tablename">
+<b>表名：cpconstitution</b>
+</div>
+<div>中文名称：章程</div>
+<div>表类型： </div>
+<a href='index.html' style='float: right;'>返回目录</a><div>说明：</div>
+<table cellspacing="1" cellpadding="0" mytablename="CPCONSTITUTION">
+ <colgroup>
+  <col width="50px">
+  <col width="190px">
+  <col width="190px">
+  <col width="80px">
+  <col width="80px">
+  <col width="70px">
+  <col width="40px">
+  <col width="60px">
+  <col width="40px">
+  <col width="200px">
+ </colgroup>
+ <thead>
+  <tr>
+   <td>序号</td>
+   <td>中文名称</td>
+   <td>英文名称</td>
+   <td>数据类型</td>
+   <td>长度</td>
+   <td>允许空值</td>
+   <td>主键</td>
+   <td>默认值</td>
+   <td>自增</td>
+   <td>说明</td>
+  </tr>
+ </thead> 
+ <tbody>
+  <tr mycolname="CONSTITUTIONID">
+   <td style="text-align: center;">1</td>
+   <td> 标识ID </td>
+   <td>CONSTITUTIONID</td>
+   <td align="center">int</td>
+   <td align="center"></td>
+   <td align="center"> N </td>
+   <td align="center"> Y </td>
+   <td align="center"></td>
+   <td> Y </td>
+   <td> 标识列 </td>
+  </tr>
+  <tr mycolname="AGGREGATEINVEST">
+   <td style="text-align: center;">2</td>
+   <td>投资总额 </td>
+   <td>AGGREGATEINVEST</td>
+   <td align="center">varchar</td>
+   <td align="center">1000</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td> 
+   <td>投资总额 </td> 
+  </tr> 
+  <tr mycolname="THEBOARD">
+   <td style="text-align: center;">3</td>
+   <td>董事会(机构) </td>
+   <td>THEBOARD</td>
+   <td align="center">varchar</td>
+   <td align="center">1000</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td> 
+   <td>董事会(机构) </td> 
+  </tr> 
+  <tr mycolname="STITUBEGINDATE">
+   <td style="text-align: center;">4</td>
+   <td>起止时间(开始) </td>
+   <td>STITUBEGINDATE</td>
+   <td align="center">char</td>
+   <td align="center">10</td>
+   <td align="center"> N </td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td> 
+   <td>起止时间(开始) </td> 
+  </tr> 
+  <tr mycolname="STITUENDDATE">
+   <td style="text-align: center;">5</td>
+   <td>起止时间(结束) </td>
+   <td>STITUENDDATE</td>
+   <td align="center">char</td>
+   <td align="center">10</td>
+   <td align="center"> N </td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td> 
+   <td>起止时间(结束) </td> 
+  </tr> 
+  <tr mycolname="ISVISITORS">
+   <td style="text-align: center;">6</td> 
+   <td>董事会/执行董事(选择) </td>
+   <td>ISVISITORS</td>
+   <td align="center">char</td>
+   <td align="center">1</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td> 
+   <td>董事会/执行董事(选择) </td> 
+  </tr> 
+  <tr mycolname="BOARDVISITORS">
+   <td style="text-align: center;">7</td>
+   <td>监事会(机构) </td>
+   <td>BOARDVISITORS</td>
+   <td align="center">varchar</td>
+   <td align="center">1000</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td> 
+   <td>监事会(机构) </td> 
+  </tr> 
+  <tr mycolname="VISITBEGINDATE">
+   <td style="text-align: center;">8</td>
+   <td>起止时间(开始) </td>
+   <td>VISITBEGINDATE</td>
+   <td align="center">char</td>
+   <td align="center">10</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td> 
+   <td>起止时间(开始) </td> 
+  </tr> 
+  <tr mycolname="VISITENDDATE">
+   <td style="text-align: center;">9</td>
+   <td>起止时间(结束) </td>
+   <td>VISITENDDATE</td>
+   <td align="center">char</td>
+   <td align="center">10</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td> 
+   <td>起止时间(结束) </td> 
+  </tr> 
+  <tr mycolname="ISREAPPOINT">
+   <td style="text-align: center;">10</td>
+   <td>董事任职期限 </td>
+   <td>ISREAPPOINT</td>
+   <td align="center">char</td>
+   <td align="center">1</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td> 
+   <td>董事任职期限 </td> 
+  </tr> 
+  <tr mycolname="GENERALMANAGER">
+   <td style="text-align: center;">11</td>
+   <td>连任连选 </td>
+   <td>GENERALMANAGER</td>
+   <td align="center">varchar</td>
+   <td align="center">1000</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td> 
+   <td>连任连选 </td> 
+  </tr> 
+  <tr mycolname="EFFECTBEGINDATE">
+   <td style="text-align: center;">12</td>
+   <td>生效日期(开始) </td>
+   <td>EFFECTBEGINDATE</td>
+   <td align="center">char</td>
+   <td align="center">10</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td> 
+   <td>生效日期(开始) </td> 
+  </tr> 
+  <tr mycolname="EFFECTENDDATE">
+   <td style="text-align: center;">13</td>
+   <td>生效日期(结束) </td>
+   <td>EFFECTENDDATE</td>
+   <td align="center">char</td>
+   <td align="center">10</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td> 
+   <td>生效日期(结束) </td> 
+  </tr> 
+  <tr mycolname="CONSTITUAFFIX">
+   <td style="text-align: center;">14</td>
+   <td>附件 </td>
+   <td>CONSTITUAFFIX</td>
+   <td align="center">varchar</td>
+   <td align="center">4000</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td> 
+   <td>附件 </td> 
+  </tr> 
+  <tr mycolname="VERSIONID">
+   <td style="text-align: center;">15</td>
+   <td>版本号 </td>
+   <td>VERSIONID</td>
+   <td align="center">int</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td> 
+   <td>版本号 </td> 
+  </tr> 
+  <tr mycolname="CREATEDATETIME">
+   <td style="text-align: center;">16</td>
+   <td>创建日期 </td>
+   <td>CREATEDATETIME</td>
+   <td align="center">char</td>
+   <td align="center">20</td>
+   <td align="center"> N </td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td> 
+   <td>创建日期 </td> 
+  </tr> 
+  <tr mycolname="LASTUPDATETIME">
+   <td style="text-align: center;">17</td>
+   <td>最后修改日期 </td>
+   <td>LASTUPDATETIME</td>
+   <td align="center">char</td>
+   <td align="center">20</td>
+   <td align="center"> N </td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td> 
+   <td>最后修改日期 </td> 
+  </tr> 
+  <tr mycolname="currencyid">
+   <td style="text-align: center;">18</td>
+   <td>货币单位 </td>
+   <td>currencyid</td>
+   <td align="center">varchar</td>
+   <td align="center">1000</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td> 
+   <td>货币单位 </td> 
+  </tr> 
+  <tr mycolname="APPOINTDUETIME">
+   <td style="text-align: center;">19</td> 
+   <td>任命时效</td>
+   <td>APPOINTDUETIME</td>
+   <td align="center">varchar</td>
+   <td align="center">1000</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td> 
+   <td>任命时效</td> 
+  </tr> 
+  <tr mycolname="companyid">
+   <td style="text-align: center;">20</td>
+   <td>依赖的公司id </td>
+   <td>companyid</td>
+   <td align="center">int</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td> 
+   <td>依赖的公司id </td> 
+  </tr> 
+  <tr mycolname="ISDEL">
+   <td style="text-align: center;">21</td>
+   <td>删除标志 </td>
+   <td>ISDEL</td>
+   <td align="center">char</td>
+   <td align="center">1</td>
+   <td align="center"> N </td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td> 
+   <td>删除标志 </td> 
+  </tr> 
+ </tbody>
+</table>
+</div>
+</center>
+</body>
+</html>
+

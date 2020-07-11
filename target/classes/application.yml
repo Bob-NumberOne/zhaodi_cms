@@ -1,0 +1,22 @@
+server:
+  port: 8989  #修改默认端口
+  servlet:
+    session:
+      timeout: 1800s #session失效时间
+      cookie:
+        http-only: true #保证浏览器端cookie的安全，同时保证session的安全
+
+spring:
+  server:
+    MaxFileSize: 300MB
+    MaxRequestSize: 500MB #文件请求大小
+  devtools:
+    restart:
+      enabled: true  #设置开启热部署
+      additional-paths: /** #重启目录
+      exclude: WEB-INF/**
+  freemarker:
+    cache: false    #页面不加载缓存，修改即时生效（开发阶段）
+  security:
+    loginType: JSON
+

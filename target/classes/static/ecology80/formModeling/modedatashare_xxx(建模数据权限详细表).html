@@ -1,0 +1,317 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+<title>modedatashare_xxx(建模数据权限详细表)</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gbk"/>
+<style>
+body, td {
+font-family: 微软雅黑;
+font-size: 12px;
+line-height: 150%;
+}
+table {
+width: 100%;
+background-color: #ccc;
+margin: 5px 0;
+word-break: break-all;
+}
+td {
+	background-color: #fff;
+	padding: 3px;
+padding-left: 10px;
+}
+thead td {
+	text-align: left;
+font-weight: bold;
+background-color: #eee;
+}
+a:link, a:visited, a:active {
+color: #015FB6;
+text-decoration: none;
+}
+a:hover {
+color: #E33E06;
+}
+.tablename {
+margin-top: 30px;
+}
+.outdiv {
+width: 1000px;
+margin: 40px auto;
+text-align: left;
+}
+
+</style>
+</head>
+<body>
+<center>
+<div class="outdiv">
+<div class="tablename">
+<b>表名：modedatashare_xxx</b>
+</div>
+<div>中文名称：建模数据权限详细表</div>
+<div>表类型： </div>
+<a href='index.html' style='float: right;'>返回目录</a><div>说明：</div>
+<table cellspacing="1" cellpadding="0"> 
+ <colgroup> 
+  <col width="5%"> 
+  <col width="10%"> 
+  <col width="10%"> 
+  <col width="10%"> 
+  <col width="8%"> 
+  <col width="8%"> 
+  <col width="8%"> 
+  <col width="8%"> 
+  <col width="8%"> 
+  <col width="25%">
+ </colgroup> 
+ <thead> 
+  <tr> 
+   <td>序号</td> 
+   <td>中文名称</td> 
+   <td>英文名称</td> 
+   <td>数据类型</td> 
+   <td>长度</td> 
+   <td>允许空值</td> 
+   <td>主键</td> 
+   <td>默认值</td> 
+   <td>自增</td> 
+   <td>说明</td>
+  </tr>
+ </thead> 
+ <tbody> 
+  <tr> 
+   <td style="text-align: center;">1</td> 
+   <td>id</td> 
+   <td>id</td> 
+   <td align="center">int</td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td></td> 
+   <td></td>
+  </tr> 
+  <tr> 
+   <td style="text-align: center;">2</td> 
+   <td>数据id</td> 
+   <td>sourceid</td> 
+   <td align="center">int</td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td></td> 
+   <td>数据id，对应模块中设置的uf_xxx表中的id</td>
+  </tr> 
+  <tr> 
+   <td style="text-align: center;">3</td> 
+   <td>权限类型</td> 
+   <td>type</td> 
+   <td align="center">int</td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td></td> 
+   <td>1、人员； <br>2、分部； <br>3、部门； <br>4、角色； <br>5、所有人； <br>6、岗位； <br>80、创建人本人； <br>81、创建人直接上级 <br>84、创建人分部 <br>85、创建人部门 <br>89、创建人所有上级<br>90、创建人本岗位</td>
+  </tr> 
+  <tr> 
+   <td style="text-align: center;">4</td> 
+   <td>共享对象id</td> 
+   <td>content</td> 
+   <td align="center">int</td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td></td> 
+   <td><br>如：共享对象为人员时，为人员的id，共享对象为部门时，为部门id，共享对象为岗位时，为岗位id</td>
+  </tr> 
+  <tr> 
+   <td style="text-align: center;">5</td> 
+   <td>安全级别下限</td> 
+   <td>seclevel</td> 
+   <td align="center">int</td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td></td> 
+   <td>安全级别范围最小值</td>
+  </tr> 
+  <tr> 
+   <td style="text-align: center;">6</td> 
+   <td>权限级别</td> 
+   <td>sharelevel</td> 
+   <td align="center">int</td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td></td> 
+   <td>1、查看；<br>2、编辑；<br>3、完全控制</td>
+  </tr> 
+  <tr> 
+   <td style="text-align: center;">7</td> 
+   <td>权限类型</td> 
+   <td>srcfrom</td> 
+   <td align="center">int</td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td></td> 
+   <td>1、人员； <br>2、分部； <br>3、部门； <br>4、角色； <br>5、所有人； <br>6、岗位； <br>80、创建人本人； <br>81、创建人直接上级 <br>84、创建人分部 <br>85、创建人部门 <br>89、创建人所有上级<br>90、创建人本岗位</td>
+  </tr> 
+  <tr> 
+   <td style="text-align: center;">8</td> 
+   <td>操作人</td> 
+   <td>opuser</td> 
+   <td align="center">int</td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td></td> 
+   <td>一般值和content相同，没有太大意义</td>
+  </tr> 
+  <tr> 
+   <td style="text-align: center;">9</td> 
+   <td>是否默认共享</td> 
+   <td>isDefault</td> 
+   <td align="center">int</td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td></td> 
+   <td><br>0：非默认共享，为用户自己手动添加的共享；1：默认共享，根据模块设置的权限生成的权限</td>
+  </tr> 
+  <tr> 
+   <td style="text-align: center;">10</td> 
+   <td>查看布局id</td> 
+   <td>layoutid</td> 
+   <td align="center">int</td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td></td> 
+   <td>对应modehtmllayout表中的id</td>
+  </tr> 
+  <tr> 
+   <td style="text-align: center;">11</td> 
+   <td>编辑布局id</td> 
+   <td>layoutid1</td> 
+   <td align="center">int</td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td></td> 
+   <td>对应modehtmllayout表中的id</td>
+  </tr> 
+  <tr> 
+   <td style="text-align: center;">12</td> 
+   <td>布局级别</td> 
+   <td>layoutorder</td> 
+   <td align="center">int</td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td></td> 
+   <td>布局级别值越小，优先级越高</td>
+  </tr> 
+  <tr> 
+   <td style="text-align: center;">13</td> 
+   <td>建模数据权限规则id(角色)</td> 
+   <td>sharesetid</td> 
+   <td align="center">int</td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td></td> 
+   <td>仅在角色受权限控制值，此字段才会有值，对应modedatashare_xxx_set表中的id</td>
+  </tr> 
+  <tr> 
+   <td style="text-align: center;">14</td> 
+   <td>上级关系</td> 
+   <td>higherlevel</td> 
+   <td align="center">int</td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td></td> 
+   <td>仅用在共享在模块主字段为人员时。 <br>1：创建人本人 <br>2：创建人直接上级 <br>3：创建人所有上级</td>
+  </tr> 
+  <tr> 
+   <td style="text-align: center;">15</td> 
+   <td>建模数据权限规则id</td> 
+   <td>setid</td> 
+   <td align="center">int</td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td></td> 
+   <td>对应modedatashare_xxx_set表中的id</td>
+  </tr> 
+  <tr> 
+   <td style="text-align: center;">16</td> 
+   <td>模块权限设置id</td> 
+   <td>rightid</td> 
+   <td align="center">int</td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td></td> 
+   <td>模块权限设置id，对应moderightinfo表中的id</td>
+  </tr> 
+  <tr> 
+   <td style="text-align: center;">17</td> 
+   <td>安全级别上限</td> 
+   <td>showlevel2</td> 
+   <td align="center">int</td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td></td> 
+   <td>安全级别范围最大值</td>
+  </tr>
+   <tr> 
+   <td style="text-align: center;">18</td> 
+   <td>岗位级别</td> 
+   <td>joblevel</td> 
+   <td align="center">int</td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td></td> 
+   <td>0、部门；<br>1、分部；<br>2、总部；</td>
+  </tr>
+  <tr> 
+   <td style="text-align: center;">19</td> 
+   <td>岗位级别指定对象ID</td> 
+   <td>jobleveltext</td> 
+   <td align="center">varchar</td> 
+   <td align="center">4000</td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td></td> 
+   <td>保存岗位级别对应的对象以逗号分隔的id串</td>
+  </tr>
+ </tbody>
+</table>
+</div>
+</center>
+</body>
+</html>
+

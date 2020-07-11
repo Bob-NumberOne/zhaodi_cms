@@ -1,0 +1,72 @@
+{
+  "homeInfo": {
+    "infoName": "homeInfo",
+    "title": "首页",
+    "href": "page/toWelcome.xmj"
+  },
+  "logoInfo": {
+    "title": "兆弟集团",
+    "image": "layuiAdmin/images/logo.png",
+    "href": ""
+  },
+  "menuInfo": [
+    {
+      "title": "常规管理",
+      "icon": "fa fa-address-book",
+      "href": "",
+      "target": "_self",
+      "child": [
+        {
+          "title": "专利模块",
+          "href": "",
+          "icon": "fa fa-window-maximize",
+          "target": "_self",
+          "child": [
+            {
+              "title": "词云分析",
+              "href": "page/toArticiple.xmj",
+              "icon": "fa fa-tachometer",
+              "target": "_self"
+            },
+            {
+              "title": "企业专利按月新增概述",
+              "href": "page/toPatentAdded.xmj",
+              "icon": "fa fa-tachometer",
+              "target": "_self"
+            },
+            {
+              "title": "企业技术方向",
+              "href": "page/toTechDirection.xmj",
+              "icon": "fa fa-tachometer",
+              "target": "_self"
+            },
+            {
+              "title": "数据导入",
+              "href": "page/toPatentUpload.xmj",
+              "icon": "fa fa-tachometer",
+              "target": "_self"
+            },
+            {
+              "title": "创新刊物",
+              "href": "page/toPatentTable.xmj",
+              "icon": "fa fa-tachometer",
+              "target": "_self"
+            },
+            {
+              "title": "历史数据对比图",
+              "href": "page/toPatentBrokenLine.xmj",
+              "icon": "fa fa-tachometer",
+              "target": "_self"
+            },
+            {
+              "title": "特色专利",
+              "href": "page/toPatentCharacteristic.xmj",
+              "icon": "fa fa-tachometer",
+              "target": "_self"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

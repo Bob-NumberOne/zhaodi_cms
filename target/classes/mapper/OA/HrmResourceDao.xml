@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zhaodi.oa.dao.HrmResourceDao">
+    <!--人员查询 -->
+    <select id="getUsers" resultType="com.zhaodi.oa.entity.HrmResource">
+    select * from HrmResource
+    </select>
+    <!--人员查询 -->
+    <select id="getHrmResource" resultType="com.zhaodi.oa.entity.HrmResource">
+    select * from HrmResource
+    where loginid=#{loginId}
+    </select>
+    <!--管理员查询 -->
+    <select id="findManager" resultType="com.zhaodi.oa.entity.HrmResource">
+    SELECT id,loginid,password,	lastname,	systemlanguage,	seclevel,	status,dactylogram,assistantdactylogram,userUsbType,	usbstate,mobile,serial,tokenKey
+    FROM hrmresourcemanager
+    where loginid=#{loginId}
+    </select>
+    <!--获取市场部下的岗位-->
+    <select  id="getHrmResourcerowse" resultType="java.util.HashMap">
+        select id as value,lastname as title from HrmResource
+    </select>
+
+    <!--获取人员信息-->
+    <select  id="getUserInfoById" resultType="com.zhaodi.custom.entity.UserRoleRelation">
+        select a.id as userId,a.lastName as userName,b.jobtitlename as jobTitle,c.departmentname as departmentName,d.subcompanyname as subCompany
+        from HrmResource a
+        LEFT JOIN hrmjobtitles b on b.id=a.jobtitle
+        LEFT JOIN hrmdepartment c on c.id=a.departmentid
+        LEFT JOIN HrmSubCompany d on d.id=a.subcompanyid1
+        where a.id=#{userId}
+    </select>
+
+</mapper>

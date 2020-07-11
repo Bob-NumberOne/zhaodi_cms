@@ -1,0 +1,470 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+<title>exp_DBProSettings(数据库方案设置信息保存表)</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gbk"/>
+<style>
+body, td {
+font-family: 微软雅黑;
+font-size: 12px;
+line-height: 150%;
+}
+table {
+width: 100%;
+background-color: #ccc;
+margin: 5px 0;
+word-break: break-all;
+}
+td {
+	background-color: #fff;
+	padding: 3px;
+padding-left: 10px;
+}
+thead td {
+	text-align: left;
+font-weight: bold;
+background-color: #eee;
+}
+a:link, a:visited, a:active {
+color: #015FB6;
+text-decoration: none;
+}
+a:hover {
+color: #E33E06;
+}
+.tablename {
+margin-top: 30px;
+}
+.outdiv {
+width: 1000px;
+margin: 40px auto;
+text-align: left;
+}
+
+</style>
+</head>
+<body>
+<center>
+<div class="outdiv">
+<div class="tablename">
+<b>表名：exp_DBProSettings</b>
+</div>
+<div>中文名称：数据库方案设置信息保存表</div>
+<div>表类型： </div>
+<a href='index.html' style='float: right;'>返回目录</a><div>说明：</div>
+<table cellspacing="1" cellpadding="0">
+ <thead>
+  <tr>
+   <td style="width: 40px;">序号</td>
+   <td>中文名称</td>
+   <td>英文名称</td>
+   <td>数据类型</td>
+   <td>长度</td>
+   <td>允许空值</td>
+   <td>主键</td>
+   <td>默认值</td>
+   <td>自增</td>
+   <td>说明</td>
+  </tr>
+ </thead> 
+ <tbody>
+  <tr>
+   <td style="text-align: center;">1</td> 
+   <td>主键</td> 
+   <td>id</td>
+   <td align="center">int</td>
+   <td align="center"></td>
+   <td align="center"> N </td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td> Y </td>
+   <td></td>
+  </tr>
+
+  <tr>
+   <td style="text-align: center;">2</td>
+   <td>方案名称</td>
+   <td>name</td>
+   <td align="center">varchar</td>
+   <td align="center">200</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td></td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">3</td> 
+   <td>文件保存方式</td> 
+   <td>FileSaveType</td>
+   <td align="center">char</td>
+   <td align="center">1</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td></td>
+  </tr>
+   <tr>
+   <td style="text-align: center;">4</td> 
+   <td>方案类型</td> 
+   <td>regitType</td>
+   <td align="center">int</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>FileSaveType=0,对应exp_ftpdetail里的id<BR>
+   FileSaveType=1,对应exp_localdetail里的id</td>
+  </tr> 
+    <tr>
+   <td style="text-align: center;">5</td> 
+   <td>文档存储数据类型</td> 
+   <td>expTableType</td>
+   <td align="center">char</td>
+   <td align="center">1</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td></td>
+   <tr>
+   <td style="text-align: center;">6</td> 
+   <td>同步方式</td> 
+   <td>synType</td>
+   <td align="center">char</td>
+   <td align="center">1</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>0,手动;1,自动</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">7</td> 
+   <td>同步间隔时间</td> 
+   <td>TimeModul</td>
+   <td align="center">char</td>
+   <td align="center">1</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td> 
+   <td><p>0：周</p> <p>1：月</p> <p>2：年</p> <p>3：天</p></td> 
+  </tr>
+  <tr>
+   <td style="text-align: center;">8</td> 
+   <td>星期</td> 
+   <td>Frequency</td>
+   <td align="center">int</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td> 
+   <td><p>1：周一</p> <p>2：周二</p> <p>3：周三</p> <p>4：周四</p> <p>5：周五</p> <p>6：周六</p> <p>7：周日</p></td> 
+  </tr>
+  <tr>
+   <td style="text-align: center;">9</td> 
+   <td>天</td> 
+   <td>frequencyy</td>
+   <td align="center">int</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td> 
+   <td><p>1-28：对应1-28日</p> </td> 
+  </tr>
+  <tr>
+   <td style="text-align: center;">10</td> 
+   <td>取值类型</td> 
+   <td>createType</td>
+   <td align="center">char</td>
+   <td align="center">1</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td> 
+   <td><p>0：正数</p> <p>1：倒数</p> <p>说明：TimeModul=1或2有效</p></td> 
+  </tr>
+  <tr>
+   <td style="text-align: center;">11</td> 
+   <td>同步时间</td> 
+   <td>createTime</td>
+   <td align="center">char</td>
+   <td align="center">8</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td> 
+   <td>格式：03:00，表示3点正</td> 
+  </tr>
+
+   <tr>
+   <td style="text-align: center;">12</td> 
+   <td>数据库保存方案id</td> 
+   <td>regitDBId</td>
+   <td align="center">char</td>
+   <td align="center">1</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td></td>
+  </tr>
+
+  <tr>
+   <td style="text-align: center;">13</td> 
+   <td>主表主键生成规则</td> 
+   <td>mainTableKeyType</td>
+   <td align="center">char</td>
+   <td align="center">1</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>0,自增长;1,UUID;2,时间戳 </td>
+  </tr>
+
+   <tr>
+   <td style="text-align: center;">14</td> 
+   <td>明细表主键生成规则</td> 
+   <td>dtTableKeyType</td>
+   <td align="center">char</td>
+   <td align="center">1</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>0,自增长;1,UUID;2,时间戳</td>
+  </tr>
+
+   <tr>
+   <td style="text-align: center;">15</td> 
+   <td>是否导出流程表单文档</td> 
+   <td>ExpWorkflowFileFlag</td>
+   <td align="center">char</td>
+   <td align="center">1</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td></td>
+  </tr>
+
+  
+   <tr>
+   <td style="text-align: center;">16</td> 
+   <td>是否导出流程表单文档为ZIP</td> 
+   <td>ExpWorkflowFileForZipFlag</td>
+   <td align="center">char</td>
+   <td align="center">1</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td></td>
+  </tr>
+
+   <tr>
+   <td style="text-align: center;">17</td> 
+   <td>是否导出流转意见文档</td> 
+   <td>ExpWorkflowRemarkFileFlag</td>
+   <td align="center">char</td>
+   <td align="center">1</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td></td>
+  </tr>
+
+   <tr>
+   <td style="text-align: center;">18</td> 
+   <td>是否导出流转意见文档为ZIP</td> 
+   <td>ExpWorkflowRemarkFileForZip</td>
+   <td align="center">char</td>
+   <td align="center">1</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td></td>
+  </tr>
+
+   <tr>
+   <td style="text-align: center;">19</td> 
+   <td>导出流程文档路径 </td> 
+   <td>ExpWorkflowFilePath</td>
+   <td align="center">varchar</td>
+   <td align="center">500</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td></td>
+  </tr>
+
+   <tr>
+   <td style="text-align: center;">20</td> 
+   <td>是否导出流程表单 </td> 
+   <td>ExpWorkflowInfoFlag</td>
+   <td align="center">char</td>
+   <td align="center">1</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td></td>
+  </tr>
+  
+   <tr>
+   <td style="text-align: center;">21</td> 
+   <td>导出流程表单路径 </td> 
+   <td>ExpWorkflowInfoPath</td>
+   <td align="center">varchar</td>
+   <td align="center">500</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td></td>
+  </tr>
+
+   <tr>
+   <td style="text-align: center;">22</td> 
+   <td>是否导出流转意见</td> 
+   <td>ExpWorkflowRemarkFlag</td>
+   <td align="center">char</td>
+   <td align="center">1</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td></td>
+  </tr>
+
+  
+   <tr>
+   <td style="text-align: center;">23</td> 
+   <td>是否导出签章图片</td> 
+   <td>ExpSignFileFlag</td>
+   <td align="center">char</td>
+   <td align="center">1</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td></td>
+  </tr>
+
+   <tr>
+   <td style="text-align: center;">24</td> 
+   <td>导出签章图片路径</td> 
+   <td>ExpSignFilePath</td>
+   <td align="center">varchar</td>
+   <td align="center">500</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td></td>
+  </tr>
+
+   <tr>
+   <td style="text-align: center;">25</td> 
+   <td>流程表单正文 </td> 
+   <td>zwMapFiletype</td>
+   <td align="center">varchar</td>
+   <td align="center">200</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td></td>
+  </tr>
+
+  <tr>
+   <td style="text-align: center;">26</td> 
+   <td>流程表单附件 </td> 
+   <td>fjMapFiletype</td>
+   <td align="center">varchar</td>
+   <td align="center">200</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td></td>
+  </tr>
+
+  <tr>
+   <td style="text-align: center;">27</td> 
+   <td>流程表单文档 </td> 
+   <td>dwdMapFiletype</td>
+   <td align="center">varchar</td>
+   <td align="center">200</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td></td>
+  </tr>
+  
+    <tr>
+   <td style="text-align: center;">28</td> 
+   <td>流程表单多文档 </td> 
+   <td>mwdMapFiletype</td>
+   <td align="center">varchar</td>
+   <td align="center">200</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td></td>
+  </tr>
+
+    <tr>
+   <td style="text-align: center;">29</td> 
+   <td>流转意见文档 </td> 
+   <td>remarkWDMapFiletype</td>
+   <td align="center">varchar</td>
+   <td align="center">200</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td></td>
+  </tr>
+    <tr>
+   <td style="text-align: center;">30</td> 
+   <td>流转意见附件 </td> 
+   <td>remarkFJMapFiletype</td>
+   <td align="center">varchar</td>
+   <td align="center">200</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td></td>
+  </tr>
+    <tr>
+   <td style="text-align: center;">31</td> 
+   <td>流程表单 </td> 
+   <td>bdMapFiletype</td>
+   <td align="center">varchar</td>
+   <td align="center">200</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td></td>
+  </tr>
+ </tbody>
+</table>
+</div>
+</center>
+</body>
+</html>
+

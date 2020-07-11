@@ -1,0 +1,305 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+<title>workflow_texttopdfconfig(转PDF设置表)</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gbk"/>
+<style>
+body, td {
+font-family: 微软雅黑;
+font-size: 12px;
+line-height: 150%;
+}
+table {
+width: 100%;
+background-color: #ccc;
+margin: 5px 0;
+word-break: break-all;
+}
+td {
+	background-color: #fff;
+	padding: 3px;
+padding-left: 10px;
+}
+thead td {
+	text-align: left;
+font-weight: bold;
+background-color: #eee;
+}
+a:link, a:visited, a:active {
+color: #015FB6;
+text-decoration: none;
+}
+a:hover {
+color: #E33E06;
+}
+.tablename {
+margin-top: 30px;
+}
+.outdiv {
+width: 1000px;
+margin: 40px auto;
+text-align: left;
+}
+
+</style>
+</head>
+<body>
+<center>
+<div class="outdiv">
+<div class="tablename">
+<b>表名：workflow_texttopdfconfig</b>
+</div>
+<div>中文名称：转PDF设置表</div>
+<div>表类型： </div>
+<a href='index.html' style='float: right;'>返回目录</a><div>说明：</div>
+<table cellspacing="1" cellpadding="0">
+ <colgroup>
+  <col width="50px">
+  <col width="190px">
+  <col width="190px">
+  <col width="80px">
+  <col width="80px">
+  <col width="70px">
+  <col width="40px">
+  <col width="60px">
+  <col width="40px">
+  <col width="200px">
+ </colgroup>
+ <thead>
+  <tr>
+   <td>序号</td>
+   <td>中文名称</td>
+   <td>英文名称</td>
+   <td>数据类型</td>
+   <td>长度</td>
+   <td>允许空值</td>
+   <td>主键</td>
+   <td>默认值</td>
+   <td>自增</td>
+   <td>说明</td>
+  </tr>
+ </thead> 
+ <tbody>
+  <tr>
+   <td style="text-align: center;">1</td>
+   <td>ID</td>
+   <td>id</td>
+   <td align="center">int</td>
+   <td align="center"></td>
+   <td align="center"> N </td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td> Y </td>
+   <td>　</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">2</td>
+   <td>流程id</td>
+   <td>workflowid</td>
+   <td align="center">int</td>
+   <td align="center"></td>
+   <td align="center">Y</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>　</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">3</td>
+   <td>转换节点id</td>
+   <td>topdfnodeid</td>
+   <td align="center">int</td>
+   <td align="center"></td>
+   <td align="center">Y</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>　</td>
+  </tr> 
+   <tr>
+   <td style="text-align: center;">3</td>
+   <td>转成PDF存放固定目录id</td>
+   <td>pdfsavesecid</td>
+   <td align="center">int</td>
+   <td align="center"></td>
+   <td align="center">Y</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>　</td>
+  </tr> 
+   <tr>
+   <td style="text-align: center;">4</td>
+   <td>转成PDF存放目录类型</td>
+   <td>catalogtype2</td>
+   <td align="center">int</td>
+   <td align="center"></td>
+   <td align="center">Y</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>0：固定目录 1：选择目录　</td>
+  </tr> 
+   <tr>
+   <td style="text-align: center;">5</td>
+   <td>转成PDF后存放选择字段id</td>
+   <td>selectcatalog2</td>
+   <td align="center">int</td>
+   <td align="center"></td>
+   <td align="center">Y</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>　</td>
+  </tr>
+   <tr>
+   <td style="text-align: center;">6</td>
+   <td>转成PDF后的文档状态</td>
+   <td>pdfdocstatus</td>
+   <td align="center">int</td>
+   <td align="center"></td>
+   <td align="center">Y</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>　</td>
+  </tr> 
+   <tr>
+   <td style="text-align: center;">7</td>
+   <td>转成PDF后的存放字段</td>
+   <td>pdffieldid</td>
+   <td align="center">int</td>
+   <td align="center"></td>
+   <td align="center">Y</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>　</td>
+  </tr> 
+   <tr>
+   <td style="text-align: center;">8</td>
+   <td>转成脱密PDF后的文档状态</td>
+   <td>decryptpdfdocstatus</td>
+   <td align="center">int</td>
+   <td align="center"></td>
+   <td align="center">Y</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>　</td>
+  </tr> 
+   <tr>
+   <td style="text-align: center;">9</td>
+   <td>转成脱密PDF后的存放目录id</td>
+   <td>decryptpdfsavesecid</td>
+   <td align="center">int</td>
+   <td align="center"></td>
+   <td align="center">Y</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>　</td>
+  </tr> 
+   <tr>
+   <td style="text-align: center;">10</td>
+   <td>转成脱密PDF后的存放目录类型</td>
+   <td>decryptcatalogtype2</td>
+   <td align="center">int</td>
+   <td align="center"></td>
+   <td align="center">Y</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>0：固定目录 1：选择目录　</td>
+  </tr> 
+   <tr>
+   <td style="text-align: center;">11</td>
+   <td>转成脱密PDF后的存放选择类型字段id</td>
+   <td>decryptselectcatalog2</td>
+   <td align="center">int</td>
+   <td align="center"></td>
+   <td align="center">Y</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>　</td>
+  </tr> 
+   <tr>
+   <td style="text-align: center;">12</td>
+   <td>转成脱密PDF后的存放字段id</td>
+   <td>decryptpdffieldid</td>
+   <td align="center">int</td>
+   <td align="center"></td>
+   <td align="center">Y</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>　</td>
+  </tr> 
+   <tr>
+   <td style="text-align: center;">13</td>
+   <td>转换类型</td>
+   <td>checktype</td>
+   <td align="center">char</td>
+   <td align="center">10</td>
+   <td align="center">Y</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>　</td>
+  </tr> 
+   <tr>
+   <td style="text-align: center;">14</td>
+   <td>触发类型</td>
+   <td>operationtype</td>
+   <td align="center">int</td>
+   <td align="center"></td>
+   <td align="center">Y</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>1：提交流程时 0：保存文档时　</td>
+  </tr> 
+   <tr>
+   <td style="text-align: center;">15</td>
+   <td>流程附件转为PDF副本附件</td>
+   <td>filetopdffile</td>
+   <td align="center">int</td>
+   <td align="center"></td>
+   <td align="center">Y</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>　</td>
+  </tr> 
+   <tr>
+   <td style="text-align: center;">16</td>
+   <td>正文/流程中的Office附件转为PDF格式</td>
+   <td>filetopdf</td>
+   <td align="center">int</td>
+   <td align="center"></td>
+   <td align="center">Y</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>　</td>
+  </tr> 
+   <tr>
+   <td style="text-align: center;">17</td>
+   <td>转换附件最大值</td>
+   <td>filemaxsize</td>
+   <td align="center">int</td>
+   <td align="center"></td>
+   <td align="center">Y</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>　</td>
+  </tr> 
+ </tbody>
+</table>
+</div>
+</center>
+</body>
+</html>
+

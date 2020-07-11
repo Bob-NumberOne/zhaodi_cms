@@ -1,0 +1,245 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+<title>cpcominforight(公司资料模块权限维护)</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gbk"/>
+<style>
+body, td {
+font-family: 微软雅黑;
+font-size: 12px;
+line-height: 150%;
+}
+table {
+width: 100%;
+background-color: #ccc;
+margin: 5px 0;
+word-break: break-all;
+}
+td {
+	background-color: #fff;
+	padding: 3px;
+padding-left: 10px;
+}
+thead td {
+	text-align: left;
+font-weight: bold;
+background-color: #eee;
+}
+a:link, a:visited, a:active {
+color: #015FB6;
+text-decoration: none;
+}
+a:hover {
+color: #E33E06;
+}
+.tablename {
+margin-top: 30px;
+}
+.outdiv {
+width: 1000px;
+margin: 40px auto;
+text-align: left;
+}
+
+</style>
+</head>
+<body>
+<center>
+<div class="outdiv">
+<div class="tablename">
+<b>表名：cpcominforight</b>
+</div>
+<div>中文名称：公司资料模块权限维护</div>
+<div>表类型： </div>
+<a href='index.html' style='float: right;'>返回目录</a><div>说明：</div>
+<table cellspacing="1" cellpadding="0" mytablename="cpcominforight">
+ <colgroup>
+  <col width="50px">
+  <col width="190px">
+  <col width="190px">
+  <col width="80px">
+  <col width="80px">
+  <col width="70px">
+  <col width="40px">
+  <col width="60px">
+  <col width="40px">
+  <col width="200px">
+ </colgroup>
+ <thead>
+  <tr>
+   <td>序号</td>
+   <td>中文名称</td>
+   <td>英文名称</td>
+   <td>数据类型</td>
+   <td>长度</td>
+   <td>允许空值</td>
+   <td>主键</td>
+   <td>默认值</td>
+   <td>自增</td>
+   <td>说明</td>
+  </tr>
+ </thead> 
+ <tbody>
+  <tr mycolname="id">
+   <td style="text-align: center;">1</td>
+   <td> 标识ID </td>
+   <td>id</td>
+   <td align="center">int</td>
+   <td align="center"></td>
+   <td align="center"> N </td>
+   <td align="center"> Y </td>
+   <td align="center"></td>
+   <td> Y </td>
+   <td> 标识列 </td>
+  </tr>
+  <tr mycolname="comid">
+   <td style="text-align: center;">2</td>
+   <td>公司id </td>
+   <td>comid</td>
+   <td align="center">int</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>公司id </td>
+  </tr>
+  <tr mycolname="comrright">
+   <td style="text-align: center;">3</td> 
+   <td>权限 </td>
+   <td>comrright</td>
+   <td align="center">int</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>1是公司资源管理区后台维护权限|2是公司资源管理区证照维护权限</td>
+  </tr>
+  <tr mycolname="permtype">
+   <td style="text-align: center;">4</td>
+   <td>类型 </td>
+   <td>permtype</td>
+   <td align="center">int</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>1,部门+安全级别,3表示安全级别,6分部+安全级别,2角色+安全级别+级别,4用户类型+安全级别|5人力资源</td>
+  </tr>
+  <tr mycolname="seclevel">
+   <td style="text-align: center;">5</td>
+   <td>安全级别 </td>
+   <td>seclevel</td>
+   <td align="center">int</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td> 
+   <td>安全级别 </td> 
+  </tr> 
+  <tr mycolname="subComid">
+   <td style="text-align: center;">6</td>
+   <td>分部id </td>
+   <td>subComid</td>
+   <td align="center">int</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td> 
+   <td>分部id </td> 
+  </tr> 
+  <tr mycolname="depid">
+   <td style="text-align: center;">7</td>
+   <td>部门id </td>
+   <td>depid</td>
+   <td align="center">int</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td> 
+   <td>部门id </td> 
+  </tr> 
+  <tr mycolname="roleid">
+   <td style="text-align: center;">8</td>
+   <td>角色id </td>
+   <td>roleid</td>
+   <td align="center">int</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td> 
+   <td>角色id </td> 
+  </tr> 
+  <tr mycolname="userid">
+   <td style="text-align: center;">9</td>
+   <td>用户id </td>
+   <td>userid</td>
+   <td align="center">int</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td> 
+   <td>用户id </td> 
+  </tr> 
+  <tr mycolname="rolelevel">
+   <td style="text-align: center;">10</td>
+   <td>角色级别 </td>
+   <td>rolelevel</td>
+   <td align="center">int</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td> 
+   <td>角色级别 </td> 
+  </tr> 
+  <tr mycolname="usertype">
+   <td style="text-align: center;">11</td>
+   <td>用户种类 </td>
+   <td>usertype</td>
+   <td align="center">int</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td> 
+   <td>用户种类 </td> 
+  </tr> 
+  <tr mycolname="comallright">
+   <td style="text-align: center;">12</td>
+   <td>是否为全局的公司权限 </td>
+   <td>comallright</td>
+   <td align="center">int</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>1是全局的，0不是全局的</td>
+  </tr>
+  <tr mycolname="seclevel2">
+   <td style="text-align: center;">13</td> 
+   <td>安全级别 (最大值)</td>
+   <td>seclevel2</td>
+   <td align="center">int</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>安全级别 (最大值)</td>
+  </tr> 
+ </tbody>
+</table>
+</div>
+</center>
+</body>
+</html>
+

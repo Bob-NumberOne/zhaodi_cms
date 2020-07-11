@@ -1,0 +1,377 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+<title>mode_customdspfield(查询列表字段信息)</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gbk"/>
+<style>
+body, td {
+font-family: 微软雅黑;
+font-size: 12px;
+line-height: 150%;
+}
+table {
+width: 100%;
+background-color: #ccc;
+margin: 5px 0;
+word-break: break-all;
+}
+td {
+	background-color: #fff;
+	padding: 3px;
+padding-left: 10px;
+}
+thead td {
+	text-align: left;
+font-weight: bold;
+background-color: #eee;
+}
+a:link, a:visited, a:active {
+color: #015FB6;
+text-decoration: none;
+}
+a:hover {
+color: #E33E06;
+}
+.tablename {
+margin-top: 30px;
+}
+.outdiv {
+width: 1000px;
+margin: 40px auto;
+text-align: left;
+}
+
+</style>
+</head>
+<body>
+<center>
+<div class="outdiv">
+<div class="tablename">
+<b>表名：mode_customdspfield</b>
+</div>
+<div>中文名称：查询列表字段信息</div>
+<div>表类型： </div>
+<a href='index.html' style='float: right;'>返回目录</a><div>说明：</div>
+<table cellspacing="1" cellpadding="0"> 
+ <colgroup> 
+  <col width="5%"> 
+  <col width="10%"> 
+  <col width="10%"> 
+  <col width="10%"> 
+  <col width="8%"> 
+  <col width="8%"> 
+  <col width="8%"> 
+  <col width="8%"> 
+  <col width="8%"> 
+  <col width="25%">
+ </colgroup> 
+ <thead> 
+  <tr> 
+   <td>序号</td> 
+   <td>中文名称</td> 
+   <td>英文名称</td> 
+   <td>数据类型</td> 
+   <td>长度</td> 
+   <td>允许空值</td> 
+   <td>主键</td> 
+   <td>默认值</td> 
+   <td>自增</td> 
+   <td>说明</td>
+  </tr>
+ </thead> 
+ <tbody> 
+  <tr> 
+   <td style="text-align: center;">1</td> 
+   <td>id</td> 
+   <td>id</td> 
+   <td align="center">int</td> 
+   <td align="center"></td> 
+   <td align="center">N</td> 
+   <td align="center">Y</td> 
+   <td align="center"></td> 
+   <td>Y</td> 
+   <td></td>
+  </tr> 
+  <tr> 
+   <td style="text-align: center;">2</td> 
+   <td>查询id</td> 
+   <td>customid</td> 
+   <td align="center">int</td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td></td> 
+   <td>对应mode_customsearch表的id</td>
+  </tr> 
+  <tr> 
+   <td style="text-align: center;">3</td> 
+   <td>字段id</td> 
+   <td>fieldid</td> 
+   <td align="center">int</td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td></td> 
+   <td>对应workflow_billfield表的id</td>
+  </tr> 
+  <tr> 
+   <td style="text-align: center;">4</td> 
+   <td>是否查询条件</td> 
+   <td>isquery</td> 
+   <td align="center">char</td> 
+   <td align="center">1</td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td></td> 
+   <td>1：是<br>0：否</td>
+  </tr> 
+  <tr> 
+   <td style="text-align: center;">5</td> 
+   <td>是否显示</td> 
+   <td>isshow</td> 
+   <td align="center">char</td> 
+   <td align="center">1</td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td></td> 
+   <td>1：是<br>0：否</td>
+  </tr> 
+  <tr> 
+   <td style="text-align: center;">6</td> 
+   <td>显示顺序</td> 
+   <td>showorder</td> 
+   <td align="center">int</td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td></td> 
+   <td>查询列表里字段的显示顺序</td>
+  </tr> 
+  <tr> 
+   <td style="text-align: center;">7</td> 
+   <td>查询条件显示顺序</td> 
+   <td>queryorder</td> 
+   <td align="center">int</td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td></td> 
+   <td>在查询条件中，字段的显示顺序</td>
+  </tr> 
+  <tr> 
+   <td style="text-align: center;">8</td> 
+   <td>链接字段</td> 
+   <td>istitle</td> 
+   <td align="center">char</td> 
+   <td align="center">1</td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td></td> 
+   <td>0：否<br>1：表单建模<br>2：工作流程<br>3：自定义</td>
+  </tr> 
+  <tr> 
+   <td style="text-align: center;">9</td> 
+   <td>列宽</td> 
+   <td>colwidth</td> 
+   <td align="center">decimal</td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td></td> 
+   <td></td>
+  </tr> 
+  <tr> 
+   <td style="text-align: center;">10</td> 
+   <td>是否统计</td> 
+   <td>isstat</td> 
+   <td align="center">char</td> 
+   <td align="center">1</td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td></td> 
+   <td>1：是<br>0：否</td>
+  </tr> 
+  <tr> 
+   <td style="text-align: center;">11</td> 
+   <td>是否关键字查询字段</td> 
+   <td>iskey</td> 
+   <td align="center">int</td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td></td> 
+   <td>1：是<br>0：否<br>设置为关键字字段后，可作为查询列表右上角的快速搜索框</td>
+  </tr> 
+  <tr> 
+   <td style="text-align: center;">12</td> 
+   <td>是否排序字段</td> 
+   <td>isorderfield</td> 
+   <td align="center">int</td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td></td> 
+   <td>作废</td>
+  </tr> 
+  <tr> 
+   <td style="text-align: center;">13</td> 
+   <td>priorder</td> 
+   <td>priorder</td> 
+   <td align="center">char</td> 
+   <td align="center">4</td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td></td> 
+   <td>作废</td>
+  </tr> 
+  <tr> 
+   <td style="text-align: center;">14</td> 
+   <td>链接地址</td> 
+   <td>hreflink</td> 
+   <td align="center">varchar</td> 
+   <td align="center">1000</td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td></td> 
+   <td></td>
+  </tr> 
+  <tr> 
+   <td style="text-align: center;">15</td> 
+   <td>是否显示方式</td> 
+   <td>showmethod</td> 
+   <td align="center">int</td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td></td> 
+   <td>1：显示转换<br>0：不转换<br>只有select框字段才能进行显示转换</td>
+  </tr> 
+  <tr> 
+   <td style="text-align: center;">16</td> 
+   <td>是否分组</td> 
+   <td>isgroup</td> 
+   <td align="center">char</td> 
+   <td align="center">1</td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td></td> 
+   <td></td>
+  </tr> 
+  <tr> 
+   <td style="text-align: center;">17</td> 
+   <td>是否排序</td> 
+   <td>isorder</td> 
+   <td align="center">int</td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td></td> 
+   <td>1：排序<br>0：不排序</td>
+  </tr> 
+  <tr> 
+   <td style="text-align: center;">18</td> 
+   <td>排序类型</td> 
+   <td>ordertype</td> 
+   <td align="center">varchar</td> 
+   <td align="center">100</td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td></td> 
+   <td>n：--<br>0：不能排序<br>a：默认升序<br>d；默认降序</td>
+  </tr> 
+  <tr> 
+   <td style="text-align: center;">19</td> 
+   <td>默认排序优先级</td> 
+   <td>ordernum</td> 
+   <td align="center">int</td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td></td> 
+   <td>默认排序优先级，值越小，优先级越高</td>
+  </tr> 
+  <tr> 
+   <td style="text-align: center;">20</td> 
+   <td>条件参数</td> 
+   <td>searchparaname</td> 
+   <td align="center">varchar</td> 
+   <td align="center">50</td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td></td> 
+   <td>条件参数</td>
+  </tr> 
+  <tr> 
+   <td style="text-align: center;">21</td> 
+   <td>条件参数1</td> 
+   <td>searchparaname1</td> 
+   <td align="center">varchar</td> 
+   <td align="center">50</td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td></td> 
+   <td></td>
+  </tr> 
+  <tr> 
+   <td style="text-align: center;">22</td> 
+   <td>是否高级查询字段</td> 
+   <td>isadvancedquery</td> 
+   <td align="center">char</td> 
+   <td align="center">1</td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td></td> 
+   <td>1：是<br>0：否</td>
+  </tr> 
+  <tr> 
+   <td style="text-align: center;">23</td> 
+   <td>高级查询条件显示顺序</td> 
+   <td>advancedqueryorder</td> 
+   <td align="center">int</td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td></td> 
+   <td></td>
+  </tr> 
+  <tr> 
+   <td style="text-align: center;">24</td> 
+   <td>显示转换条件</td> 
+   <td>conditionTransition</td> 
+   <td align="center">int</td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td></td> 
+   <td>1：是<br>0：否</td>
+  </tr>
+ </tbody>
+</table>
+</div>
+</center>
+</body>
+</html>
+

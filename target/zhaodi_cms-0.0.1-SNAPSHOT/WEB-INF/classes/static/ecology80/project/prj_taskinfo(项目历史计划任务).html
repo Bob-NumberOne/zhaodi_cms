@@ -1,0 +1,485 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+<title>prj_taskinfo(项目历史计划任务)</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gbk"/>
+<style>
+body, td {
+font-family: 微软雅黑;
+font-size: 12px;
+line-height: 150%;
+}
+table {
+width: 100%;
+background-color: #ccc;
+margin: 5px 0;
+word-break: break-all;
+}
+td {
+	background-color: #fff;
+	padding: 3px;
+padding-left: 10px;
+}
+thead td {
+	text-align: left;
+font-weight: bold;
+background-color: #eee;
+}
+a:link, a:visited, a:active {
+color: #015FB6;
+text-decoration: none;
+}
+a:hover {
+color: #E33E06;
+}
+.tablename {
+margin-top: 30px;
+}
+.outdiv {
+width: 1000px;
+margin: 40px auto;
+text-align: left;
+}
+
+</style>
+</head>
+<body>
+<center>
+<div class="outdiv">
+<div class="tablename">
+<b>表名：prj_taskinfo</b>
+</div>
+<div>中文名称：项目历史计划任务</div>
+<div>表类型： </div>
+<a href='index.html' style='float: right;'>返回目录</a><div>说明：</div>
+<table cellspacing="1" cellpadding="0" mytablename="Prj_TaskInfo">
+ <colgroup>
+  <col width="50px">
+  <col width="190px">
+  <col width="190px">
+  <col width="80px">
+  <col width="80px">
+  <col width="70px">
+  <col width="40px">
+  <col width="60px">
+  <col width="40px">
+  <col width="200px">
+ </colgroup>
+ <thead>
+  <tr>
+   <td>序号</td>
+   <td>中文名称</td>
+   <td>英文名称</td>
+   <td>数据类型</td>
+   <td>长度</td>
+   <td>允许空值</td>
+   <td>主键</td>
+   <td>默认值</td>
+   <td>自增</td>
+   <td>说明</td>
+  </tr>
+ </thead> 
+ <tbody>
+  <tr mycolname="id">
+   <td style="text-align: center;">1</td>
+   <td> 标识ID </td>
+   <td>id</td>
+   <td align="center">int</td>
+   <td align="center"></td>
+   <td align="center"> N </td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td> Y </td>
+   <td> 标识列 </td>
+  </tr>
+  <tr mycolname="prjid">
+   <td style="text-align: center;">2</td> 
+   <td>项目id </td>
+   <td>prjid</td>
+   <td align="center">int</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td> 
+   <td>项目id </td> 
+  </tr> 
+  <tr mycolname="taskid">
+   <td style="text-align: center;">3</td> 
+   <td>任务id</td>
+   <td>taskid</td>
+   <td align="center">int</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td> 
+   <td>任务id</td> 
+  </tr> 
+  <tr mycolname="wbscoding">
+   <td style="text-align: center;">4</td> 
+   <td>wbs编码 </td>
+   <td>wbscoding</td>
+   <td align="center">varchar</td>
+   <td align="center">1000</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td> 
+   <td>wbs编码 </td> 
+  </tr> 
+  <tr mycolname="subject">
+   <td style="text-align: center;">5</td> 
+   <td>任务标题 </td>
+   <td>subject</td>
+   <td align="center">varchar</td>
+   <td align="center">1000</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td> 
+   <td>任务标题 </td> 
+  </tr> 
+  <tr mycolname="version">
+   <td style="text-align: center;">6</td> 
+   <td>版本 </td>
+   <td>version</td>
+   <td align="center">tinyint</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td> 
+   <td>版本 </td> 
+  </tr> 
+  <tr mycolname="isactived">
+   <td style="text-align: center;">7</td> 
+   <td>是否活动 </td>
+   <td>isactived</td>
+   <td align="center">tinyint</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center">0</td>
+   <td></td> 
+   <td>是否活动(执行状态的项目,isactive=2) </td> 
+  </tr> 
+  <tr mycolname="workday">
+   <td style="text-align: center;">8</td> 
+   <td>工期 </td>
+   <td>workday</td>
+   <td align="center">decimal</td>
+   <td align="center">10,1</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center">0.0</td>
+   <td></td> 
+   <td>工期 </td> 
+  </tr> 
+  <tr mycolname="begindate">
+   <td style="text-align: center;">9</td> 
+   <td>开始日期 </td>
+   <td>begindate</td>
+   <td align="center">varchar</td>
+   <td align="center">1000</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td> 
+   <td>开始日期 </td> 
+  </tr> 
+  <tr mycolname="enddate">
+   <td style="text-align: center;">10</td> 
+   <td>结束日期 </td>
+   <td>enddate</td>
+   <td align="center">varchar</td>
+   <td align="center">1000</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td> 
+   <td>结束日期 </td> 
+  </tr> 
+  <tr mycolname="content">
+   <td style="text-align: center;">11</td> 
+   <td>任务说明 </td>
+   <td>content</td>
+   <td align="center">varchar</td>
+   <td align="center">4000</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td> 
+   <td>任务说明 </td> 
+  </tr> 
+  <tr mycolname="fixedcost">
+   <td style="text-align: center;">12</td> 
+   <td>预算 </td>
+   <td>fixedcost</td>
+   <td align="center">decimal</td>
+   <td align="center">18,2</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center">0.00</td>
+   <td></td> 
+   <td>预算 </td> 
+  </tr> 
+  <tr mycolname="parentid">
+   <td style="text-align: center;">13</td> 
+   <td>上级任务 </td>
+   <td>parentid</td>
+   <td align="center">int</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center">0</td>
+   <td></td> 
+   <td>上级任务 </td> 
+  </tr> 
+  <tr mycolname="parentids">
+   <td style="text-align: center;">14</td> 
+   <td>上级任务串 </td>
+   <td>parentids</td>
+   <td align="center">varchar</td>
+   <td align="center">4000</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td> 
+   <td>上级任务串 </td> 
+  </tr> 
+  <tr mycolname="level_n">
+   <td style="text-align: center;">15</td> 
+   <td>层级 </td>
+   <td>level_n</td>
+   <td align="center">tinyint</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center">1</td>
+   <td></td> 
+   <td>层级 </td> 
+  </tr> 
+  <tr mycolname="hrmid">
+   <td style="text-align: center;">16</td> 
+   <td>任务负责人 </td>
+   <td>hrmid</td>
+   <td align="center">int</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td> 
+   <td>任务负责人 </td> 
+  </tr> 
+  <tr mycolname="parenthrmids">
+   <td style="text-align: center;">17</td> 
+   <td>上级任务负责人串 </td>
+   <td>parenthrmids</td>
+   <td align="center">varchar</td>
+   <td align="center">4000</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td> 
+   <td>上级任务负责人串 </td> 
+  </tr> 
+  <tr mycolname="isdelete">
+   <td style="text-align: center;">18</td> 
+   <td>是否删除 </td>
+   <td>isdelete</td>
+   <td align="center">tinyint</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center">0</td>
+   <td></td> 
+   <td>是否删除 </td> 
+  </tr> 
+  <tr mycolname="childnum">
+   <td style="text-align: center;">19</td> 
+   <td>子任务数量 </td>
+   <td>childnum</td>
+   <td align="center">int</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center">0</td>
+   <td></td> 
+   <td>子任务数量 </td> 
+  </tr> 
+  <tr mycolname="realManDays">
+   <td style="text-align: center;">20</td> 
+   <td>实际工期 </td>
+   <td>realManDays</td>
+   <td align="center">decimal</td>
+   <td align="center">6,1</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td> 
+   <td>实际工期 </td> 
+  </tr> 
+  <tr mycolname="actualBeginDate">
+   <td style="text-align: center;">21</td> 
+   <td>实际开始日期 </td>
+   <td>actualBeginDate</td>
+   <td align="center">varchar</td>
+   <td align="center">1000</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td> 
+   <td>实际开始日期 </td> 
+  </tr> 
+  <tr mycolname="actualEndDate">
+   <td style="text-align: center;">22</td> 
+   <td>实际结束日期 </td>
+   <td>actualEndDate</td>
+   <td align="center">varchar</td>
+   <td align="center">1000</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td> 
+   <td>实际结束日期 </td> 
+  </tr> 
+  <tr mycolname="finish">
+   <td style="text-align: center;">23</td> 
+   <td>进度 </td>
+   <td>finish</td>
+   <td align="center">int</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td> 
+   <td>进度 </td> 
+  </tr> 
+  <tr mycolname="status">
+   <td style="text-align: center;">24</td> 
+   <td>状态 </td>
+   <td>status</td>
+   <td align="center">int</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td> 
+   <td>状态 </td> 
+  </tr> 
+  <tr mycolname="islandmark">
+   <td style="text-align: center;">25</td> 
+   <td>里程碑 </td>
+   <td>islandmark</td>
+   <td align="center">char</td>
+   <td align="center">1</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td> 
+   <td>里程碑 </td> 
+  </tr> 
+  <tr mycolname="creater">
+   <td style="text-align: center;">26</td> 
+   <td>创建者 </td>
+   <td>creater</td>
+   <td align="center">int</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td> 
+   <td>创建者 </td> 
+  </tr> 
+  <tr mycolname="createdate">
+   <td style="text-align: center;">27</td> 
+   <td>创建日期 </td>
+   <td>createdate</td>
+   <td align="center">varchar</td>
+   <td align="center">1000</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td> 
+   <td>创建日期 </td> 
+  </tr> 
+  <tr mycolname="createtime">
+   <td style="text-align: center;">28</td> 
+   <td>创建时间 </td>
+   <td>createtime</td>
+   <td align="center">varchar</td>
+   <td align="center">1000</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td> 
+   <td>创建时间 </td> 
+  </tr> 
+  <tr mycolname="taskIndex">
+   <td style="text-align: center;">29</td> 
+   <td>任务索引 </td>
+   <td>taskIndex</td>
+   <td align="center">int</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td> 
+   <td>任务索引 </td> 
+  </tr> 
+  <tr mycolname="begintime">
+   <td style="text-align: center;">30</td> 
+   <td>开始时间 </td>
+   <td>begintime</td>
+   <td align="center">varchar</td>
+   <td align="center">10</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td> 
+   <td>开始时间 </td> 
+  </tr> 
+  <tr mycolname="endtime">
+   <td style="text-align: center;">31</td> 
+   <td>结束时间 </td>
+   <td>endtime</td>
+   <td align="center">varchar</td>
+   <td align="center">10</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td> 
+   <td>结束时间 </td> 
+  </tr> 
+  <tr mycolname="actualbegintime">
+   <td style="text-align: center;">32</td> 
+   <td>实际开始时间 </td>
+   <td>actualbegintime</td>
+   <td align="center">varchar</td>
+   <td align="center">10</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td> 
+   <td>实际开始时间 </td> 
+  </tr> 
+  <tr mycolname="actualendtime">
+   <td style="text-align: center;">33</td> 
+   <td>实际结束时间 </td>
+   <td>actualendtime</td>
+   <td align="center">varchar</td>
+   <td align="center">10</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td> 
+   <td>实际结束时间 </td> 
+  </tr> 
+ </tbody>
+</table>
+</div>
+</center>
+</body>
+</html>
+

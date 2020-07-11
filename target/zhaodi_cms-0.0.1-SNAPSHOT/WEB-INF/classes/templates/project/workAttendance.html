@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <base th:href="${#request.getContextPath()}+'/'">
+    <link rel="stylesheet" href="js/layui/css/layui.css"  media="all">
+    <script src="js/layui/layui.js" charset="utf-8"></script>
+    <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
+    <script type="text/javascript" src="js/serializejson.min.js"></script>
+    <style type="text/css">
+        .table_head{text-align: center;}
+        .layui-transfer-data{height: 280px !important;}
+    </style>
+</head>
+<body>
+<form class="layui-form" id="myForm" style="padding-top:20px; ">
+    <div class="layui-inline  layui-form-item" style="display: flex;justify-content: center;align-items: center;">
+        <div class="layui-inline">
+            <label class="layui-form-label">标准出勤</label>
+            <div class="layui-input-block">
+                <input type="checkbox" checked="" lay-skin="switch" lay-filter="switchTest" lay-text="ON|OFF">
+                <input style="display: none" type="text" id="whether" name="whether" >
+            </div>
+        </div>
+
+        <div class="layui-inline">
+            <!--筛选-->
+            <label class="layui-form-label">姓名</label>
+            <div class="layui-input-inline">
+                <input type="text" id="lastName" name="lastName" lay-verify="title" autocomplete="off" placeholder="请输入人员名称" class="layui-input">
+            </div>
+        </div>
+
+        <div class="layui-inline">
+            <label class="layui-form-label">岗位</label>
+            <input type="text" id="wb_gw" name="jobtitlename" style="display: none">
+            <input style="width: 190px" type="text" id="JobTitle" name="JobTitle" lay-verify="title" autocomplete="off" placeholder="请选择岗位" class="layui-input">
+        </div>
+        <div id="JobTitle_pplicant" lay-filter="JobTitle_pplicant" style="display: none;padding-left: 30px;padding-top: 30px;">
+            <div id="JobTitle_choose" class="demo-transfer"></div>
+        </div>
+
+        <div class="layui-inline">
+            <label class="layui-form-label">区域</label>
+            <div class="layui-input-inline">
+                <select id="departmentid" name="departmentid" lay-filter="wb_order">
+                    <option value="" >选择区域</option>
+                    <option value="825">江苏区域</option>
+                    <option value="1255">浙江区域</option>
+                    <option value="1256">上海区域</option>
+                    <option value="1272">福建区域</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="layui-inline">
+            <!--筛选-->
+            <label class="layui-form-label">办事处</label>
+            <div class="layui-input-inline">
+                <input type="text" id="departmentname" name="departmentname" lay-verify="title" autocomplete="off" placeholder="请输入办事处" class="layui-input">
+            </div>
+        </div>
+
+        <div class="layui-inline" id="setYear">
+            <label class="layui-form-label">选择年月</label>
+            <div class="layui-input-inline">
+                <input type="text" class="layui-input" id="yearMonth" name="yearMonth" placeholder="yyyy-MM">
+            </div>
+        </div>
+
+        <div class="layui-inline" >
+            <button id="search" type="button" style="margin-left: -10px;" class="layui-btn layui-btn-primary">搜索</button>
+        </div>
+
+    </div>
+</form>
+<table class="layui-hide" id="patent" lay-filter="patentTable"></table>
+<!--<script type="text/html" id="barDemo" th:inline="none">
+    <a class="layui-btn layui-btn-primary layui-btn-xs" lay-event="look"><i class="layui-icon layui-icon-form"></i>字段详情</a>
+
+</script>-->
+<script type="text/javascript" src="js/patent/getJobTitle.js"></script>
+<script th:inline="none">
+    var myDate = new Date();
+    var yearMonthStr=myDate.getFullYear()+"-"+myDate.getMonth();
+    var yearMonthStr1=myDate.getFullYear()+"-"+(myDate.getMonth()+1);
+    //console.log(yearMonthStr);
+
+    layui.use(['table','form','layer','laydate','transfer'],function(){
+        var table = layui.table
+            ,form = layui.form
+            ,laydate=layui.laydate
+            ,transfer = layui.transfer
+            ,layer = layui.layer;
+        //年月选择器
+        laydate.render({
+            elem: '#yearMonth'
+            ,type: 'month'
+            ,value: yearMonthStr
+            ,max: yearMonthStr1
+            ,format: 'yyyy-MM'
+        });
+        //监听指定开关
+        form.on('switch(switchTest)', function(data){
+            if(this.checked){
+                layer.tips('温馨提示：签到一天是4次，时间分别是9点之前，9点至十点半一次，1点至3点一次，3点至6点一次，其他时间的不做统计！', data.othis);
+                $('#whether').val('1');
+            }else{
+                layer.tips('温馨提示：关闭后，不按标准时间计算，签到几次就算几次！', data.othis);
+                $('#whether').val('2');
+            }
+        });
+        //验证字符串是否是数字
+        function checkNumber(theObj) {
+            var reg = /^[0-9]+.?[0-9]*$/;
+            if (reg.test(theObj)) {
+                return true;
+            }
+            return false;
+        }
+        var arr = [{field:'region', title:'区域', width:90, align:'center',templet:function (res){
+                var supdepid=res.supdepid;
+                var region=res.region;
+                var departmentname=res.departmentname;
+                if(supdepid=="801"){
+                    return departmentname;
+                }
+                return region;
+            }}
+            ,{field:'id', title:'ID', width:90, align:'center',hide:true}
+            ,{field:'jobtitle', title:'岗位ID', width:90, align:'center',hide:true}
+            ,{field:'departmentname', title:'办事处', width:90, align:'center'}
+            ,{field:'lastName', title:'姓名', width:90, align:'center'}
+            ,{field:'jobtitlename', title:'岗位', width:90, align:'center'}
+            ,{field:'project', title:'项目', width:60, align:'center'}
+            ];//表头
+        for(var i=0;i<31;i++){
+            let j=i;
+            let f=function(res){
+                // console.log(res);
+                let days=res.days[j];
+                let aa='<a class="wba" href="javascript:void(0);">'+days+'</a>';
+                return aa;
+            };
+
+            if(i<9){
+                arr.push({field:'days', title:(i+1)+'', width:40, align:'center',
+                    templet:f});
+            }else{
+                arr.push({field:'days', title:(i+1)+'', width:50, align:'center',
+                    templet:f});
+            }
+
+        }
+        arr.push({field:'attendanceCount', title:'应出勤天数合计', width:90, align:'center'});
+        arr.push({field:'leave', title:'请假次数', width:90, align:'center'});
+        arr.push({field:'noAttendance', title:'缺勤', width:90, align:'center'});
+        arr.push({field:'actualAttendance', title:'实际出勤天数', width:90, align:'center'});
+        arr.push({field:'lackDay', title:'缺签到/日志天数', width:90, align:'center'});
+        arr.push({field:'completionRate', title:'签到/日志完成率', width:90, align:'center',templet:function (res){
+                var reg = /^[0-9]+.?[0-9]*$/;
+                var days=res.days;
+                var totalCQ=res.attendanceCount;//应出勤
+                var project=res.project;//项目类型
+                var totalNum=0;
+                //console.log(days);
+                if(days!=undefined){
+                    for(var i=0;i<days.length;i++){
+                        if (reg.test(days[i])) {
+                            totalNum=totalNum+parseInt(days[i]);
+                        }
+                    }
+                }
+
+                //console.log(totalNum);
+                if(project=="日志"){
+                    return (Math.round(totalNum / totalCQ * 10000) / 100.00 + "%");
+                }else{
+                    let num=totalCQ * 4;
+                    return (Math.round(totalNum /num * 10000) / 100.00 + "%");
+                }
+
+            }});
+
+
+        // $('.layui-form').on('click', '.wba', function(){
+        //     alert(1);
+        // });
+
+        //console.log(arr);
+        reloadTable = table.render({
+            elem: '#patent'
+            ,url:"project/getorkAttendance.xmj"
+            ,method:'post'
+            ,toolbar: true
+            ,limit:8
+            ,limits:[8,20,50,100,200,500]
+            ,title: '签到日志统计表'
+            ,totalRow: true
+            ,cols: [arr]
+            ,done: function (res, curr, count) {
+                let MaxDay=31-parseInt(res.data[0].maxDay);
+                if(MaxDay==1){//30天==31号隐藏
+                    $("td[data-key='1-0-37']").addClass("layui-hide");
+                    $("th[data-key='1-0-37']").addClass("layui-hide");
+                }else if(MaxDay==2){//29天==30、31号隐藏
+                    $("td[data-key='1-0-37']").addClass("layui-hide");
+                    $("th[data-key='1-0-37']").addClass("layui-hide");
+
+                    $("td[data-key='1-0-36']").addClass("layui-hide");
+                    $("th[data-key='1-0-36']").addClass("layui-hide");
+                }else if(MaxDay==3){//28天==29、30、31号隐藏
+                    $("td[data-key='1-0-37']").addClass("layui-hide");
+                    $("th[data-key='1-0-37']").addClass("layui-hide");
+
+                    $("td[data-key='1-0-36']").addClass("layui-hide");
+                    $("th[data-key='1-0-36']").addClass("layui-hide");
+
+                    $("td[data-key='1-0-35']").addClass("layui-hide");
+                    $("th[data-key='1-0-35']").addClass("layui-hide");
+                }
+            }
+            ,page: true
+            ,response: {
+                statusCode: 200 //重新规定成功的状态码为 200，table 组件默认为 0
+            }
+            ,parseData: function(res){ //将原始数据解析成 table 组件所规定的数据
+                return {
+                    "code": res.status, //解析接口状态
+                    "msg": res.message, //解析提示文本
+                    "count": res.counts, //解析数据长度
+                    "data": res.beans //解析数据列表
+                };
+            }
+        });
+        $("#search").click(function () {
+            var formData=$("#myForm").serializeJSON();
+            //console.log(formData);
+            //这里以搜索为例
+            reloadTable.reload({
+                where: formData
+                ,page: {
+                    curr: 1 //重新从第 1 页开始
+                }
+            });
+        });
+        //前端 || 日志 查看明细内容
+        $('body').on('click','.wba', function(){
+            let str=$(this).html();
+            let project=$(this).parents('td').siblings("td[data-field='project']").find('div').html();//获取当前项目类型
+            let jobtitle=$(this).parents('td').siblings("td[data-field='jobtitle']").find('div').html();//获取当前岗位类型
+            let index=$(this).parents('td').attr('data-key').split('-')[2];
+            let colName=parseInt($('.layui-table-header table th:eq('+index+') span').html());
+            let dateStr='';
+            let yearMonth=$('#yearMonth').val();
+            if(colName<10){
+                dateStr=yearMonth+'-0'+colName;//获取年月日
+            }else{
+                dateStr=yearMonth+'-'+colName;//获取年月日
+            }
+            let userId=$(this).parents('td').siblings("td[data-field='id']").find('div').html();//获取当前人
+            var url='';
+            var limit=str.includes('请假');
+            //不同类型跳转
+            if(project=='签到' && !limit){//签到
+                url='http://119.3.67.26:85/hrm/mobile/signin/timeViewContent.jsp?cmd=tv_cDate&date='+dateStr+'&uid='+userId;
+            }else if(project=="日志" && (jobtitle=='386' || jobtitle=='49') && !limit){//服务日志
+                url='http://119.3.67.26:85/formmode/search/CustomSearchBySimple.jsp?customid=4107&dateStr='+dateStr+'&user='+userId;
+            }else if(limit){//请假
+                url='http://119.3.67.26:85/formmode/search/CustomSearchBySimple.jsp?customid=4109&dateStr='+dateStr+'&user='+userId;
+            }else {//项目日志
+                url='http://119.3.67.26:85/formmode/search/CustomSearchBySimple.jsp?customid=4106&dateStr='+dateStr+'&user='+userId;
+            }
+            /*服务日志路径*/
+            //let url='https://www.baidu.com/';
+            /*项目日志路径*/
+            //http://119.3.67.26:85/formmode/search/CustomSearchBySimple.jsp?customid=4106&user=1001&dateStr=2020-06-01
+            /*人员签到路径*/
+            //let url='http://119.3.67.26:85/hrm/mobile/signin/timeViewContent.jsp?cmd=tv_cDate&date='+dateStr+'&uid='+userId;
+            window.open(url, 'newwindow', 'height=600, width=1200, top=' + (window.screen.height - 30 - 600) / 2 + ', left=' + (window.screen.width - 10 -1000) / 2 + ', toolbar=no, menubar=no, scrollbars=no, resizable=no, location=no, status=no')
+
+            //openLay('签到情况',url,"800px","600px");
+        });
+        //监听行工具事件
+        table.on('tool(patentTable)', function(obj){ //注：tool 是工具条事件名，patentTable 是 table 原始容器的属性 lay-filter="对应的值"\
+           console.log(1);
+        });
+        function openWindows(tableName,width,height,idElement) {
+            var detail=tableName+"详情";
+            layer.open({
+                type: 1
+                ,title: [detail, 'font-size:18px;'] //不显示标题栏
+                ,closeBtn: false
+                ,area: [ width, height]
+                ,id: 'LAY_layuipro123' //设定一个id，防止重复弹出
+                ,maxmin: true
+                ,btn: ['确定', '取消']
+                ,btnAlign: 'c'
+                ,moveType: 1 //拖拽模式，0或者1
+                ,content: idElement
+                ,success: function(layero){
+                    //idElement.css('display', 'block');
+                },yes: function(index, layero) {//确定操作
+                    layer.close(index); //如果设定了yes回调，需进行手工关闭
+                    reloadTable.reload();
+                }
+            });
+        }
+        function openLay(title, url, width, height){
+            layer.open({
+                type: 2 //此处以iframe举例
+                ,title: title
+                ,area: [width, height]
+                ,shade: 0.1
+                ,maxmin: true
+                ,offset: '75px'
+                ,content: url
+                ,btn: ['确定','关闭'] //只是为了演示
+                ,yes : function(index, layero) { // 保存按钮回调函数
+                    layer.close(index); // 关闭弹出层
+                }
+                ,btn2 : function(index, layero) { // 取消按钮回调函数
+                    layer.close(index); // 关闭弹出层
+                    /*reloadTable.reload();*/
+                },zIndex: layer.zIndex
+            });
+        }
+    });
+
+
+
+</script>
+
+</body>
+</html>

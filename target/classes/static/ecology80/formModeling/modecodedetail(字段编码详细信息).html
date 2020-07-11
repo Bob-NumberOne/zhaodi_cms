@@ -1,0 +1,221 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+<title>modecodedetail(字段编码详细信息)</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gbk"/>
+<style>
+body, td {
+font-family: 微软雅黑;
+font-size: 12px;
+line-height: 150%;
+}
+table {
+width: 100%;
+background-color: #ccc;
+margin: 5px 0;
+word-break: break-all;
+}
+td {
+	background-color: #fff;
+	padding: 3px;
+padding-left: 10px;
+}
+thead td {
+	text-align: left;
+font-weight: bold;
+background-color: #eee;
+}
+a:link, a:visited, a:active {
+color: #015FB6;
+text-decoration: none;
+}
+a:hover {
+color: #E33E06;
+}
+.tablename {
+margin-top: 30px;
+}
+.outdiv {
+width: 1000px;
+margin: 40px auto;
+text-align: left;
+}
+
+</style>
+</head>
+<body>
+<center>
+<div class="outdiv">
+<div class="tablename">
+<b>表名：modecodedetail</b>
+</div>
+<div>中文名称：字段编码详细信息</div>
+<div>表类型： </div>
+<a href='index.html' style='float: right;'>返回目录</a><div>说明：</div>
+<table cellspacing="1" cellpadding="0"> 
+ <colgroup> 
+  <col width="5%"> 
+  <col width="10%"> 
+  <col width="10%"> 
+  <col width="10%"> 
+  <col width="8%"> 
+  <col width="8%"> 
+  <col width="8%"> 
+  <col width="8%"> 
+  <col width="8%"> 
+  <col width="25%">
+ </colgroup> 
+ <thead> 
+  <tr> 
+   <td>序号</td> 
+   <td>中文名称</td> 
+   <td>英文名称</td> 
+   <td>数据类型</td> 
+   <td>长度</td> 
+   <td>允许空值</td> 
+   <td>主键</td> 
+   <td>默认值</td> 
+   <td>自增</td> 
+   <td>说明</td>
+  </tr>
+ </thead> 
+ <tbody> 
+  <tr> 
+   <td style="text-align: center;">1</td> 
+   <td>id</td> 
+   <td>id</td> 
+   <td align="center">int</td> 
+   <td align="center"></td> 
+   <td align="center">N</td> 
+   <td align="center">Y</td> 
+   <td align="center"></td> 
+   <td>Y</td> 
+   <td></td>
+  </tr> 
+  <tr> 
+   <td style="text-align: center;">2</td> 
+   <td>字段编码主id</td> 
+   <td>codemainid</td> 
+   <td align="center">int</td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td></td> 
+   <td>对应modecode表的id</td>
+  </tr> 
+  <tr> 
+   <td style="text-align: center;">3</td> 
+   <td>显示名称</td> 
+   <td>showname</td> 
+   <td align="center">int</td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td></td> 
+   <td>多语言标签id，对应htmllabelindex表的id</td>
+  </tr> 
+  <tr> 
+   <td style="text-align: center;">4</td> 
+   <td>编码类型</td> 
+   <td>showtype</td> 
+   <td align="center">int</td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td></td> 
+   <td>1:年,月,日,模块名称<br>2:流水号<br>3:前缀<br>4:字段编码<br>5:日期字段<br>6:字符串</td>
+  </tr> 
+  <tr> 
+   <td style="text-align: center;">5</td> 
+   <td>编码的值</td> 
+   <td>showvalue</td> 
+   <td align="center">varchar</td> 
+   <td align="center">400</td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td></td> 
+   <td>字段编码中设置的值</td>
+  </tr> 
+  <tr> 
+   <td style="text-align: center;">6</td> 
+   <td>编码顺序</td> 
+   <td>codeorder</td> 
+   <td align="center">int</td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td></td> 
+   <td>生成编码时，会根据编码顺序依次生成</td>
+  </tr> 
+  <tr> 
+   <td style="text-align: center;">7</td> 
+   <td>是否单独流水</td> 
+   <td>isSerial</td> 
+   <td align="center">int</td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td></td> 
+   <td>1：是<br>0：否<br>单独流水，仅用在编码字段和日期字段</td>
+  </tr> 
+  <tr> 
+   <td style="text-align: center;">8</td> 
+   <td>表名</td> 
+   <td>tablename</td> 
+   <td align="center">varchar</td> 
+   <td align="center">50</td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td></td> 
+   <td>编码字段和日期字段对应的数据库表名</td>
+  </tr> 
+  <tr> 
+   <td style="text-align: center;">9</td> 
+   <td>字段名</td> 
+   <td>fieldname</td> 
+   <td align="center">varchar</td> 
+   <td align="center">50</td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td></td> 
+   <td>编码字段和日期字段对应的数据库字段名</td>
+  </tr>
+  <tr> 
+   <td style="text-align: center;">10</td> 
+   <td>显示名</td> 
+   <td>shownamestr</td> 
+   <td align="center">varchar</td> 
+   <td align="center">100</td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td></td> 
+   <td></td>
+  </tr>
+  <tr> 
+   <td style="text-align: center;">11</td> 
+   <td>字段内容</td> 
+   <td>fieldnamestr</td> 
+   <td align="center">varchar</td> 
+   <td align="center">100</td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td></td> 
+   <td></td>
+  </tr>
+ </tbody>
+</table>
+</div>
+</center>
+</body>
+</html>
+

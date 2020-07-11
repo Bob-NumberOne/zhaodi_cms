@@ -1,0 +1,641 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+<title>mode_remindjob(提醒基本信息)</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gbk"/>
+<style>
+body, td {
+font-family: 微软雅黑;
+font-size: 12px;
+line-height: 150%;
+}
+table {
+width: 100%;
+background-color: #ccc;
+margin: 5px 0;
+word-break: break-all;
+}
+td {
+	background-color: #fff;
+	padding: 3px;
+padding-left: 10px;
+}
+thead td {
+	text-align: left;
+font-weight: bold;
+background-color: #eee;
+}
+a:link, a:visited, a:active {
+color: #015FB6;
+text-decoration: none;
+}
+a:hover {
+color: #E33E06;
+}
+.tablename {
+margin-top: 30px;
+}
+.outdiv {
+width: 1000px;
+margin: 40px auto;
+text-align: left;
+}
+
+</style>
+</head>
+<body>
+<center>
+<div class="outdiv">
+<div class="tablename">
+<b>表名：mode_remindjob</b>
+</div>
+<div>中文名称：提醒基本信息</div>
+<div>表类型： </div>
+<a href='index.html' style='float: right;'>返回目录</a><div>说明：</div>
+<table cellspacing="1" cellpadding="0"> 
+ <colgroup> 
+  <col width="5%"> 
+  <col width="10%"> 
+  <col width="10%"> 
+  <col width="10%"> 
+  <col width="8%"> 
+  <col width="8%"> 
+  <col width="8%"> 
+  <col width="8%"> 
+  <col width="8%"> 
+  <col width="25%">
+ </colgroup> 
+ <thead> 
+  <tr> 
+   <td>序号</td> 
+   <td>中文名称</td> 
+   <td>英文名称</td> 
+   <td>数据类型</td> 
+   <td>长度</td> 
+   <td>允许空值</td> 
+   <td>主键</td> 
+   <td>默认值</td> 
+   <td>自增</td> 
+   <td>说明</td>
+  </tr>
+ </thead> 
+ <tbody> 
+  <tr> 
+   <td style="text-align: center;">1</td> 
+   <td>id</td> 
+   <td>id</td> 
+   <td align="center">int</td> 
+   <td align="center"></td> 
+   <td align="center">N</td> 
+   <td align="center">Y</td> 
+   <td align="center"></td> 
+   <td>Y</td> 
+   <td></td>
+  </tr> 
+  <tr> 
+   <td style="text-align: center;">2</td> 
+   <td>名称</td> 
+   <td>name</td> 
+   <td align="center">varchar</td> 
+   <td align="center">1000</td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td></td> 
+   <td></td>
+  </tr> 
+  <tr> 
+   <td style="text-align: center;">3</td> 
+   <td>是否启用</td> 
+   <td>isenable</td> 
+   <td align="center">int</td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td></td> 
+   <td>1：是<br>0：否</td>
+  </tr> 
+  <tr> 
+   <td style="text-align: center;">4</td> 
+   <td>提醒类型</td> 
+   <td>remindtype</td> 
+   <td align="center">int</td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td></td> 
+   <td>1：即时提醒<br>2：到期提醒<br>3：循环提醒</td>
+  </tr> 
+  <tr> 
+   <td style="text-align: center;">5</td> 
+   <td>表单名称</td> 
+   <td>formid</td> 
+   <td align="center">int</td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td></td> 
+   <td>对应workflow_bill表的id</td>
+  </tr> 
+  <tr> 
+   <td style="text-align: center;">6</td> 
+   <td>模块名称</td> 
+   <td>modeid</td> 
+   <td align="center">int</td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td></td> 
+   <td>对应modeinfo表的id</td>
+  </tr> 
+  <tr> 
+   <td style="text-align: center;">7</td> 
+   <td>所属应用</td> 
+   <td>appid</td> 
+   <td align="center">int</td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td></td> 
+   <td>对应modetreefield表的id</td>
+  </tr> 
+  <tr> 
+   <td style="text-align: center;">8</td> 
+   <td>创建时间</td> 
+   <td>createtime</td> 
+   <td align="center">varchar</td> 
+   <td align="center">1000</td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td></td> 
+   <td></td>
+  </tr> 
+  <tr> 
+   <td style="text-align: center;">9</td> 
+   <td>创建人</td> 
+   <td>creator</td> 
+   <td align="center">int</td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td></td> 
+   <td></td>
+  </tr> 
+  <tr> 
+   <td style="text-align: center;">10</td> 
+   <td>到期时间类型</td> 
+   <td>remindtimetype</td> 
+   <td align="center">int</td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td></td> 
+   <td>1：常量<br>2：字段</td>
+  </tr> 
+  <tr> 
+   <td style="text-align: center;">11</td> 
+   <td>到期日期字段</td> 
+   <td>reminddatefield</td> 
+   <td align="center">int</td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td></td> 
+   <td>对应workflow_billfield表的id</td>
+  </tr> 
+  <tr> 
+   <td style="text-align: center;">12</td> 
+   <td>到期时间字段</td> 
+   <td>remindtimefield</td> 
+   <td align="center">int</td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td></td> 
+   <td>对应workflow_billfield表的id</td>
+  </tr> 
+  <tr> 
+   <td style="text-align: center;">13</td> 
+   <td>到期日期常量</td> 
+   <td>reminddate</td> 
+   <td align="center">varchar</td> 
+   <td align="center">1000</td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td></td> 
+   <td></td>
+  </tr> 
+  <tr> 
+   <td style="text-align: center;">14</td> 
+   <td>到期时间常量</td> 
+   <td>remindtime</td> 
+   <td align="center">varchar</td> 
+   <td align="center">1000</td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td></td> 
+   <td></td>
+  </tr> 
+  <tr> 
+   <td style="text-align: center;">15</td> 
+   <td>时间增量</td> 
+   <td>incrementway</td> 
+   <td align="center">int</td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td></td> 
+   <td>1：提前<br>2：延迟</td>
+  </tr> 
+  <tr> 
+   <td style="text-align: center;">16</td> 
+   <td>时间增量类型</td> 
+   <td>incrementtype</td> 
+   <td align="center">int</td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td></td> 
+   <td>1：整数常量<br>2：整数字段</td>
+  </tr> 
+  <tr> 
+   <td style="text-align: center;">17</td> 
+   <td>时间增量整数字段</td> 
+   <td>incrementfield</td> 
+   <td align="center">int</td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td></td> 
+   <td>对应workflow_billfield表的id</td>
+  </tr> 
+  <tr> 
+   <td style="text-align: center;">18</td> 
+   <td>时间增量增长量</td> 
+   <td>incrementnum</td> 
+   <td align="center">int</td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td></td> 
+   <td>提前或延迟的常量</td>
+  </tr> 
+  <tr> 
+   <td style="text-align: center;">19</td> 
+   <td>时间增量单位</td> 
+   <td>incrementunit</td> 
+   <td align="center">int</td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td></td> 
+   <td>1：分钟<br>2：小时<br>3：天</td>
+  </tr> 
+  <tr> 
+   <td style="text-align: center;">20</td> 
+   <td>提醒方式</td> 
+   <td>remindway</td> 
+   <td align="center">int</td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td></td> 
+   <td>1：微信提醒<br>2：短信提醒<br>3：邮件提醒<br>4：流程提醒</td>
+  </tr> 
+  <tr> 
+   <td style="text-align: center;">21</td> 
+   <td>创建人类型</td> 
+   <td>sendertype</td> 
+   <td align="center">int</td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td></td> 
+   <td>短信发送人/流程创建人类型。<br>1：系统管理员<br>2：模块创建人<br>3：单人力资源字段</td>
+  </tr> 
+  <tr> 
+   <td style="text-align: center;">22</td> 
+   <td>创建人字段</td> 
+   <td>senderfield</td> 
+   <td align="center">int</td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td></td> 
+   <td>单人力资源字段，对应workflow_billfield表的id</td>
+  </tr> 
+  <tr> 
+   <td style="text-align: center;">23</td> 
+   <td>发送标题</td> 
+   <td>subject</td> 
+   <td align="center">varchar</td> 
+   <td align="center">1000</td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td></td> 
+   <td>邮件标题/流程标题，可取字段的值作为变量</td>
+  </tr> 
+  <tr> 
+   <td style="text-align: center;">24</td> 
+   <td>dml方式</td> 
+   <td>reminddml</td> 
+   <td align="center">varchar</td> 
+   <td align="center">1000</td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td></td> 
+   <td>保留</td>
+  </tr> 
+  <tr> 
+   <td style="text-align: center;">25</td> 
+   <td>java提醒方式</td> 
+   <td>remindjava</td> 
+   <td align="center">varchar</td> 
+   <td align="center">1000</td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td></td> 
+   <td>保留</td>
+  </tr> 
+  <tr> 
+   <td style="text-align: center;">26</td> 
+   <td>条件类型</td> 
+   <td>conditionstype</td> 
+   <td align="center">int</td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td></td> 
+   <td>1：字段<br>2：sql</td>
+  </tr> 
+  <tr> 
+   <td style="text-align: center;">27</td> 
+   <td>条件字段sql</td> 
+   <td>conditionsfield</td> 
+   <td align="center">varchar</td> 
+   <td align="center">4000</td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td></td> 
+   <td>字段类型sql</td>
+  </tr> 
+  <tr> 
+   <td style="text-align: center;">28</td> 
+   <td>条件字段显示名称</td> 
+   <td>conditionsfieldcn</td> 
+   <td align="center">varchar</td> 
+   <td align="center">4000</td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td></td> 
+   <td>字段类型sql显示名称</td>
+  </tr> 
+  <tr> 
+   <td style="text-align: center;">29</td> 
+   <td>条件sql</td> 
+   <td>conditionssql</td> 
+   <td align="center">varchar</td> 
+   <td align="center">4000</td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td></td> 
+   <td>sql类型的sqlwhere</td>
+  </tr> 
+  <tr> 
+   <td style="text-align: center;">30</td> 
+   <td>java条件</td> 
+   <td>conditionsjava</td> 
+   <td align="center">varchar</td> 
+   <td align="center">1000</td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td></td> 
+   <td>保留</td>
+  </tr> 
+  <tr> 
+   <td style="text-align: center;">31</td> 
+   <td>提醒内容类型</td> 
+   <td>remindcontenttype</td> 
+   <td align="center">int</td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td></td> 
+   <td>1：文本<br>2：java</td>
+  </tr> 
+  <tr> 
+   <td style="text-align: center;">32</td> 
+   <td>提醒内容文本</td> 
+   <td>remindcontenttext</td> 
+   <td align="center">varchar</td> 
+   <td align="center">4000</td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td></td> 
+   <td></td>
+  </tr> 
+  <tr> 
+   <td style="text-align: center;">33</td> 
+   <td>提醒内容java</td> 
+   <td>remindcontentjava</td> 
+   <td align="center">varchar</td> 
+   <td align="center">1000</td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td></td> 
+   <td></td>
+  </tr> 
+  <tr> 
+   <td style="text-align: center;">34</td> 
+   <td>提醒接收人员类型</td> 
+   <td>receivertype</td> 
+   <td align="center">int</td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td></td> 
+   <td>1:人员<br>2:分部<br>3:部门<br>4:角色<br>5:所有人<br>6:模块创建人</td>
+  </tr> 
+  <tr> 
+   <td style="text-align: center;">35</td> 
+   <td>提醒接收人员对象id</td> 
+   <td>receiverdetail</td> 
+   <td align="center">varchar</td> 
+   <td align="center">4000</td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td></td> 
+   <td></td>
+  </tr> 
+  <tr> 
+   <td style="text-align: center;">36</td> 
+   <td>提醒接收人员字段类型</td> 
+   <td>receiverfieldtype</td> 
+   <td align="center">int</td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td></td> 
+   <td>1：人员<br>2：部门<br>3：分部</td>
+  </tr> 
+  <tr> 
+   <td style="text-align: center;">37</td> 
+   <td>提醒接收人员字段</td> 
+   <td>receiverfield</td> 
+   <td align="center">varchar</td> 
+   <td align="center">4000</td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td></td> 
+   <td>对应workflow_billfield表的id</td>
+  </tr> 
+  <tr> 
+   <td style="text-align: center;">38</td> 
+   <td>提醒接收人员安全级别</td> 
+   <td>receiverlevel</td> 
+   <td align="center">int</td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td></td> 
+   <td></td>
+  </tr> 
+  <tr> 
+   <td style="text-align: center;">39</td> 
+   <td>定时器触发方式</td> 
+   <td>triggerway</td> 
+   <td align="center">int</td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td></td> 
+   <td>1：简单规则<br>2：表达式</td>
+  </tr> 
+  <tr> 
+   <td style="text-align: center;">40</td> 
+   <td>定时器运行频率</td> 
+   <td>triggertype</td> 
+   <td align="center">int</td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td></td> 
+   <td>1：分钟<br>2：小时<br>3：天<br>4：周<br>5：月<br>6：仅一次</td>
+  </tr> 
+  <tr> 
+   <td style="text-align: center;">41</td> 
+   <td>定时器表达式</td> 
+   <td>triggerexpression</td> 
+   <td align="center">varchar</td> 
+   <td align="center">1000</td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td></td> 
+   <td></td>
+  </tr> 
+  <tr> 
+   <td style="text-align: center;">42</td> 
+   <td>定时器循环周期</td> 
+   <td>triggercycletime</td> 
+   <td align="center">int</td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td></td> 
+   <td></td>
+  </tr> 
+  <tr> 
+   <td style="text-align: center;">43</td> 
+   <td>周</td> 
+   <td>weeks</td> 
+   <td align="center">varchar</td> 
+   <td align="center">1000</td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td></td> 
+   <td></td>
+  </tr> 
+  <tr> 
+   <td style="text-align: center;">44</td> 
+   <td>月</td> 
+   <td>months</td> 
+   <td align="center">varchar</td> 
+   <td align="center">1000</td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td></td> 
+   <td></td>
+  </tr> 
+  <tr> 
+   <td style="text-align: center;">45</td> 
+   <td>天</td> 
+   <td>days</td> 
+   <td align="center">varchar</td> 
+   <td align="center">1000</td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td></td> 
+   <td></td>
+  </tr>
+  <tr> 
+   <td style="text-align: center;">46</td> 
+   <td>数据表单类型</td> 
+   <td>formtype</td> 
+   <td align="center">int</td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td></td> 
+   <td>0:代表主表<br>1:代表明细表1<br>2:代表明细表2<br>...</td>
+  </tr>
+ </tbody>
+</table>
+</div>
+</center>
+</body>
+</html>
+

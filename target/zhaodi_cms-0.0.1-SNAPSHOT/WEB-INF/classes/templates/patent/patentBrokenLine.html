@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>历史数据对比</title>
+    <base th:href="${#request.getContextPath()}+'/'">
+    <link rel="stylesheet" href="layuiAdmin/lib/layui-v2.5.5/css/layui.css"  media="all">
+    <script src="layuiAdmin/lib/layui-v2.5.5/layui.js" charset="utf-8"></script>
+    <script src="echarts/echarts.min.js"></script>
+    <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
+    <style type="text/css">
+        .wb_head{margin-top: 20px;padding-left: 50px}
+        .table_head{text-align: center;}
+        .layui-transfer-data{height: 280px !important;}
+    </style>
+</head>
+<body>
+<div style="height: 50px" class="layui-form wb_head">
+    <label class="layui-form-label">TOP</label>
+    <div class="layui-input-inline" style="margin-top: 2px;width: 250px;" id="slideTop"></div>
+
+    <div class="layui-input-inline">
+        <label class="layui-form-label">数据方式</label>
+        <div class="layui-input-inline">
+            <select id="wb_order" lay-filter="wb_order">
+                <option value="" disabled="false">选择数据方式</option>
+                <option value="1">年份</option>
+                <option value="2" selected = "selected">月份</option>
+            </select>
+        </div>
+    </div>
+
+    <div class="layui-inline" id="setYear">
+        <label class="layui-form-label">选择年</label>
+        <div class="layui-input-inline">
+            <input type="text" class="layui-input" id="chooseYear" placeholder="yyyy">
+        </div>
+    </div>
+
+    <div class="layui-inline" id="setYearRange" style="display: none">
+        <label class="layui-form-label">年范围</label>
+        <div class="layui-input-inline">
+            <input type="text" class="layui-input" id="yearRange" placeholder=" - ">
+        </div>
+    </div>
+
+    <div class="layui-input-inline">
+        <!--筛选-->
+        <label class="layui-form-label">专利申请人</label>
+        <div class="layui-input-inline">
+            <input type="text" id="wb_sqr" name="title" lay-verify="title" autocomplete="off" placeholder="请选择专利申请人" class="layui-input">
+        </div>
+    </div>
+
+    <div id="wb_applicant" lay-filter="wb_applicant" style="display: none;padding-left: 30px;padding-top: 30px;">
+        <div id="wb_choose" class="demo-transfer"></div>
+    </div>
+    <!--添加 弹出部门表格的 tool（里面的按钮）-->
+    <script type="text/html" id="hidden1-table-tool">
+        <a class="layui-btn layui-btn-xs" lay-event="select">选择</a>
+    </script>
+
+    <div  class="layui-input-inline">
+        <div style="display: none" id="patentTree" class="demo-tree-more"></div>
+        <input type="text" id="belongToBlock" name="belongToBlock" style="display: none">
+        <button id="getTreeBtn" type="button" class="layui-btn layui-btn-primary" style="margin-left: 20px;">分块筛选</button>
+    </div>
+
+    <button id="search" type="button" class="layui-btn layui-btn-primary" style="margin-left: 50px;">搜索</button>
+</div>
+<div id="moreColumn" style="float: left;"></div>
+<script type="text/javascript" src="js/patent/getBlockTree.js"></script>
+<script th:inline="none">
+    var screen_height=$(window).height()-70; //浏览器当前窗口可视区域高度
+    var screen_width=$(window).width(); //浏览器当前窗口可视区域宽度
+    $("#moreColumn").css("height",screen_height);
+    $("#moreColumn").css("width",screen_width);
+    layui.use(['slider','form','layer','transfer', 'util','laydate'], function(){
+        var form = layui.form
+            ,layer = layui.layer
+            ,transfer = layui.transfer
+            ,util = layui.util
+            ,slider = layui.slider;
+        var laydate = layui.laydate;
+        //当滑块为普通模式，回调返回的 value 是一个数值
+        var ins=slider.render({
+            elem: '#slideTop'
+            ,input: true //输入框
+            ,min: 0 //最小值
+            ,max: 20 //最大值
+            ,change: function(value){
+                if(value!=0){
+                    postToServer(value);
+                }
+            }
+        });
+        /*ins.config;*/
+        ins.setValue(10);
+
+        //年选择器
+        laydate.render({
+            elem: '#chooseYear'
+            ,type: 'year'
+        });
+        //年范围
+        laydate.render({
+            elem: '#yearRange'
+            ,type: 'year'
+            ,range: true
+        });
+        //获取弹框数据
+        var data1 = [];
+        $.ajax({
+            async: false,
+            url: 'patent/getCompanyNames.xmj',
+            data: {},
+            dataType: 'json',
+            type: 'post',
+            success: function (data) {
+                if(data.length>0){
+                    data1=data;
+                }
+            }
+        });
+        //显示搜索框
+        transfer.render({
+            elem: '#wb_choose'
+            ,data: data1
+            ,title: ['专利申请人', '筛选结果']
+            ,showSearch: true
+            ,id: 'wb_key' //定义唯一索引
+        });
+        // 为输入框绑定光标聚焦事件的触发该函数，
+        $('#wb_sqr').focus(applicant_input_focus_handler);
+
+        // “客户”输入框的光标聚焦事件的触发函数， 弹出弹层，弹层上显示所有的客户，以供选择。
+        function applicant_input_focus_handler() {
+            layer.open({
+                type : 1
+                ,title: ['[标]当前申请(专利权)人', 'font-size:18px;']
+                , area : [ '550px', '530px' ]
+                , content : $('#wb_applicant')
+                ,btn: ['确认', '取消']
+                , success : function () {
+                    // 重新加载表格中的数据
+                    $('#wb_applicant').css('display', 'block');
+                },yes: function(index, layero){//确定操作
+                    //do something
+                    var getData = transfer.getData('wb_key'); //获取右侧数据
+                    var text="";
+                    for(var i=0;i<getData.length;i++){
+                        if(i==getData.length-1){
+                            text+=getData[i].title;
+                        }else {
+                            text+=getData[i].title+",";
+                        }
+                    }
+                    $("#wb_sqr").val(text);
+                    layer.close(index); //如果设定了yes回调，需进行手工关闭
+                }
+            });
+        }
+        function postToServer(value){
+            var type=$("#wb_order").val();
+            var companyName=$("#wb_sqr").val();
+            var belongToBlock=$("#belongToBlock").val();
+            var top=value;
+            if(value==-1){
+                top=$('.layui-slider-input-txt').children("input:eq(0)").val();
+            }
+            var year="";
+            var yearRange="";
+            if (type==1){//年
+                yearRange=$("#yearRange").val();
+            }else if(type==2){//月
+                year=$("#chooseYear").val();
+            }
+            /*alert(top+"===="+type+"======="+companyName+"======="+year+"======="+yearRange);*/
+            setData(type,companyName,year,yearRange,top,belongToBlock);//初始化
+
+
+        }
+        //选择事件
+        form.on('select(wb_order)', function(data){
+            if (data.value==1){//年
+                $("#setYear").css("display","none");
+                $("#setYearRange").css("display","");
+            }else if(data.value==2){//月
+                $("#setYear").css("display","");
+                $("#setYearRange").css("display","none");
+            }else {
+                $("#setYear").css("display","none");
+                $("#setYearRange").css("display","none");
+            }
+
+        });
+
+        $("#search").click(function(){
+            postToServer(-1);
+        });
+
+
+        var myChart = echarts.init(document.getElementById('moreColumn'));
+        function setImage(data1,data2,data3) {
+            var option = {
+                /*        title: {
+                            text: '历史数据对比'
+                        },*/
+                tooltip: {
+                    trigger: 'axis'
+                },
+                legend: {
+                    data: data1
+                },
+                grid: {
+                    left: '3%',
+                    right: '4%',
+                    bottom: '3%',
+                    containLabel: true
+                },
+                /*        toolbox: {
+                            feature: {
+                                saveAsImage: {}
+                            }
+                        },*/
+                xAxis: {
+                    type: 'category',
+                    boundaryGap: false,
+                    data: data2
+
+                },
+                yAxis: {
+                    type: 'value'
+                },
+                series: data3
+            };
+            // 使用刚指定的配置项和数据显示图表。
+            myChart.setOption(option,true);// 加上true表示不合并配置
+        }
+        function setData(type,companyName,year,yearRange,top,belongToBlock) {
+/*            var data1=[];
+            var data2=[];
+            var data3=[];*/
+            $.ajax({
+                async: false,
+                url: 'patent/getPatentLine.xmj',
+                data: {"type":type,"companyName":companyName,"year":year,"yearRange":yearRange,"top":top,"belongToBlock":belongToBlock},
+                dataType: 'json',
+                type: 'post',
+                success: function (data) {
+                    if(data.length>0){
+                        setImage(data[0],data[1],data[2]);
+                    }else{
+                        layer.msg("请求数据失败！");
+                    }
+                },error:function(e){
+                    layer.msg('请求数据失败！');
+                }
+
+            })
+
+
+        }
+        setData(3,"","","","");//初始化
+    });
+</script>
+</body>
+</html>

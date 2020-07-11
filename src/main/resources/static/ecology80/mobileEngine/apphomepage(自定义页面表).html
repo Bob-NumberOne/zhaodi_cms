@@ -1,0 +1,197 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+<title>apphomepage(自定义页面表)</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gbk"/>
+<style>
+body, td {
+font-family: 微软雅黑;
+font-size: 12px;
+line-height: 150%;
+}
+table {
+width: 100%;
+background-color: #ccc;
+margin: 5px 0;
+word-break: break-all;
+}
+td {
+	background-color: #fff;
+	padding: 3px;
+padding-left: 10px;
+}
+thead td {
+	text-align: left;
+font-weight: bold;
+background-color: #eee;
+}
+a:link, a:visited, a:active {
+color: #015FB6;
+text-decoration: none;
+}
+a:hover {
+color: #E33E06;
+}
+.tablename {
+margin-top: 30px;
+}
+.outdiv {
+width: 1000px;
+margin: 40px auto;
+text-align: left;
+}
+
+</style>
+</head>
+<body>
+<center>
+<div class="outdiv">
+<div class="tablename">
+<b>表名：apphomepage</b>
+</div>
+<div>中文名称：自定义页面表</div>
+<div>表类型： </div>
+<a href='index.html' style='float: right;'>返回目录</a><div>说明：</div>
+<table cellspacing="1" cellpadding="0"> 
+ <thead> 
+  <tr> 
+   <td style="width: 40px;">序号</td> 
+   <td style="width: 60px;">中文名称</td> 
+   <td>英文名称</td> 
+   <td>数据类型</td> 
+   <td>长度</td> 
+   <td>允许空值</td> 
+   <td>主键</td> 
+   <td>默认值</td> 
+   <td>自增</td> 
+   <td>说明</td> 
+  </tr> 
+ </thead> 
+ <tbody>
+  <tr> 
+   <td style="text-align: center;">1</td> 
+   <td></td> 
+   <td>id</td> 
+   <td align="center">int</td> 
+   <td align="center"></td> 
+   <td align="center"> N </td> 
+   <td align="center"> Y </td> 
+   <td align="center"></td> 
+   <td> Y </td> 
+   <td></td> 
+  </tr> 
+  <tr> 
+   <td style="text-align: center;">2</td> 
+   <td>应用id</td> 
+   <td>appid</td> 
+   <td align="center">int</td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td></td> 
+   <td>所属应用，mobileAppBaseInfo表的id列外键</td> 
+  </tr> 
+  <tr> 
+   <td style="text-align: center;">3</td> 
+   <td>页面内容</td> 
+   <td>pagecontent</td> 
+   <td align="center">text</td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td></td> 
+   <td>存放页面html内容</td> 
+  </tr> 
+  <tr> 
+   <td style="text-align: center;">4</td> 
+   <td>设备类型id</td> 
+   <td>mobiledeviceid</td> 
+   <td align="center">int</td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td></td> 
+   <td>设备类型，mobiledevice表id列外键</td> 
+  </tr> 
+  <tr> 
+   <td style="text-align: center;">5</td> 
+   <td>父id</td> 
+   <td>parentid</td> 
+   <td align="center">int</td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td></td> 
+   <td>父id，和本表id列自身关联</td> 
+  </tr> 
+  <tr> 
+   <td style="text-align: center;">6</td> 
+   <td>页面名称</td> 
+   <td>pagename</td> 
+   <td align="center">varchar</td> 
+   <td align="center">1000</td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td></td> 
+   <td>自定义页面的中文名称</td> 
+  </tr> 
+  <tr> 
+   <td style="text-align: center;">7</td> 
+   <td>页面描述</td> 
+   <td>pagedesc</td> 
+   <td align="center">varchar</td> 
+   <td align="center">1000</td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td></td> 
+   <td>自定义页面描述信息</td> 
+  </tr> 
+  <tr> 
+   <td style="text-align: center;">8</td> 
+   <td>是否首页</td> 
+   <td>ishomepage</td> 
+   <td align="center">int</td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td></td> 
+   <td>是否是首页，1为是，0或者空为否</td> 
+  </tr> 
+  <tr> 
+   <td style="text-align: center;">9</td> 
+   <td>页面属性</td> 
+   <td>pageattr</td> 
+   <td align="center">text</td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td></td> 
+   <td>页面本身的一些属性设置，json数据格式</td> 
+  </tr> 
+  <tr> 
+   <td style="text-align: center;">10</td> 
+   <td>顺序</td> 
+   <td>orderid</td> 
+   <td align="center">int</td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td></td> 
+   <td>显示顺序，升序排序，越小的值排序越靠前</td> 
+  </tr> 
+ </tbody>
+</table>
+</div>
+</center>
+</body>
+</html>
+

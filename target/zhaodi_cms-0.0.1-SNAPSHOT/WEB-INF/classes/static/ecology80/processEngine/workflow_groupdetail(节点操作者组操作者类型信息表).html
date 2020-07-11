@@ -1,0 +1,401 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+<title>workflow_groupdetail(节点操作者组操作者类型信息表)</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gbk"/>
+<style>
+body, td {
+font-family: 微软雅黑;
+font-size: 12px;
+line-height: 150%;
+}
+table {
+width: 100%;
+background-color: #ccc;
+margin: 5px 0;
+word-break: break-all;
+}
+td {
+	background-color: #fff;
+	padding: 3px;
+padding-left: 10px;
+}
+thead td {
+	text-align: left;
+font-weight: bold;
+background-color: #eee;
+}
+a:link, a:visited, a:active {
+color: #015FB6;
+text-decoration: none;
+}
+a:hover {
+color: #E33E06;
+}
+.tablename {
+margin-top: 30px;
+}
+.outdiv {
+width: 1000px;
+margin: 40px auto;
+text-align: left;
+}
+
+</style>
+</head>
+<body>
+<center>
+<div class="outdiv">
+<div class="tablename">
+<b>表名：workflow_groupdetail</b>
+</div>
+<div>中文名称：节点操作者组操作者类型信息表</div>
+<div>表类型： </div>
+<a href='index.html' style='float: right;'>返回目录</a><div>说明：</div>
+<table cellspacing="1" cellpadding="0">
+ <colgroup>
+  <col width="50px">
+  <col width="190px">
+  <col width="190px">
+  <col width="80px">
+  <col width="80px">
+  <col width="70px">
+  <col width="40px">
+  <col width="60px">
+  <col width="40px">
+  <col width="200px">
+ </colgroup>
+ <thead>
+  <tr>
+   <td>序号</td>
+   <td>中文名称</td>
+   <td>英文名称</td>
+   <td>数据类型</td>
+   <td>长度</td>
+   <td>允许空值</td>
+   <td>主键</td>
+   <td>默认值</td>
+   <td>自增</td>
+   <td>说明</td>
+  </tr>
+ </thead> 
+ <tbody>
+  <tr>
+   <td style="text-align: center;">1</td>
+   <td>ID</td>
+   <td>id</td>
+   <td align="center">int</td>
+   <td align="center"></td>
+   <td align="center"> N </td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td> Y </td>
+   <td>　</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">2</td>
+   <td> 操作者组id</td>
+   <td>groupid</td>
+   <td align="center">int</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>　</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">3</td>
+   <td> 操作者类型</td>
+   <td>type</td>
+   <td align="center">int</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>1、部门 + 安全级别：某一部门安全级别大于等于设定值的人力资源<br> 2、角色 + 级别：某一角色级别等于设置级别并在级别范围内的成员。比如部门级的成员必须和创建人为同一部门，分部级的成员必须和创建人为同一分部，才能成为符合条件的操作者<br> 3、人力资源：某一人力资源<br> 4、所有人 + 安全级别：所有安全级别大于等于设定值的人力资源<br> 5、人力资源字段本人：选择的人力资源字段对应值所代表的人力资源<br> 6、人力资源字段经理：选择的人力资源字段对应值所代表的人力资源的直接上级<br> 7、人力资源字段本部门 + 安全级别：选择的人力资源字段对应值所代表的人力资源所在部门安全级别大于等于设定值的人力资源<br> 8、文档字段所有者：选择的文档字段对应值所代表的文档的所有者<br> 9、文档字段部门+ 安全级别：选择的文档字段对应值所代表的文档的所有者所在部门安全级别大于等于设定值的人力资源<br> 10、项目字段经理：选择的项目字段对应值所代表的项目的经理<br> 11、项目字段部门+ 安全级别：选择的项目字段对应值所代表的项目的经理所在部门安全级别大于等于设定值的人力资源<br> 12、项目字段成员+ 安全级别：选择的项目字段对应值所代表的项目的成员安全级别大于等于设定值的人力资源<br> 13、资产字段管理员：选择的资产字段对应值所代表的资产的所有者<br> 14、资产字段部门+ 安全级别：选择的资产字段对应值所代表的资产的所有者所在部门安全级别大于等于设定值的人力资源<br> 15、客户字段经理：选择的客户字段对应值所代表的客户的经理<br> 16、客户联系人字段经理：选择的客户联系人字段对应值所代表的客户联系人的经理<br> 17、创建人本人：请求的创建人<br> 18、创建人经理：请求创建人的经理<br> 19、创建人本部门+ 安全级别：请求创建人所在部门安全级别大于等于设定值的人力资源<br> 20、客户类型+ 安全级别：某一类型客户安全级别大于等于设定值的客户<br> 21、客户状态+ 安全级别：某一状态客户安全级别大于等于设定值的客户<br> 22、客户部门+ 安全级别：某一部门管理的安全级别大于等于设定值的客户<br> 23、客户经理：客户的经理为指定人的客户<br> 24、客户字段本人：选择的客户字段对应值所代表的客户<br> 25、所有客户+ 安全级别：所有安全级别大于等于设定值的客户<br> 30、分部+ 安全级别：某一分部安全级别大于等于设定值的人力资源<br> 31、人力资源字段下属：选择的人力资源字段对应值所代表的人力资源的下属<br> 32、人力资源字段本分部+ 安全级别：选择的人力资源字段对应值所代表的人力资源的分部安全级别大于等于设定值的人力资源<br> 33、文档字段分部+ 安全级别：选择的文档字段对应值所代表的文档的所有者所在分部安全级别大于等于设定值的人力资源<br> 34、项目字段分部+ 安全级别：选择的项目字段对应值所代表的项目的管理员所在分部安全级别大于等于设定值的人力资源<br> 35、资产字段分部+ 安全级别：选择的资产字段对应值所代表的资产的所有者所在分部安全级别大于等于设定值的人力资源<br> 36、创建人下属：请求创建人的下属<br> 37、创建人本分部+ 安全级别：请求创建人所在分部安全级别大于等于设定值的人力资源<br> 38、人力资源字段上级部门+ 安全级别：选择的人力资源字段对应值所代表的人力资源所在部门的上级部门安全级别大于等于设定值的人力资源<br> 39、创建人上级部门+ 安全级别：请求创建人所在部门的上级部门安全级别大于等于设定值的人力资源<br>58、一般岗位<br>59、人力资源字段所属岗位<br>60、人力资源字段岗位字段<br>61、创建人所属岗位<br></td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">4</td>
+   <td> 相关对象id</td>
+   <td>objid</td>
+   <td align="center">int</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>　</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">5</td>
+   <td> 相关级别</td>
+   <td>level_n</td>
+   <td align="center">int</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>　</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">6</td>
+   <td> </td>
+   <td>level2_n</td>
+   <td align="center">int</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>　</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">7</td>
+   <td> 操作者批次</td>
+   <td>orders</td>
+   <td align="center">decimal</td>
+   <td align="center">5,2</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>　</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">8</td>
+   <td> 会签关系</td>
+   <td>signorder</td>
+   <td align="center">char</td>
+   <td align="center">1</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>0:非会签，1：会签，2：依次逐个签</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">9</td>
+   <td> 操作者条件</td>
+   <td>CONDITIONS</td>
+   <td align="center">text</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>　</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">10</td>
+   <td> 操作者条件（中文）</td>
+   <td>CONDITIONCN</td>
+   <td align="center">text</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>　</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">11</td>
+   <td> 是否抄送协办人</td>
+   <td>IsCoadjutant</td>
+   <td align="center">char</td>
+   <td align="center">1</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>1：是</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">12</td>
+   <td> 会签关系</td>
+   <td>signtype</td>
+   <td align="center">char</td>
+   <td align="center">1</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>0：非会签，1：会签，2：不影响流程流转</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">13</td>
+   <td> 系统设置协办人</td>
+   <td>issyscoadjutant</td>
+   <td align="center">char</td>
+   <td align="center">1</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>　</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">14</td>
+   <td> 是否可提交意见</td>
+   <td>issubmitdesc</td>
+   <td align="center">char</td>
+   <td align="center">1</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>　</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">15</td>
+   <td> 未查看一直停留在待办</td>
+   <td>ispending</td>
+   <td align="center">char</td>
+   <td align="center">1</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>　</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">16</td>
+   <td> 是否可转发</td>
+   <td>isforward</td>
+   <td align="center">char</td>
+   <td align="center">1</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>　</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">17</td>
+   <td> 是否可修改表单内容</td>
+   <td>ismodify</td>
+   <td align="center">char</td>
+   <td align="center">1</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>　</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">18</td>
+   <td> 抄送协办人条件</td>
+   <td>coadjutants</td>
+   <td align="center">varchar</td>
+   <td align="center">1000</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>　</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">19</td>
+   <td> 抄送协办人条件（中文）</td>
+   <td>coadjutantcn</td>
+   <td align="center">varchar</td>
+   <td align="center">1000</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>　</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">20</td>
+   <td>部门字段</td>
+   <td>deptField</td>
+   <td align="center">varchar</td>
+   <td align="center">1000</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>　</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">21</td>
+   <td>子公司字段 </td>
+   <td>subcompanyField</td>
+   <td align="center">varchar</td>
+   <td align="center">1000</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>　</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">22</td>
+   <td>组织维度ID </td>
+   <td>virtualid</td>
+   <td align="center">varchar</td>
+   <td align="center">10</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>　</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">23</td>
+   <td>规则间关系 </td>
+   <td>ruleRelationship</td>
+   <td align="center">char</td>
+   <td align="center">1</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>　</td>
+  </tr> 
+   <tr>
+   <td style="text-align: center;">24</td>
+   <td>是否包含下级 </td>
+   <td>bhxj</td>
+   <td align="center">integer</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>1-包含<br>0/null-不包含</td>
+  </tr> 
+  <tr>
+   <td style="text-align: center;">25</td>
+   <td>岗位id </td>
+   <td>jobobj</td>
+   <td align="center">varchar</td>
+   <td align="center">4000</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>岗位id</td>
+  </tr> 
+  <tr>
+   <td style="text-align: center;">26</td>
+   <td>岗位对应级别id </td>
+   <td>jobfield</td>
+   <td align="center">varchar</td>
+   <td align="center">4000</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>指定级别为1时，指定级别是指定部门id；指定级别为2时，指定级别是指定分部id；指定级别为3时，指定级别是总部，值为空</td>
+  </tr> 
+ </tbody>
+</table>
+</div>
+</center>
+</body>
+</html>
+

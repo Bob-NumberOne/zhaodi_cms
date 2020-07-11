@@ -1,0 +1,199 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+<title>shareinnerwfcreate(创建流程权限表)</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gbk"/>
+<style>
+body, td {
+font-family: 微软雅黑;
+font-size: 12px;
+line-height: 150%;
+}
+table {
+width: 100%;
+background-color: #ccc;
+margin: 5px 0;
+word-break: break-all;
+}
+td {
+	background-color: #fff;
+	padding: 3px;
+padding-left: 10px;
+}
+thead td {
+	text-align: left;
+font-weight: bold;
+background-color: #eee;
+}
+a:link, a:visited, a:active {
+color: #015FB6;
+text-decoration: none;
+}
+a:hover {
+color: #E33E06;
+}
+.tablename {
+margin-top: 30px;
+}
+.outdiv {
+width: 1000px;
+margin: 40px auto;
+text-align: left;
+}
+
+</style>
+</head>
+<body>
+<center>
+<div class="outdiv">
+<div class="tablename">
+<b>表名：workflow_groupdetail</b>
+</div>
+<div>中文名称：创建流程权限表</div>
+<div>表类型： </div>
+<a href='index.html' style='float: right;'>返回目录</a><div>说明：</div>
+<table cellspacing="1" cellpadding="0">
+ <colgroup>
+  <col width="50px">
+  <col width="190px">
+  <col width="190px">
+  <col width="80px">
+  <col width="80px">
+  <col width="70px">
+  <col width="40px">
+  <col width="60px">
+  <col width="40px">
+  <col width="200px">
+ </colgroup>
+ <thead>
+  <tr>
+   <td>序号</td>
+   <td>中文名称</td>
+   <td>英文名称</td>
+   <td>数据类型</td>
+   <td>长度</td>
+   <td>允许空值</td>
+   <td>主键</td>
+   <td>默认值</td>
+   <td>自增</td>
+   <td>说明</td>
+  </tr>
+ </thead> 
+ <tbody>
+  <tr>
+   <td style="text-align: center;">1</td>
+   <td>ID</td>
+   <td>id</td>
+   <td align="center">int</td>
+   <td align="center"></td>
+   <td align="center"> N </td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td> Y </td>
+   <td>　</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">2</td>
+   <td>操作者明细表id</td>
+   <td>gid</td>
+   <td align="center">int</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>　</td>
+  </tr>
+  
+  <tr>
+   <td style="text-align: center;">3</td>
+   <td>流程id</td>
+   <td>workflowid</td>
+   <td align="center">int</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>　</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">4</td>
+   <td> 操作者类型</td>
+   <td>type</td>
+   <td align="center">int</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>1、部门 + 安全级别：某一部门安全级别大于等于设定值的人力资源<br> 2、角色 + 级别：某一角色级别等于设置级别并在级别范围内的成员。比如部门级的成员必须和创建人为同一部门，分部级的成员必须和创建人为同一分部，才能成为符合条件的操作者<br> 3、人力资源：某一人力资源<br> 4、所有人 + 安全级别：所有安全级别大于等于设定值的人力资源<br> 5、人力资源字段本人：选择的人力资源字段对应值所代表的人力资源<br> 6、人力资源字段经理：选择的人力资源字段对应值所代表的人力资源的直接上级<br> 7、人力资源字段本部门 + 安全级别：选择的人力资源字段对应值所代表的人力资源所在部门安全级别大于等于设定值的人力资源<br> 8、文档字段所有者：选择的文档字段对应值所代表的文档的所有者<br> 9、文档字段部门+ 安全级别：选择的文档字段对应值所代表的文档的所有者所在部门安全级别大于等于设定值的人力资源<br> 10、项目字段经理：选择的项目字段对应值所代表的项目的经理<br> 11、项目字段部门+ 安全级别：选择的项目字段对应值所代表的项目的经理所在部门安全级别大于等于设定值的人力资源<br> 12、项目字段成员+ 安全级别：选择的项目字段对应值所代表的项目的成员安全级别大于等于设定值的人力资源<br> 13、资产字段管理员：选择的资产字段对应值所代表的资产的所有者<br> 14、资产字段部门+ 安全级别：选择的资产字段对应值所代表的资产的所有者所在部门安全级别大于等于设定值的人力资源<br> 15、客户字段经理：选择的客户字段对应值所代表的客户的经理<br> 16、客户联系人字段经理：选择的客户联系人字段对应值所代表的客户联系人的经理<br> 17、创建人本人：请求的创建人<br> 18、创建人经理：请求创建人的经理<br> 19、创建人本部门+ 安全级别：请求创建人所在部门安全级别大于等于设定值的人力资源<br> 20、客户类型+ 安全级别：某一类型客户安全级别大于等于设定值的客户<br> 21、客户状态+ 安全级别：某一状态客户安全级别大于等于设定值的客户<br> 22、客户部门+ 安全级别：某一部门管理的安全级别大于等于设定值的客户<br> 23、客户经理：客户的经理为指定人的客户<br> 24、客户字段本人：选择的客户字段对应值所代表的客户<br> 25、所有客户+ 安全级别：所有安全级别大于等于设定值的客户<br> 30、分部+ 安全级别：某一分部安全级别大于等于设定值的人力资源<br> 31、人力资源字段下属：选择的人力资源字段对应值所代表的人力资源的下属<br> 32、人力资源字段本分部+ 安全级别：选择的人力资源字段对应值所代表的人力资源的分部安全级别大于等于设定值的人力资源<br> 33、文档字段分部+ 安全级别：选择的文档字段对应值所代表的文档的所有者所在分部安全级别大于等于设定值的人力资源<br> 34、项目字段分部+ 安全级别：选择的项目字段对应值所代表的项目的管理员所在分部安全级别大于等于设定值的人力资源<br> 35、资产字段分部+ 安全级别：选择的资产字段对应值所代表的资产的所有者所在分部安全级别大于等于设定值的人力资源<br> 36、创建人下属：请求创建人的下属<br> 37、创建人本分部+ 安全级别：请求创建人所在分部安全级别大于等于设定值的人力资源<br> 38、人力资源字段上级部门+ 安全级别：选择的人力资源字段对应值所代表的人力资源所在部门的上级部门安全级别大于等于设定值的人力资源<br> 39、创建人上级部门+ 安全级别：请求创建人所在部门的上级部门安全级别大于等于设定值的人力资源<br></td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">5</td>
+   <td> 相关对象id</td>
+   <td>content</td>
+   <td align="center">int</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>　</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">6</td>
+   <td> 最小安全级别</td>
+   <td>MIN_SECLEVEL</td>
+   <td align="center">int</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>　</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">7</td>
+   <td> 最大安全级别</td>
+   <td>MAX_SECLEVEL</td>
+   <td align="center">int</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>　</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">8</td>
+   <td> 是否属于</td>
+   <td>ISBELONG</td>
+   <td align="center">decimal</td>
+   <td align="center">5,2</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>　1、属于<br>2、不属于</td>
+  </tr>
+  
+   <tr>
+   <td style="text-align: center;">9</td>
+   <td>是否包含下级 </td>
+   <td>bhxj</td>
+   <td align="center">integer</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>1-包含<br>0/null-不包含</td>
+  </tr> 
+ </tbody>
+</table>
+</div>
+</center>
+</body>
+</html>
+

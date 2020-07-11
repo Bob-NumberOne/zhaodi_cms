@@ -1,0 +1,557 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+<title>prj_template(项目模板)</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gbk"/>
+<style>
+body, td {
+font-family: 微软雅黑;
+font-size: 12px;
+line-height: 150%;
+}
+table {
+width: 100%;
+background-color: #ccc;
+margin: 5px 0;
+word-break: break-all;
+}
+td {
+	background-color: #fff;
+	padding: 3px;
+padding-left: 10px;
+}
+thead td {
+	text-align: left;
+font-weight: bold;
+background-color: #eee;
+}
+a:link, a:visited, a:active {
+color: #015FB6;
+text-decoration: none;
+}
+a:hover {
+color: #E33E06;
+}
+.tablename {
+margin-top: 30px;
+}
+.outdiv {
+width: 1000px;
+margin: 40px auto;
+text-align: left;
+}
+
+</style>
+</head>
+<body>
+<center>
+<div class="outdiv">
+<div class="tablename">
+<b>表名：prj_template</b>
+</div>
+<div>中文名称：项目模板</div>
+<div>表类型： </div>
+<a href='index.html' style='float: right;'>返回目录</a><div>说明：</div>
+<table cellspacing="1" cellpadding="0" mytablename="Prj_Template">
+ <colgroup>
+  <col width="50px">
+  <col width="190px">
+  <col width="190px">
+  <col width="80px">
+  <col width="80px">
+  <col width="70px">
+  <col width="40px">
+  <col width="60px">
+  <col width="40px">
+  <col width="200px">
+ </colgroup>
+ <thead>
+  <tr>
+   <td>序号</td>
+   <td>中文名称</td>
+   <td>英文名称</td>
+   <td>数据类型</td>
+   <td>长度</td>
+   <td>允许空值</td>
+   <td>主键</td>
+   <td>默认值</td>
+   <td>自增</td>
+   <td>说明</td>
+  </tr>
+ </thead> 
+ <tbody>
+  <tr mycolname="id">
+   <td style="text-align: center;">1</td>
+   <td> 标识ID </td>
+   <td>id</td>
+   <td align="center">int</td>
+   <td align="center"></td>
+   <td align="center"> N </td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td> Y </td>
+   <td> 标识列 </td>
+  </tr>
+  <tr mycolname="isSelected">
+   <td style="text-align: center;">2</td> 
+   <td>是否指定 </td>
+   <td>isSelected</td>
+   <td align="center">char</td>
+   <td align="center">1</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td> 
+   <td>是否指定 </td> 
+  </tr> 
+  <tr mycolname="templetName">
+   <td style="text-align: center;">3</td> 
+   <td>模板名称 </td>
+   <td>templetName</td>
+   <td align="center">varchar</td>
+   <td align="center">1000</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td> 
+   <td>模板名称 </td> 
+  </tr> 
+  <tr mycolname="templetDesc">
+   <td style="text-align: center;">4</td> 
+   <td>描述</td>
+   <td>templetDesc</td>
+   <td align="center">varchar</td>
+   <td align="center">1000</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td> 
+   <td>描述</td> 
+  </tr> 
+  <tr mycolname="proTypeId">
+   <td style="text-align: center;">5</td> 
+   <td>项目类型 </td>
+   <td>proTypeId</td>
+   <td align="center">int</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td> 
+   <td>项目类型 </td> 
+  </tr> 
+  <tr mycolname="workTypeId">
+   <td style="text-align: center;">6</td> 
+   <td>工作类型 </td>
+   <td>workTypeId</td>
+   <td align="center">int</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td> 
+   <td>工作类型 </td> 
+  </tr> 
+  <tr mycolname="proMember">
+   <td style="text-align: center;">7</td> 
+   <td>项目成员 </td>
+   <td>proMember</td>
+   <td align="center">varchar</td>
+   <td align="center">1000</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td> 
+   <td>项目成员 </td> 
+  </tr> 
+  <tr mycolname="isMemberSee">
+   <td style="text-align: center;">8</td> 
+   <td>成员可见 </td>
+   <td>isMemberSee</td>
+   <td align="center">char</td>
+   <td align="center">1</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td> 
+   <td>成员可见 </td> 
+  </tr> 
+  <tr mycolname="proCrm">
+   <td style="text-align: center;">9</td> 
+   <td>相关客户 </td>
+   <td>proCrm</td>
+   <td align="center">varchar</td>
+   <td align="center">1000</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td> 
+   <td>相关客户 </td> 
+  </tr> 
+  <tr mycolname="isCrmSee">
+   <td style="text-align: center;">10</td> 
+   <td>客户可见</td>
+   <td>isCrmSee</td>
+   <td align="center">char</td>
+   <td align="center">1</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td> 
+   <td>客户可见</td> 
+  </tr> 
+  <tr mycolname="parentProId">
+   <td style="text-align: center;">11</td> 
+   <td>上级项目 </td>
+   <td>parentProId</td>
+   <td align="center">int</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td> 
+   <td>上级项目 </td> 
+  </tr> 
+  <tr mycolname="commentDoc">
+   <td style="text-align: center;">12</td> 
+   <td>评价书 </td>
+   <td>commentDoc</td>
+   <td align="center">int</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td> 
+   <td>评价书 </td> 
+  </tr> 
+  <tr mycolname="confirmDoc">
+   <td style="text-align: center;">13</td> 
+   <td>确认书 </td>
+   <td>confirmDoc</td>
+   <td align="center">int</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td> 
+   <td>确认书 </td> 
+  </tr> 
+  <tr mycolname="adviceDoc">
+   <td style="text-align: center;">14</td> 
+   <td>建议书 </td>
+   <td>adviceDoc</td>
+   <td align="center">int</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td> 
+   <td>建议书 </td> 
+  </tr> 
+  <tr mycolname="Manager">
+   <td style="text-align: center;">15</td> 
+   <td>项目经理 </td>
+   <td>Manager</td>
+   <td align="center">int</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td> 
+   <td>项目经理 </td> 
+  </tr> 
+  <tr mycolname="relationXml">
+   <td style="text-align: center;">16</td> 
+   <td>WBS任务关系</td>
+   <td>relationXml</td>
+   <td align="center">text</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td> 
+   <td>WBS任务关系(E8已弃用该字段)</td> 
+  </tr> 
+  <tr mycolname="Datefield1">
+   <td style="text-align: center;">17</td> 
+   <td>自定义日期字段1 </td>
+   <td>Datefield1</td>
+   <td align="center">varchar</td>
+   <td align="center">1000</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td> 
+   <td>自定义日期字段1 </td> 
+  </tr> 
+  <tr mycolname="Datefield2">
+   <td style="text-align: center;">18</td> 
+   <td>自定义日期字段2 </td>
+   <td>Datefield2</td>
+   <td align="center">varchar</td>
+   <td align="center">1000</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td> 
+   <td>自定义日期字段2 </td> 
+  </tr> 
+  <tr mycolname="Datefield3">
+   <td style="text-align: center;">19</td> 
+   <td>自定义日期字段3 </td>
+   <td>Datefield3</td>
+   <td align="center">varchar</td>
+   <td align="center">1000</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td> 
+   <td>自定义日期字段3 </td> 
+  </tr> 
+  <tr mycolname="Datefield4">
+   <td style="text-align: center;">20</td> 
+   <td>自定义日期字段4</td>
+   <td>Datefield4</td>
+   <td align="center">varchar</td>
+   <td align="center">1000</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td> 
+   <td>自定义日期字段4</td> 
+  </tr> 
+  <tr mycolname="Datefield5">
+   <td style="text-align: center;">21</td> 
+   <td>自定义日期字段5</td>
+   <td>Datefield5</td>
+   <td align="center">varchar</td>
+   <td align="center">1000</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td> 
+   <td>自定义日期字段5</td> 
+  </tr> 
+  <tr mycolname="numberfield1">
+   <td style="text-align: center;">22</td> 
+   <td>自定义数字字段1 </td>
+   <td>numberfield1</td>
+   <td align="center">float</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td> 
+   <td>自定义数字字段1 </td> 
+  </tr> 
+  <tr mycolname="Numberfield2">
+   <td style="text-align: center;">23</td> 
+   <td>自定义数字字段2</td>
+   <td>Numberfield2</td>
+   <td align="center">float</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td> 
+   <td>自定义数字字段2</td> 
+  </tr> 
+  <tr mycolname="Numberfield3">
+   <td style="text-align: center;">24</td> 
+   <td>自定义数字字段3</td>
+   <td>Numberfield3</td>
+   <td align="center">float</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td> 
+   <td>自定义数字字段3</td> 
+  </tr> 
+  <tr mycolname="Numberfield4">
+   <td style="text-align: center;">25</td> 
+   <td>自定义数字字段4</td>
+   <td>Numberfield4</td>
+   <td align="center">float</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td> 
+   <td>自定义数字字段4</td> 
+  </tr> 
+  <tr mycolname="Numberfield5">
+   <td style="text-align: center;">26</td> 
+   <td>自定义数字字段5</td>
+   <td>Numberfield5</td>
+   <td align="center">float</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td> 
+   <td>自定义数字字段5</td> 
+  </tr> 
+  <tr mycolname="Textfield1">
+   <td style="text-align: center;">27</td> 
+   <td>自定义文本字段1 </td>
+   <td>Textfield1</td>
+   <td align="center">varchar</td>
+   <td align="center">1000</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td> 
+   <td>自定义文本字段1 </td> 
+  </tr> 
+  <tr mycolname="Textfield2">
+   <td style="text-align: center;">28</td> 
+   <td>自定义文本字段2</td>
+   <td>Textfield2</td>
+   <td align="center">varchar</td>
+   <td align="center">1000</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td> 
+   <td>自定义文本字段2</td> 
+  </tr> 
+  <tr mycolname="Textfield3">
+   <td style="text-align: center;">29</td> 
+   <td>自定义文本字段3</td>
+   <td>Textfield3</td>
+   <td align="center">varchar</td>
+   <td align="center">1000</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td> 
+   <td>自定义文本字段3</td> 
+  </tr> 
+  <tr mycolname="Textfield4">
+   <td style="text-align: center;">30</td> 
+   <td>自定义文本字段4</td>
+   <td>Textfield4</td>
+   <td align="center">varchar</td>
+   <td align="center">1000</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td> 
+   <td>自定义文本字段4</td> 
+  </tr> 
+  <tr mycolname="Textfield5">
+   <td style="text-align: center;">31</td> 
+   <td>自定义文本字段5</td>
+   <td>Textfield5</td>
+   <td align="center">varchar</td>
+   <td align="center">1000</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td> 
+   <td>自定义文本字段5</td> 
+  </tr> 
+  <tr mycolname="tinyintfield1">
+   <td style="text-align: center;">32</td> 
+   <td>自定义选择字段1 </td>
+   <td>tinyintfield1</td>
+   <td align="center">tinyint</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td> 
+   <td>自定义选择字段1 </td> 
+  </tr> 
+  <tr mycolname="Tinyintfield2">
+   <td style="text-align: center;">33</td> 
+   <td>自定义选择字段2</td>
+   <td>Tinyintfield2</td>
+   <td align="center">tinyint</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td> 
+   <td>自定义选择字段2</td> 
+  </tr> 
+  <tr mycolname="Tinyintfield3">
+   <td style="text-align: center;">34</td> 
+   <td>自定义选择字段3</td>
+   <td>Tinyintfield3</td>
+   <td align="center">tinyint</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td> 
+   <td>自定义选择字段3</td> 
+  </tr> 
+  <tr mycolname="Tinyintfield4">
+   <td style="text-align: center;">35</td> 
+   <td>自定义选择字段4</td>
+   <td>Tinyintfield4</td>
+   <td align="center">tinyint</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td> 
+   <td>自定义选择字段4</td> 
+  </tr> 
+  <tr mycolname="Tinyintfield5">
+   <td style="text-align: center;">36</td> 
+   <td>自定义选择字段5</td>
+   <td>Tinyintfield5</td>
+   <td align="center">tinyint</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td> 
+   <td>自定义选择字段5</td> 
+  </tr> 
+  <tr mycolname="status">
+   <td style="text-align: center;">37</td> 
+   <td>状态</td>
+   <td>status</td>
+   <td align="center">char</td>
+   <td align="center">1</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td> 
+   <td>状态</td> 
+  </tr> 
+  <tr mycolname="updatedate">
+   <td style="text-align: center;">38</td> 
+   <td>更新日期 </td>
+   <td>updatedate</td>
+   <td align="center">char</td>
+   <td align="center">10</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td> 
+   <td>更新日期 </td> 
+  </tr> 
+  <tr mycolname="accessory">
+   <td style="text-align: center;">39</td> 
+   <td>附件 </td>
+   <td>accessory</td>
+   <td align="center">varchar</td>
+   <td align="center">2000</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td> 
+   <td>附件 </td> 
+  </tr> 
+ </tbody>
+</table>
+</div>
+</center>
+</body>
+</html>
+

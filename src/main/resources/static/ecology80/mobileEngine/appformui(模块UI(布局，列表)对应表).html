@@ -1,0 +1,245 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+<title>appformui(模块UI(布局，列表)对应表)</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gbk"/>
+<style>
+body, td {
+font-family: 微软雅黑;
+font-size: 12px;
+line-height: 150%;
+}
+table {
+width: 100%;
+background-color: #ccc;
+margin: 5px 0;
+word-break: break-all;
+}
+td {
+	background-color: #fff;
+	padding: 3px;
+padding-left: 10px;
+}
+thead td {
+	text-align: left;
+font-weight: bold;
+background-color: #eee;
+}
+a:link, a:visited, a:active {
+color: #015FB6;
+text-decoration: none;
+}
+a:hover {
+color: #E33E06;
+}
+.tablename {
+margin-top: 30px;
+}
+.outdiv {
+width: 1000px;
+margin: 40px auto;
+text-align: left;
+}
+
+</style>
+</head>
+<body>
+<center>
+<div class="outdiv">
+<div class="tablename">
+<b>表名：appformui</b>
+</div>
+<div>中文名称：模块UI(布局，列表)对应表</div>
+<div>表类型： </div>
+<a href='index.html' style='float: right;'>返回目录</a><div>说明：</div>
+<table cellspacing="1" cellpadding="0"> 
+ <thead> 
+  <tr> 
+   <td style="width: 40px;">序号</td> 
+   <td style="width: 60px;">中文名称</td> 
+   <td>英文名称</td> 
+   <td>数据类型</td> 
+   <td>长度</td> 
+   <td>允许空值</td> 
+   <td>主键</td> 
+   <td>默认值</td> 
+   <td>自增</td> 
+   <td>说明</td> 
+  </tr> 
+ </thead> 
+ <tbody>
+  <tr> 
+   <td style="text-align: center;">1</td> 
+   <td></td> 
+   <td>id</td> 
+   <td align="center">int</td> 
+   <td align="center"></td> 
+   <td align="center"> N </td> 
+   <td align="center"> Y </td> 
+   <td align="center"></td> 
+   <td> Y </td> 
+   <td></td> 
+  </tr> 
+  <tr> 
+   <td style="text-align: center;">2</td> 
+   <td>表单id</td> 
+   <td>formid</td> 
+   <td align="center">int</td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td></td> 
+   <td>布局对应的表单id，workflow_bill表的id列外键</td> 
+  </tr> 
+  <tr> 
+   <td style="text-align: center;">3</td> 
+   <td>UI内容</td> 
+   <td>uiContent</td> 
+   <td align="center">text</td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td></td> 
+   <td>存放UI布局的html代码</td> 
+  </tr> 
+  <tr> 
+   <td style="text-align: center;">4</td> 
+   <td>UI类型</td> 
+   <td>uiType</td> 
+   <td align="center">int</td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td></td> 
+   <td>UI类型：0新建,1显示,2编辑,3列表</td> 
+  </tr> 
+  <tr> 
+   <td style="text-align: center;">5</td> 
+   <td>应用id</td> 
+   <td>appid</td> 
+   <td align="center">int</td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td></td> 
+   <td>所属应用，mobileAppBaseInfo表的id列外键</td> 
+  </tr> 
+  <tr> 
+   <td style="text-align: center;">6</td> 
+   <td>UI名称</td> 
+   <td>uiname</td> 
+   <td align="center">varchar</td> 
+   <td align="center">1000</td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td></td> 
+   <td>ui的中文名称，根据ui类型分别对应表单建模模块下的新建布局名称，编辑布局名称，显示布局名称，查询列表的名称</td> 
+  </tr> 
+  <tr> 
+   <td style="text-align: center;">7</td> 
+   <td>是否删除</td> 
+   <td>isdelete</td> 
+   <td align="center">int</td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td></td> 
+   <td>是否删除，1是，0否</td> 
+  </tr> 
+  <tr> 
+   <td style="text-align: center;">7</td> 
+   <td>是否隐藏</td> 
+   <td>isHide</td> 
+   <td align="center">varchar</td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td></td> 
+   <td>是否隐藏，1是，NULL否</td> 
+  </tr> 
+  <tr> 
+   <td style="text-align: center;">8</td> 
+   <td>UI模板</td> 
+   <td>uiTemplate</td> 
+   <td align="center">text</td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td></td> 
+   <td>存放UI布局的html代码</td> 
+  </tr> 
+  <tr> 
+   <td style="text-align: center;">9</td> 
+   <td>默认名称</td> 
+   <td>defaultTitle</td> 
+   <td align="center">varchar</td> 
+   <td align="center">1000</td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td></td> 
+   <td>无用，已废弃</td> 
+  </tr> 
+  <tr> 
+   <td style="text-align: center;">10</td> 
+   <td>模块id</td> 
+   <td>entityId</td> 
+   <td align="center">int</td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td></td> 
+   <td>模块id，mobileAppModelInfo表id列的外键</td> 
+  </tr> 
+  <tr> 
+   <td style="text-align: center;">11</td> 
+   <td>查询id</td> 
+   <td>sourceid</td> 
+   <td align="center">int</td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td></td> 
+   <td>表单建模，查询列表id。mode_customsearch表id列的外键</td> 
+  </tr> 
+  <tr> 
+   <td style="text-align: center;">12</td> 
+   <td>设备类型id</td> 
+   <td>mobiledeviceid</td> 
+   <td align="center">int</td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td></td> 
+   <td>设备类型，mobiledevice表id列的外键</td> 
+  </tr> 
+  <tr> 
+   <td style="text-align: center;">13</td> 
+   <td>父id</td> 
+   <td>parentid</td> 
+   <td align="center">int</td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td align="center"></td> 
+   <td></td> 
+   <td>父id，和本表id列自身关联</td> 
+  </tr> 
+ </tbody>
+</table>
+</div>
+</center>
+</body>
+</html>
+

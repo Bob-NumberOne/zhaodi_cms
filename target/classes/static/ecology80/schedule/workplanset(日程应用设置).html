@@ -1,0 +1,293 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+<title>workplanset(日程应用设置)</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gbk"/>
+<style>
+body, td {
+font-family: 微软雅黑;
+font-size: 12px;
+line-height: 150%;
+}
+table {
+width: 100%;
+background-color: #ccc;
+margin: 5px 0;
+word-break: break-all;
+}
+td {
+	background-color: #fff;
+	padding: 3px;
+padding-left: 10px;
+}
+thead td {
+	text-align: left;
+font-weight: bold;
+background-color: #eee;
+}
+a:link, a:visited, a:active {
+color: #015FB6;
+text-decoration: none;
+}
+a:hover {
+color: #E33E06;
+}
+.tablename {
+margin-top: 30px;
+}
+.outdiv {
+width: 1000px;
+margin: 40px auto;
+text-align: left;
+}
+
+</style>
+</head>
+<body>
+<center>
+<div class="outdiv">
+<div class="tablename">
+<b>表名：workplanset</b>
+</div>
+<div>中文名称：日程应用设置</div>
+<div>表类型： </div>
+<a href='index.html' style='float: right;'>返回目录</a><div>说明：</div>
+<table cellspacing="1" cellpadding="0">
+ <colgroup>
+  <col width="50px">
+  <col width="190px">
+  <col width="190px">
+  <col width="80px">
+  <col width="80px">
+  <col width="70px">
+  <col width="40px">
+  <col width="60px">
+  <col width="40px">
+  <col width="200px">
+ </colgroup>
+ <thead>
+  <tr>
+   <td>序号</td>
+   <td>中文名称</td>
+   <td>英文名称</td>
+   <td>数据类型</td>
+   <td>长度</td>
+   <td>允许空值</td>
+   <td>主键</td>
+   <td>默认值</td>
+   <td>自增</td>
+   <td>说明</td>
+  </tr>
+ </thead> 
+ <tbody>
+  <tr>
+   <td style="text-align: center;">1</td>
+   <td>ID</td>
+   <td>id</td>
+   <td align="center">int</td>
+   <td align="center"></td>
+   <td align="center"> N </td>
+   <td align="center"> Y </td>
+   <td align="center"></td>
+   <td></td>
+   <td>　</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">2</td>
+   <td> 日历开始值</td>
+   <td>timeRangeStart</td>
+   <td align="center">int</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>默认0</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">3</td>
+   <td> 日历结束值</td>
+   <td>timeRangeEnd</td>
+   <td align="center">int</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>默认23</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">4</td>
+   <td> 是否拆分上下午</td>
+   <td>amAndPm</td>
+   <td align="center">int</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>0不拆分 1拆分</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">5</td>
+   <td> 上午开始时间</td>
+   <td>amStart</td>
+   <td align="center">varchar</td>
+   <td align="center">1000</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>拆分上下午时有效</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">6</td>
+   <td> 上午结束时间拆分上下午时有效上午结束时间拆分上下午时有效</td>
+   <td>amEnd</td>
+   <td align="center">varchar</td>
+   <td align="center">1000</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>　</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">7</td>
+   <td> 下午开始时间</td>
+   <td>pmStart</td>
+   <td align="center">varchar</td>
+   <td align="center">1000</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>拆分上下午时有效</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">8</td>
+   <td> 下午结束时间</td>
+   <td>pmEnd</td>
+   <td align="center">varchar</td>
+   <td align="center">1000</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>拆分上下午时有效</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">9</td>
+   <td> 是否拆分数据</td>
+   <td>dataSplit</td>
+   <td align="center">int</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>0 不拆分 1拆分<br>对应跨天日程是否每天都显示对横跨上下午数据受是否拆分上下午影响</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">10</td>
+   <td> 是否显示没有日程人员</td>
+   <td>showPerson</td>
+   <td align="center">int</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>0 不显示 1显示</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">11</td>
+   <td> 显示信息</td>
+   <td>showInfo</td>
+   <td align="center">varchar</td>
+   <td align="center">1000</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>通过1^0^1^0 组合来显示 1表示显示 0 不显示总共表示4个值通过 ^ 分割</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">12</td>
+   <td> Tooltip的显示信息</td>
+   <td>tooltipInfo</td>
+   <td align="center">varchar</td>
+   <td align="center">1000</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>通过组合来控制，同showinfo1^1^1^1^1^0^1</td>
+  </tr>
+  <tr>
+   <td style="text-align: center;">13</td>
+   <td> 数据获取规则</td>
+   <td>dataRule</td>
+   <td align="center">int</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>1创建人 2接收人</td>
+  </tr> 
+  <tr>
+   <td style="text-align: center;">14</td>
+   <td> 日程详情附件开启标识</td>
+   <td>infoaccessory</td>
+   <td align="center">int</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>0不开启 1开启</td>
+  </tr> 
+  <tr>
+   <td style="text-align: center;">15</td>
+   <td> 日程详情附件目录</td>
+   <td>infoaccessorydir</td>
+   <td align="center">varchar</td>
+   <td align="center">10</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td></td>
+  </tr> 
+   <tr>
+   <td style="text-align: center;">16</td>
+   <td> 日程交流附件开启标识</td>
+   <td>dscsaccessory</td>
+   <td align="center">int</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td>0不开启 1开启</td>
+  </tr> 
+  <tr>
+   <td style="text-align: center;">17</td>
+   <td> 日程交流附件目录</td>
+   <td>dscsaccessorydir</td>
+   <td align="center">varchar</td>
+   <td align="center">10</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td></td>
+  </tr> 
+ </tbody>
+</table>
+</div>
+</center>
+</body>
+</html>
+

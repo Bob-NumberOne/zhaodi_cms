@@ -1,0 +1,305 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+<title>cpboarddirectors(董事会)</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gbk"/>
+<style>
+body, td {
+font-family: 微软雅黑;
+font-size: 12px;
+line-height: 150%;
+}
+table {
+width: 100%;
+background-color: #ccc;
+margin: 5px 0;
+word-break: break-all;
+}
+td {
+	background-color: #fff;
+	padding: 3px;
+padding-left: 10px;
+}
+thead td {
+	text-align: left;
+font-weight: bold;
+background-color: #eee;
+}
+a:link, a:visited, a:active {
+color: #015FB6;
+text-decoration: none;
+}
+a:hover {
+color: #E33E06;
+}
+.tablename {
+margin-top: 30px;
+}
+.outdiv {
+width: 1000px;
+margin: 40px auto;
+text-align: left;
+}
+
+</style>
+</head>
+<body>
+<center>
+<div class="outdiv">
+<div class="tablename">
+<b>表名：cpboarddirectors</b>
+</div>
+<div>中文名称：董事会</div>
+<div>表类型： </div>
+<a href='index.html' style='float: right;'>返回目录</a><div>说明：</div>
+<table cellspacing="1" cellpadding="0" mytablename="CPBOARDDIRECTORS">
+ <colgroup>
+  <col width="50px">
+  <col width="190px">
+  <col width="190px">
+  <col width="80px">
+  <col width="80px">
+  <col width="70px">
+  <col width="40px">
+  <col width="60px">
+  <col width="40px">
+  <col width="200px">
+ </colgroup>
+ <thead>
+  <tr>
+   <td>序号</td>
+   <td>中文名称</td>
+   <td>英文名称</td>
+   <td>数据类型</td>
+   <td>长度</td>
+   <td>允许空值</td>
+   <td>主键</td>
+   <td>默认值</td>
+   <td>自增</td>
+   <td>说明</td>
+  </tr>
+ </thead> 
+ <tbody>
+  <tr mycolname="DIRECTORSID">
+   <td style="text-align: center;">1</td>
+   <td> 标识ID </td>
+   <td>DIRECTORSID</td>
+   <td align="center">int</td>
+   <td align="center"></td>
+   <td align="center"> N </td>
+   <td align="center"> Y </td>
+   <td align="center"></td>
+   <td> Y </td>
+   <td> 标识列 </td>
+  </tr>
+  <tr mycolname="COMPANYID">
+   <td style="text-align: center;">2</td>
+   <td>公司ID </td>
+   <td>COMPANYID</td>
+   <td align="center">int</td>
+   <td align="center"></td>
+   <td align="center"> N </td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td> 
+   <td>公司ID </td> 
+  </tr> 
+  <tr mycolname="CHAIRMAN">
+   <td style="text-align: center;">3</td>
+   <td>董事长 </td>
+   <td>CHAIRMAN</td>
+   <td align="center">varchar</td>
+   <td align="center">1000</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td> 
+   <td>董事长 </td> 
+  </tr> 
+  <tr mycolname="APPOINTBEGINDATE">
+   <td style="text-align: center;">4</td>
+   <td>起止时间(开始) </td>
+   <td>APPOINTBEGINDATE</td>
+   <td align="center">char</td>
+   <td align="center">10</td>
+   <td align="center"> N </td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td> 
+   <td>起止时间(开始) </td> 
+  </tr> 
+  <tr mycolname="APPOINTENDDATE">
+   <td style="text-align: center;">5</td>
+   <td>起止时间(结束) </td>
+   <td>APPOINTENDDATE</td>
+   <td align="center">char</td>
+   <td align="center">10</td>
+   <td align="center"> N </td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td> 
+   <td>起止时间(结束) </td> 
+  </tr> 
+  <tr mycolname="SUPERVISOR">
+   <td style="text-align: center;">6</td>
+   <td>监事 </td>
+   <td>SUPERVISOR</td>
+   <td align="center">varchar</td>
+   <td align="center">1000</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td> 
+   <td>监事 </td> 
+  </tr> 
+  <tr mycolname="GENERALMANAGER">
+   <td style="text-align: center;">7</td>
+   <td>总经理 </td>
+   <td>GENERALMANAGER</td>
+   <td align="center">varchar</td>
+   <td align="center">1000</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td> 
+   <td>总经理 </td> 
+  </tr> 
+  <tr mycolname="DRECTORSAFFIX">
+   <td style="text-align: center;">8</td>
+   <td>附件 </td>
+   <td>DRECTORSAFFIX</td>
+   <td align="center">varchar</td>
+   <td align="center">4000</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td> 
+   <td>附件 </td> 
+  </tr> 
+  <tr mycolname="VERSIONID">
+   <td style="text-align: center;">9</td>
+   <td>版本号 </td>
+   <td>VERSIONID</td>
+   <td align="center">int</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td> 
+   <td>版本号 </td> 
+  </tr> 
+  <tr mycolname="managerbegindate">
+   <td style="text-align: center;">10</td>
+   <td>总经理的开始时间 </td>
+   <td>managerbegindate</td>
+   <td align="center">char</td>
+   <td align="center">10</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td> 
+   <td>总经理的开始时间 </td> 
+  </tr> 
+  <tr mycolname="managerenddate">
+   <td style="text-align: center;">11</td>
+   <td>总经理的结束时间 </td>
+   <td>managerenddate</td>
+   <td align="center">char</td>
+   <td align="center">10</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td> 
+   <td>总经理的结束时间 </td> 
+  </tr> 
+  <tr mycolname="managerduetime">
+   <td style="text-align: center;">12</td>
+   <td>总经理的任职期限 </td>
+   <td>managerduetime</td>
+   <td align="center">varchar</td>
+   <td align="center">1000</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td> 
+   <td>总经理的任职期限 </td> 
+  </tr> 
+  <tr mycolname="APPOINTDUETIME">
+   <td style="text-align: center;">13</td> 
+   <td>董事长或执行董事的任职期限 </td>
+   <td>APPOINTDUETIME</td>
+   <td align="center">varchar</td>
+   <td align="center">1000</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td> 
+   <td>董事长或执行董事的任职期限 </td> 
+  </tr> 
+  <tr mycolname="LICENSEID">
+   <td style="text-align: center;">14</td> 
+   <td>证照id </td>
+   <td>LICENSEID</td>
+   <td align="center">int</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td> 
+   <td>证照id </td> 
+  </tr> 
+  <tr mycolname="ischairman">
+   <td style="text-align: center;">15</td>
+   <td>所在的下拉框 </td>
+   <td>ischairman</td>
+   <td align="center">char</td>
+   <td align="center">1</td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td> 
+   <td>所在的下拉框 </td> 
+  </tr> 
+  <tr mycolname="CREATEDATETIME">
+   <td style="text-align: center;">16</td>
+   <td>创建日期 </td>
+   <td>CREATEDATETIME</td>
+   <td align="center">char</td>
+   <td align="center">20</td>
+   <td align="center"> N </td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td> 
+   <td>创建日期 </td> 
+  </tr> 
+  <tr mycolname="LASTUPDATETIME">
+   <td style="text-align: center;">17</td>
+   <td>修改时间 </td>
+   <td>LASTUPDATETIME</td>
+   <td align="center">char</td>
+   <td align="center">20</td>
+   <td align="center"> N </td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td> 
+   <td>修改时间 </td> 
+  </tr> 
+  <tr mycolname="ISDEL">
+   <td style="text-align: center;">18</td>
+   <td>是否已经删除 </td>
+   <td>ISDEL</td>
+   <td align="center">char</td>
+   <td align="center">1</td>
+   <td align="center"> N </td>
+   <td align="center"></td>
+   <td align="center"></td>
+   <td></td>
+   <td><p>T:正常状态</p> <p>F:作废</p></td>
+  </tr> 
+ </tbody>
+</table>
+</div>
+</center>
+</body>
+</html>
+
